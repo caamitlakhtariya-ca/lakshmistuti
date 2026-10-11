@@ -110,3 +110,5 @@ html.intro body{overflow:hidden}
 .shri.foot{font-size:1.6rem;margin-bottom:8px;opacity:.8}
 .verse{position:relative;overflow:hidden;isolation:isolate}
 .verse .yantra{width:min(520px,130%);opacity:.14;top:50%}
+.yantra-big{text-align:center;padding:10px}.yantra-big .yantra{opacity:.5;width:min(420px,100%);position:absolute;top:50%}
+.yantra-big{min-height:440px;display:flex;align-items:center;justify-content:center;margin:24px 0}.yantra-big p{margin:0!important}

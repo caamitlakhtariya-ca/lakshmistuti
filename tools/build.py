@@ -65,10 +65,9 @@ GLOSSARY = [
 ]
 
 YANTRA = '''<svg class="yantra" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round">
-<rect x="6" y="6" width="288" height="288"/><rect x="14" y="14" width="272" height="272"/>
-<circle cx="150" cy="150" r="136"/><g><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(0.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(22.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(45.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(67.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(90.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(112.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(135.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(157.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(180.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(202.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(225.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(247.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(270.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(292.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(315.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(337.50 150 150)"/></g><g><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(0.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(45.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(90.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(135.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(180.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(225.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(270.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(315.00 150 150)"/></g>
-<circle cx="150" cy="150" r="102"/><circle cx="150" cy="150" r="100"/>
-<polygon points="53.7,123.2 246.3,123.2 150,250.0"/><polygon points="53.0,174.2 247.0,174.2 150,50.0"/><polygon points="98.7,220.0 201.3,220.0 150,123.2"/><polygon points="78.3,197.9 221.7,197.9 150,78.1"/><polygon points="90.5,78.1 209.5,78.1 150,160.7"/><polygon points="81.0,103.1 219.0,103.1 150,220.0"/><polygon points="114.9,160.7 185.1,160.7 150,103.1"/><polygon points="116.4,134.3 183.6,134.3 150,197.9"/><polygon points="124.6,144.8 175.4,144.8 150,174.2"/><circle cx="150" cy="150" r="1.6" fill="currentColor"/></g></svg>'''
+<rect x="2" y="2" width="296" height="296"/><rect x="9" y="9" width="282" height="282"/><rect x="137" y="2" width="26" height="20"/><rect x="137" y="278" width="26" height="20"/><rect x="2" y="137" width="20" height="26"/><rect x="278" y="137" width="20" height="26"/><circle cx="150" cy="150" r="138"/><circle cx="150" cy="150" r="134"/><circle cx="150" cy="150" r="130"/><g><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(0.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(22.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(45.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(67.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(90.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(112.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(135.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(157.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(180.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(202.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(225.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(247.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(270.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(292.50 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(315.00 150 150)"/><path d="M150,40.0 Q164.0,29.5 150,19.0 Q136.0,29.5 150,40.0Z" transform="rotate(337.50 150 150)"/></g><g><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(0.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(45.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(90.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(135.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(180.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(225.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(270.00 150 150)"/><path d="M150,66.0 Q176.0,53.5 150,41.0 Q124.0,53.5 150,66.0Z" transform="rotate(315.00 150 150)"/></g>
+<circle cx="150" cy="150" r="82"/><circle cx="150" cy="150" r="80"/>
+<g transform="translate(150 150) scale(.8) translate(-150 -150)"><polygon points="53.7,123.2 246.3,123.2 150,250.0"/><polygon points="53.0,174.2 247.0,174.2 150,50.0"/><polygon points="98.7,220.0 201.3,220.0 150,123.2"/><polygon points="78.3,197.9 221.7,197.9 150,78.1"/><polygon points="90.5,78.1 209.5,78.1 150,160.7"/><polygon points="81.0,103.1 219.0,103.1 150,220.0"/><polygon points="114.9,160.7 185.1,160.7 150,103.1"/><polygon points="116.4,134.3 183.6,134.3 150,197.9"/><polygon points="124.6,144.8 175.4,144.8 150,174.2"/><circle cx="150" cy="150" r="1.6" fill="currentColor"/></g></g></svg>'''
 INTRO_HTML = '''<div class="intro-overlay" id="intro" role="dialog" aria-label="Welcome">
 <svg viewBox="-120 -120 240 240" class="lotus" aria-hidden="true"><g fill="none" stroke="#b8860b" stroke-width="1.4"><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(0)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(45)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(90)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(135)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(180)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(225)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(270)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(315)"/><circle r="108" class="ring"/></g></svg>
 <p class="in-deva">ॐ श्रीं महालक्ष्म्यै नमः</p>
@@ -130,7 +129,7 @@ def foot():
     return f'''
 <footer class="site"><div class="wrap">
 <p class="shri foot" lang="sa">श्री</p>
-<p><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p>
+<p><a href="/sri-yantra/">Śrī Yantra</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p>
 <p>© 2026 {AUTHOR}. Commentary prepared with AI assistance and reviewed by the author.</p>
 </div></footer>
 </body></html>'''
@@ -193,6 +192,7 @@ def page_home():
 <div class="grid">
 <a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. Verse 1 is live; more verses are added one at a time.</p></a>
 <a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram <span class="soon">coming soon</span></h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi, to follow the Śrī Sūktam.</p></a>
+<a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
 <h2>Today’s verse</h2>
@@ -273,6 +273,32 @@ def page_verse(i):
 <div class="pager">{p}{n}</div>
 </article></main>''' + foot()
     write(path, body, "0.9")
+
+def page_yantra():
+    t = "Śrī Yantra Meaning – Layers and Symbolism of the Lakshmi Yantra"
+    d = "What the Śrī Yantra is and what each layer means: the enclosure, circle, lotus petals, nine triangles and the central point."
+    parts = [("Śrī Yantra","sri-yantra/")]
+    body = head(t,d,"sri-yantra/",bc_ld(parts)) + nav("") + f'''
+<main class="wrap">{crumbs([("Śrī Yantra",None)])}
+<p class="shri small" lang="sa">श्री</p>
+<h1>The Śrī Yantra</h1>
+<p class="lede">The Śrī Yantra is the sacred diagram associated with Goddess Lakshmi (Śrī): nine interlocking triangles around a central point, held inside circles, lotus petals and a gated square.</p>
+<div class="verse yantra-big">{YANTRA}<p class="shri" lang="sa" style="font-size:2.4rem;margin:70px 0">श्रीं</p></div>
+<h2>What is a yantra?</h2>
+<p>A yantra is a geometric design made of shapes and patterns, used in early India as the basis on which major temples were planned. The word <em>yantra</em> means “machinery”. Like a machine, it has one task: to turn one form of energy into another and put it to use. Yantras are made for different purposes, such as prosperity or peace in the home.</p>
+<h2>The layers, from the outside in</h2>
+<div class="card"><h3>1. The enclosure (the Sun layer)</h3><p>The outermost square, with its four gateways. It is the first layer and creates a protected, enclosed space in the yantra. According to the source below, a yantra is drawn starting from this layer and energised last.</p></div>
+<div class="card"><h3>2. The circle (the Moon layer)</h3><p>The circle stands for the continuous flow of energy. Where the square regulates energy at its corners and junctions, the circle lets it flow evenly. The Moon layer also keeps the strong energy of the Sun in balance.</p></div>
+<div class="card"><h3>3. The lotus petals (the filter)</h3><p>Two rings of petals clean the energy, letting the steady, flowing part pass and holding back the disturbed part. The two rings stand in a ratio of 1:2 or 1:1. In the Śrī Yantra there are eight inner petals and sixteen outer petals, a ratio of 1:2.</p></div>
+<div class="card"><h3>4. The triangles (the converters)</h3><p>Triangles take energy of one form and send it in one direction with full force. The Śrī Yantra has nine: four pointing upward and five pointing downward, interlocked so that together they form forty-three smaller triangles.</p></div>
+<div class="card"><h3>5. The central point (bindu)</h3><p>All the energy finally reaches the centre, which becomes the point of reception. The bindu is the heart of the yantra.</p></div>
+<h2>The seed sound</h2>
+<p>A yantra is written in a language of its own, built from seed sounds (<em>bīja mantras</em>). The seed sound associated with Lakshmi is <em>Śrīṁ</em> (श्रीं), the sound shown in the yantra above. The same Śrī gives its name to the Śrī Sūktam, the hymn this site studies.</p>
+<p>Begin with the <a href="/sri-suktam/verse-1/">first verse of the Śrī Sūktam</a>.</p>
+<h2>Sources and credits</h2>
+<p>The layer descriptions are adapted from the presentation <em>Universal Energy: Geometry of the Universe – Basics of Yantras</em> by Deepanshu Giri. The drawing uses the nine-triangle geometry published by Bhaskar Tripathi at <a href="https://texample.net/sri-yantra/" rel="noopener">texample.net</a> (CC BY-SA 4.0).</p>
+</main>''' + foot()
+    write("sri-yantra", body, "0.7")
 
 def page_gl():
     t = "Glossary of Sanskrit Terms – Śrī Sūktam & Lakshmi Stotras"
@@ -365,5 +391,5 @@ def sitemap():
 if __name__ == "__main__":
     page_home(); page_sri(); page_kana()
     for i in range(len(VERSES)): page_verse(i)
-    page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     print("built", len(PAGES), "pages")
