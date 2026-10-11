@@ -85,8 +85,7 @@ nav.main a[aria-current]{background:var(--soft);color:var(--maroon)}
 .hero h1{font-size:clamp(2.5rem,8vw,4.6rem);line-height:1.05;margin:.2em 0 .35em;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
 .eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0}
 .hero .lede{max-width:34rem;margin-inline:auto;font-size:1.05rem}
-.yantra{position:absolute;z-index:-1;left:50%;top:50%;width:min(760px,150vw);transform:translate(-50%,-50%);color:var(--gold);opacity:.2;animation:spin 240s linear infinite}
-@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.yantra{position:absolute;z-index:-1;left:50%;top:50%;width:min(640px,150vw);transform:translate(-50%,-50%);color:var(--gold);opacity:.22}
 .garden h2{font-size:2.1rem}
 /* intro overlay */
 .intro-overlay{display:none}
@@ -104,3 +103,10 @@ html.intro body{overflow:hidden}
 @keyframes fadeout{to{opacity:0;visibility:hidden}}
 .skip{position:absolute;right:18px;bottom:18px;font-family:var(--sans);font-size:.85rem;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--maroon);cursor:pointer}
 @media (prefers-reduced-motion:reduce){.yantra{animation:none}}
+
+.shri{font-family:var(--deva);font-weight:700;color:var(--gold);line-height:1;margin:0}
+.hero .shri{font-size:3.2rem;margin-bottom:10px}
+.shri.small{font-size:1.8rem;margin-top:22px}
+.shri.foot{font-size:1.6rem;margin-bottom:8px;opacity:.8}
+.verse{position:relative;overflow:hidden;isolation:isolate}
+.verse .yantra{width:min(520px,130%);opacity:.14;top:50%}

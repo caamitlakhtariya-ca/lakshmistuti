@@ -64,13 +64,11 @@ GLOSSARY = [
  ("आवह","Āvaha","Invite, bring forth.","sri-suktam/verse-1/"),
 ]
 
-YANTRA = '''<svg class="yantra" viewBox="-200 -200 400 400" aria-hidden="true" focusable="false">
-<g fill="none" stroke="currentColor" stroke-width="1">
-<circle r="190"/><circle r="170"/><circle r="130"/><circle r="90"/><circle r="40"/>
-<g><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(0)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(30)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(60)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(90)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(120)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(150)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(180)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(210)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(240)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(270)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(300)"/><ellipse cx="0" cy="-92" rx="17" ry="42" transform="rotate(330)"/></g><g><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(15)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(45)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(75)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(105)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(135)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(165)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(195)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(225)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(255)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(285)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(315)"/><ellipse cx="0" cy="-62" rx="12" ry="30" transform="rotate(345)"/></g>
-<polygon points="0.0,-110.0 95.3,55.0 -95.3,55.0"/><polygon points="95.3,-55.0 0.0,110.0 -95.3,-55.0"/>
-<polygon points="0.0,-70.0 60.6,35.0 -60.6,35.0"/><polygon points="60.6,-35.0 0.0,70.0 -60.6,-35.0"/>
-</g></svg>'''
+YANTRA = '''<svg class="yantra" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round">
+<rect x="6" y="6" width="288" height="288"/><rect x="14" y="14" width="272" height="272"/>
+<circle cx="150" cy="150" r="136"/><g><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(0.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(22.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(45.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(67.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(90.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(112.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(135.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(157.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(180.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(202.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(225.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(247.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(270.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(292.50 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(315.00 150 150)"/><ellipse cx="150" cy="32.0" rx="9" ry="16.0" transform="rotate(337.50 150 150)"/></g><g><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(0.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(45.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(90.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(135.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(180.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(225.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(270.00 150 150)"/><ellipse cx="150" cy="39.0" rx="9" ry="9.0" transform="rotate(315.00 150 150)"/></g>
+<circle cx="150" cy="150" r="102"/><circle cx="150" cy="150" r="100"/>
+<polygon points="53.7,123.2 246.3,123.2 150,250.0"/><polygon points="53.0,174.2 247.0,174.2 150,50.0"/><polygon points="98.7,220.0 201.3,220.0 150,123.2"/><polygon points="78.3,197.9 221.7,197.9 150,78.1"/><polygon points="90.5,78.1 209.5,78.1 150,160.7"/><polygon points="81.0,103.1 219.0,103.1 150,220.0"/><polygon points="114.9,160.7 185.1,160.7 150,103.1"/><polygon points="116.4,134.3 183.6,134.3 150,197.9"/><polygon points="124.6,144.8 175.4,144.8 150,174.2"/><circle cx="150" cy="150" r="1.6" fill="currentColor"/></g></svg>'''
 INTRO_HTML = '''<div class="intro-overlay" id="intro" role="dialog" aria-label="Welcome">
 <svg viewBox="-120 -120 240 240" class="lotus" aria-hidden="true"><g fill="none" stroke="#b8860b" stroke-width="1.4"><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(0)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(45)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(90)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(135)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(180)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(225)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(270)"/><path class="p" d="M0,0 C-26,-30 -22,-76 0,-104 C22,-76 26,-30 0,0Z" transform="rotate(315)"/><circle r="108" class="ring"/></g></svg>
 <p class="in-deva">ॐ श्रीं महालक्ष्म्यै नमः</p>
@@ -131,6 +129,7 @@ def nav(cur):
 def foot():
     return f'''
 <footer class="site"><div class="wrap">
+<p class="shri foot" lang="sa">श्री</p>
 <p><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p>
 <p>© 2026 {AUTHOR}. Commentary prepared with AI assistance and reviewed by the author.</p>
 </div></footer>
@@ -170,6 +169,7 @@ def page_home():
 <main class="wrap">
 <section class="hero">
 {YANTRA}
+<p class="shri" lang="sa">श्री</p>
 <p class="eyebrow">Śrī Sūktam · Kanakadhāra Stotram</p>
 <h1>Śrī Sūktam &amp; Kanakadhāra Stotram, understood gently</h1>
 <p class="lede">A slow, verse-by-verse commentary on the hymns to Goddess Lakshmi (also written Laxmi): the original text, simple word meanings, and a short practice for each verse.</p>
@@ -250,10 +250,11 @@ def page_verse(i):
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("sri") + f'''
 <main class="wrap"><article>
 {crumbs([("Śrī Sūktam","sri-suktam/"),(f"Verse {v['n']}",None)])}
+<p class="shri small" lang="sa">श्री</p>
 <h1>{v["h1"]}</h1>
 <p class="lede">{E(v["sub"])}</p>
 <p class="crumbs">By {AUTHOR}</p>
-<div class="verse"><p class="label">Devanāgarī</p><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
+<div class="verse">{YANTRA}<p class="label">Devanāgarī</p><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
 {ad("below-verse")}
 <nav class="toc" aria-label="On this page"><a href="#words">Word by word</a><a href="#meaning">Meaning</a><a href="#insights">Deeper insights</a><a href="#meditation">Meditation</a><a href="#reflection">Reflection</a></nav>
 <h2 id="words">Word-by-word meaning</h2>
@@ -301,6 +302,8 @@ def page_about():
 <p>This commentary is prepared collaboratively with an AI assistant (Claude, by Anthropic). The AI helps with drafting, structuring and cross-checking the word-by-word explanations. The author directs the interpretation, reviews every verse and decides what is published. Because AI can make mistakes, and because Sanskrit admits more than one reading, this is a study aid and not a substitute for a teacher or the traditional commentaries. Corrections are welcome through the <a href="/contact/">contact page</a>.</p>
 <h2>How the content is organised</h2>
 <p>Every verse page has the Devanāgarī text, a transliteration, a word-by-word meaning, the full meaning, deeper insights, a short meditation and a reflection for the day. Verses are released one at a time.</p>
+<h2>Credits</h2>
+<p>The Śrī Yantra drawn in the background uses the nine-triangle geometry published by Bhaskar Tripathi at <a href="https://texample.net/sri-yantra/" rel="noopener">texample.net</a> (CC BY-SA 4.0).</p>
 <h2>Spellings</h2>
 <p>The Goddess’s name is written <em>Lakshmi</em> (Sanskrit <em>Lakṣmī</em>), and is also commonly spelled <em>Laxmi</em>. Both refer to the same Goddess.</p>
 </main>''' + foot()
