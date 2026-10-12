@@ -11,6 +11,7 @@ SITE = "https://lakshmistuti.com"
 NAME = "Lakshmi Stuti"
 AUTHOR = "Amit N. Lakhtariya"
 TODAY = "2026-10-11"
+GSC_TOKEN = "ydCk8z62OzpGbv6EnLvQAu8VoJl7T40cv6htu9_FsWs"  # Google Search Console site verification
 GA_ID = ""          # e.g. "G-XXXXXXXXXX"  -> switches Google Analytics on
 ADSENSE_CLIENT = "" # e.g. "ca-pub-1234567890123456" -> switches AdSense on after approval
 CONTACT_EMAIL = "amitnlakhtariya@gmail.com"  # interim address; to be replaced by the dedicated site Gmail once created
@@ -175,6 +176,7 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{url}">
 <meta name="author" content="{AUTHOR}">
+<meta name="google-site-verification" content="{GSC_TOKEN}">
 <meta name="theme-color" content="#7a1f2b">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{NAME}">
