@@ -12,7 +12,7 @@ NAME = "Lakshmi Stuti"
 AUTHOR = "Amit N. Lakhtariya"
 TODAY = "2026-10-12"
 GSC_TOKEN = "ydCk8z62OzpGbv6EnLvQAu8VoJl7T40cv6htu9_FsWs"  # Google Search Console site verification
-GA_ID = ""          # e.g. "G-XXXXXXXXXX"  -> switches Google Analytics on
+GA_ID = "G-X1Y34J30ST"   # Google Analytics 4 measurement ID
 ADSENSE_CLIENT = "" # e.g. "ca-pub-1234567890123456" -> switches AdSense on after approval
 CONTACT_EMAIL = "amitnlakhtariya@gmail.com"  # interim address; to be replaced by the dedicated site Gmail once created
 E = html.escape
@@ -938,7 +938,7 @@ def page_privacy():
 <h2>Information collected</h2>
 <p>When you visit, standard technical information (such as your IP address, browser type and the pages viewed) may be recorded by the hosting provider and by analytics tools. If you email the author, your email address and message are used only to reply.</p>
 <h2>Analytics</h2>
-<p>The site may use Google Analytics to understand which pages are read, so the content can be improved. Google Analytics uses cookies and collects data in aggregate.</p>
+<p>This site uses Google Analytics to understand which pages are read, so the content can be improved. Google Analytics uses cookies and collects data in aggregate, such as pages viewed, approximate location and device type. It is not used to identify individual readers. You can opt out with the <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>, or by blocking cookies in your browser settings.</p>
 <h2>Advertising</h2>
 <p>The site may in future display advertisements, including Google AdSense. Third-party vendors, including Google, may use cookies to serve ads based on a visitor’s prior visits to this and other websites. You can opt out of personalised advertising at <a href="https://www.google.com/settings/ads" rel="noopener">Google Ads Settings</a>.</p>
 <h2>External links</h2>
