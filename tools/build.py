@@ -13,7 +13,7 @@ AUTHOR = "Amit N. Lakhtariya"
 TODAY = "2026-10-11"
 GA_ID = ""          # e.g. "G-XXXXXXXXXX"  -> switches Google Analytics on
 ADSENSE_CLIENT = "" # e.g. "ca-pub-1234567890123456" -> switches AdSense on after approval
-CONTACT_EMAIL = "contact@lakshmistuti.com"  # placeholder: replace with the address you want to show publicly
+CONTACT_EMAIL = "amitnlakhtariya@gmail.com"  # interim address; to be replaced by the dedicated site Gmail once created
 E = html.escape
 
 # ---------------------------------------------------------------- content
@@ -28,10 +28,10 @@ VERSES = [
   sub="Hiraṇyavarṇāṁ Hariṇīṁ – the invitation to Goddess Lakshmi",
   words=[
    ("हिरण्यवर्णां","Hiraṇyavarṇāṁ","Golden-colored one","The golden glow stands for spiritual illumination, purity and auspiciousness."),
-   ("हरिणीं","Hariṇīṁ","Resembling a deer","Gentle and graceful: it points to gentleness, beauty, purity and swiftness."),
-   ("सुवर्णरजतस्रजाम्","Suvarṇa-rajata-srajām","Wearing garlands (adornments) of gold and silver","<em>Suvarṇa</em> = gold, <em>rajata</em> = silver, <em>srajām</em> = garlanded or adorned. It speaks of richness, prosperity, brilliance, divine radiance and cosmic abundance."),
-   ("चन्द्रां","Chandrāṁ","Radiant like the moon","Coolness, soothing grace, serenity, beauty and balanced emotions."),
-   ("हिरण्मयीं लक्ष्मीं","Hiraṇmayīṁ Lakṣmīṁ","The golden form of Goddess Lakshmi","Divine abundance, prosperity and spiritual richness."),
+   ("हरिणीं","Hariṇīṁ","Resembling a deer (doe)","Gentle and graceful: it points to gentleness, beauty, purity and swiftness. This commentary follows the deer reading. Other commentators read <em>hariṇī</em> as “golden-yellow” (from <em>hari</em>, tawny gold), or as “she who takes away” sorrow and poverty. The three readings sit comfortably together."),
+   ("सुवर्णरजतस्रजाम्","Suvarṇa-rajata-srajām","Wearing garlands of gold and silver","<em>Suvarṇa</em> = gold, <em>rajata</em> = silver, <em>sraj</em> = a garland or wreath. It speaks of richness, prosperity, brilliance, divine radiance and cosmic abundance. Gold is the colour of the sun and silver of the moon, which prepares the way for <em>Chandrāṁ</em> in the next word."),
+   ("चन्द्रां","Chandrāṁ","Shining and gladdening, moon-like","The root of <em>candra</em> means both “to shine” and “to delight”, and the moon is called <em>candra</em> because it gladdens the heart. So the word carries coolness, soothing grace, serenity, beauty and balanced emotions, together with the joy she brings."),
+   ("हिरण्मयीं लक्ष्मीं","Hiraṇmayīṁ Lakṣmīṁ","The golden form of Goddess Lakshmi","Divine abundance, prosperity and spiritual richness. Note the difference from the first word: <em>hiraṇya-varṇā</em> is golden in colour, in appearance, while <em>hiraṇmayī</em> is golden in substance, made of gold. She is golden both in how she appears and in what she is."),
    ("जातवेदो म आवह","Jātavedo ma āvaha","O Jātaveda (Fire, Agni), please invite or bring her to me","<em>Jātaveda</em> means “one who knows all births”. Agni is the mediator who carries our prayers to the Divine."),
   ],
   meaning="O Jātaveda (sacred fire, knower of all births), I humbly request you to invite into my life the golden-hued, graceful, gentle Goddess Lakshmi, who is adorned with garlands of gold and silver, who radiates serenity like the soft glow of the moon. May she gracefully enter my life, bestowing purity, peace, prosperity and spiritual harmony.",
@@ -40,6 +40,7 @@ VERSES = [
    ("The gold and silver garland","Balanced material and spiritual prosperity: gold stands for worldly success, silver for emotional and spiritual wisdom."),
    ("Moon-like radiance (Chandrāṁ)","Real prosperity is serene, calm and balanced. It cools the mind, relieves stress and brings peace."),
    ("The role of Agni (Jātaveda)","You are not alone on the journey. You ask the divine forces, with Agni as messenger, to guide you and connect you with universal abundance."),
+   ("Where this hymn comes from","The Śrī Sūktam is a <em>khila</em>, a supplement to the Ṛgveda. In the Vedic tradition Agni is the one who carries offerings from the sacrificial fire to the gods, which is why the hymn begins by addressing him as <em>Jātavedas</em>. In the traditional worship of Lakshmi this first verse is commonly used as the invocation, the moment of inviting the Goddess to be present. Reading it that way, the verse is not a request for a distant favour but a formal welcome."),
   ],
   meditation=["After chanting, visualise Goddess Lakshmi vividly.",
               "Imagine her radiant form, golden like sunrise, her eyes full of compassionate gentleness, like those of a deer.",
@@ -116,12 +117,12 @@ TOTAL_SRI = 15  # core verses of the Śrī Sūktam (a closing phalaśruti follow
 
 GLOSSARY = [
  ("हिरण्यवर्णा","Hiraṇyavarṇā","Golden-colored; the golden hue of Lakshmi.","sri-suktam/verse-1/"),
- ("हरिणी","Hariṇī","Deer-like; gentle and graceful.","sri-suktam/verse-1/"),
+ ("हरिणी","Hariṇī","Deer-like, gentle and graceful. Also read as golden-yellow, or as the one who removes sorrow and poverty.","sri-suktam/verse-1/"),
  ("सुवर्ण","Suvarṇa","Gold.","sri-suktam/verse-1/"),
  ("रजत","Rajata","Silver.","sri-suktam/verse-1/"),
- ("स्रज्","Sraj","Garland; adornment.","sri-suktam/verse-1/"),
- ("चन्द्रा","Chandrā","Moon-like; radiant and cooling.","sri-suktam/verse-1/"),
- ("हिरण्मयी","Hiraṇmayī","Made of gold; golden.","sri-suktam/verse-1/"),
+ ("स्रज्","Sraj","A garland or wreath; by extension, an adornment.","sri-suktam/verse-1/"),
+ ("चन्द्रा","Chandrā","Shining and gladdening; moon-like, radiant and cooling.","sri-suktam/verse-1/"),
+ ("हिरण्मयी","Hiraṇmayī","Made of gold; golden in substance, not only in colour.","sri-suktam/verse-1/"),
  ("लक्ष्मी","Lakṣmī (Lakshmi, Laxmi)","Goddess of prosperity, grace and auspiciousness.","sri-suktam/verse-1/"),
  ("जातवेदस्","Jātavedas","Agni, the sacred fire; “one who knows all births”.","sri-suktam/verse-1/"),
  ("आवह","Āvaha","Invite, bring forth.","sri-suktam/verse-1/"),
@@ -290,6 +291,7 @@ def page_sri():
 <h1>Śrī Sūktam – verse by verse</h1>
 <p class="lede">The Śrī Sūktam is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.</p>
 <p>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears.</p>
+<p><small>A note on the count: the Śrī Sūktam is usually counted as 15 verses. A few closing verses on the fruits of reciting it (the <em>phalaśruti</em>) are chanted after them, and some editions number those too, so you may see a slightly higher total elsewhere.</small></p>
 <div class="grid">{rows}</div>
 {ad("index")}
 </main>''' + foot()
