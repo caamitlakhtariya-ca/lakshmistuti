@@ -435,6 +435,97 @@ VERSES = [
   reflection="Am I cultivating softness and grace along with strength and ambition? Does my abundance radiate beauty and nourish others? Can I bring more calm, peaceful energy into my home and work, like the stillness of a lotus lake?",
   closing="This verse teaches that prosperity is not only power. It is gentle, radiant, nourishing beauty that brings peace and fulfilment.",
  ),
+ dict(
+  n=14, slug="verse-14",
+  deva="आर्द्रां यः करिणीं यष्टिं सुवर्णां हेममालिनीम्।<br>सूर्यां हिरण्मयीं लक्ष्मीं जातवेदो म आवह॥",
+  iast="Ārdrāṁ yaḥ kariṇīṁ yaṣṭiṁ suvarṇāṁ hema-mālinīm,<br>Sūryāṁ hiraṇmayīṁ lakṣmīṁ jāta-vedo ma āvaha.",
+  title="Śrī Sūktam Verse 14 Meaning – Ārdrāṁ Yaḥ Kariṇīṁ Yaṣṭiṁ Explained",
+  desc="Śrī Sūktam Verse 14 (Ārdrāṁ Yaḥ Kariṇīṁ Yaṣṭiṁ) with Devanāgarī, transliteration, word-by-word meaning, the tender, active, sun-bright Lakshmi, and reflection questions.",
+  h1="Śrī Sūktam – Verse 14",
+  sub="Ārdrāṁ Yaḥ Kariṇīṁ – tender, active and sun-bright",
+  words=[
+   ("आर्द्राम्","Ārdrām","Tender, compassionate, soft","She who makes life moist and nourished."),
+   ("यः करिणीम्","Yaḥ kariṇīm","She who gives the strength to accomplish every kind of work","She is the cause of activity and movement in life. This is one of the harder phrases of the hymn, and commentators differ. Another traditional reading takes <em>kariṇī</em> as “attended by elephants”."),
+   ("यष्टिम्","Yaṣṭiṁ","The power joined with resolve, worship and austerity","The strength that comes as the lasting fruit of sustained practice, giving stability in life. The word also means a staff, a support."),
+   ("सुवर्णाम्","Suvarṇām","Golden, shining with a pure, bright glow",""),
+   ("हेममालिनीम्","Hema-mālinīm","Adorned with a garland of gold","A symbol of splendour, grace and dignity."),
+   ("सूर्याम्","Sūryām","Radiant like the sun, life-giving","The sun’s brilliance never stops; it gives energy and strength continuously. In Verse 13 she was moon-like (<em>Chandrā</em>); here she is sun-like. Together they bring coolness and fire."),
+   ("हिरण्मयीम्","Hiraṇmayīṁ","Gold-like in brilliance, divine and full of divine radiance",""),
+   ("लक्ष्मीम्","Lakṣmīṁ","Mother Lakshmi","The Goddess of prosperity, beauty, grace and splendour."),
+   ("जातवेदो म आवह","Jātavedo ma āvaha","O Agni, knower of all births, please bring this divine Lakshmi into my life",""),
+  ],
+  meaning="O Agni, please invite into my life that Goddess Lakshmi who is tender and compassionate, the power that brings every undertaking to fulfilment, who shines like gold, wears a garland of gold, is radiant like the sun, and is filled with divine brilliance.",
+  insights=[
+   ("Tenderness and compassion (Ārdrām)","Wealth is not only hard power; it should carry gentleness, kindness and love as well. Only then does it last."),
+   ("Action and resolve (Yaḥ kariṇīm, Yaṣṭiṁ)","Lakshmi dwells where there is action and resolve, where there is no laziness but steady inspiration and practice."),
+   ("Beauty and radiance (Suvarṇām, Hema-mālinīm, Sūryām, Hiraṇmayīṁ)","Prosperity is not only material wealth. It is the beauty of life, divinity and inner light, which shines itself and also lights up others."),
+   ("The invitation (Jātavedo ma āvaha)","Through Agni, the power of the self, we call Goddess Lakshmi. Calling her is not just a mantra; it is an inner preparation."),
+  ],
+  meditation=[],
+  reflection="Is the radiance of Lakshmi in my life only outside, or inside as well? Am I making my action and resolve pure and strong enough for Lakshmi to stay in my life? Do I have the compassion and beauty within that can make wealth sacred?",
+  closing="",
+ ),
+ dict(
+  n=15, slug="verse-15",
+  deva="तां म आवह जातवेदो लक्ष्मीमनपगामिनीम्।<br>यस्यां हिरण्यं प्रभूतं गावो दास्यो अश्वान्विन्देयं पुरुषानहम्॥",
+  iast="Tāṁ ma āvaha jāta-vedo lakṣmīm anapagāminīm,<br>Yasyāṁ hiraṇyaṁ prabhūtaṁ gāvo dāsyo aśvān vindeyaṁ puruṣān aham.",
+  title="Śrī Sūktam Verse 15 Meaning – Tāṁ Ma Āvaha Prabhūtaṁ Explained",
+  desc="Śrī Sūktam Verse 15 (Tāṁ Ma Āvaha, the closing verse) with Devanāgarī, transliteration, word-by-word meaning, lasting prosperity, support and good company, and a short meditation.",
+  h1="Śrī Sūktam – Verse 15",
+  sub="Tāṁ Ma Āvaha – the closing invocation of lasting prosperity",
+  words=[
+   ("तां","Tāṁ","Her (that Goddess Lakshmi)",""),
+   ("म आवह","Ma āvaha","Invite her for me; bring her",""),
+   ("जातवेदः","Jātavedo","O Agni, knower of all births",""),
+   ("लक्ष्मीम्","Lakṣmīm","Goddess Lakshmi","The Goddess of prosperity and beauty."),
+   ("अनपगामिनीम्","Anapagāminīm","One who never goes away; one who stays always",""),
+   ("यस्याम्","Yasyāṁ","With whom; in whose presence",""),
+   ("हिरण्यं प्रभूतम्","Hiraṇyaṁ prabhūtam","Gold and splendour in abundance",""),
+   ("गावः","Gāvaḥ","Cows","A symbol of prosperity and nourishment."),
+   ("दास्यः","Dāsyaḥ","Attendants, those who help","Meaning cooperation and support."),
+   ("अश्वान्","Aśvān","Horses","Symbols of strength, speed and progress."),
+   ("विन्देयम्","Vindeyaṁ","May I obtain",""),
+   ("पुरुषान् अहम्","Puruṣān aham","Good, excellent, virtuous people","Good people and good company."),
+  ],
+  meaning="O Jātaveda (Agni), please invite into my life Mother Lakshmi, who never goes away and always stays with me. In her presence may I obtain gold and splendour in abundance, cows (nourishment), attendants (support), horses (strength and progress), and the company of excellent people. This closing verse returns to the invocation of Verse 2.",
+  insights=[
+   ("Lasting Lakshmi (Anapagāminīm)","This is a very important word. We are not asking for temporary pleasure, but inviting lasting prosperity and inner peace."),
+   ("Gold in abundance (Hiraṇyaṁ prabhūtam)","But this gold is not only outer wealth. It is also a symbol of knowledge, brightness, good judgement and divine radiance."),
+   ("Cows, helpers and horses (Gāvaḥ, Dāsyaḥ, Aśvān): nourishment, support and strength","Prosperity lasts only when we have nourishment, cooperation and the means of progress."),
+   ("Good company (Puruṣān aham)","This is very important. Lakshmi stays only when our company is excellent, positive and uplifting."),
+  ],
+  meditation=["Close your eyes and imagine a golden radiance coming towards you, as the lasting presence of Mother Lakshmi.",
+              "With her come abundance, help, strength, and excellent guides and companions in life.",
+              "Slowly say within your heart: “O Mother Lakshmi, may you remain in my life, and give me auspiciousness, strength, cooperation and right guidance.”"],
+  reflection="Do I want only wealth, or wealth that lasts and brings growth? Is my life limited to material prosperity, or do I also pay attention to cooperation, strength and good company? Am I removing instability from my life and bringing steadiness and balance?",
+  closing="",
+ ),
+ dict(
+  n=16, slug="phalashruti", label="Phalaśruti",
+  deva="यः शुचिः प्रयतो भूत्वा जुहुयादाज्यमन्वहम्।<br>श्रियः पञ्चदशर्चं च श्रीकामः सततं जपेत्॥",
+  iast="Yaḥ śuciḥ prayato bhūtvā juhuyād ājyam anvaham,<br>Śriyaḥ pañcadaśarcaṁ ca śrīkāmaḥ satataṁ japet.",
+  title="Śrī Sūktam Phalaśruti Meaning – Yaḥ Śuciḥ Prayato Bhūtvā Explained",
+  desc="The Śrī Sūktam phalaśruti (Yaḥ Śuciḥ Prayato Bhūtvā) with Devanāgarī, transliteration, word-by-word meaning, the fruit of reciting the fifteen verses, and a closing meditation.",
+  h1="Śrī Sūktam – Phalaśruti",
+  sub="Yaḥ Śuciḥ Prayato Bhūtvā – the fruit of reciting the hymn",
+  words=[
+   ("यः शुचिः प्रयतः भूत्वा","Yaḥ śuciḥ prayataḥ bhūtvā","One who, becoming pure, with a clean mind and self-restraint",""),
+   ("जुहुयात् आज्यम् अन्वहम्","Juhuyāt ājyam anvaham","Should offer ghee into the sacred fire every day","The daily fire offering (<em>agnihotra</em>)."),
+   ("श्रियः पञ्चदशर्चं च","Śriyaḥ pañcadaśarcaṁ ca","And the fifteen verses of the Śrī Sūktam","Recited every day."),
+   ("श्रीकामः सततं जपेत्","Śrīkāmaḥ satataṁ japet","One who desires Lakshmi should keep reciting it continuously",""),
+  ],
+  meaning="The person who becomes pure and self-restrained, offers ghee into the sacred fire every day, and recites the fifteen verses of the Śrī Sūktam with faith, receives the special grace of Śrī Lakshmi. Such a person gains both material and spiritual prosperity.",
+  insights=[
+   ("More than asking","This closing part does not teach us only to ask. It tells us that discipline, self-restraint and pure conduct are what make Mother Lakshmi’s grace lasting."),
+   ("A daily practice","It says that for Lakshmi there must be a daily practice: a pure heart, regular recitation, the offering of one’s own duty and work, and true faith."),
+  ],
+  meditation=["Close your eyes.",
+              "Imagine Mother Lakshmi, calm and gentle, surrounded by a golden glow, seated in the temple of your heart.",
+              "At her feet are lotuses, and from her hands a steady stream of gold, knowledge and peace flows into your life.",
+              "Say softly: “O Mother Lakshmi, make me worthy of pure conduct, self-restraint, good deeds and your continuous grace.”"],
+  reflection="",
+  closing="Mother Lakshmi is not called by words alone. To call her we need clean conduct, a disciplined life, service, good company and daily practice. Then she not only comes; she stays.",
+ ),
 ]
 TOTAL_SRI = 15  # core verses of the Śrī Sūktam (a closing phalaśruti follows)
 
@@ -527,6 +618,21 @@ GLOSSARY = [
  ("पुष्करिणी","Puṣkariṇī","A lotus pond; one who dwells among lotuses.","sri-suktam/verse-13/"),
  ("पुष्टि","Puṣṭi","Nourishment, fullness, thriving.","sri-suktam/verse-13/"),
  ("पिङ्गला","Piṅgalā","Golden-hued, tawny and warm.","sri-suktam/verse-13/"),
+ ("करिणी","Kariṇī","She who brings action to fulfilment; also read as one attended by elephants.","sri-suktam/verse-14/"),
+ ("यष्टि","Yaṣṭi","A staff or support; the strength that comes from sustained practice.","sri-suktam/verse-14/"),
+ ("सुवर्णा","Suvarṇā","Golden, of a fine bright colour.","sri-suktam/verse-14/"),
+ ("हेममालिनी","Hema-mālinī","One wearing a garland of gold.","sri-suktam/verse-14/"),
+ ("सूर्या","Sūryā","Sun-like; radiant and life-giving.","sri-suktam/verse-14/"),
+ ("प्रभूत","Prabhūta","Abundant, plentiful.","sri-suktam/verse-15/"),
+ ("दासी","Dāsī","An attendant or helper; here, cooperation and support.","sri-suktam/verse-15/"),
+ ("फलश्रुति","Phalaśruti","The “hearing of the fruits”: the closing verses that describe the benefit of reciting a hymn.","sri-suktam/phalashruti/"),
+ ("शुचि","Śuci","Pure, clean.","sri-suktam/phalashruti/"),
+ ("प्रयत","Prayata","Self-restrained, disciplined, composed.","sri-suktam/phalashruti/"),
+ ("आज्य","Ājya","Clarified butter (ghee) used in fire offerings.","sri-suktam/phalashruti/"),
+ ("अग्निहोत्र","Agnihotra","The daily fire offering made at sunrise and sunset.","sri-suktam/phalashruti/"),
+ ("पञ्चदशर्च","Pañcadaśarca","Of fifteen verses (ṛc); the fifteen verses of the Śrī Sūktam.","sri-suktam/phalashruti/"),
+ ("श्रीकाम","Śrīkāma","One who desires Śrī, prosperity.","sri-suktam/phalashruti/"),
+ ("जप","Japa","Quiet, repeated recitation of a mantra.","sri-suktam/phalashruti/"),
 ]
 
 YANTRA = '''<svg class="yantra" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round">
@@ -624,8 +730,9 @@ def write(path, content, prio="0.6"):
     PAGES.append((path, prio))
 
 # ---------------------------------------------------------------- pages
+def lab(v): return v.get("label") or f"Verse {v['n']}"
 def page_home():
-    v = VERSES[-1]
+    v = [x for x in VERSES if "label" not in x][-1]
     t = "Lakshmi Stuti – Śrī Sūktam & Kanakadhāra Stotram Meaning in English"
     d = "Verse-by-verse English commentary on the Śrī Sūktam and Kanakadhāra Stotram to Goddess Lakshmi (Laxmi): Devanāgarī, transliteration, word meanings and practice."
     ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","inGroup":None,"author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
@@ -662,8 +769,8 @@ def page_home():
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
 <h2>Today’s verse</h2>
-<div class="verse"><p class="label">Śrī Sūktam · Verse {v["n"]}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
-<p>{E(v["closing"])} <a href="/sri-suktam/{v["slug"]}/">Read the full commentary →</a></p>
+<div class="verse"><p class="label">Śrī Sūktam · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
+<p>{E(v["closing"] or v["meaning"])} <a href="/sri-suktam/{v["slug"]}/">Read the full commentary →</a></p>
 {ad("home")}
 </main>''' + INTRO_SCRIPT + foot()
     write("", body, "1.0")
@@ -674,7 +781,7 @@ def page_sri():
     parts = [("Śrī Sūktam","sri-suktam/")]
     rows = ""
     for v in VERSES:
-        rows += f'<a class="tile" href="/sri-suktam/{v["slug"]}/"><h3>Verse {v["n"]}</h3><p>{E(v["sub"])}</p></a>'
+        rows += f'<a class="tile" href="/sri-suktam/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>'
     for n in range(len(VERSES)+1, TOTAL_SRI+1):
         rows += f'<div class="tile" style="opacity:.55"><h3>Verse {n} <span class="soon">coming soon</span></h3></div>'
     body = head(t,d,"sri-suktam/",bc_ld(parts)) + nav("sri") + f'''
@@ -705,36 +812,40 @@ def page_verse(i):
     prev = VERSES[i-1] if i>0 else None
     nxt = VERSES[i+1] if i+1 < len(VERSES) else None
     path = f'sri-suktam/{v["slug"]}'
-    parts = [("Śrī Sūktam","sri-suktam/"),(f'Verse {v["n"]}',None)]
+    parts = [("Śrī Sūktam","sri-suktam/"),(lab(v),None)]
     art = {"@context":"https://schema.org","@type":"Article","headline":v["title"],"description":v["desc"],
            "author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en",
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR}}
     words = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p class="m">{E(c)}</p><p>{d}</p></div>' for a,b,c,d in v["words"])
     ins = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in v["insights"])
     med = "".join(f"<li>{E(x)}</li>" for x in v["meditation"])
-    p = f'<a href="/sri-suktam/{prev["slug"]}/">← Verse {prev["n"]}</a>' if prev else '<span class="off">← Previous</span>'
-    n = f'<a href="/sri-suktam/{nxt["slug"]}/">Verse {nxt["n"]} →</a>' if nxt else f'<span class="off">Verse {v["n"]+1} coming soon →</span>'
+    medlink = '<a href="#meditation">Meditation</a>' if v["meditation"] else ''
+    medsec = f'<h2 id="meditation">Practical meditation</h2>\n<ol>{med}</ol>' if v["meditation"] else ''
+    reflink = '<a href="#reflection">Reflection</a>' if v["reflection"] else ''
+    refsec = f'<h2 id="reflection">Reflection for today</h2>\n<p>{E(v["reflection"])}</p>' if v["reflection"] else ''
+    closesec = f'<p><em>{E(v["closing"])}</em></p>' if v["closing"] else ''
+    p = f'<a href="/sri-suktam/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
+    n = f'<a href="/sri-suktam/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/sri-suktam/">All verses →</a>' if v.get("label") else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
+    n = n.replace('Verse 15 coming soon','Phalaśruti coming soon') if v["n"]==15 and not nxt else n
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("sri") + f'''
 <main class="wrap"><article>
-{crumbs([("Śrī Sūktam","sri-suktam/"),(f"Verse {v['n']}",None)])}
+{crumbs([("Śrī Sūktam","sri-suktam/"),(lab(v),None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>{v["h1"]}</h1>
 <p class="lede">{E(v["sub"])}</p>
 <p class="crumbs">By {AUTHOR}</p>
 <div class="verse">{YANTRA}<p class="label">Devanāgarī</p><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
 {ad("below-verse")}
-<nav class="toc" aria-label="On this page"><a href="#words">Word by word</a><a href="#meaning">Meaning</a><a href="#insights">Deeper insights</a><a href="#meditation">Meditation</a><a href="#reflection">Reflection</a></nav>
+<nav class="toc" aria-label="On this page"><a href="#words">Word by word</a><a href="#meaning">Meaning</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
 <h2 id="words">Word-by-word meaning</h2>
 {words}
 <h2 id="meaning">Full meaning</h2>
 <blockquote><p>{E(v["meaning"])}</p></blockquote>
 <h2 id="insights">Deeper spiritual insights</h2>
 {ins}
-<h2 id="meditation">Practical meditation</h2>
-<ol>{med}</ol>
-<h2 id="reflection">Reflection for today</h2>
-<p>{E(v["reflection"])}</p>
-<p><em>{E(v["closing"])}</em></p>
+{medsec}
+{refsec}
+{closesec}
 <p class="crumbs">Terms used here are explained in the <a href="/glossary/">glossary</a>. This commentary was prepared with AI assistance; <a href="/about/">read more</a>.</p>
 {ad("end")}
 <div class="pager">{p}{n}</div>
