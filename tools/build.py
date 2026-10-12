@@ -81,6 +81,35 @@ VERSES = [
   reflection="Today, focus on what true abundance means to you. Ask yourself: is my prosperity steady and rooted in righteousness, or is it fleeting? Cultivate gratitude for the abundance already present in your life, however small or great.",
   closing="This verse reminds us that Lakshmi is not just about gold coins. She is the inner wealth that stays with us forever. Prosperity without peace is meaningless; abundance without wisdom is dangerous. By understanding this verse, we shift from simply seeking wealth to seeking holistic well-being, progress and good company, things that enrich life beyond measure.",
  ),
+ dict(
+  n=3, slug="verse-3",
+  deva="अश्वपूर्वां रथमध्यां हस्तिनादप्रबोधिनीम्।<br>श्रियं देवीमुपह्वये श्रीर्मा देवी जुषताम्॥",
+  iast="Aśva-pūrvāṁ ratha-madhyāṁ hastināda-prabodhinīm,<br>Śriyaṁ devīm upahvaye śrīr mā devī juṣatām.",
+  title="Śrī Sūktam Verse 3 Meaning – Aśvapūrvāṁ Rathamadhyāṁ Explained",
+  desc="Śrī Sūktam Verse 3 (Aśvapūrvāṁ Rathamadhyāṁ) with Devanāgarī, transliteration, word-by-word meaning, the symbolism of horses, chariot and elephants, and a short meditation.",
+  h1="Śrī Sūktam – Verse 3",
+  sub="Aśvapūrvāṁ Rathamadhyāṁ – the grand arrival of Lakshmi",
+  words=[
+   ("अश्वपूर्वां","Aśva-pūrvāṁ","One who is preceded by horses","Horses symbolise speed, energy, progress and power, the dynamic force that moves life forward. In ancient Vedic times, a grand chariot led by horses signified royalty and divine strength."),
+   ("रथमध्यां","Ratha-madhyāṁ","One who is seated at the center of a chariot","Represents Lakshmi’s royal, majestic presence, signifying that prosperity moves with strength and direction."),
+   ("हस्तिनादप्रबोधिनीम्","Hastināda-prabodhinīm","One awakened by the trumpeting of elephants","Elephants symbolise power, royalty, dignity and wisdom. Their majestic call is seen as a herald of prosperity and abundance. This line portrays Goddess Lakshmi arriving in grandeur, with horses leading the way and elephants trumpeting her arrival, symbolising immense, unstoppable prosperity."),
+   ("श्रियं देवीमुपह्वये","Śriyaṁ devīm upahvaye","I invoke the divine Goddess Lakshmi","A heartfelt invocation, calling upon Lakshmi’s presence with reverence and devotion."),
+   ("श्रीर्मा देवी जुषताम्","Śrīr mā devī juṣatām","May the divine Goddess Śrī bless me and reside with me","Not just visit, but stay permanently, bringing lasting prosperity and well-being."),
+  ],
+  meaning="I invoke the divine Goddess Lakshmi, who arrives in majesty, preceded by swift horses, seated in a grand chariot, and awakened by the mighty trumpet of elephants. May this supreme Goddess of prosperity bless me and reside in my life forever.",
+  insights=[
+   ("The grand arrival of Lakshmi: dynamic, unstoppable prosperity","This verse paints a majestic picture of Goddess Lakshmi’s arrival, not as a mere deity but as a powerful force of abundance. True prosperity comes with energy, movement and direction, just like a chariot powered by strong horses. Question to reflect on: is my life moving with direction and energy toward prosperity, or am I stagnant?"),
+   ("The symbolism of horses, chariot and elephants","Horses (<em>Aśva-pūrvāṁ</em>) stand for speed, enthusiasm and energy: progress requires effort. The chariot (<em>Ratha-madhyāṁ</em>) stands for the structured path of life: prosperity follows discipline. Elephants (<em>Hastināda-prabodhinīm</em>) stand for strength, stability and wisdom: true prosperity is not temporary, and must be grounded in wisdom and righteousness. Reflection: do I balance energy (horses) with wisdom (elephants) in my pursuit of prosperity?"),
+   ("Requesting not just wealth but a permanent divine presence","The last line, <em>Śrīr mā devī juṣatām</em>, is very special. It means “May the divine Goddess not just visit, but reside with me.” We are asking for lasting prosperity: not fleeting gains, but wealth rooted in virtue, gratitude and wisdom. Reflection: am I cultivating a mindset and actions that invite lasting prosperity into my life?"),
+  ],
+  meditation=["After chanting, visualise Goddess Lakshmi’s grand arrival.",
+              "A golden chariot, led by white horses, approaches with grace.",
+              "Mighty elephants trumpet, signalling unstoppable abundance.",
+              "Lakshmi, glowing with divine radiance, blesses you with prosperity that is powerful, stable and enduring.",
+              "Whisper gently in your heart: “May my prosperity be powerful yet wise, fast yet steady, and may it stay with me forever.”"],
+  reflection="Where in your life do you need speed and energy (horses)? Where do you need wisdom and stability (elephants)? How can you ensure prosperity stays permanently, not just visits briefly? For example, by cultivating gratitude, ethical wealth practices, giving back and continuous learning.",
+  closing="This verse teaches that prosperity isn’t just about financial gain. It is about momentum, stability, wisdom and divine grace. True abundance is a balance of enthusiasm (horses), structure (chariot) and wisdom (elephants). When these forces are aligned, Lakshmi doesn’t just visit; she stays.",
+ ),
 ]
 TOTAL_SRI = 15  # core verses of the Śrī Sūktam (a closing phalaśruti follows)
 
@@ -99,6 +128,12 @@ GLOSSARY = [
  ("विन्देयम्","Vindeyam","May I obtain.","sri-suktam/verse-2/"),
  ("गो","Go","Cow, cattle; nourishment and sustenance.","sri-suktam/verse-2/"),
  ("अश्व","Aśva","Horse; energy, movement and progress.","sri-suktam/verse-2/"),
+ ("रथ","Ratha","Chariot; the structured path of life.","sri-suktam/verse-3/"),
+ ("हस्ती","Hastin","Elephant; strength, dignity, stability and wisdom.","sri-suktam/verse-3/"),
+ ("नाद","Nāda","Sound, trumpeting call.","sri-suktam/verse-3/"),
+ ("उपह्वये","Upahvaye","I call upon, I invoke.","sri-suktam/verse-3/"),
+ ("जुषताम्","Juṣatām","May she favour, be pleased with, and stay with.","sri-suktam/verse-3/"),
+ ("श्री","Śrī","Lakshmi; prosperity, grace and auspiciousness.","sri-suktam/verse-3/"),
  ("पुरुष","Puruṣa","Person, man; here the noble people, companions and lineage one is blessed with.","sri-suktam/verse-2/"),
 ]
 
