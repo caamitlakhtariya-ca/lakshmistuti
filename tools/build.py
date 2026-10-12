@@ -799,16 +799,28 @@ def page_sri():
     write("sri-suktam", body, "0.9")
 
 def page_kana():
-    t = "Kanakadhāra Stotram Meaning in English – Commentary (Coming Soon)"
-    d = "Commentary on the Kanakadhāra Stotram, Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi. Verse-by-verse meaning is coming soon."
+    t = "Kanakadhāra Stotram – Meaning, Story and Background in English"
+    d = "The Kanakadhāra Stotram, the hymn to Goddess Lakshmi traditionally attributed to Śrī Śaṅkarācārya: its meaning, the story of the golden gooseberries, and what to expect from this verse-by-verse commentary."
     parts = [("Kanakadhāra Stotram","kanakadhara/")]
-    body = head(t,d,"kanakadhara/",bc_ld(parts)) + nav("kana") + f'''
+    ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – Meaning, Story and Background","author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en","mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR}}
+    body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + f'''
 <main class="wrap">{crumbs([("Kanakadhāra Stotram",None)])}
 <h1>Kanakadhāra Stotram</h1>
-<p class="lede">The Kanakadhāra Stotram is the hymn traditionally attributed to Śrī Śaṅkarācārya, composed in praise of Goddess Lakshmi.</p>
-<p>The verse-by-verse commentary will begin after the Śrī Sūktam series is well under way. Meanwhile, you can begin with the <a href="/sri-suktam/">Śrī Sūktam</a>.</p>
+<p class="lede">A hymn to Goddess Lakshmi, traditionally attributed to Śrī Śaṅkarācārya, whose name means “the stream of gold”.</p>
+<p class="crumbs">By {AUTHOR}</p>
+<h2>What the name means</h2>
+<p><em>Kanaka</em> means gold and <em>dhārā</em> means a stream or a steady flow. The <em>Kanakadhāra Stotram</em> is therefore the “hymn of the golden stream”: a prayer in which Lakshmi’s grace is pictured as something that flows, patiently and without break, into a life that is ready to receive it.</p>
+<h2>The story behind it</h2>
+<p>Tradition tells of the young Śaṅkara, still a boy and a student of the sacred texts, going out to beg alms for his meal. He stopped at the door of a very poor Brahmin woman. She had nothing to give, but she searched her house and found a single dried gooseberry (<em>āmalaka</em>), which she offered him with great humility.</p>
+<p>Moved by the sincerity of a gift that cost her everything she had, Śaṅkara sang a hymn to Lakshmi on the spot. In reply, the story says, Lakshmi showered the woman’s house with gooseberries made of gold. The hymn is remembered as the song that was sung that day.</p>
+<p>Whatever one makes of the details, the point of the story is clear and is worth keeping in mind while reading the hymn: it is the <em>giving</em>, small as it was, that opened the door, and not the amount.</p>
+<h2>How many verses?</h2>
+<p>You will see different counts. Many printed and online versions carry 21 or 22 stanzas, with the last one speaking of the fruit of reciting the hymn. Some scholarly editions of Śaṅkarācārya’s works give a shorter core text of 18, treating the rest as later additions. This commentary will follow one clear edition, and will say so openly, so that you can follow along with whichever text you chant from.</p>
+<h2>What to expect here</h2>
+<p>The same way of reading as for the <a href="/sri-suktam/">Śrī Sūktam</a>: each verse with its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection for the day. Verses will be published one at a time. The Śrī Sūktam commentary is complete and is a good place to begin while this one is prepared.</p>
+<p><small>Background drawn from the traditional account of the hymn; details of the story vary between tellings.</small></p>
 </main>''' + foot()
-    write("kanakadhara", body, "0.5")
+    write("kanakadhara", body, "0.7")
 
 def page_verse(i):
     v = VERSES[i]
