@@ -46,7 +46,40 @@ VERSES = [
               "Feel the serenity of moonlight radiating from her presence into your heart.",
               "Allow the image to settle gently, gradually replacing anxieties or fears with calmness and confidence."],
   reflection="Through the day, quietly remind yourself of gentleness, grace, clarity and balance, the qualities symbolised by Lakshmi. Notice how these qualities subtly influence your interactions, choices and responses.",
-  closing="This first verse isn’t merely a chant. It is an invitation to the Divine, an invitation to nurture a gentle yet radiant heart that attracts true prosperity effortlessly.",
+  closing="This first verse isn’t merely a chant. It is an invitation to the Divine, an invitation to nurture a gentle yet radiant heart that attracts true prosperity effortlessly. May your journey today become profoundly meaningful, peaceful, and enriching!",
+ ),
+ dict(
+  n=2, slug="verse-2",
+  deva="तां म आवह जातवेदो लक्ष्मीमनपगामिनीम्।<br>यस्यां हिरण्यं विन्देयं गामश्वं पुरुषानहम्॥",
+  iast="Tāṁ ma āvaha jāta-vedo lakṣmīm anapagāminīm,<br>Yasyāṁ hiraṇyaṁ vindeyaṁ gāmaśvaṁ puruṣān aham.",
+  title="Śrī Sūktam Verse 2 Meaning – Tāṁ Ma Āvaha Jātavedo Explained",
+  desc="Śrī Sūktam Verse 2 (Tāṁ Ma Āvaha) with Devanāgarī, transliteration, word-by-word meaning, the idea of Lakshmi as the one who never leaves, and a short meditation.",
+  h1="Śrī Sūktam – Verse 2",
+  sub="Tāṁ Ma Āvaha – the Goddess who never leaves",
+  words=[
+   ("तां","Tāṁ","That Goddess","Referring to Lakshmi."),
+   ("म आवह","Ma āvaha","Please bring (to me)","A request made to Agni, as in the first verse."),
+   ("जातवेदः","Jātavedaḥ","O Fire God (Agni), the knower of all beings","As in the first verse, Agni is invoked as the divine messenger who carries prayers to higher realms."),
+   ("लक्ष्मीम्","Lakṣmīm","Goddess Lakshmi","The embodiment of prosperity, grace and well-being."),
+   ("अनपगामिनीम्","Anapagāminīm","One who never leaves, who is always present","Symbolising unwavering, enduring prosperity: not just material wealth but lasting spiritual and emotional well-being."),
+   ("यस्याम्","Yasyāṁ","By whose presence",""),
+   ("हिरण्यं विन्देयं","Hiraṇyaṁ vindeyaṁ","I may obtain gold (divine wealth)","<em>Hiraṇyaṁ</em> here is not just physical gold but symbolises abundance in all aspects: health, wisdom, dharma and joy."),
+   ("गामश्वम्","Gām aśvam","Cattle and horses","Cattle represent nourishment (food, sustenance), and horses symbolise energy, movement and progress."),
+   ("पुरुषानहम्","Puruṣān aham","And worthy, noble people","The blessing of good companionship, wise people around you, or even progeny and lineage."),
+  ],
+  meaning="O Jātaveda (sacred fire, divine messenger), please bring to me that ever-present, unwavering Goddess Lakshmi, whose presence bestows prosperity and grace. May I, through her blessings, attain divine wealth, nourishment, strength and the company of noble souls.",
+  insights=[
+   ("Lakshmi as Anapagāminī, the one who never leaves","True prosperity is not temporary or fleeting. It is steady, ever-present and deeply rooted in righteousness (dharma). Material wealth can come and go, but spiritual wealth, meaning wisdom, peace, gratitude and inner contentment, stays forever."),
+   ("Requesting abundance beyond just money","Gold (<em>Hiraṇyaṁ</em>) symbolises not just money but also wisdom, divine grace and clarity. Cattle (<em>Gāṁ</em>) represent sustenance and nourishment, enough to share with others. Horses (<em>Aśvam</em>) represent movement, progress, energy and success in one’s pursuits. Good company (<em>Puruṣān</em>) represents the importance of being surrounded by wise, ethical and noble people who uplift us. True wealth is holistic: financial, emotional, mental and social well-being."),
+   ("Why invoke Agni (Jātaveda) again?","Fire symbolises purification and transformation. Just as fire transforms raw food into nourishment, it is also believed to transform prayers into divine blessings. Here, we ask Agni to connect us with the divine abundance of Lakshmi, not just for material wealth but for holistic, righteous prosperity."),
+  ],
+  meditation=["Sit quietly after chanting.",
+              "Visualise Goddess Lakshmi seated on a lotus, golden radiance surrounding her, blessing you.",
+              "Feel her grace as an unshakable presence in your life, not just today but always.",
+              "Picture yourself abundantly blessed, not just with money but with wisdom, peace, health and noble companions.",
+              "Whisper gently in your heart: “May true abundance, spiritual and material, flow into my life, and may I share it with others.”"],
+  reflection="Today, focus on what true abundance means to you. Ask yourself: is my prosperity steady and rooted in righteousness, or is it fleeting? Cultivate gratitude for the abundance already present in your life, however small or great.",
+  closing="This verse reminds us that Lakshmi is not just about gold coins. She is the inner wealth that stays with us forever. Prosperity without peace is meaningless; abundance without wisdom is dangerous. By understanding this verse, we shift from simply seeking wealth to seeking holistic well-being, progress and good company, things that enrich life beyond measure.",
  ),
 ]
 TOTAL_SRI = 15  # core verses of the Śrī Sūktam (a closing phalaśruti follows)
@@ -62,6 +95,11 @@ GLOSSARY = [
  ("लक्ष्मी","Lakṣmī (Lakshmi, Laxmi)","Goddess of prosperity, grace and auspiciousness.","sri-suktam/verse-1/"),
  ("जातवेदस्","Jātavedas","Agni, the sacred fire; “one who knows all births”.","sri-suktam/verse-1/"),
  ("आवह","Āvaha","Invite, bring forth.","sri-suktam/verse-1/"),
+ ("अनपगामिनी","Anapagāminī","One who never leaves; ever-present, enduring.","sri-suktam/verse-2/"),
+ ("विन्देयम्","Vindeyam","May I obtain.","sri-suktam/verse-2/"),
+ ("गो","Go","Cow, cattle; nourishment and sustenance.","sri-suktam/verse-2/"),
+ ("अश्व","Aśva","Horse; energy, movement and progress.","sri-suktam/verse-2/"),
+ ("पुरुष","Puruṣa","Person, man; here the noble people, companions and lineage one is blessed with.","sri-suktam/verse-2/"),
 ]
 
 YANTRA = '''<svg class="yantra" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round">
@@ -159,7 +197,7 @@ def write(path, content, prio="0.6"):
 
 # ---------------------------------------------------------------- pages
 def page_home():
-    v = VERSES[0]
+    v = VERSES[-1]
     t = "Lakshmi Stuti – Śrī Sūktam & Kanakadhāra Stotram Meaning in English"
     d = "Verse-by-verse English commentary on the Śrī Sūktam and Kanakadhāra Stotram to Goddess Lakshmi (Laxmi): Devanāgarī, transliteration, word meanings and practice."
     ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","inGroup":None,"author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
@@ -190,14 +228,14 @@ def page_home():
 <p class="amen">You are on a beautiful path. Enjoy every step.</p>
 </section>
 <div class="grid">
-<a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. Verse 1 is live; more verses are added one at a time.</p></a>
+<a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
 <a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram <span class="soon">coming soon</span></h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi, to follow the Śrī Sūktam.</p></a>
 <a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
 <h2>Today’s verse</h2>
-<div class="verse"><p class="label">Śrī Sūktam · Verse 1</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
-<p>{E(v["closing"])} <a href="/sri-suktam/verse-1/">Read the full commentary →</a></p>
+<div class="verse"><p class="label">Śrī Sūktam · Verse {v["n"]}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
+<p>{E(v["closing"])} <a href="/sri-suktam/{v["slug"]}/">Read the full commentary →</a></p>
 {ad("home")}
 </main>''' + INTRO_SCRIPT + foot()
     write("", body, "1.0")
@@ -243,10 +281,10 @@ def page_verse(i):
            "author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en",
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR}}
     words = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p class="m">{E(c)}</p><p>{d}</p></div>' for a,b,c,d in v["words"])
-    ins = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{E(b)}</p></div>' for a,b in v["insights"])
+    ins = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in v["insights"])
     med = "".join(f"<li>{E(x)}</li>" for x in v["meditation"])
     p = f'<a href="/sri-suktam/{prev["slug"]}/">← Verse {prev["n"]}</a>' if prev else '<span class="off">← Previous</span>'
-    n = f'<a href="/sri-suktam/{nxt["slug"]}/">Verse {nxt["n"]} →</a>' if nxt else '<span class="off">Verse 2 coming soon →</span>'
+    n = f'<a href="/sri-suktam/{nxt["slug"]}/">Verse {nxt["n"]} →</a>' if nxt else f'<span class="off">Verse {v["n"]+1} coming soon →</span>'
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("sri") + f'''
 <main class="wrap"><article>
 {crumbs([("Śrī Sūktam","sri-suktam/"),(f"Verse {v['n']}",None)])}
@@ -267,7 +305,7 @@ def page_verse(i):
 <ol>{med}</ol>
 <h2 id="reflection">Reflection for today</h2>
 <p>{E(v["reflection"])}</p>
-<p><em>{E(v["closing"])} May your journey today become meaningful, peaceful and enriching.</em></p>
+<p><em>{E(v["closing"])}</em></p>
 <p class="crumbs">Terms used here are explained in the <a href="/glossary/">glossary</a>. This commentary was prepared with AI assistance; <a href="/about/">read more</a>.</p>
 {ad("end")}
 <div class="pager">{p}{n}</div>
