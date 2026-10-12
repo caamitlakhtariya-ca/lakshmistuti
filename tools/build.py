@@ -444,26 +444,29 @@ VERSES = [
   h1="Śrī Sūktam – Verse 14",
   sub="Ārdrāṁ Yaḥ Kariṇīṁ – tender, active and sun-bright",
   words=[
-   ("आर्द्राम्","Ārdrām","Tender, compassionate, soft","She who makes life moist and nourished."),
-   ("यः करिणीम्","Yaḥ kariṇīm","She who gives the strength to accomplish every kind of work","She is the cause of activity and movement in life. This is one of the harder phrases of the hymn, and commentators differ. Another traditional reading takes <em>kariṇī</em> as “attended by elephants”."),
-   ("यष्टिम्","Yaṣṭiṁ","The power joined with resolve, worship and austerity","The strength that comes as the lasting fruit of sustained practice, giving stability in life. The word also means a staff, a support."),
+   ("आर्द्राम्","Ārdrām","Tender, compassionate, soft","She who keeps life moist and nourished, like rain on dry ground."),
+   ("यः करिणीम्","Yaḥ kariṇīm","She who gives the strength to accomplish every kind of work","She is the source of activity and movement in life. This is one of the harder phrases of the hymn, and commentators differ; another traditional reading takes <em>kariṇī</em> as “attended by elephants”."),
+   ("यष्टिम्","Yaṣṭiṁ","The power joined with resolve, worship and austerity","The strength that comes as the lasting fruit of sustained practice and gives stability in life. The word also means a staff, a support."),
    ("सुवर्णाम्","Suvarṇām","Golden, shining with a pure, bright glow",""),
    ("हेममालिनीम्","Hema-mālinīm","Adorned with a garland of gold","A symbol of splendour, grace and dignity."),
-   ("सूर्याम्","Sūryām","Radiant like the sun, life-giving","The sun’s brilliance never stops; it gives energy and strength continuously. In Verse 13 she was moon-like (<em>Chandrā</em>); here she is sun-like. Together they bring coolness and fire."),
-   ("हिरण्मयीम्","Hiraṇmayīṁ","Gold-like in brilliance, divine and full of divine radiance",""),
+   ("सूर्याम्","Sūryām","Radiant like the sun, life-giving","The sun’s brilliance never fails; it gives energy and strength continuously. In Verse 13 she was moon-like (<em>Chandrā</em>); here she is sun-like. Together they bring coolness and fire, gentleness and power."),
+   ("हिरण्मयीम्","Hiraṇmayīṁ","Golden in brilliance, filled with divine radiance",""),
    ("लक्ष्मीम्","Lakṣmīṁ","Mother Lakshmi","The Goddess of prosperity, beauty, grace and splendour."),
    ("जातवेदो म आवह","Jātavedo ma āvaha","O Agni, knower of all births, please bring this divine Lakshmi into my life",""),
   ],
   meaning="O Agni, please invite into my life that Goddess Lakshmi who is tender and compassionate, the power that brings every undertaking to fulfilment, who shines like gold, wears a garland of gold, is radiant like the sun, and is filled with divine brilliance.",
   insights=[
    ("Tenderness and compassion (Ārdrām)","Wealth is not only hard power; it should carry gentleness, kindness and love as well. Only then does it last."),
-   ("Action and resolve (Yaḥ kariṇīm, Yaṣṭiṁ)","Lakshmi dwells where there is action and resolve, where there is no laziness but steady inspiration and practice."),
-   ("Beauty and radiance (Suvarṇām, Hema-mālinīm, Sūryām, Hiraṇmayīṁ)","Prosperity is not only material wealth. It is the beauty of life, divinity and inner light, which shines itself and also lights up others."),
-   ("The invitation (Jātavedo ma āvaha)","Through Agni, the power of the self, we call Goddess Lakshmi. Calling her is not just a mantra; it is an inner preparation."),
+   ("Action and resolve (Yaḥ kariṇīm, Yaṣṭiṁ)","Lakshmi dwells where there is action and resolve: where there is no laziness, but steady effort and practice."),
+   ("Beauty and radiance (Suvarṇām, Hema-mālinīm, Sūryām, Hiraṇmayīṁ)","Prosperity is not only material wealth. It is the beauty of life, a touch of the divine and an inner light that shines by itself and lights up others too."),
+   ("The invitation (Jātavedo ma āvaha)","Through Agni, the power of the self, we call Goddess Lakshmi. Calling her is not just reciting a mantra; it is an inner preparation."),
   ],
-  meditation=[],
+  meditation=["Close your eyes and imagine the first light of dawn, soft and warm, spreading slowly across a still sky.",
+              "See Mother Lakshmi in that light: gentle eyes full of compassion, a garland of gold on her shoulders, her whole form shining like the rising sun.",
+              "Feel her radiance reach your heart and wake up your own resolve, steady and unhurried, ready to act.",
+              "Whisper inwardly: “O Mother, let tenderness and strength, compassion and effort, shine together in me, and may your light stay in my life.”"],
   reflection="Is the radiance of Lakshmi in my life only outside, or inside as well? Am I making my action and resolve pure and strong enough for Lakshmi to stay in my life? Do I have the compassion and beauty within that can make wealth sacred?",
-  closing="",
+  closing="This verse teaches that prosperity is tender and active at once. It shines like the sun, but it stays only where there is compassion in the heart and steady, sincere effort in the hands.",
  ),
  dict(
   n=15, slug="verse-15",
@@ -501,13 +504,13 @@ VERSES = [
   closing="",
  ),
  dict(
-  n=16, slug="phalashruti", label="Phalaśruti",
+  n=16, slug="verse-16",
   deva="यः शुचिः प्रयतो भूत्वा जुहुयादाज्यमन्वहम्।<br>श्रियः पञ्चदशर्चं च श्रीकामः सततं जपेत्॥",
   iast="Yaḥ śuciḥ prayato bhūtvā juhuyād ājyam anvaham,<br>Śriyaḥ pañcadaśarcaṁ ca śrīkāmaḥ satataṁ japet.",
-  title="Śrī Sūktam Phalaśruti Meaning – Yaḥ Śuciḥ Prayato Bhūtvā Explained",
-  desc="The Śrī Sūktam phalaśruti (Yaḥ Śuciḥ Prayato Bhūtvā) with Devanāgarī, transliteration, word-by-word meaning, the fruit of reciting the fifteen verses, and a closing meditation.",
-  h1="Śrī Sūktam – Phalaśruti",
-  sub="Yaḥ Śuciḥ Prayato Bhūtvā – the fruit of reciting the hymn",
+  title="Śrī Sūktam Verse 16 (Phalaśruti) Meaning – Yaḥ Śuciḥ Prayato Bhūtvā Explained",
+  desc="Śrī Sūktam Verse 16, the phalaśruti (Yaḥ Śuciḥ Prayato Bhūtvā) with Devanāgarī, transliteration, word-by-word meaning, the fruit of reciting the fifteen verses, and a closing meditation.",
+  h1="Śrī Sūktam – Verse 16",
+  sub="Yaḥ Śuciḥ Prayato Bhūtvā – the phalaśruti, the fruit of reciting the hymn",
   words=[
    ("यः शुचिः प्रयतः भूत्वा","Yaḥ śuciḥ prayataḥ bhūtvā","One who, becoming pure, with a clean mind and self-restraint",""),
    ("जुहुयात् आज्यम् अन्वहम्","Juhuyāt ājyam anvaham","Should offer ghee into the sacred fire every day","The daily fire offering (<em>agnihotra</em>)."),
@@ -527,7 +530,7 @@ VERSES = [
   closing="Mother Lakshmi is not called by words alone. To call her we need clean conduct, a disciplined life, service, good company and daily practice. Then she not only comes; she stays.",
  ),
 ]
-TOTAL_SRI = 15  # core verses of the Śrī Sūktam (a closing phalaśruti follows)
+TOTAL_SRI = 16  # 15 verses of the hymn plus the closing phalaśruti, numbered Verse 16 here
 
 GLOSSARY = [
  ("हिरण्यवर्णा","Hiraṇyavarṇā","Golden-colored; the golden hue of Lakshmi.","sri-suktam/verse-1/"),
@@ -625,14 +628,14 @@ GLOSSARY = [
  ("सूर्या","Sūryā","Sun-like; radiant and life-giving.","sri-suktam/verse-14/"),
  ("प्रभूत","Prabhūta","Abundant, plentiful.","sri-suktam/verse-15/"),
  ("दासी","Dāsī","An attendant or helper; here, cooperation and support.","sri-suktam/verse-15/"),
- ("फलश्रुति","Phalaśruti","The “hearing of the fruits”: the closing verses that describe the benefit of reciting a hymn.","sri-suktam/phalashruti/"),
- ("शुचि","Śuci","Pure, clean.","sri-suktam/phalashruti/"),
- ("प्रयत","Prayata","Self-restrained, disciplined, composed.","sri-suktam/phalashruti/"),
- ("आज्य","Ājya","Clarified butter (ghee) used in fire offerings.","sri-suktam/phalashruti/"),
- ("अग्निहोत्र","Agnihotra","The daily fire offering made at sunrise and sunset.","sri-suktam/phalashruti/"),
- ("पञ्चदशर्च","Pañcadaśarca","Of fifteen verses (ṛc); the fifteen verses of the Śrī Sūktam.","sri-suktam/phalashruti/"),
- ("श्रीकाम","Śrīkāma","One who desires Śrī, prosperity.","sri-suktam/phalashruti/"),
- ("जप","Japa","Quiet, repeated recitation of a mantra.","sri-suktam/phalashruti/"),
+ ("फलश्रुति","Phalaśruti","The “hearing of the fruits”: the closing verse that describes the benefit of reciting a hymn.","sri-suktam/verse-16/"),
+ ("शुचि","Śuci","Pure, clean.","sri-suktam/verse-16/"),
+ ("प्रयत","Prayata","Self-restrained, disciplined, composed.","sri-suktam/verse-16/"),
+ ("आज्य","Ājya","Clarified butter (ghee) used in fire offerings.","sri-suktam/verse-16/"),
+ ("अग्निहोत्र","Agnihotra","The daily fire offering made at sunrise and sunset.","sri-suktam/verse-16/"),
+ ("पञ्चदशर्च","Pañcadaśarca","Of fifteen verses (ṛc); the fifteen verses of the Śrī Sūktam.","sri-suktam/verse-16/"),
+ ("श्रीकाम","Śrīkāma","One who desires Śrī, prosperity.","sri-suktam/verse-16/"),
+ ("जप","Japa","Quiet, repeated recitation of a mantra.","sri-suktam/verse-16/"),
 ]
 
 YANTRA = '''<svg class="yantra" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round">
@@ -732,7 +735,7 @@ def write(path, content, prio="0.6"):
 # ---------------------------------------------------------------- pages
 def lab(v): return v.get("label") or f"Verse {v['n']}"
 def page_home():
-    v = [x for x in VERSES if "label" not in x][-1]
+    v = VERSES[-1]
     t = "Lakshmi Stuti – Śrī Sūktam & Kanakadhāra Stotram Meaning in English"
     d = "Verse-by-verse English commentary on the Śrī Sūktam and Kanakadhāra Stotram to Goddess Lakshmi (Laxmi): Devanāgarī, transliteration, word meanings and practice."
     ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","inGroup":None,"author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
@@ -789,7 +792,7 @@ def page_sri():
 <h1>Śrī Sūktam – verse by verse</h1>
 <p class="lede">The Śrī Sūktam is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.</p>
 <p>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears.</p>
-<p><small>A note on the count: the Śrī Sūktam is usually counted as 15 verses. A few closing verses on the fruits of reciting it (the <em>phalaśruti</em>) are chanted after them, and some editions number those too, so you may see a slightly higher total elsewhere.</small></p>
+<p><small>A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
 <div class="grid">{rows}</div>
 {ad("index")}
 </main>''' + foot()
@@ -825,8 +828,7 @@ def page_verse(i):
     refsec = f'<h2 id="reflection">Reflection for today</h2>\n<p>{E(v["reflection"])}</p>' if v["reflection"] else ''
     closesec = f'<p><em>{E(v["closing"])}</em></p>' if v["closing"] else ''
     p = f'<a href="/sri-suktam/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
-    n = f'<a href="/sri-suktam/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/sri-suktam/">All verses →</a>' if v.get("label") else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
-    n = n.replace('Verse 15 coming soon','Phalaśruti coming soon') if v["n"]==15 and not nxt else n
+    n = f'<a href="/sri-suktam/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/sri-suktam/">All verses →</a>' if v["n"]==len(VERSES) else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("sri") + f'''
 <main class="wrap"><article>
 {crumbs([("Śrī Sūktam","sri-suktam/"),(lab(v),None)])}
