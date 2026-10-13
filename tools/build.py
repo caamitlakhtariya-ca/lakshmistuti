@@ -532,7 +532,60 @@ VERSES = [
 ]
 TOTAL_SRI = 16  # 15 verses of the hymn plus the closing phalaśruti, numbered Verse 16 here
 
+KANA_TOTAL = 22  # popular edition; the verse count is confirmed on the Kanakadhāra page once the edition is settled
+
+KVERSES = [
+ dict(
+  n=1, slug="verse-1",
+  deva="अङ्गं हरेः पुलकभूषणमाश्रयन्ती<br>भृङ्गाङ्गनेव मुकुलाभरणं तमालम्।<br>अङ्गीकृताखिलविभूतिरपाङ्गलीला<br>माङ्गल्यदास्तु मम मङ्गलदेवतायाः॥",
+  iast="Aṅgaṁ hareḥ pulaka-bhūṣaṇam āśrayantī,<br>Bhṛṅgāṅganeva mukulābharaṇaṁ tamālam;<br>Aṅgīkṛtākhila-vibhūtir apāṅga-līlā,<br>Māṅgalya-dāstu mama maṅgala-devatāyāḥ.",
+  title="Kanakadhāra Stotram Verse 1 Meaning – Aṅgaṁ Hareḥ Pulaka-Bhūṣaṇam Explained",
+  desc="Kanakadhāra Stotram Verse 1 (Aṅgaṁ Hareḥ Pulaka-Bhūṣaṇam) with Devanāgarī, transliteration, word-by-word meaning, the sidelong glance of Mahalakshmi, the bee and the tamāla tree, and a short meditation.",
+  h1="Kanakadhāra Stotram – Verse 1",
+  sub="Aṅgaṁ Hareḥ – the divine glance of Mahālakṣmī",
+  words=[
+   ("अङ्गं हरेः","Aṅgaṁ hareḥ","The body of Hari (Lord Vishnu)","<em>Aṅga</em> means body or limb; <em>hareḥ</em> is “of Hari”, a name of Vishnu."),
+   ("पुलकभूषणम्","Pulaka-bhūṣaṇam","Having goosebumps as its ornament","<em>Pulaka</em> is the goosebumps that rise from intense emotion; <em>bhūṣaṇa</em> is an ornament. Together: goosebumps that become ornaments."),
+   ("आश्रयन्ती","Āśrayantī","Resting upon, taking refuge in","The glance rests upon the body of the Lord."),
+   ("भृङ्गाङ्गना इव","Bhṛṅgāṅganā iva","Like a female bee","<em>Bhṛṅga</em> is a bee and <em>aṅganā</em> a woman or female figure; <em>iva</em> means “like” or “as”."),
+   ("मुकुलाभरणं तमालम्","Mukulābharaṇaṁ tamālam","A tamāla tree adorned with flower buds","<em>Mukula</em> is a flower bud and <em>ābharaṇa</em> an ornament. The <em>tamāla</em> is a tree traditionally associated with a dark complexion."),
+   ("अङ्गीकृताखिलविभूतिः","Aṅgīkṛtākhila-vibhūtiḥ","That which has embraced all glories and powers","<em>Aṅgīkṛta</em> is accepted or embraced as one’s own; <em>akhila</em> is all; <em>vibhūti</em> is glory, power, excellence."),
+   ("अपाङ्गलीला","Apāṅga-līlā","The graceful play of a sidelong glance","<em>Apāṅga</em> is the corner of the eye, a sidelong glance; <em>līlā</em> is play or graceful action."),
+   ("माङ्गल्यदा अस्तु मम","Māṅgalyadā astu mama","May it bestow auspiciousness on me","<em>Māṅgalyadā</em> is “giver of auspiciousness”; <em>astu</em> is “may it be”; <em>mama</em> is “for me”."),
+   ("मङ्गलदेवतायाः","Maṅgala-devatāyāḥ","Of the Goddess of auspiciousness","Lakshmi, whose glance is the subject of the prayer."),
+  ],
+  meaning="May the graceful sidelong glance of Goddess Mahalakshmi, which lovingly rests upon the dark, beautiful form of Lord Vishnu and makes His body thrill with divine joy; which moves like a bee among the flower buds adorning a tamāla tree; and which embraces every form of divine glory and prosperity: may that sacred glance of the Goddess of Auspiciousness bless my life with good fortune and well-being.",
+  insights=[
+   ("In simple words","“O Mother Mahalakshmi, your glance is filled with such love and grace that even Lord Vishnu’s body thrills with joy when you look upon Him. Your beauty is like a bee moving among flower buds on a dark tree, and you embody every form of divine glory. May your compassionate glance fall upon me and bring auspiciousness into my life.” The central prayer is not simply for gold. It is for the grace of the Goddess who embodies auspiciousness."),
+   ("The poetry hidden in the first line","Ādi Śaṅkarācārya could have simply written, “Lakshmi looked at Vishnu.” Instead he paints a whole picture. Imagine it: Vishnu stands serene, dark as a monsoon cloud. Lakshmi turns toward Him. She does not stare; she gives only a gentle glance from the corner of her eye. That glance is filled with so much love that His body is covered in goosebumps of divine bliss, sparkling like jewels. A poet sees what ordinary eyes miss."),
+   ("Goosebumps as ornaments (Pulaka-bhūṣaṇam)","Ordinarily we adorn the body with gold, pearls and precious stones. Here the poet imagines something more beautiful: divine love itself becomes the ornament. Vishnu needs no jewellery to be magnificent; the joy awakened by Lakshmi’s glance adorns Him. The phrase turns an invisible feeling into a visible image. There is a gentle lesson in it for us too: the deepest forms of beauty are not always things we can purchase or possess. Sometimes they are the traces of love, devotion and joy that show in a person."),
+   ("The bee and the tamāla tree","The second line extends the painting. Imagine a dark tamāla tree, its branches adorned with delicate flower buds, and a bee moving gracefully among them. The poet compares Lakshmi’s glance to this bee and Vishnu’s dark form to the tamāla tree. A bee is drawn to flowers; its movement is delicate and graceful. In the same way her glance brings movement and tenderness to the picture of Vishnu’s serene form. Traditionally Lakshmi and Vishnu are also seen as inseparable, their relationship expressing divine harmony. It helps to keep the layers apart: the bee and the tree are the verse’s own imagery, while inseparability and harmony are spiritual interpretations we draw from it."),
+   ("The most important word: Apāṅga","<em>Apāṅga</em> is the corner of the eye, a sidelong glance. Why not simply say that Lakshmi looks at Vishnu? Because the sidelong glance adds delicacy, intimacy and grace. In classical Indian aesthetics the eyes are powerful instruments of expression: a glance can carry affection, shyness, compassion, longing or delight without a word. In devotional language a deity’s <em>kaṭākṣa</em>, a gracious glance, is a symbol of divine favour. The devotee is not merely asking to be seen. The devotee longs to receive compassionate attention."),
+   ("Seek the giver, not merely the gift","The verse ends with a prayer for auspiciousness, not for a specific quantity of gold. The poet turns our attention to the Goddess herself. We may ask for material prosperity, but we can also seek the wisdom, integrity and grace that make prosperity meaningful."),
+   ("Prosperity is broader than money","The word <em>vibhūti</em> evokes glory, power and excellence. We can think of prosperity as including material resources along with knowledge, good judgement, courage, generosity and contentment. These wider applications are philosophical reflections inspired by the verse, not a literal list contained in it."),
+   ("Love is itself an adornment","<em>Pulaka-bhūṣaṇam</em> reminds us that emotion changes how we see beauty. A person adorned with jewels may be impressive; a person whose face shines with love, joy and compassion has a different kind of beauty. The verse invites us to appreciate both."),
+   ("Grace and effort belong together","The prayer asks for divine auspiciousness. In a practical reading, prayer need not replace effort; it can guide it. We may pray for prosperity while working honestly, managing resources prudently, learning continuously and helping others where we can. Devotion gives direction to effort; effort gives practical expression to our intentions."),
+   ("How to pronounce the key words","Aṅgam: ang-gam. Hareḥ: ha-reh, ending in a soft breath. Pulaka: pu-la-ka. Bhūṣaṇam: bhoo-sha-nam. Bhṛṅgāṅganeva: bhring-gaan-ga-ne-va. Apāṅgalīlā: a-paan-ga-lee-laa. Māṅgalyadāstu: maang-gal-yaa-stu. Do not worry about mastering every sound at once; confidence grows gradually."),
+  ],
+  meditation=["Minute 1, become still: sit comfortably and breathe naturally. Let your attention settle without forcing the mind to become completely silent.",
+              "Minutes 2–3, visualise the poetry: imagine Lakshmi’s gentle glance resting upon Vishnu, and His joy shown as a natural radiance, as though His body were adorned by bliss. Recite the verse slowly, resting on <em>apāṅgalīlā</em>.".replace("<em>","").replace("</em>",""),
+              "Minute 4, offer a prayer. Say silently: “O Mahalakshmi, may I recognise the blessings already present in my life. May I gain the wisdom to use my resources well and the generosity to share what I can.”",
+              "Minute 5, carry the prayer into life: choose one action for today. Help someone, share knowledge, express gratitude, or make a thoughtful financial decision."],
+  reflection="What adorns my life: is it merely what I possess, or also my conduct, relationships and inner qualities? Where does my attention rest: am I noticing opportunities for gratitude and goodness, or am I consumed by fear and comparison? What does auspiciousness mean to me: if prosperity came into my life tomorrow, what would make me use it wisely? Do not rush to answer; let one question stay with you through the day.",
+  closing="The first verse joins the grace of Lakshmi, the joy of Vishnu and the beauty of nature in a single poetic moment. The bee, the flower buds, the dark tree, the goosebumps and the sidelong glance are not isolated decorations; they form one living picture of divine beauty and auspiciousness. And the prayer brings that image close to us: may that auspicious glance bless me. Prosperity is worth seeking, but also worth understanding. Wealth can fill a treasury; wisdom helps us use it. Possessions can adorn the body; love and goodness adorn the life. This meditation is a devotional practice for attention and reflection; it does not promise a supernatural result or guarantee material wealth.",
+ ),
+]
+
+
 GLOSSARY = [
+ ("पुलक","Pulaka","Goosebumps that rise from intense emotion; the visible thrill of joy.","kanakadhara/verse-1/"),
+ ("अपाङ्ग","Apāṅga","The corner of the eye; a sidelong glance.","kanakadhara/verse-1/"),
+ ("कटाक्ष","Kaṭākṣa","A gracious glance; in devotion, a sign of divine favour.","kanakadhara/verse-1/"),
+ ("लीला","Līlā","Play; graceful, effortless action.","kanakadhara/verse-1/"),
+ ("विभूति","Vibhūti","Glory, power, excellence, magnificence.","kanakadhara/verse-1/"),
+ ("माङ्गल्य","Māṅgalya","Auspiciousness; blessing and good fortune.","kanakadhara/verse-1/"),
+ ("तमाल","Tamāla","A tree traditionally associated with a dark complexion, often used as an image of Vishnu’s dark form.","kanakadhara/verse-1/"),
+ ("भृङ्ग","Bhṛṅga","A bee.","kanakadhara/verse-1/"),
  ("हिरण्यवर्णा","Hiraṇyavarṇā","Golden-colored; the golden hue of Lakshmi.","sri-suktam/verse-1/"),
  ("हरिणी","Hariṇī","Deer-like, gentle and graceful. Also read as golden-yellow, or as the one who removes sorrow and poverty.","sri-suktam/verse-1/"),
  ("सुवर्ण","Suvarṇa","Gold.","sri-suktam/verse-1/"),
@@ -735,7 +788,7 @@ def write(path, content, prio="0.6"):
 # ---------------------------------------------------------------- pages
 def lab(v): return v.get("label") or f"Verse {v['n']}"
 def page_home():
-    v = VERSES[-1]
+    v = KVERSES[-1]
     t = "Lakshmi Stuti – Śrī Sūktam & Kanakadhāra Stotram Meaning in English"
     d = "Verse-by-verse English commentary on the Śrī Sūktam and Kanakadhāra Stotram to Goddess Lakshmi (Laxmi): Devanāgarī, transliteration, word meanings and practice."
     ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","inGroup":None,"author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
@@ -767,13 +820,13 @@ def page_home():
 </section>
 <div class="grid">
 <a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
-<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram <span class="soon">verses coming soon</span></h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi: the story is published, the verses follow.</p></a>
+<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram</h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi. The story and {len(KVERSES)} verse{"s" if len(KVERSES)!=1 else ""} are live; more follow one at a time.</p></a>
 <a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
 <h2>Today’s verse</h2>
-<div class="verse"><p class="label">Śrī Sūktam · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
-<p>{E(v["closing"] or v["meaning"])} <a href="/sri-suktam/{v["slug"]}/">Read the full commentary →</a></p>
+<div class="verse"><p class="label">Kanakadhāra Stotram · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
+<p>{E(v["closing"] or v["meaning"])} <a href="/kanakadhara/{v["slug"]}/">Read the full commentary →</a></p>
 {ad("home")}
 </main>''' + INTRO_SCRIPT + foot()
     write("", body, "1.0")
@@ -803,6 +856,7 @@ def page_kana():
     d = "The Kanakadhāra Stotram, the hymn to Goddess Lakshmi traditionally attributed to Ādi Śaṅkarācārya: the story of the poor woman’s gooseberry, what “stream of gold” means, and a reflection to begin with."
     parts = [("Kanakadhāra Stotram","kanakadhara/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – The Story Before the First Verse","author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en","mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR}}
+    krows = "".join(f'<a class="tile" href="/kanakadhara/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>' for v in KVERSES)
     body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + f'''
 <main class="wrap">{crumbs([("Kanakadhāra Stotram",None)])}
 <h1>Kanakadhāra Stotram</h1>
@@ -841,18 +895,22 @@ def page_kana():
 <div class="card"><h3>Practice for today</h3><p>Perform one act of giving, whether of time, kindness, knowledge or material help, without expecting anything in return.</p></div>
 </div>
 
+<h2>Verse by verse</h2>
+<div class="grid">{krows}</div>
 <h2>About the text and this commentary</h2>
 <p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary will follow one clear edition and will say which, so that you can read along with the text you chant from. Each verse will have its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series. Verses will be published one at a time.</p>
 <p><small>The story is the traditional account; details vary between tellings.</small></p>
 </main>''' + foot()
     write("kanakadhara", body, "0.7")
 
-def page_verse(i):
-    v = VERSES[i]
-    prev = VERSES[i-1] if i>0 else None
-    nxt = VERSES[i+1] if i+1 < len(VERSES) else None
-    path = f'sri-suktam/{v["slug"]}'
-    parts = [("Śrī Sūktam","sri-suktam/"),(lab(v),None)]
+def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None):
+    lst = lst or VERSES
+    total = total or len(lst)
+    v = lst[i]
+    prev = lst[i-1] if i>0 else None
+    nxt = lst[i+1] if i+1 < len(lst) else None
+    path = f'{base}/{v["slug"]}'
+    parts = [(sname,base+"/"),(lab(v),None)]
     art = {"@context":"https://schema.org","@type":"Article","headline":v["title"],"description":v["desc"],
            "author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en",
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR}}
@@ -864,11 +922,11 @@ def page_verse(i):
     reflink = '<a href="#reflection">Reflection</a>' if v["reflection"] else ''
     refsec = f'<h2 id="reflection">Reflection for today</h2>\n<p>{E(v["reflection"])}</p>' if v["reflection"] else ''
     closesec = f'<p><em>{E(v["closing"])}</em></p>' if v["closing"] else ''
-    p = f'<a href="/sri-suktam/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
-    n = f'<a href="/sri-suktam/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/sri-suktam/">All verses →</a>' if v["n"]==len(VERSES) else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
-    body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("sri") + f'''
+    p = f'<a href="/{base}/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
+    n = f'<a href="/{base}/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/{base}/">All verses →</a>' if v["n"]>=total else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
+    body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
 <main class="wrap"><article>
-{crumbs([("Śrī Sūktam","sri-suktam/"),(lab(v),None)])}
+{crumbs([(sname,base+"/"),(lab(v),None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>{v["h1"]}</h1>
 <p class="lede">{E(v["sub"])}</p>
@@ -1008,5 +1066,6 @@ def sitemap():
 if __name__ == "__main__":
     page_home(); page_sri(); page_kana()
     for i in range(len(VERSES)): page_verse(i)
+    for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     print("built", len(PAGES), "pages")
