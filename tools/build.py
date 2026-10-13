@@ -801,8 +801,11 @@ def page_home():
 <p class="eyebrow">Śrī Sūktam · Kanakadhāra Stotram</p>
 <h1>Śrī Sūktam &amp; Kanakadhāra Stotram, understood gently</h1>
 <p class="lede">A slow, verse-by-verse commentary on the hymns to Goddess Lakshmi (also written Laxmi): the original text, simple word meanings, and a short practice for each verse.</p>
-<p><a class="btn" href="/sri-suktam/verse-1/">Start with Verse 1</a><a class="btn ghost" href="/sri-suktam/">Śrī Sūktam index</a></p>
+<p><a class="btn" href="/sri-suktam/verse-1/">Start with Śrī Sūktam Verse 1</a><a class="btn ghost" href="/sri-suktam/">Śrī Sūktam index</a><a class="btn ghost" href="/kanakadhara/">Kanakadhāra Stotram</a></p>
 </section>
+<h2>Latest verse</h2>
+<div class="verse"><p class="label">Kanakadhāra Stotram · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
+<p>{E(v["closing"] or v["meaning"])} <a href="/kanakadhara/{v["slug"]}/">Read the full commentary →</a></p>
 <section class="garden">
 <h2>A sacred garden, one seed at a time</h2>
 <p>Think of your journey into the Śrī Sūktam like planting seeds in a sacred garden. Each verse is a seed. By carefully understanding and meditating upon one verse daily, you gently plant and nurture it within your heart. Slowly but surely, this practice blossoms into an abundant, radiant inner garden of clarity, devotion and wisdom.</p>
@@ -824,9 +827,6 @@ def page_home():
 <a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
-<h2>Today’s verse</h2>
-<div class="verse"><p class="label">Kanakadhāra Stotram · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
-<p>{E(v["closing"] or v["meaning"])} <a href="/kanakadhara/{v["slug"]}/">Read the full commentary →</a></p>
 {ad("home")}
 </main>''' + INTRO_SCRIPT + foot()
     write("", body, "1.0")
