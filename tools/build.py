@@ -767,7 +767,7 @@ def page_home():
 </section>
 <div class="grid">
 <a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
-<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram <span class="soon">coming soon</span></h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi, to follow the Śrī Sūktam.</p></a>
+<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram <span class="soon">verses coming soon</span></h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi: the story is published, the verses follow.</p></a>
 <a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
@@ -800,25 +800,50 @@ def page_sri():
 
 def page_kana():
     t = "Kanakadhāra Stotram – Meaning, Story and Background in English"
-    d = "The Kanakadhāra Stotram, the hymn to Goddess Lakshmi traditionally attributed to Śrī Śaṅkarācārya: its meaning, the story of the golden gooseberries, and what to expect from this verse-by-verse commentary."
+    d = "The Kanakadhāra Stotram, the hymn to Goddess Lakshmi traditionally attributed to Ādi Śaṅkarācārya: the story of the poor woman’s gooseberry, what “stream of gold” means, and a reflection to begin with."
     parts = [("Kanakadhāra Stotram","kanakadhara/")]
-    ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – Meaning, Story and Background","author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en","mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – The Story Before the First Verse","author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en","mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR}}
     body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + f'''
 <main class="wrap">{crumbs([("Kanakadhāra Stotram",None)])}
 <h1>Kanakadhāra Stotram</h1>
-<p class="lede">A hymn to Goddess Lakshmi, traditionally attributed to Śrī Śaṅkarācārya, whose name means “the stream of gold”.</p>
+<p class="lede">The story before the first verse.</p>
 <p class="crumbs">By {AUTHOR}</p>
-<h2>What the name means</h2>
-<p><em>Kanaka</em> means gold and <em>dhārā</em> means a stream or a steady flow. The <em>Kanakadhāra Stotram</em> is therefore the “hymn of the golden stream”: a prayer in which Lakshmi’s grace is pictured as something that flows, patiently and without break, into a life that is ready to receive it.</p>
-<h2>The story behind it</h2>
-<p>Tradition tells of the young Śaṅkara, still a boy and a student of the sacred texts, going out to beg alms for his meal. He stopped at the door of a very poor Brahmin woman. She had nothing to give, but she searched her house and found a single dried gooseberry (<em>āmalaka</em>), which she offered him with great humility.</p>
-<p>Moved by the sincerity of a gift that cost her everything she had, Śaṅkara sang a hymn to Lakshmi on the spot. In reply, the story says, Lakshmi showered the woman’s house with gooseberries made of gold. The hymn is remembered as the song that was sung that day.</p>
-<p>Whatever one makes of the details, the point of the story is clear and is worth keeping in mind while reading the hymn: it is the <em>giving</em>, small as it was, that opened the door, and not the amount.</p>
-<h2>How many verses?</h2>
-<p>You will see different counts. Many printed and online versions carry 21 or 22 stanzas, with the last one speaking of the fruit of reciting the hymn. Some scholarly editions of Śaṅkarācārya’s works give a shorter core text of 18, treating the rest as later additions. This commentary will follow one clear edition, and will say so openly, so that you can follow along with whichever text you chant from.</p>
-<h2>What to expect here</h2>
-<p>The same way of reading as for the <a href="/sri-suktam/">Śrī Sūktam</a>: each verse with its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection for the day. Verses will be published one at a time. The Śrī Sūktam commentary is complete and is a good place to begin while this one is prepared.</p>
-<p><small>Background drawn from the traditional account of the hymn; details of the story vary between tellings.</small></p>
+
+<p>Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
+<p>More than 1,200 years ago, the young Ādi Śaṅkarācārya, still a boy of about eight in most tellings, went from house to house seeking <em>bhikṣā</em> (alms), as a student and renunciate does. The custom is not about need. Accepting whatever is freely offered cultivates humility in both the giver and the receiver.</p>
+<p>One day he arrived at the home of a poor Brahmin family. The lady of the house searched every corner of her kitchen. She had nothing to offer. Nothing, except one small <em>āmalakī</em> (Indian gooseberry): the last edible thing in the house.</p>
+<p>She faced a dilemma. Should she keep it for herself and her family, or honour the sacred duty of offering food to a seeker? Her heart chose generosity. She offered that lone gooseberry with complete sincerity.</p>
+<p>The young Śaṅkara saw her poverty at once and, more importantly, her boundless generosity. Deeply moved, he composed a spontaneous hymn in praise of Mahālakṣmī, praying that her compassionate glance fall upon this noble woman.</p>
+<p>Tradition says that the Goddess first replied that, by the law of karma, the woman had not yet earned enough merit to receive wealth. Śaṅkara, it is said, then appealed not to justice but to compassion. The story is often read as carrying this unspoken argument: if a person who possesses nothing can still give everything, has she not created merit at this very moment?</p>
+<p>The Goddess smiled. A shower of golden gooseberries fell upon the humble home. Thus the Kanakadhāra Stotram was born. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream or continuous flow, so <em>Kanakadhārā</em> is “the stream of gold”.</p>
+
+<h2>The first lesson, even before verse one</h2>
+<p>Many people take this hymn to be about becoming rich. The story points to something subtler. The miracle did not begin with Lakshmi. It began with the generosity of the poor woman. She gave before she received.</p>
+<p>Prosperity does not begin in the wallet. It begins in the heart. Lakshmi is not merely the Goddess of money; she is the Goddess of abundance in every form:</p>
+<ul>
+<li>Wealth</li><li>Health</li><li>Knowledge</li><li>Virtue</li><li>Beauty</li><li>Courage</li><li>Harmony</li><li>Opportunity</li><li>Contentment</li>
+</ul>
+<p>Money is only one expression of Śrī.</p>
+
+<h2>A Sanskrit jewel</h2>
+<div class="verse">{YANTRA}<p class="deva" lang="sa">श्री</p><p class="iast" lang="sa-Latn">Śrī</p></div>
+<p>This is one of the most beautiful words in Sanskrit, and no single English word carries it. <em>Śrī</em> means prosperity, auspiciousness, grace, beauty, radiance, excellence and divine abundance. That is why we say Śrī Rāma, Śrī Kṛṣṇa and Śrī Mahālakṣmī: the word carries the sense of something blessed, noble and flourishing.</p>
+
+<h2>Reflection for today</h2>
+<p>Rather than rushing to the first verse, pause with this question:</p>
+<p><em>If I had only one gooseberry left, would I have the faith and generosity to offer it?</em></p>
+<p>This question is the doorway to the Kanakadhāra Stotram. Śaṅkarācārya invites us to reflect not only on receiving Lakshmi’s blessings, but also on becoming worthy of them.</p>
+
+<h2>Today’s takeaway</h2>
+<div class="grid">
+<div class="card"><h3>Three Sanskrit words</h3><p><strong>Śrī</strong> (श्री): divine abundance and auspiciousness.<br><strong>Kanaka</strong> (कनक): gold.<br><strong>Dhārā</strong> (धारा): stream or continuous flow.</p></div>
+<div class="card"><h3>Philosophical insight</h3><p>True prosperity begins with a generous heart, not a full treasury.</p></div>
+<div class="card"><h3>Practice for today</h3><p>Perform one act of giving, whether of time, kindness, knowledge or material help, without expecting anything in return.</p></div>
+</div>
+
+<h2>About the text and this commentary</h2>
+<p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary will follow one clear edition and will say which, so that you can read along with the text you chant from. Each verse will have its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series. Verses will be published one at a time.</p>
+<p><small>The story is the traditional account; details vary between tellings.</small></p>
 </main>''' + foot()
     write("kanakadhara", body, "0.7")
 
