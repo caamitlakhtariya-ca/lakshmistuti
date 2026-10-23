@@ -971,8 +971,12 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     closesec = f'<p><em>{E(v["closing"])}</em></p>' if v["closing"] else ''
     p = f'<a href="/{base}/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
     n = f'<a href="/{base}/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/{base}/">All verses →</a>' if v["n"]>=total else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
+    other = ("Kanakadhāra Stotram","kanakadhara") if base=="sri-suktam" else ("Śrī Sūktam","sri-suktam")
+    items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x is v else ""}><b>{x["n"]}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
+    vnav = f'<aside class="vnav" aria-label="Verses"><p class="vn-title"><a href="/{base}/">{sname}</a></p><ol>{items}</ol><p class="vn-other"><a href="/{other[1]}/">{other[0]} →</a></p></aside>'
+    vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView&&innerWidth<1100){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
-<main class="wrap"><article>
+<main class="wrap has-vnav">{vnav}<article>
 {crumbs([(sname,base+"/"),(lab(v),None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>{v["h1"]}</h1>
@@ -993,7 +997,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <p class="crumbs">Terms used here are explained in the <a href="/glossary/">glossary</a>. This commentary was prepared with AI assistance; <a href="/about/">read more</a>.</p>
 {ad("end")}
 <div class="pager">{p}{n}</div>
-</article></main>''' + foot()
+</article></main>{vscript}''' + foot()
     write(path, body, "0.9")
 
 def page_yantra():

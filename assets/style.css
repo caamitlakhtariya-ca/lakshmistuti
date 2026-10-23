@@ -112,3 +112,27 @@ html.intro body{overflow:hidden}
 .verse .yantra{width:min(520px,130%);opacity:.14;top:50%}
 .yantra-big{text-align:center;padding:10px}.yantra-big .yantra{opacity:.5;width:min(420px,100%);position:absolute;top:50%}
 .yantra-big{min-height:440px;display:flex;align-items:center;justify-content:center;margin:24px 0}.yantra-big p{margin:0!important}
+
+/* verse selector panel */
+.vnav{font-family:var(--sans);font-size:.88rem;margin:14px 0 0}
+.vnav .vn-title{margin:0 0 6px;font-family:var(--serif);font-size:1.05rem;font-weight:600}
+.vnav .vn-title a,.vnav .vn-title a:hover{display:inline;border:0;background:none;box-shadow:none;padding:0;border-radius:0;white-space:normal;color:var(--maroon);text-decoration:none}
+.vnav ol{list-style:none;margin:0;padding:0;display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.vnav li{flex:0 0 auto}
+.vnav a{display:flex;align-items:baseline;gap:8px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);text-decoration:none;white-space:nowrap}
+.vnav a b{font-weight:600;color:var(--maroon)}
+.vnav a .t{display:none}
+.vnav a:hover{border-color:var(--gold)}
+.vnav a.on{background:var(--soft);border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold)}
+.vnav .vn-other{margin:8px 0 0;font-size:.82rem}
+.vnav .vn-other a{display:inline;border:0;background:none;padding:0;color:var(--muted);text-decoration:underline}
+@media (min-width:1100px){
+  main.has-vnav{max-width:1060px;display:grid;grid-template-columns:230px minmax(0,760px);gap:0 44px;align-items:start}
+  .vnav{position:sticky;top:104px;margin-top:22px;max-height:calc(100vh - 130px);overflow-y:auto;padding-right:4px}
+  .vnav ol{display:block;overflow:visible}
+  .vnav li{margin:0 0 5px}
+  .vnav a{border-radius:10px;padding:7px 12px}
+  .vnav a .t{display:inline;color:var(--muted);font-size:.84rem;overflow:hidden;text-overflow:ellipsis}
+  .vnav a b{min-width:1.4em}
+}
+@media print{.vnav{display:none}}
