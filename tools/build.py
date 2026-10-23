@@ -3,14 +3,14 @@
 Run:  python3 tools/build.py      (from the repo root)
 Add a verse by appending to VERSES below, then rebuild.
 """
-import os, json, html
+import os, json, html, hashlib, unicodedata, subprocess
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://lakshmistuti.com"
 NAME = "Lakshmi Stuti"
 AUTHOR = "Amit N. Lakhtariya"
-TODAY = "2026-10-12"
+TODAY = date.today().isoformat()
 GSC_TOKEN = "ydCk8z62OzpGbv6EnLvQAu8VoJl7T40cv6htu9_FsWs"  # Google Search Console site verification
 GA_ID = "G-X1Y34J30ST"   # Google Analytics 4 measurement ID
 ADSENSE_CLIENT = "" # e.g. "ca-pub-1234567890123456" -> switches AdSense on after approval
@@ -781,8 +781,16 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/assets/og.svg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{SITE}/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lakshmi Stuti: Śrī Sūktam and Kanakadhāra Stotram commentary">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{E(title)}">
+<meta name="twitter:description" content="{E(desc)}">
+<meta name="twitter:image" content="{SITE}/assets/og.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;700&display=swap">
@@ -824,20 +832,46 @@ def bc_ld(parts):
     return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":i+1,"name":l, **({"item":u} if u else {})} for i,(l,u) in enumerate(items)]}
 
-PAGES = []  # (path, priority)
+PAGES = []  # (path, priority, lastmod)
+MANIFEST_PATH = os.path.join(ROOT, "tools", "pagedates.json")
+try: MANIFEST = json.load(open(MANIFEST_PATH, encoding="utf-8"))
+except Exception: MANIFEST = {}
 def write(path, content, prio="0.6"):
+    # published / modified dates come from a manifest: the modified date moves only when the page's own content changes
+    m = content[content.find("<main"):content.rfind("</main>")]
+    h = hashlib.sha1(m.encode("utf-8")).hexdigest()[:12]
+    e = MANIFEST.get(path or "home")
+    if not e:
+        # first time a page is seen: use the date it was first committed, if it already existed
+        rel = (path + "/index.html") if path else "index.html"
+        try:
+            dts = subprocess.run(["git","log","--format=%cs","--",rel],cwd=ROOT,capture_output=True,text=True).stdout.split()
+        except Exception: dts = []
+        e = {"published": dts[-1] if dts else TODAY, "modified": dts[0] if dts else TODAY, "hash": h}
+    elif e["hash"] != h: e = {"published": e["published"], "modified": TODAY, "hash": h}
+    MANIFEST[path or "home"] = e
+    content = content.replace("@@PUB@@", e["published"]).replace("@@MOD@@", e["modified"])
     d = os.path.join(ROOT, path)
     os.makedirs(d, exist_ok=True) if path else None
     with open(os.path.join(d, "index.html") if path else os.path.join(ROOT,"index.html"), "w", encoding="utf-8") as f:
         f.write(content)
-    PAGES.append((path, prio))
+    PAGES.append((path, prio, e["modified"]))
+
+def plain(t):
+    """Diacritics-free spelling, because most people search without them (Sri Suktam, not Śrī Sūktam)."""
+    t = unicodedata.normalize("NFD", t.replace("ṁ","m").replace("ṃ","m"))
+    return "".join(c for c in t if not unicodedata.combining(c))
+
+def opening(v, n=4):
+    first = v["iast"].replace("<br>"," ").replace("-"," ").replace(","," ").replace(";"," ").replace("."," ")
+    return " ".join(plain(first).split()[:n]).title()
 
 # ---------------------------------------------------------------- pages
 def lab(v): return v.get("label") or f"Verse {v['n']}"
 def page_home():
     v = KVERSES[-1]
-    t = "Lakshmi Stuti – Śrī Sūktam & Kanakadhāra Stotram Meaning in English"
-    d = "Verse-by-verse English commentary on the Śrī Sūktam and Kanakadhāra Stotram to Goddess Lakshmi (Laxmi): Devanāgarī, transliteration, word meanings and practice."
+    t = "Lakshmi Stuti: Sri Suktam & Kanakadhara Stotram Meaning"
+    d = "Verse-by-verse English meaning of the Sri Suktam and Kanakadhara Stotram to Goddess Lakshmi (Laxmi): Sanskrit text, word meanings and reflection."
     ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","inGroup":None,"author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
     ld.pop("inGroup")
     body = head(t,d,"",ld) + INTRO_HTML + nav("home") + f'''
@@ -879,8 +913,8 @@ def page_home():
     write("", body, "1.0")
 
 def page_sri():
-    t = "Śrī Sūktam Meaning in English – Verse by Verse Commentary"
-    d = "Verse-by-verse English meaning of the Śrī Sūktam, the Vedic hymn to Goddess Lakshmi, with Devanāgarī, transliteration and word-by-word explanation."
+    t = "Sri Suktam Meaning in English – Verse by Verse"
+    d = "Sri Suktam (Shri Suktam) meaning in English: all 16 verses of the Vedic hymn to Goddess Lakshmi with Sanskrit text and word-by-word explanation."
     parts = [("Śrī Sūktam","sri-suktam/")]
     rows = ""
     for v in VERSES:
@@ -890,7 +924,7 @@ def page_sri():
     body = head(t,d,"sri-suktam/",bc_ld(parts)) + nav("sri") + f'''
 <main class="wrap">{crumbs([("Śrī Sūktam",None)])}
 <h1>Śrī Sūktam – verse by verse</h1>
-<p class="lede">The Śrī Sūktam is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.</p>
+<p class="lede">The Śrī Sūktam (also written Sri Suktam, Shri Suktam or Shree Suktam) is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.</p>
 <p>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears.</p>
 <p><small>A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
 <div class="grid">{rows}</div>
@@ -899,15 +933,15 @@ def page_sri():
     write("sri-suktam", body, "0.9")
 
 def page_kana():
-    t = "Kanakadhāra Stotram – Meaning, Story and Background in English"
-    d = "The Kanakadhāra Stotram, the hymn to Goddess Lakshmi traditionally attributed to Ādi Śaṅkarācārya: the story of the poor woman’s gooseberry, what “stream of gold” means, and a reflection to begin with."
+    t = "Kanakadhara Stotram Meaning, Story and Verses in English"
+    d = "Kanakadhara Stotram by Adi Shankaracharya: the story of the poor woman’s gooseberry, what “stream of gold” means, and verse-by-verse meaning in English."
     parts = [("Kanakadhāra Stotram","kanakadhara/")]
-    ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – The Story Before the First Verse","author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en","mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – The Story Before the First Verse","author":{"@type":"Person","name":AUTHOR},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     krows = "".join(f'<a class="tile" href="/kanakadhara/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>' for v in KVERSES)
     body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + f'''
 <main class="wrap">{crumbs([("Kanakadhāra Stotram",None)])}
 <h1>Kanakadhāra Stotram</h1>
-<p class="lede">Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi, read slowly, verse by verse.</p>
+<p class="lede">Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi (the Kanakadhara Stotram, also written Kanakdhara or Kanaka Dhara Stotra), read slowly, verse by verse.</p>
 <p class="crumbs">By {AUTHOR}</p>
 <p><a class="btn" href="/kanakadhara/verse-1/">Start with Verse 1</a><a class="btn ghost" href="#story">Read the story first</a></p>
 <h2 id="verses">Verses</h2>
@@ -961,9 +995,17 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     nxt = lst[i+1] if i+1 < len(lst) else None
     path = f'{base}/{v["slug"]}'
     parts = [(sname,base+"/"),(lab(v),None)]
+    sp = plain(sname).replace("Sri Suktam","Sri Suktam").replace("Kanakadhara Stotram","Kanakadhara Stotram")
+    tail = v["sub"].split(" – ")[1] if " – " in v["sub"] else ""
+    v = dict(v)
+    v["title"] = f"{sp} Verse {v['n']} Meaning – {opening(v,3)}"
+    d1 = f"{sp} Verse {v['n']} ({opening(v,4)}): {plain(tail)}."
+    for extra in (" Word-by-word meaning, English translation and a short meditation."," Word-by-word meaning and English translation."," Meaning in English."):
+        if len(d1 + extra) <= 158: d1 += extra; break
+    v["desc"] = d1
     art = {"@context":"https://schema.org","@type":"Article","headline":v["title"],"description":v["desc"],
-           "author":{"@type":"Person","name":AUTHOR},"datePublished":TODAY,"dateModified":TODAY,"inLanguage":"en",
-           "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR}}
+           "author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,
+           "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     words = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p class="m">{E(c)}</p><p>{d}</p></div>' for a,b,c,d in v["words"])
     ins = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in v["insights"])
     med = "".join(f"<li>{E(x)}</li>" for x in v["meditation"])
@@ -975,7 +1017,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     p = f'<a href="/{base}/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
     n = f'<a href="/{base}/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/{base}/">All verses →</a>' if v["n"]>=total else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
     other = ("Kanakadhāra Stotram","kanakadhara") if base=="sri-suktam" else ("Śrī Sūktam","sri-suktam")
-    items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x is v else ""}><b>{x["n"]}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
+    items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x["slug"]==v["slug"] else ""}><b>{x["n"]}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
     vnav = f'<aside class="vnav" aria-label="Verses"><p class="vn-title"><a href="/{base}/">{sname}</a></p><ol>{items}</ol><p class="vn-other"><a href="/{other[1]}/">{other[0]} →</a></p></aside>'
     vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView&&innerWidth<1100){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
@@ -1004,8 +1046,8 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     write(path, body, "0.9")
 
 def page_yantra():
-    t = "Śrī Yantra Meaning – Layers and Symbolism of the Lakshmi Yantra"
-    d = "What the Śrī Yantra is and what each layer means: the enclosure, circle, lotus petals, nine triangles and the central point."
+    t = "Sri Yantra Meaning – Layers and Symbolism"
+    d = "What the Sri Yantra (Lakshmi Yantra) is and what each layer means: the square enclosure, circle, lotus petals, nine triangles and the central point."
     parts = [("Śrī Yantra","sri-yantra/")]
     body = head(t,d,"sri-yantra/",bc_ld(parts)) + nav("") + f'''
 <main class="wrap">{crumbs([("Śrī Yantra",None)])}
@@ -1030,8 +1072,8 @@ def page_yantra():
     write("sri-yantra", body, "0.7")
 
 def page_gl():
-    t = "Glossary of Sanskrit Terms – Śrī Sūktam & Lakshmi Stotras"
-    d = "Simple meanings of Sanskrit words used in the Śrī Sūktam and Kanakadhāra Stotram commentary: Hiraṇya, Hariṇī, Lakshmi, Jātavedas and more."
+    t = "Sanskrit Glossary – Sri Suktam & Lakshmi Stotras"
+    d = "Simple meanings of Sanskrit words in the Sri Suktam and Kanakadhara Stotram: Hiranya, Harini, Lakshmi, Jatavedas, Apanga and more."
     parts = [("Glossary","glossary/")]
     dl = "".join(f'<dt>{a} <span style="font-family:var(--serif);font-weight:400;color:var(--muted)">· {E(b)}</span></dt><dd>{E(c)} <a href="/{u}">See verse →</a></dd>' for a,b,c,u in GLOSSARY)
     body = head(t,d,"glossary/",bc_ld(parts)) + nav("gl") + f'''
@@ -1114,7 +1156,7 @@ def assets():
     open(os.path.join(ROOT,"ads.txt"),"w").write("# Add the AdSense line here after approval, e.g.\n# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0\n")
 
 def sitemap():
-    u = "".join(f'<url><loc>{SITE}/{p + "/" if p else ""}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>' for p,pr in PAGES)
+    u = "".join(f'<url><loc>{SITE}/{p + "/" if p else ""}</loc><lastmod>{lm}</lastmod><priority>{pr}</priority></url>' for p,pr,lm in PAGES)
     open(os.path.join(ROOT,"sitemap.xml"),"w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{u}</urlset>\n')
 
 if __name__ == "__main__":
@@ -1122,4 +1164,5 @@ if __name__ == "__main__":
     for i in range(len(VERSES)): page_verse(i)
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")

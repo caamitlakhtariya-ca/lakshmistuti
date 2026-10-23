@@ -1,0 +1,132 @@
+{
+ "home": {
+  "published": "2026-10-11",
+  "modified": "2026-10-23",
+  "hash": "5c2ef7907966"
+ },
+ "sri-suktam": {
+  "published": "2026-10-11",
+  "modified": "2026-10-12",
+  "hash": "93aca78c2bdb"
+ },
+ "kanakadhara": {
+  "published": "2026-10-11",
+  "modified": "2026-10-23",
+  "hash": "da2a7fc12272"
+ },
+ "sri-suktam/verse-1": {
+  "published": "2026-10-11",
+  "modified": "2026-10-23",
+  "hash": "6e17d40c9859"
+ },
+ "sri-suktam/verse-2": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "97cc48f57c0d"
+ },
+ "sri-suktam/verse-3": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "905031a19282"
+ },
+ "sri-suktam/verse-4": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "c4df1d396c6e"
+ },
+ "sri-suktam/verse-5": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "7044615ade5d"
+ },
+ "sri-suktam/verse-6": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "26a42bd0e0ee"
+ },
+ "sri-suktam/verse-7": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "3252cbf28d12"
+ },
+ "sri-suktam/verse-8": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "81516996af8f"
+ },
+ "sri-suktam/verse-9": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "95252e080e96"
+ },
+ "sri-suktam/verse-10": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "f7d21a3fbd61"
+ },
+ "sri-suktam/verse-11": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "1bc52e2ae610"
+ },
+ "sri-suktam/verse-12": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "88216ae420db"
+ },
+ "sri-suktam/verse-13": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "e2720483a6be"
+ },
+ "sri-suktam/verse-14": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "0f8ad0cb0956"
+ },
+ "sri-suktam/verse-15": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "ee99b52eb129"
+ },
+ "sri-suktam/verse-16": {
+  "published": "2026-10-12",
+  "modified": "2026-10-23",
+  "hash": "ea538868a8db"
+ },
+ "kanakadhara/verse-1": {
+  "published": "2026-10-13",
+  "modified": "2026-10-23",
+  "hash": "60d88b5990b9"
+ },
+ "kanakadhara/verse-2": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "964516770908"
+ },
+ "sri-yantra": {
+  "published": "2026-10-11",
+  "modified": "2026-10-12",
+  "hash": "e9d09ebe77b1"
+ },
+ "glossary": {
+  "published": "2026-10-11",
+  "modified": "2026-10-23",
+  "hash": "a422f148f30d"
+ },
+ "about": {
+  "published": "2026-10-11",
+  "modified": "2026-10-12",
+  "hash": "020b84835f7e"
+ },
+ "contact": {
+  "published": "2026-10-11",
+  "modified": "2026-10-12",
+  "hash": "e319796a9359"
+ },
+ "privacy": {
+  "published": "2026-10-11",
+  "modified": "2026-10-12",
+  "hash": "827dbb7c3cdc"
+ }
+}
