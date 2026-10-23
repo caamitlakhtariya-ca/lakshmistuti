@@ -2,12 +2,12 @@
  "home": {
   "published": "2026-10-11",
   "modified": "2026-10-23",
-  "hash": "663f326e8ca4"
+  "hash": "963df007da4e"
  },
  "sri-suktam": {
   "published": "2026-10-11",
-  "modified": "2026-10-23",
-  "hash": "6606ee6b5af4"
+  "modified": "2026-10-12",
+  "hash": "93aca78c2bdb"
  },
  "kanakadhara": {
   "published": "2026-10-11",
@@ -116,8 +116,8 @@
  },
  "about": {
   "published": "2026-10-11",
-  "modified": "2026-10-23",
-  "hash": "f0fb5e3fba3e"
+  "modified": "2026-10-12",
+  "hash": "020b84835f7e"
  },
  "contact": {
   "published": "2026-10-11",
@@ -132,7 +132,7 @@
  "mahalakshmi-ashtakam": {
   "published": "2026-10-23",
   "modified": "2026-10-23",
-  "hash": "e8e7c45afd8b"
+  "hash": "0ce4e6579060"
  },
  "mahalakshmi-ashtakam/verse-1": {
   "published": "2026-10-23",

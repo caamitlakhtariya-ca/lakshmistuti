@@ -1088,11 +1088,6 @@ def opening(v, n=4):
 
 # ---------------------------------------------------------------- pages
 def lab(v): return v.get("label") or f"Verse {v['n']}"
-
-FIG = """<figure class="deity"><img src="/assets/lakshmi-825.webp" srcset="/assets/lakshmi-480.webp 480w, /assets/lakshmi-825.webp 825w" sizes="(max-width:520px) 72vw, 340px" width="825" height="1024" loading="lazy" decoding="async" alt="Illustration of Goddess Lakshmi seated on a pink lotus, with two white elephants pouring water from golden pots and gold coins falling from her hand"><figcaption>Goddess Lakshmi with the two elephants (Gaja-Lakshmi). AI-generated illustration.</figcaption></figure>"""
-
-FIG2 = """<figure class="deity"><img src="/assets/mahalakshmi-825.webp" srcset="/assets/mahalakshmi-480.webp 480w, /assets/mahalakshmi-825.webp 825w" sizes="(max-width:520px) 72vw, 340px" width="825" height="1024" loading="lazy" decoding="async" alt="Illustration of Goddess Mahalakshmi seated on a lotus in white garments, holding a conch, a discus and a mace, with one hand raised in blessing"><figcaption>Mahalakshmi as the hymn describes her: lotus seat, white garments, conch, discus and mace. AI-generated illustration.</figcaption></figure>"""
-
 def page_home():
     v = KVERSES[-1]
     t = "Lakshmi Stuti: Sri Suktam & Kanakadhara Stotram Meaning"
@@ -1112,7 +1107,6 @@ def page_home():
 <h2>Latest verse</h2>
 <div class="verse"><p class="label">Kanakadhāra Stotram · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
 <p>{E(v["closing"] or v["meaning"])} <a href="/kanakadhara/{v["slug"]}/">Read the full commentary →</a></p>
-{FIG}
 <section class="garden">
 <h2>A sacred garden, one seed at a time</h2>
 <p>Think of your journey into the Śrī Sūktam like planting seeds in a sacred garden. Each verse is a seed. By carefully understanding and meditating upon one verse daily, you gently plant and nurture it within your heart. Slowly but surely, this practice blossoms into an abundant, radiant inner garden of clarity, devotion and wisdom.</p>
@@ -1155,7 +1149,6 @@ def page_sri():
 <p>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears.</p>
 <p><small>A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
 <div class="grid">{rows}</div>
-{FIG}
 {ad("index")}
 </main>''' + foot()
     write("sri-suktam", body, "0.9")
@@ -1240,7 +1233,6 @@ def page_mla():
 <div class="chant"><h3>देवनागरी</h3><div id="deva-text">{dev}</div></div>
 <div class="chant"><h3>Transliteration (IAST)</h3>{ias}</div>
 <p><small>Verses 9–11 are the phalaśruti, the closing verses on the fruit of reciting the hymn. Many people chant only the first eight. Editions differ in the wording of a few words; where they do, the verse page says so.</small></p>
-{FIG2}
 <h2 id="verses">Meaning, verse by verse</h2>
 <div class="grid">{rows}</div>
 <h2>About the hymn</h2>
@@ -1363,7 +1355,6 @@ def page_about():
 <p><strong>{AUTHOR}</strong> is a Chartered Accountant based in Ahmedabad, India, and a lifelong student of the devotional tradition. The commentary reflects his own reading and reflections on each verse.</p>
 <h2>AI assistance</h2>
 <p>This commentary is prepared collaboratively with an AI assistant (Claude, by Anthropic). The AI helps with drafting, structuring and cross-checking the word-by-word explanations. The author directs the interpretation, reviews every verse and decides what is published. Because AI can make mistakes, and because Sanskrit admits more than one reading, this is a study aid and not a substitute for a teacher or the traditional commentaries. Corrections are welcome through the <a href="/contact/">contact page</a>.</p>
-<p>The illustrations of Goddess Lakshmi on the home, Śrī Sūktam and Mahālakṣmī Aṣṭakam pages are AI-generated, made for this site, and is not a photograph or a copy of any particular painting.</p>
 <h2>How the content is organised</h2>
 <p>Every verse page has the Devanāgarī text, a transliteration, a word-by-word meaning, the full meaning, deeper insights, a short meditation and a reflection for the day. Verses are released one at a time.</p>
 <h2>Credits</h2>
