@@ -2,7 +2,7 @@
  "home": {
   "published": "2026-10-11",
   "modified": "2026-10-23",
-  "hash": "5c2ef7907966"
+  "hash": "963df007da4e"
  },
  "sri-suktam": {
   "published": "2026-10-11",
@@ -112,7 +112,7 @@
  "glossary": {
   "published": "2026-10-11",
   "modified": "2026-10-23",
-  "hash": "a422f148f30d"
+  "hash": "02260bd2ca5a"
  },
  "about": {
   "published": "2026-10-11",
@@ -128,5 +128,55 @@
   "published": "2026-10-11",
   "modified": "2026-10-12",
   "hash": "827dbb7c3cdc"
+ },
+ "mahalakshmi-ashtakam": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "0ce4e6579060"
+ },
+ "mahalakshmi-ashtakam/verse-1": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "a903ac3545a1"
+ },
+ "mahalakshmi-ashtakam/verse-2": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "690c30db3030"
+ },
+ "mahalakshmi-ashtakam/verse-3": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "30f644f145a9"
+ },
+ "mahalakshmi-ashtakam/verse-4": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "1be76c117e53"
+ },
+ "mahalakshmi-ashtakam/verse-5": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "78e01a086a3f"
+ },
+ "mahalakshmi-ashtakam/verse-6": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "28be6718f01c"
+ },
+ "mahalakshmi-ashtakam/verse-7": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "f0c2460e60f4"
+ },
+ "mahalakshmi-ashtakam/verse-8": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "2a165974f3af"
+ },
+ "mahalakshmi-ashtakam/verse-9": {
+  "published": "2026-10-23",
+  "modified": "2026-10-23",
+  "hash": "d1807bb7d8a5"
  }
 }

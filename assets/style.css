@@ -136,3 +136,13 @@ html.intro body{overflow:hidden}
   .vnav a b{min-width:1.4em}
 }
 @media print{.vnav{display:none}}
+
+/* chant block */
+.chant{background:var(--soft);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:10px;padding:6px 18px 10px;margin:16px 0;text-align:center}
+.chant h3{margin:.8em 0 .2em}
+.ch-dv{font-family:var(--deva);font-size:1.4rem;line-height:1.9;color:var(--maroon);margin:16px 0}
+.ch-ia{font-style:italic;color:var(--ink);line-height:1.8;margin:16px 0}
+.ch-n{font-family:var(--sans);font-size:.8em;font-style:normal;color:var(--gold)}
+@media print{.chant{border:0;background:none;padding:0}.btn,nav.main,header.site,footer.site,.ad-slot{display:none}}
+@media (max-width:520px){.ch-dv{font-size:1.25rem}}
+h2[id]{scroll-margin-top:170px}@media (min-width:700px){h2[id]{scroll-margin-top:110px}}

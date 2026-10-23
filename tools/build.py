@@ -3,7 +3,7 @@
 Run:  python3 tools/build.py      (from the repo root)
 Add a verse by appending to VERSES below, then rebuild.
 """
-import os, json, html, hashlib, unicodedata, subprocess
+import os, re, json, html, hashlib, unicodedata, subprocess
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -618,7 +618,227 @@ KVERSES = [
 ]
 
 
+MLA_D = "This meditation is a devotional practice for attention and reflection; it does not promise a supernatural result or guarantee material wealth."
+
+MVERSES = [
+ dict(n=1, slug="verse-1",
+  deva="नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते।<br>शङ्खचक्रगदाहस्ते महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Namas te 'stu mahāmāye śrīpīṭhe sura-pūjite,<br>Śaṅkha-cakra-gadā-haste mahālakṣmi namo 'stu te.",
+  sub="Namas te ’stu Mahāmāye – the first bow",
+  words=[
+   ("नमः ते अस्तु","Namaḥ te astu","Salutation to you; may there be a bow to you","<em>Namaḥ</em> is a bow or salutation; <em>te</em> is “to you”; <em>astu</em> is “let it be”."),
+   ("महामाये","Mahāmāye","O Great Māyā, great divine power","<em>Māyā</em> is the creative power by which the world appears. Here it is a title of honour, not a charge of deception."),
+   ("श्रीपीठे","Śrīpīṭhe","O you who are seated at Śrīpīṭha, the seat of Śrī","<em>Pīṭha</em> is a seat or sacred centre. Tradition links this seat with Kolhapur; the phrase can also be read simply as “seat of prosperity”."),
+   ("सुरपूजिते","Sura-pūjite","Worshipped by the gods","<em>Sura</em> is a god; <em>pūjita</em> is worshipped."),
+   ("शङ्खचक्रगदाहस्ते","Śaṅkha-cakra-gadā-haste","Holding conch, discus and mace in her hands","<em>Śaṅkha</em> is the conch, <em>cakra</em> the discus, <em>gadā</em> the mace, <em>hasta</em> the hand."),
+   ("महालक्ष्मि","Mahālakṣmi","O Mahalakshmi","The vocative of Mahālakṣmī, “the Great Lakshmi”."),
+   ("नमः अस्तु ते","Namo ’stu te","My salutations to you","The refrain that closes every verse of the hymn."),
+  ],
+  meaning="Salutations to you, O Mahāmāyā, great divine power, seated at Śrīpīṭha and worshipped by the gods; you who hold the conch, discus and mace in your hands. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","The hymn opens with a plain bow. Before asking for anything, the poet greets the Goddess with three titles: the great creative power, the one seated at the sacred seat of Śrī, and the one whom even the gods worship. Reverence comes first; everything else follows from it."),
+   ("Who is speaking","Tradition ascribes this hymn to Indra, king of the gods, and places it in the Padma Purāṇa. Accounts of the occasion differ, so it is safer to hold only the broad idea: even a king of the gods approaches Lakshmi with a bow."),
+   ("Conch, discus and mace","These are the familiar emblems of Lord Vishnu. Here the Goddess carries them herself. The picture is of a Lakshmi who is not only gentle and generous but also powerful. That is a useful balance to keep in mind through the rest of the hymn."),
+   ("Mahāmāyā is not “illusion” only","In popular speech <em>māyā</em> often means illusion. In devotional Sanskrit it also means the creative power through which the world is manifest. Read that way, <em>mahāmāyā</em> addresses Lakshmi as the great power behind creation."),
+  ],
+  meditation=["Minute 1: sit quietly and let the breath settle.","Minute 2: recite the first line slowly, feeling the bow in <em>namaḥ</em>.".replace("<em>","").replace("</em>",""),"Minute 3: picture the Goddess holding the conch, discus and mace, calm and capable.","Minute 4: offer one silent thanks for something you already have."],
+  reflection="Before I ask for anything today, can I begin by acknowledging what I have already received? What would change in my day if I started with a bow instead of a request?",
+  closing="The first verse is a salutation and nothing more, and that is its strength. A hymn that begins with reverence trains the mind to receive before it asks. "+MLA_D),
+
+ dict(n=2, slug="verse-2",
+  deva="नमस्ते गरुडारूढे कोलासुरभयङ्करि।<br>सर्वपापहरे देवि महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Namas te garuḍārūḍhe kolāsura-bhayaṅkari,<br>Sarva-pāpa-hare devi mahālakṣmi namo 'stu te.",
+  sub="Garuḍārūḍhe – she who rides Garuḍa and removes fear and fault",
+  words=[
+   ("नमः ते","Namaḥ te","Salutation to you","As in the first verse."),
+   ("गरुडारूढे","Garuḍārūḍhe","O you who are mounted on Garuḍa","<em>Garuḍa</em> is the eagle-like king of birds, the traditional mount of Lord Vishnu; <em>ārūḍha</em> is mounted or seated."),
+   ("कोलासुरभयङ्करि","Kolāsura-bhayaṅkari","O terror of the demon Kolāsura","<em>Kolāsura</em> is the demon Kola of the Kolhapur tradition; <em>bhayaṅkari</em> is she who causes fear."),
+   ("सर्वपापहरे","Sarva-pāpa-hare","O remover of all sins and faults","<em>Sarva</em> is all; <em>pāpa</em> is sin or fault; <em>harā</em> is one who takes away."),
+   ("देवि","Devi","O Goddess","A respectful vocative."),
+   ("महालक्ष्मि","Mahālakṣmi","O Mahalakshmi","The refrain name."),
+  ],
+  meaning="Salutations to you, O Goddess who ride on Garuḍa and are the terror of the demon Kolāsura, remover of all sins. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","The second verse shows two sides of the Goddess: she is mounted on Garuḍa and strikes fear into a demon, yet she is also the one who removes the faults of her devotees. Power and compassion are named in the same breath."),
+   ("Kolāsura and Kolhapur","Local tradition tells that Mahalakshmi destroyed the demon Kolāsura at Kolhapur, and the city’s great Mahalakshmi temple is linked with this legend. Different tellings vary in detail, so treat the story as tradition rather than record."),
+   ("A reflection on inner “demons”","Many readers take the demon as a symbol of whatever overwhelms us from inside: fear, greed or carelessness. That is a reading we bring to the verse, not something the verse states. It is a helpful way to make an old legend speak to daily life."),
+  ],
+  meditation=["Minute 1: breathe slowly and settle.","Minute 2: recite the verse once, paying attention to the rhythm of <em>garuḍārūḍhe</em>.".replace("<em>","").replace("</em>",""),"Minute 3: name one fear or fault you would like to be freed from, without judging yourself.","Minute 4: take one small, practical step toward it today."],
+  reflection="What is the one fear or habit that most holds back my prosperity, in the widest sense of that word? What small step could I take toward it today?",
+  closing="Fear and fault are two of the quiet drains on any life. This verse asks the Goddess to deal with both. "+MLA_D),
+
+ dict(n=3, slug="verse-3",
+  deva="सर्वज्ञे सर्ववरदे सर्वदुष्टभयङ्करि।<br>सर्वदुःखहरे देवि महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Sarvajñe sarva-varade sarva-duṣṭa-bhayaṅkari,<br>Sarva-duḥkha-hare devi mahālakṣmi namo 'stu te.",
+  sub="Sarvajñe – the all-knowing, boon-giving mother",
+  words=[
+   ("सर्वज्ञे","Sarvajñe","O all-knowing one","<em>Sarva</em> is all; <em>jña</em> is one who knows."),
+   ("सर्ववरदे","Sarva-varade","O giver of all boons","<em>Vara</em> is a boon or blessing; <em>da</em> is giver."),
+   ("सर्वदुष्टभयङ्करि","Sarva-duṣṭa-bhayaṅkari","O terror of all wicked beings","<em>Duṣṭa</em> is one of evil intent; <em>bhayaṅkari</em> is one who causes fear."),
+   ("सर्वदुःखहरे","Sarva-duḥkha-hare","O remover of all sorrows","<em>Duḥkha</em> is sorrow, pain, suffering."),
+   ("देवि महालक्ष्मि","Devi mahālakṣmi","O Goddess Mahalakshmi","Vocatives."),
+  ],
+  meaning="Salutations to you, O all-knowing one, giver of all boons, terror of all wicked beings and remover of all sorrows. O Goddess Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","This verse is built on the word <em>sarva</em>, “all”, repeated four times. She knows all, gives all boons, frightens all evil and removes all sorrow. The poet is making the Goddess’s reach complete."),
+   ("A chain of reasoning","Notice the order. Because she is all-knowing, she knows what we truly need. Because she grants boons, she can give it. Because she frightens the wicked, we are protected. Because she removes sorrow, we are comforted. The four titles can be read as one logical chain."),
+   ("Why “all-knowing” comes first","We usually pray for outcomes. The verse begins with knowledge: that she knows. A reader may find rest in that: the prayer does not need to be perfectly worded, because it is addressed to someone who already understands."),
+  ],
+  meditation=["Minute 1: sit still and breathe.","Minute 2: recite the verse slowly; on each <em>sarva</em> pause for one breath.".replace("<em>","").replace("</em>",""),"Minute 3: bring to mind one worry and hand it over in your mind, without asking for a specific outcome.","Minute 4: rest in silence."],
+  reflection="Is there a worry I keep rehearsing that I could simply place before the one who is said to know all? What would I do differently if I trusted that I had been understood?",
+  closing="Four times the verse says “all”, and each time it widens the circle of care. It is a reminder that a prayer can be an act of letting go. "+MLA_D),
+
+ dict(n=4, slug="verse-4",
+  deva="सिद्धिबुद्धिप्रदे देवि भुक्तिमुक्तिप्रदायिनि।<br>मन्त्रमूर्ते सदा देवि महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Siddhi-buddhi-prade devi bhukti-mukti-pradāyini,<br>Mantra-mūrte sadā devi mahālakṣmi namo 'stu te.",
+  sub="Siddhi, buddhi, bhukti, mukti – success and wisdom, enjoyment and freedom",
+  words=[
+   ("सिद्धिबुद्धिप्रदे","Siddhi-buddhi-prade","O giver of accomplishment and wisdom","<em>Siddhi</em> is accomplishment or success; <em>buddhi</em> is intellect, discernment; <em>prada</em> is giver."),
+   ("देवि","Devi","O Goddess","Vocative."),
+   ("भुक्तिमुक्तिप्रदायिनि","Bhukti-mukti-pradāyini","O giver of worldly enjoyment and liberation","<em>Bhukti</em> is enjoyment of the world, material well-being; <em>mukti</em> is liberation; <em>pradāyinī</em> is giver."),
+   ("मन्त्रमूर्ते","Mantra-mūrte","O you whose form is mantra","<em>Mūrti</em> is form or embodiment. The Goddess is seen as present in sacred sound."),
+   ("सदा","Sadā","Always","At all times."),
+   ("महालक्ष्मि","Mahālakṣmi","O Mahalakshmi","The refrain."),
+  ],
+  meaning="Salutations to you, O Goddess, giver of accomplishment and wisdom, giver of worldly well-being and of liberation, whose very form is mantra. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","Two pairs of gifts are named: success with wisdom, and enjoyment with liberation. Notice that success is paired with wisdom, and enjoyment with freedom. The verse does not set one pair against the other."),
+   ("Both aims of life","Indian thought speaks of <em>bhukti</em>, a good life in the world, and <em>mukti</em>, freedom from what binds us. Here the Goddess gives both. It is a quietly balanced view: material well-being is not despised, and it is not the final goal."),
+   ("Mantra-mūrti: sound as presence","To call the Goddess “whose form is mantra” is to say that when her name or verse is recited, she is present in the sound. This is the devotional logic behind chanting, and it explains why many readers value pronouncing the verses with care."),
+  ],
+  meditation=["Minute 1: settle your posture and breath.","Minute 2: recite the verse once, slowly and clearly.","Minute 3: think of one area where you want success and ask what wisdom it needs.","Minute 4: sit quietly with the sound of the verse still in your mind."],
+  reflection="Where am I asking for success without asking for wisdom? What would a good life, not only a successful one, look like for me?",
+  closing="The verse pairs every gift with its companion. That is perhaps its best advice: look for success that comes with wisdom, and enjoyment that does not forget freedom. "+MLA_D),
+
+ dict(n=5, slug="verse-5",
+  deva="आद्यन्तरहिते देवि आद्यशक्तिमहेश्वरि।<br>योगजे योगसम्भूते महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Ādyanta-rahite devi ādya-śakti-maheśvari,<br>Yogaje yoga-sambhūte mahālakṣmi namo 'stu te.",
+  sub="Ādyanta-rahite – without beginning and without end",
+  words=[
+   ("आद्यन्तरहिते","Ādyanta-rahite","O you who are without beginning or end","<em>Ādi</em> is beginning; <em>anta</em> is end; <em>rahita</em> is without."),
+   ("आद्यशक्ति","Ādya-śakti","Primal power","<em>Ādya</em> is first, primal; <em>śakti</em> is power or energy."),
+   ("महेश्वरि","Maheśvari","O great sovereign","<em>Īśvarī</em> is a female ruler; <em>mahā</em> is great."),
+   ("योगजे","Yogaje","O you who are born of yoga","Born of, or known through, yoga: union and disciplined contemplation. Some editions vary this word."),
+   ("योगसम्भूते","Yoga-sambhūte","O you who arise from yoga","<em>Sambhūta</em> is arisen, come into being."),
+   ("महालक्ष्मि","Mahālakṣmi","O Mahalakshmi","The refrain."),
+  ],
+  meaning="Salutations to you, O Goddess without beginning or end, primal power and great sovereign, born of and arising from yoga. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","With this verse the hymn moves from stories to philosophy. The Goddess is without beginning or end, the first power, the supreme sovereign, and she is known in the depths of yoga."),
+   ("Lakshmi beyond wealth","Many people meet Lakshmi only as the goddess of money. This verse shows a larger picture: Mahalakshmi as the primal power behind all that exists. Wealth is one of her gifts; it is not her whole nature."),
+   ("Yoga as a way of knowing","The verse says she arises from yoga. Readers differ on exactly how to read this; one natural way is that she is realised through steady, disciplined inner attention rather than through argument. It invites quieter forms of worship."),
+  ],
+  meditation=["Minute 1: close your eyes and breathe.","Minute 2: recite the verse and let “without beginning or end” stay with you.","Minute 3: imagine a presence larger than your worries.","Minute 4: bring that wider view back to one thing you are concerned about today."],
+  reflection="When I think of Lakshmi, do I think only of money? What changes if I think of her as the source of all well-being?",
+  closing="A hymn that begins with a bow and ends with the supreme power has travelled a long way in five verses. It asks us to widen our idea of what we are praying to. "+MLA_D),
+
+ dict(n=6, slug="verse-6",
+  deva="स्थूलसूक्ष्ममहारौद्रे महाशक्तिमहोदरे।<br>महापापहरे देवि महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Sthūla-sūkṣma-mahā-raudre mahā-śakti-mahodare,<br>Mahā-pāpa-hare devi mahālakṣmi namo 'stu te.",
+  sub="Sthūla-sūkṣma – gross and subtle, fierce and all-containing",
+  words=[
+   ("स्थूलसूक्ष्ममहारौद्रे","Sthūla-sūkṣma-mahā-raudre","O you who are gross, subtle and greatly fierce","<em>Sthūla</em> is gross or visible; <em>sūkṣma</em> is subtle; <em>raudra</em> is fierce, terrible."),
+   ("महाशक्ति","Mahā-śakti","Great power","<em>Śakti</em> is power or energy."),
+   ("महोदरे","Mahodare","O you of great womb, who contain all","Literally “of the great belly”: she holds the whole universe within her. Some editions read <em>mahodaye</em>, “of great rise or prosperity”."),
+   ("महापापहरे","Mahā-pāpa-hare","O remover of great sins","<em>Mahā</em> is great; <em>pāpa</em> is sin or fault; <em>hara</em> is remover."),
+   ("देवि महालक्ष्मि","Devi mahālakṣmi","O Goddess Mahalakshmi","Vocatives."),
+  ],
+  meaning="Salutations to you, O Goddess who are both gross and subtle and also greatly fierce, great power who contain all within you, remover of the greatest sins. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","The verse piles up contrasts: visible and invisible, and fierce as well as nurturing. The point is that the Goddess is not one thing. She is the whole range, from the form we can see to the energy we cannot."),
+   ("Gentle and fierce","Lakshmi is usually shown smiling, with coins falling from her hand. This verse reminds us that the same power can be fierce toward what harms. Taking both seriously keeps devotion from becoming sentimental."),
+   ("A note on the variant reading","Editions differ on the third pāda: <em>mahodare</em> (of great belly, containing all) and <em>mahodaye</em> (of great prosperity or rise). Either way the idea is greatness and fullness. We follow the more widely printed <em>mahodare</em>."),
+  ],
+  meditation=["Minute 1: still the body.","Minute 2: recite the verse slowly.","Minute 3: notice both the visible and the unseen in your day: what you can count, and what you cannot.","Minute 4: sit with the thought that both are part of one life."],
+  reflection="What in my life is measurable, and what matters just as much but cannot be measured? Am I giving the second kind its share of attention?",
+  closing="Gross and subtle, gentle and fierce: the verse refuses to shrink the Goddess to one picture. That is a good habit for a reader, too. "+MLA_D),
+
+ dict(n=7, slug="verse-7",
+  deva="पद्मासनस्थिते देवि परब्रह्मस्वरूपिणि।<br>परमेशि जगन्मातर्महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Padmāsana-sthite devi para-brahma-svarūpiṇi,<br>Parameśi jagan-mātar mahālakṣmi namo 'stu te.",
+  sub="Padmāsana-sthite – seated on the lotus, mother of the world",
+  words=[
+   ("पद्मासनस्थिते","Padmāsana-sthite","O you who are seated on a lotus seat","<em>Padma</em> is lotus; <em>āsana</em> is seat; <em>sthita</em> is seated."),
+   ("परब्रह्मस्वरूपिणि","Para-brahma-svarūpiṇi","O you whose nature is the Supreme Brahman","<em>Para-brahma</em> is the Supreme Reality; <em>svarūpa</em> is own form or nature."),
+   ("परमेशि","Parameśi","O Supreme Sovereign","<em>Parama</em> is supreme; <em>īśī</em> is a ruler, a feminine form."),
+   ("जगन्मातः","Jagan-mātaḥ","O Mother of the world","<em>Jagat</em> is the world; <em>mātṛ</em> is mother."),
+   ("महालक्ष्मि","Mahālakṣmi","O Mahalakshmi","The refrain."),
+  ],
+  meaning="Salutations to you, O Goddess seated on the lotus, whose very nature is the Supreme Brahman, supreme sovereign and mother of the world. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","Two images come together: the Goddess on her lotus seat, and the Goddess as the Supreme Reality itself. Lakshmi is not only a figure in a story; here she is named as the ultimate."),
+   ("The lotus seat","The lotus grows in mud yet stays clean, which is why it has long stood for purity and for being at ease in the world. To place the Goddess on a lotus is to say that prosperity and purity belong together."),
+   ("Mother of the world","<em>Jagan-mātā</em> is a warm title. It means that the Supreme is also a mother: someone from whom we are not separate and to whom we can speak directly. Many devotees find this the most approachable image in the hymn."),
+  ],
+  meditation=["Minute 1: sit and settle.","Minute 2: picture a lotus resting on still water.","Minute 3: recite the verse and let the word “mother” soften the recitation.","Minute 4: rest quietly."],
+  reflection="What would it mean to approach prosperity the way a lotus approaches water: at home in it, but not stained by it?",
+  closing="The seventh verse joins the highest philosophy with the warmest title: Supreme Brahman, and mother. Both are meant to be held together. "+MLA_D),
+
+ dict(n=8, slug="verse-8",
+  deva="श्वेताम्बरधरे देवि नानालङ्कारभूषिते।<br>जगत्स्थिते जगन्मातर्महालक्ष्मि नमोऽस्तु ते॥",
+  iast="Śvetāmbara-dhare devi nānālaṅkāra-bhūṣite,<br>Jagat-sthite jagan-mātar mahālakṣmi namo 'stu te.",
+  sub="Śvetāmbara-dhare – in white garments, adorned with many ornaments",
+  words=[
+   ("श्वेताम्बरधरे","Śvetāmbara-dhare","O you who wear white garments","<em>Śveta</em> is white; <em>ambara</em> is cloth or garment; <em>dhara</em> is wearing."),
+   ("नानालङ्कारभूषिते","Nānālaṅkāra-bhūṣite","O you adorned with many ornaments","<em>Nānā</em> is various; <em>alaṅkāra</em> is ornament; <em>bhūṣita</em> is adorned."),
+   ("जगत्स्थिते","Jagat-sthite","O you who abide in the world","<em>Sthita</em> is standing, abiding, established. She is present in the world and sustains it."),
+   ("जगन्मातः","Jagan-mātaḥ","O Mother of the world","Repeated from the seventh verse."),
+   ("महालक्ष्मि","Mahālakṣmi","O Mahalakshmi","The refrain."),
+  ],
+  meaning="Salutations to you, O Goddess clad in white garments and adorned with many ornaments, who abide in the world and are its mother. O Mahalakshmi, I bow to you.",
+  insights=[
+   ("In simple words","The eighth verse paints a final picture: white garments, rich ornaments, the world as her place and the whole world as her child. It closes the hymn with an image of simplicity and abundance together."),
+   ("White and ornaments","White suggests purity and simplicity; ornaments suggest richness. The verse gives both without any sense of conflict. That is a gentle idea of prosperity: abundance that stays clean."),
+   ("A note on colour","This hymn describes the Goddess in white. Popular images of Lakshmi, especially at Diwali, often show her in red or pink. The tradition has many forms of the Goddess, and different texts and temples describe different ones."),
+  ],
+  meditation=["Minute 1: breathe and settle.","Minute 2: recite the whole eight-verse hymn in your mind, one image per verse.","Minute 3: choose the image that stayed with you most.","Minute 4: carry it into the next hour."],
+  reflection="Which image in this hymn spoke to me most: the bow, the fear removed, the all-knowing mother, the lotus, the white garment? What does that say about what I am looking for?",
+  closing="The eight verses end as they began, with a bow. In between they have shown the Goddess as protector, giver, primal power, supreme mother. "+MLA_D),
+
+ dict(n=9, slug="verse-9",
+  deva="महालक्ष्म्यष्टकं स्तोत्रं यः पठेद्भक्तिमान्नरः।<br>सर्वसिद्धिमवाप्नोति राज्यं प्राप्नोति सर्वदा॥<br>एककाले पठेन्नित्यं महापापविनाशनम्।<br>द्विकालं यः पठेन्नित्यं धनधान्यसमन्वितः॥<br>त्रिकालं यः पठेन्नित्यं महाशत्रुविनाशनम्।<br>महालक्ष्मीर्भवेन्नित्यं प्रसन्ना वरदा शुभा॥",
+  iast="Mahālakṣmy-aṣṭakaṁ stotraṁ yaḥ paṭhed bhaktimān naraḥ,<br>Sarva-siddhim avāpnoti rājyaṁ prāpnoti sarvadā.<br>Eka-kāle paṭhen nityaṁ mahā-pāpa-vināśanam,<br>Dvi-kālaṁ yaḥ paṭhen nityaṁ dhana-dhānya-samanvitaḥ.<br>Tri-kālaṁ yaḥ paṭhen nityaṁ mahā-śatru-vināśanam,<br>Mahālakṣmīr bhaven nityaṁ prasannā varadā śubhā.",
+  sub="Phalaśruti – the fruit of reciting the hymn",
+  words=[
+   ("महालक्ष्म्यष्टकं स्तोत्रम्","Mahālakṣmy-aṣṭakaṁ stotram","The eight-verse hymn to Mahalakshmi","<em>Aṣṭaka</em> is a set of eight; <em>stotra</em> is a hymn of praise."),
+   ("यः पठेत् भक्तिमान् नरः","Yaḥ paṭhet bhaktimān naraḥ","The person who recites it with devotion","<em>Bhaktimān</em> is one who has devotion."),
+   ("सर्वसिद्धिम् अवाप्नोति","Sarva-siddhim avāpnoti","Attains all accomplishments","<em>Siddhi</em> is accomplishment; <em>avāpnoti</em> is attains."),
+   ("राज्यं प्राप्नोति","Rājyaṁ prāpnoti","Obtains sovereignty or a kingdom","Classical language for authority and prosperity; many readers take it figuratively."),
+   ("एककाले","Eka-kāle","Once a day","<em>Kāla</em> is time or period."),
+   ("द्विकालम् / त्रिकालम्","Dvi-kālam / Tri-kālam","Twice a day / three times a day","Morning and evening, or morning, noon and evening."),
+   ("धनधान्यसमन्वितः","Dhana-dhānya-samanvitaḥ","Endowed with wealth and grain","<em>Dhana</em> is wealth; <em>dhānya</em> is grain; <em>samanvita</em> is endowed with."),
+   ("प्रसन्ना वरदा शुभा","Prasannā varadā śubhā","Pleased, boon-giving and auspicious","Three words describing Mahalakshmi as she becomes favourable."),
+  ],
+  meaning="Whoever recites this eight-verse hymn to Mahalakshmi with devotion is said to attain every accomplishment and lasting authority. Recited once daily, it destroys great sins; twice daily, it brings wealth and grain; three times daily, it destroys great enemies, and Mahalakshmi becomes ever pleased, boon-giving and auspicious.",
+  insights=[
+   ("In simple words","Like many Sanskrit hymns, this one ends with a <em>phalaśruti</em>, a statement of the fruit that tradition associates with reciting it. Three more verses are added to the eight, so the hymn is often printed with eleven verses. Here the three are taken together as the ninth entry."),
+   ("Once, twice, three times","The verses raise the benefit as the practice grows: once a day for forgiveness of faults, twice for prosperity, three times for strength against what opposes us. The pattern encourages regularity rather than a single grand effort."),
+   ("How to read these promises","A phalaśruti states what tradition says, not what anyone can guarantee. Readers differ: some take the fruits literally, others as inner growth such as steadiness, clarity and courage. This site reads it as encouragement to practise, and does not promise an outcome."),
+  ],
+  meditation=["Minute 1: sit and breathe.","Minute 2: recite one verse of the hymn that you remember.","Minute 3: choose a realistic rhythm for yourself: once a day, or once a week.","Minute 4: end with a bow."],
+  reflection="What would a gentle, sustainable practice look like for me: a few minutes once a day, rather than a promise I cannot keep?",
+  closing="The hymn closes by turning from praise to practice. Whatever fruit one expects, the steady habit of attention is the part within our own hands. "+MLA_D),
+]
+
+MLA_TOTAL = 9  # eight verses plus the closing phalaśruti (three verses, shown together as the ninth entry)
+for _v in MVERSES:
+    _v["h1"] = f"Mahālakṣmī Aṣṭakam – Verse {_v['n']}"
+    _v["title"] = _v["desc"] = ""
+MVERSES[8]["label"] = "Phalaśruti (9–11)"
+MVERSES[8]["h1"] = "Mahālakṣmī Aṣṭakam – Phalaśruti (Verses 9–11)"
+MVERSES[8]["ttl"] = "Mahalakshmi Ashtakam Phalashruti Meaning (Verses 9-11)"
+MVERSES[8]["dsc"] = "Mahalakshmi Ashtakam phalashruti (verses 9-11): the fruit of reciting the hymn once, twice or three times a day. Word-by-word meaning and English translation."
+
 GLOSSARY = [
+ ("महामाया","Mahāmāyā","The “great Māyā”: the divine creative power by which the world appears; a title of the Goddess.","mahalakshmi-ashtakam/verse-1/"),
+ ("श्रीपीठ","Śrīpīṭha","The seat of Śrī (Lakshmi); tradition links it with the Mahalakshmi temple at Kolhapur.","mahalakshmi-ashtakam/verse-1/"),
+ ("कोलासुर","Kolāsura","The demon Kola of the Kolhapur tradition, said to have been destroyed by Mahalakshmi.","mahalakshmi-ashtakam/verse-2/"),
+ ("गरुड","Garuḍa","The king of birds and the traditional mount of Lord Vishnu.","mahalakshmi-ashtakam/verse-2/"),
+ ("सिद्धि","Siddhi","Accomplishment, success; in a spiritual sense, attainment.","mahalakshmi-ashtakam/verse-4/"),
+ ("भुक्ति","Bhukti","Worldly enjoyment and well-being, as the companion aim to mukti.","mahalakshmi-ashtakam/verse-4/"),
+ ("मुक्ति","Mukti","Liberation from what binds us.","mahalakshmi-ashtakam/verse-4/"),
+ ("मन्त्रमूर्ति","Mantra-mūrti","One whose form is mantra: the Goddess present in sacred sound.","mahalakshmi-ashtakam/verse-4/"),
+ ("अष्टक","Aṣṭaka","A hymn or set of eight verses.","mahalakshmi-ashtakam/verse-9/"),
  ("मुरारि","Murāri","“Foe of Mura”: a name of Vishnu, who slew the demon Mura.","kanakadhara/verse-2/"),
  ("प्रेम","Prema","Love, affection.","kanakadhara/verse-2/"),
  ("त्रपा","Trapā","Bashfulness, modesty; a graceful reserve.","kanakadhara/verse-2/"),
@@ -800,7 +1020,7 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 </head>'''
 
 def nav(cur):
-    items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Glossary","glossary/","gl"),("About","about/","about")]
+    items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla"),("Glossary","glossary/","gl"),("About","about/","about")]
     out = "".join('<a href="/%s"%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", l) for l,p,k in items)
     return f'''<body>
 <header class="site"><div class="wrap">
@@ -863,7 +1083,7 @@ def plain(t):
     return "".join(c for c in t if not unicodedata.combining(c))
 
 def opening(v, n=4):
-    first = v["iast"].replace("<br>"," ").replace("-"," ").replace(","," ").replace(";"," ").replace("."," ")
+    first = re.sub(r"(?<=\s)['’]", "a", v["iast"]).replace("<br>"," ").replace("-"," ").replace(","," ").replace(";"," ").replace("."," ")
     return " ".join(plain(first).split()[:n]).title()
 
 # ---------------------------------------------------------------- pages
@@ -905,6 +1125,7 @@ def page_home():
 <div class="grid">
 <a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
 <a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram</h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi. The story and {len(KVERSES)} verse{"s" if len(KVERSES)!=1 else ""} are live; more follow one at a time.</p></a>
+<a class="tile" href="/mahalakshmi-ashtakam/"><h3>Mahālakṣmī Aṣṭakam</h3><p>Indra’s eight-verse hymn to Mahalakshmi. The full text to chant, with the meaning of every verse.</p></a>
 <a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
@@ -987,7 +1208,43 @@ def page_kana():
 </main>''' + foot()
     write("kanakadhara", body, "0.7")
 
-def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None):
+def page_mla():
+    t = "Mahalakshmi Ashtakam Lyrics and Meaning in English"
+    d = "Mahalakshmi Ashtakam (Mahalaxmi Ashtak) in Sanskrit with transliteration and English meaning: chant the full text, then read each verse word by word."
+    parts = [("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/")]
+    ld = {"@context":"https://schema.org","@type":"Article","headline":"Mahalakshmi Ashtakam – Lyrics, Transliteration and Meaning in English","author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/mahalakshmi-ashtakam/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
+    dn = str.maketrans("0123456789","०१२३४५६७८९")
+    chant = [(v["n"], v["deva"], v["iast"]) for v in MVERSES[:8]]
+    dd = MVERSES[8]["deva"].split("<br>"); ii = MVERSES[8]["iast"].split("<br>")
+    for k in range(3): chant.append((9+k, dd[2*k]+"<br>"+dd[2*k+1], ii[2*k]+"<br>"+ii[2*k+1]))
+    dev = '<p class="ch-dv" lang="sa">इन्द्र उवाच</p>' + "".join(f'<p class="ch-dv" lang="sa">{c[1]}<br><span class="ch-n">॥ {str(c[0]).translate(dn)} ॥</span></p>' for c in chant)
+    ias = '<p class="ch-ia"><em>Indra uvāca</em></p>' + "".join(f'<p class="ch-ia" lang="sa-Latn">{c[2]}<br><span class="ch-n">({c[0]})</span></p>' for c in chant)
+    rows = "".join(f'<a class="tile" href="/mahalakshmi-ashtakam/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>' for v in MVERSES)
+    copyjs = '<script>try{var b=document.getElementById("copy-deva");b.addEventListener("click",function(){var t=document.getElementById("deva-text").innerText;navigator.clipboard.writeText(t).then(function(){b.textContent="Copied"},function(){b.textContent="Copy not available"})})}catch(e){}</script>'
+    body = head(t,d,"mahalakshmi-ashtakam/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("mla") + f'''
+<main class="wrap">{crumbs([("Mahālakṣmī Aṣṭakam",None)])}
+<h1>Mahālakṣmī Aṣṭakam</h1>
+<p class="lede">The Mahalakshmi Ashtakam (also written Mahalaxmi Ashtak or Mahalakshmyashtakam) is an eight-verse hymn to Goddess Mahalakshmi, traditionally ascribed to Indra. Chant the full text below, then read the meaning of each verse.</p>
+<p class="crumbs">By {AUTHOR}</p>
+<p><a class="btn" href="#chant">Chant the Ashtakam</a><a class="btn ghost" href="/mahalakshmi-ashtakam/verse-1/">Meaning, verse by verse</a></p>
+<h2 id="chant">Chant the Ashtakam</h2>
+<p>The full hymn in one place, for daily practice. Devanāgarī first, then the same text in Roman transliteration. The meaning of each verse follows further down.</p>
+<p><button class="btn ghost" id="copy-deva" type="button">Copy Devanāgarī text</button></p>
+<div class="chant"><h3>देवनागरी</h3><div id="deva-text">{dev}</div></div>
+<div class="chant"><h3>Transliteration (IAST)</h3>{ias}</div>
+<p><small>Verses 9–11 are the phalaśruti, the closing verses on the fruit of reciting the hymn. Many people chant only the first eight. Editions differ in the wording of a few words; where they do, the verse page says so.</small></p>
+<h2 id="verses">Meaning, verse by verse</h2>
+<div class="grid">{rows}</div>
+<h2>About the hymn</h2>
+<p>An <em>aṣṭaka</em> is a hymn of eight verses. In the Mahālakṣmī Aṣṭakam each verse ends with the same line, <em>Mahālakṣmi namo ’stu te</em>, “O Mahalakshmi, I bow to you”, so the refrain gives the hymn a steady rhythm for chanting. Tradition ascribes it to Indra, king of the gods, and places it in the Padma Purāṇa; accounts of the occasion differ.</p>
+<p>The verses move from the Goddess seated at her sacred seat and worshipped by the gods, to her protection and her gifts, to her nature as the primal power and the mother of the world. The closing three verses describe the fruit of reciting the hymn, as tradition tells it. This commentary reads those as encouragement to practise, and does not promise any outcome.</p>
+<p>There is no single rule for how to chant it. Many people recite after a bath, before a lamp and an image of the Goddess, and Fridays and Diwali are popular times. Follow your own family tradition or teacher where they differ from what is written here.</p>
+<p><small>This commentary was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
+{ad("index")}
+</main>{copyjs}''' + foot()
+    write("mahalakshmi-ashtakam", body, "0.9")
+
+def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None, spname=None):
     lst = lst or VERSES
     total = total or len(lst)
     v = lst[i]
@@ -995,7 +1252,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     nxt = lst[i+1] if i+1 < len(lst) else None
     path = f'{base}/{v["slug"]}'
     parts = [(sname,base+"/"),(lab(v),None)]
-    sp = plain(sname).replace("Sri Suktam","Sri Suktam").replace("Kanakadhara Stotram","Kanakadhara Stotram")
+    sp = spname or plain(sname)
     tail = v["sub"].split(" – ")[1] if " – " in v["sub"] else ""
     v = dict(v)
     v["title"] = f"{sp} Verse {v['n']} Meaning – {opening(v,3)}"
@@ -1003,6 +1260,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     for extra in (" Word-by-word meaning, English translation and a short meditation."," Word-by-word meaning and English translation."," Meaning in English."):
         if len(d1 + extra) <= 158: d1 += extra; break
     v["desc"] = d1
+    if v.get("ttl"): v["title"], v["desc"] = v["ttl"], v["dsc"]
     art = {"@context":"https://schema.org","@type":"Article","headline":v["title"],"description":v["desc"],
            "author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
@@ -1160,9 +1418,10 @@ def sitemap():
     open(os.path.join(ROOT,"sitemap.xml"),"w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{u}</urlset>\n')
 
 if __name__ == "__main__":
-    page_home(); page_sri(); page_kana()
+    page_home(); page_sri(); page_kana(); page_mla()
     for i in range(len(VERSES)): page_verse(i)
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
+    for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
     page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")
