@@ -14,7 +14,7 @@ TODAY = date.today().isoformat()
 GSC_TOKEN = "ydCk8z62OzpGbv6EnLvQAu8VoJl7T40cv6htu9_FsWs"  # Google Search Console site verification
 GA_ID = "G-X1Y34J30ST"   # Google Analytics 4 measurement ID
 ADSENSE_CLIENT = "" # e.g. "ca-pub-1234567890123456" -> switches AdSense on after approval
-CONTACT_EMAIL = "amitnlakhtariya@gmail.com"  # interim address; to be replaced by the dedicated site Gmail once created
+CONTACT_EMAIL = "shreelakshmistuti@gmail.com"
 E = html.escape
 
 # ---------------------------------------------------------------- content
