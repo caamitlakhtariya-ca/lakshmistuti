@@ -1126,6 +1126,7 @@ def page_home():
 <a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
 <a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram</h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi. The story and {len(KVERSES)} verse{"s" if len(KVERSES)!=1 else ""} are live; more follow one at a time.</p></a>
 <a class="tile" href="/mahalakshmi-ashtakam/"><h3>Mahālakṣmī Aṣṭakam</h3><p>Indra’s eight-verse hymn to Mahalakshmi. The full text to chant, with the meaning of every verse.</p></a>
+<a class="tile" href="/ashtalakshmi/"><h3>Aṣṭalakṣmī</h3><p>The eight forms of Lakshmi, and what each one stands for.</p></a>
 <a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
 <a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
 </div>
@@ -1303,6 +1304,59 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 </article></main>{vscript}''' + foot()
     write(path, body, "0.9")
 
+ASHTA = [
+ ("Ādi Lakshmi","आदिलक्ष्मी","The first, primal Lakshmi",
+  "<em>Ādi</em> means first or original. This is Lakshmi as the source from whom the other seven forms flow, often identified with Mahālakṣmī and with Vishnu’s eternal abode. She stands for what is steady beneath all changes of fortune: the sense that prosperity has a source and is not only a matter of luck.",
+  "Often shown with a lotus and a flag in two hands, and the other two hands raised in reassurance and in giving."),
+ ("Dhana Lakshmi","धनलक्ष्मी","Lakshmi of wealth",
+  "<em>Dhana</em> is wealth in the plainest sense: money, gold, savings and the means to live well. In the images this form is the one most clearly linked with coins. The tradition around her is not only “may I have wealth” but also how wealth is earned, held and shared.",
+  "Often shown with a pot from which gold coins pour, together with Vishnu’s emblems (discus and conch), a bow and arrow, and a lotus."),
+ ("Dhānya Lakshmi","धान्यलक्ष्मी","Lakshmi of grain and food",
+  "<em>Dhānya</em> is grain. This form stands for food, good harvests and the quiet abundance of a well-fed home. It is the oldest sense of prosperity: enough to eat, and something to share. It is also a reminder of the farmers and workers behind every meal.",
+  "Often shown in green, holding sheaves of crops, fruits, sugarcane and bananas."),
+ ("Gaja Lakshmi","गजलक्ष्मी","Lakshmi with the elephants",
+  "<em>Gaja</em> is an elephant. Two elephants pouring water over the Goddess is one of the oldest images of Lakshmi in Indian art, found in early sculpture and on ancient coins. It stands for royal grandeur, strength, dignity and the rain that makes the land fertile. Tradition links this form with the recovery of lost glory and standing.",
+  "Seated on a lotus, with two elephants lifting water pots over her."),
+ ("Santāna Lakshmi","सन्तानलक्ष्मी","Lakshmi of children and lineage",
+  "<em>Santāna</em> means offspring and the continuity of a family. This form stands for children, the next generation, and what is handed down: values, skills and a good name along with property. Many families pray to her for the wellbeing of their children.",
+  "Often shown with a child on her lap, and pots, a sword and a shield in her hands."),
+ ("Dhairya Lakshmi","धैर्यलक्ष्मी","Lakshmi of courage and steadiness",
+  "<em>Dhairya</em> is courage, patience and steadiness under pressure. Some lists call this form <em>Vīra</em> Lakshmi, “the heroic”. It stands for the inner strength that keeps a person working through a hard period. Prosperity needs it too: a business or a household often gets through bad years on nerve.",
+  "Often shown with weapons and emblems in several hands, in red or orange."),
+ ("Vijaya Lakshmi","विजयलक्ष्मी","Lakshmi of victory",
+  "<em>Vijaya</em> is victory. Some lists name her <em>Jaya</em> Lakshmi. She stands for success after effort, and for overcoming obstacles, including the inner ones such as fear, laziness and doubt. Victory here is not only winning over others.",
+  "Often shown on a lotus with a sword, shield, discus and conch, and a hand raised in reassurance."),
+ ("Vidyā Lakshmi","विद्यालक्ष्मी","Lakshmi of knowledge",
+  "<em>Vidyā</em> is knowledge and learning. This is the form where Lakshmi and Sarasvatī meet, since knowledge is counted here as a kind of wealth, one that cannot be divided or easily lost. She is remembered by students, teachers, artists and professionals.",
+  "Often shown in white, with a book, a lotus and a hand raised in blessing."),
+]
+
+def page_ashta():
+    t = "Ashtalakshmi Meaning – The Eight Forms of Goddess Lakshmi"
+    d = "The Ashtalakshmi, the eight forms of Goddess Lakshmi: Adi, Dhana, Dhanya, Gaja, Santana, Dhairya, Vijaya and Vidya, and what each one stands for."
+    parts = [("Aṣṭalakṣmī","ashtalakshmi/")]
+    ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
+    cards = "".join(f'<div class="card"><h3>{i}. {E(n)} <span lang="sa" style="font-family:var(--deva);font-weight:400;color:var(--muted)">· {dv}</span></h3><p class="m" style="font-weight:700;margin:.1em 0 .4em">{E(sub)}</p><p>{body}</p><p><small>{E(img)}</small></p></div>' for i,(n,dv,sub,body,img) in enumerate(ASHTA,1))
+    body = head(t,d,"ashtalakshmi/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f'''
+<main class="wrap">{crumbs([("Aṣṭalakṣmī",None)])}
+<p class="shri small" lang="sa">श्री</p>
+<h1>Aṣṭalakṣmī – the eight forms of Lakshmi</h1>
+<p class="lede">The Ashtalakshmi (also written Ashta Lakshmi or Ashtalaxmi) are eight forms of Goddess Lakshmi, each standing for a different kind of prosperity. Wealth is one of the eight; the others are a source, food, standing, family, courage, success and knowledge.</p>
+<p class="crumbs">By {AUTHOR}</p>
+<h2>Why eight?</h2>
+<p><em>Aṣṭa</em> means eight. The idea behind the eight forms is that prosperity is not one thing. A person can have money and no peace, or a good family and a struggling business, or learning without a livelihood. Tradition therefore pictures Lakshmi in eight forms, and a worshipper may turn to one or to all of them.</p>
+<p>Lists differ a little from one tradition to another. Some name Vīra Lakshmi in place of Dhairya, or Jaya in place of Vijaya, and some lists include Aiśvarya (grandeur) or Saubhāgya (good fortune). The eight below are the most common set. The pictures described are typical ones; temples and paintings differ in the details, and the number of hands varies.</p>
+<h2>The eight forms</h2>
+{cards}
+{ad("below-verse")}
+<h2>A way to use the eight</h2>
+<p>Read the eight names slowly and ask which one is most present in your life, and which is least. Many people find they have put effort into one or two, usually wealth and knowledge, while courage, family or simple gratitude for food went unattended. This is a reflection inspired by the tradition, and does not promise any outcome.</p>
+<p>The Ashtalakshmi are also worshipped together in temples and in the Ashtalakshmi Stotram, a hymn that praises each form in turn. Prosperity in its wider sense is also the theme of the <a href="/sri-suktam/">Śrī Sūktam</a>, the <a href="/kanakadhara/">Kanakadhāra Stotram</a> and the <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a> on this site.</p>
+<p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
+{ad("end")}
+</main>''' + foot()
+    write("ashtalakshmi", body, "0.8")
+
 def page_yantra():
     t = "Sri Yantra Meaning – Layers and Symbolism"
     d = "What the Sri Yantra (Lakshmi Yantra) is and what each layer means: the square enclosure, circle, lotus petals, nine triangles and the central point."
@@ -1422,6 +1476,6 @@ if __name__ == "__main__":
     for i in range(len(VERSES)): page_verse(i)
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
-    page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_ashta(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")
