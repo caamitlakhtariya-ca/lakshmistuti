@@ -1,8 +1,8 @@
 {
  "home": {
   "published": "2026-10-11",
-  "modified": "2026-10-23",
-  "hash": "963df007da4e"
+  "modified": "2026-10-27",
+  "hash": "b240b500a592"
  },
  "sri-suktam": {
   "published": "2026-10-11",
@@ -178,5 +178,10 @@
   "published": "2026-10-23",
   "modified": "2026-10-23",
   "hash": "d1807bb7d8a5"
+ },
+ "lakshmi-aarti": {
+  "published": "2026-10-27",
+  "modified": "2026-10-27",
+  "hash": "eb03c6588de2"
  }
 }
