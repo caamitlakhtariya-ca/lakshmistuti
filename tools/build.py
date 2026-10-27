@@ -1377,6 +1377,46 @@ ASHTA = [
   "Often shown in white, with a book, a lotus and a hand raised in blessing."),
 ]
 
+ASTS = [
+ ("The prayer behind every stanza","Each of the eight stanzas has the same shape: a string of titles praising the Goddess, then a closing prayer that names the form being honoured and asks her to protect the devotee always. She is addressed as the beloved of Vishnu, the slayer of the demon Madhu. The hymn is less a list of requests than a long act of praise that ends each time in one plain request for protection."),
+ ("Stanza 1: Ādi Lakshmi","The first form is praised as the beautiful consort of Vishnu, the sister of the moon (both are said to have risen from the ocean of milk), golden in colour and a dweller in the lotus. Gods and sages honour her and the Vedas praise her; she speaks sweetly, gives peace and showers good qualities. The gift named here is liberation, so the source of prosperity is also pictured as a source of freedom."),
+ ("Stanza 2: Dhānya Lakshmi","Dhānya Lakshmi is the Lakshmi of grain, but this stanza does not mention grain. It describes her as the destroyer of the faults of the Kali age, born of the milk ocean, of auspicious form and dwelling in mantras, served by the gods and praised by the Vedas. The link to food comes from the name in the closing prayer. One reading, which we bring to the stanza, is that nourishment is a blessing that rests on purity and auspiciousness."),
+ ("Stanza 3: Dhairya Lakshmi","She is addressed by names tied to Vishnu and to the sage Bhṛgu (Bhārgavī, “daughter of Bhṛgu”), as mantra in form, quick to give results and an unfolder of knowledge. The gifts named are freedom from the fear of worldly life and release from sin, and the people who rely on her are the good. Courage is pictured here as freedom from fear, not as aggression."),
+ ("Stanza 4: Gaja Lakshmi","The imagery turns royal. She is the destroyer of misfortune and the giver of every fruit, surrounded by the four divisions of a king’s army (chariots, elephants, horses and foot-soldiers) and by her attendants, and praised by the whole world. Vishnu, Shiva and Brahmā all worship her, and she removes distress. The picture is one of dignity and standing, the grandeur the elephants stand for in the older sculptures."),
+ ("Stanza 5: Santāna Lakshmi","As with Dhānya, this stanza does not speak of children. It praises her as the rider of the divine bird, the enchantress who holds the discus, an increaser of love or devotion (the word <em>rāga</em> can also mean a musical mode) and a sea of virtues who wishes the world well. She is adorned by the seven notes of music and praised in song, and gods, demons, sages and humans alike honour her. The theme of family and continuity comes from the name in the closing prayer."),
+ ("Stanza 6: Vijaya Lakshmi","She is seated on a lotus, gives a good destiny, unfolds knowledge and is full of song. The stanza pictures daily worship with kumkum, perfume and instruments. Then it names the <a href=\"/kanakadhara/\">Kanakadhāra hymn</a> and the teacher Śaṅkara, saying that her feet are honoured by him and that she is praised in the glory of that hymn. This is the stanza that links the Ashtalakshmi hymn with the Kanakadhāra Stotram, and it also shows that the Ashtalakshmi hymn is the later of the two."),
+ ("Stanza 7: Vidyā Lakshmi","She is addressed as Bhāratī, a name of Sarasvatī, and as Bhārgavī, so learning and prosperity are named together in one breath. She destroys sorrow, is adorned with jewels and ear ornaments, smiles and is wrapped in peace. She gives the nine treasures of the god of wealth, removes the faults of the Kali age and fulfils wishes. Knowledge is pictured with jewels and a calm smile, not only with books."),
+ ("Stanza 8: Dhana Lakshmi","The wealth stanza opens with sound instead of pictures: the beat of the kettledrum and the blare of conches, written out in drum syllables. Wealth here is a festival. Yet the stanza ends on a quiet note: she is worshipped through the Vedas, the Purāṇas and the epics, and she shows the Vedic path. Money is celebrated, and then tied to guidance on how to live."),
+ ("The closing verse","After the eight stanzas comes a short closing salutation. It bows to the eight forms together: the giver of boons who takes any form at will, seated on Vishnu’s chest, a liberator of devotees, holding the conch, discus and mace (the same emblems as in <a href=\"/mahalakshmi-ashtakam/verse-1/\">Verse 1 of the Mahālakṣmī Aṣṭakam</a>), of universal form, the mother of the world; it ends with a wish for auspiciousness. Printed versions often label it a <em>phalaśruti</em>, but it states no fruit of reciting, so it is better read as a salutation and blessing."),
+]
+
+def page_asts():
+    t = "Ashtalakshmi Stotram Meaning in English – Stanza by Stanza"
+    d = "Ashtalakshmi Stotram meaning in English: what each of the eight stanzas says about Adi, Dhanya, Dhairya, Gaja, Santana, Vijaya, Vidya and Dhana Lakshmi."
+    parts = [("Ashtalakshmi Stotram","ashtalakshmi-stotram/")]
+    ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi-stotram/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
+    cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in ASTS)
+    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f'''
+<main class="wrap">{crumbs([("Ashtalakshmi Stotram",None)])}
+<p class="shri small" lang="sa">श्री</p>
+<h1>Ashtalakshmi Stotram – meaning in English</h1>
+<p class="lede">The Ashtalakshmi Stotram is a Sanskrit hymn of eight stanzas, one for each of the <a href="/ashtalakshmi/">eight forms of Lakshmi</a>, with a short closing salutation. This page explains what each stanza says.</p>
+<p class="crumbs">By {AUTHOR}</p>
+<p><small>A note on the words: this hymn is a modern composition, not an ancient scripture, so this page explains it and does not print the verses. Please use a trusted printed or recorded version for chanting; printed versions differ in small details.</small></p>
+<h2>About the hymn</h2>
+<p>According to Wikipedia, the hymn was composed in Chennai in the early 1970s by U. V. Srinivasa Varadachariyar, a scholar of the Sri Vaishnava tradition, and became widely known through recordings in the 1980s. I have not been able to confirm this from a second source, so please treat the attribution as provisional. The eight forms are taken in this order: Ādi, Dhānya, Dhairya, Gaja, Santāna, Vijaya, Vidyā and Dhana. (The <a href="/ashtalakshmi/">explainer page</a> lists Dhana second; the order differs between lists.)</p>
+<h2>What the stanzas say</h2>
+<p>These are my own explanations of the hymn’s ideas, and any practical lessons are reflections inspired by it, not literal lines in the text.</p>
+{cards}
+{ad("below-verse")}
+<h2>A way to read it</h2>
+<p>Some people read one stanza a day, or the stanza of the form they feel most in need of. A simple way to begin is to read the meaning of a stanza here, then listen to or chant it from your own book, and sit quietly for a minute with the form’s name. This is a devotional and reflective reading. It does not promise any outcome or guarantee wealth.</p>
+<p>See also: <a href="/ashtalakshmi/">Aṣṭalakṣmī – the eight forms</a>, <a href="/kanakadhara/">Kanakadhāra Stotram</a> and <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a>.</p>
+<p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
+{ad("end")}
+</main>''' + foot()
+    write("ashtalakshmi-stotram", body, "0.8")
+
 def page_ashta():
     t = "Ashtalakshmi Meaning – The Eight Forms of Goddess Lakshmi"
     d = "The Ashtalakshmi, the eight forms of Goddess Lakshmi: Adi, Dhana, Dhanya, Gaja, Santana, Dhairya, Vijaya and Vidya, and what each one stands for."
@@ -1397,7 +1437,7 @@ def page_ashta():
 {ad("below-verse")}
 <h2>A way to use the eight</h2>
 <p>Read the eight names slowly and ask which one is most present in your life, and which is least. Many people find they have put effort into one or two, usually wealth and knowledge, while courage, family or simple gratitude for food went unattended. This is a reflection inspired by the tradition, and does not promise any outcome.</p>
-<p>The Ashtalakshmi are also worshipped together in temples and in the Ashtalakshmi Stotram, a hymn that praises each form in turn. Prosperity in its wider sense is also the theme of the <a href="/sri-suktam/">Śrī Sūktam</a>, the <a href="/kanakadhara/">Kanakadhāra Stotram</a> and the <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a> on this site.</p>
+<p>The Ashtalakshmi are also worshipped together in temples and in the <a href="/ashtalakshmi-stotram/">Ashtalakshmi Stotram</a>, a hymn that praises each form in turn. Prosperity in its wider sense is also the theme of the <a href="/sri-suktam/">Śrī Sūktam</a>, the <a href="/kanakadhara/">Kanakadhāra Stotram</a> and the <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a> on this site.</p>
 <p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("end")}
 </main>''' + foot()
@@ -1579,6 +1619,6 @@ if __name__ == "__main__":
     for i in range(len(VERSES)): page_verse(i)
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
-    page_ashta(); page_aarti(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_ashta(); page_asts(); page_aarti(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")

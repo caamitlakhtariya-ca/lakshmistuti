@@ -187,11 +187,16 @@
  "ashtalakshmi": {
   "published": "2026-10-27",
   "modified": "2026-10-27",
-  "hash": "8c016fa4b376"
+  "hash": "ac3d460b7438"
  },
  "kanakadhara/verse-3": {
   "published": "2026-10-27",
   "modified": "2026-10-27",
   "hash": "ffac74363d02"
+ },
+ "ashtalakshmi-stotram": {
+  "published": "2026-10-27",
+  "modified": "2026-10-27",
+  "hash": "e39f036da348"
  }
 }
