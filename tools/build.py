@@ -1494,11 +1494,71 @@ def page_aarti():
 <h2>One thought to take away</h2>
 <p>We often pray for Lakshmi to enter our homes. We might also ask whether we are building a home worthy of the qualities she stands for: gratitude in place of complaint, integrity in place of greed, love in place of ego, humility in place of pride, and a heart that remembers those who have less. Money can build a house, but values make it a home. Money can buy comfort but cannot guarantee contentment. May we receive prosperity with gratitude, keep it with wisdom, use it rightly and share it with compassion.</p>
 <p>This page is a devotional and reflective reading. It does not promise any outcome or guarantee wealth.</p>
+<p><strong>For the puja table:</strong> a <a href="/lakshmi-aarti-printable/">one-page printable guide</a> with the steps and a line on each stanza, to keep beside your aarti booklet.</p>
 <p>See also: <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a> to chant, and the <a href="/sri-suktam/">Śrī Sūktam</a>.</p>
 <p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("end")}
 </main>''' + foot()
     write("lakshmi-aarti", body, "0.8")
+
+AARTI_ONE = [
+ ("Refrain","“Victory to Mother Lakshmi”: a thank-you for food, work, family and health."),
+ ("1st stanza","Lakshmi beside Vishnu: wealth should walk with right conduct."),
+ ("2nd stanza","One Mother, many names: the goddesses are faces of one divine feminine."),
+ ("3rd stanza","The stainless Durgā: prosperity needs courage and steady character."),
+ ("4th stanza","From the unseen to the seen: effort and grace work together."),
+ ("5th stanza","Where she dwells, good qualities come: virtues, not gold, make a home."),
+ ("6th stanza","Nothing happens without her: behind every meal stand many hands, so give back."),
+ ("7th stanza","Born of the milk ocean: the source of the jewels of the churning."),
+ ("Final stanza","The fruit of singing: a glad heart and the strength to turn from our faults."),
+]
+
+def page_aarti_print():
+    t = "Lakshmi Aarti at Home – Printable Guide for Diwali"
+    d = "One-page printable guide to the Lakshmi Aarti: what to keep ready, the steps and a line on each stanza. Print it and keep it beside your aarti booklet."
+    parts = [("Lakshmi Aarti","lakshmi-aarti/"),("Printable guide","lakshmi-aarti-printable/")]
+    ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/lakshmi-aarti-printable/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
+    mean = "".join(f'<li><strong>{E(a)}.</strong> {E(b)}</li>' for a,b in AARTI_ONE)
+    body = head(t,d,"lakshmi-aarti-printable/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f"""
+<main class="wrap">{crumbs([("Lakshmi Aarti","lakshmi-aarti/"),("Printable guide",None)])}
+<div class="printpage">
+<button type="button" class="btn noprint" onclick="window.print()">Print this page</button>
+<p class="shri small" lang="sa">श्री</p>
+<h1>Lakshmi Aarti at home</h1>
+<p class="pp-sub">A one-page guide to keep beside your aarti booklet. It does not print the words of the aarti, so sing from the version your family or temple uses.</p>
+<div class="pp-cols">
+<section>
+<h2>Keep ready</h2>
+<ul class="pp-list">
+<li>Image or idol of the Goddess on a clean cloth</li>
+<li>A thali with a ghee lamp, incense, flowers and kumkum</li>
+<li>Camphor or a second small lamp for the aarti</li>
+<li>A small bell, if you have one</li>
+<li>Sweets or fruit for the offering (prasad)</li>
+<li>Your aarti booklet or printed words</li>
+</ul>
+<h2>The steps</h2>
+<ol class="pp-list">
+<li><strong>Finish the puja first.</strong> Offer flowers, kumkum and sweets before the aarti begins.</li>
+<li><strong>Light the lamp.</strong> Hold the thali in your right hand and keep the left free for the bell.</li>
+<li><strong>Wave the light.</strong> Move the thali slowly in a clockwise circle before the image while the hymn is sung. Follow your family’s number of turns.</li>
+<li><strong>Take the aarti.</strong> When the hymn ends, pass your hands over the flame and touch them to your eyes and forehead.</li>
+<li><strong>Offer the prasad</strong> and stay a minute in quiet gratitude.</li>
+</ol>
+<p class="pp-safe"><strong>Safety.</strong> Keep dupattas, long sleeves and curtains away from the flame, and keep children back from the lit thali.</p>
+</section>
+<section>
+<h2>What each stanza says</h2>
+<ul class="pp-list pp-mean">{mean}</ul>
+<h2>A closing prayer</h2>
+<p class="pp-prayer">O Mother Mahalakshmi, give us enough wealth to live with dignity and to meet our duties, and the wisdom never to let the pursuit of wealth make us forget our dharma. Give us courage in hard times and humility when success comes. Bless our homes with food, peace and understanding. Make us worthy keepers of the prosperity we ask for.</p>
+</section>
+</div>
+<p class="pp-foot">Full explanation of each stanza: lakshmistuti.com/lakshmi-aarti/ · By {AUTHOR}</p>
+</div>
+<p class="noprint"><small>The full guide, with a longer explanation of every stanza, is at <a href="/lakshmi-aarti/">Lakshmi Aarti – meaning and how to perform it</a>. This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
+</main>""" + foot()
+    write("lakshmi-aarti-printable", body, "0.6")
 
 def page_yantra():
     t = "Sri Yantra Meaning – Layers and Symbolism"
@@ -1619,6 +1679,6 @@ if __name__ == "__main__":
     for i in range(len(VERSES)): page_verse(i)
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
-    page_ashta(); page_asts(); page_aarti(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")

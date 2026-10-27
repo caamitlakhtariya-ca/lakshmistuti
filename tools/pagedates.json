@@ -182,7 +182,7 @@
  "lakshmi-aarti": {
   "published": "2026-10-27",
   "modified": "2026-10-27",
-  "hash": "eb03c6588de2"
+  "hash": "80ed4cb908de"
  },
  "ashtalakshmi": {
   "published": "2026-10-27",
@@ -198,5 +198,10 @@
   "published": "2026-10-27",
   "modified": "2026-10-27",
   "hash": "e39f036da348"
+ },
+ "lakshmi-aarti-printable": {
+  "published": "2026-10-27",
+  "modified": "2026-10-27",
+  "hash": "78bb9c5ab5b8"
  }
 }
