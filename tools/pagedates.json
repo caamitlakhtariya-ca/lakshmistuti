@@ -1,8 +1,8 @@
 {
  "home": {
   "published": "2026-10-11",
-  "modified": "2026-10-27",
-  "hash": "d57982eeeb7f"
+  "modified": "2026-11-01",
+  "hash": "65b3c9215f48"
  },
  "sri-suktam": {
   "published": "2026-10-11",
@@ -11,8 +11,8 @@
  },
  "kanakadhara": {
   "published": "2026-10-11",
-  "modified": "2026-10-27",
-  "hash": "f3478b3426ca"
+  "modified": "2026-11-01",
+  "hash": "898e85e5a8ba"
  },
  "sri-suktam/verse-1": {
   "published": "2026-10-11",
@@ -96,13 +96,13 @@
  },
  "kanakadhara/verse-1": {
   "published": "2026-10-13",
-  "modified": "2026-10-27",
-  "hash": "6354c8450725"
+  "modified": "2026-11-01",
+  "hash": "49231b6a7d68"
  },
  "kanakadhara/verse-2": {
   "published": "2026-10-23",
-  "modified": "2026-10-27",
-  "hash": "1e5908b24a9a"
+  "modified": "2026-11-01",
+  "hash": "80fabfdffe4e"
  },
  "sri-yantra": {
   "published": "2026-10-11",
@@ -111,8 +111,8 @@
  },
  "glossary": {
   "published": "2026-10-11",
-  "modified": "2026-10-27",
-  "hash": "74726601c3d9"
+  "modified": "2026-11-01",
+  "hash": "11075e8c2b07"
  },
  "about": {
   "published": "2026-10-11",
@@ -191,8 +191,8 @@
  },
  "kanakadhara/verse-3": {
   "published": "2026-10-27",
-  "modified": "2026-10-27",
-  "hash": "ffac74363d02"
+  "modified": "2026-11-01",
+  "hash": "8ea05afe16d5"
  },
  "ashtalakshmi-stotram": {
   "published": "2026-10-27",
@@ -203,5 +203,10 @@
   "published": "2026-10-27",
   "modified": "2026-10-27",
   "hash": "78bb9c5ab5b8"
+ },
+ "kanakadhara/verse-4": {
+  "published": "2026-11-01",
+  "modified": "2026-11-01",
+  "hash": "b64e024427c4"
  }
 }
