@@ -2,7 +2,7 @@
  "home": {
   "published": "2026-10-11",
   "modified": "2026-11-02",
-  "hash": "303cf0334d53"
+  "hash": "155e0b2a0306"
  },
  "sri-suktam": {
   "published": "2026-10-11",
@@ -12,7 +12,7 @@
  "kanakadhara": {
   "published": "2026-10-11",
   "modified": "2026-11-02",
-  "hash": "92bd2185c141"
+  "hash": "185b326472f2"
  },
  "sri-suktam/verse-1": {
   "published": "2026-10-11",
@@ -97,12 +97,12 @@
  "kanakadhara/verse-1": {
   "published": "2026-10-13",
   "modified": "2026-11-02",
-  "hash": "c5dcd32b571e"
+  "hash": "40f349f05108"
  },
  "kanakadhara/verse-2": {
   "published": "2026-10-23",
   "modified": "2026-11-02",
-  "hash": "9ccacbca1793"
+  "hash": "b148267b7c4b"
  },
  "sri-yantra": {
   "published": "2026-10-11",
@@ -112,7 +112,7 @@
  "glossary": {
   "published": "2026-10-11",
   "modified": "2026-11-02",
-  "hash": "7a2b32e339df"
+  "hash": "96c9775b4ed3"
  },
  "about": {
   "published": "2026-10-11",
@@ -192,7 +192,7 @@
  "kanakadhara/verse-3": {
   "published": "2026-10-27",
   "modified": "2026-11-02",
-  "hash": "3cab829b28f6"
+  "hash": "a42598656c1d"
  },
  "ashtalakshmi-stotram": {
   "published": "2026-10-27",
@@ -207,31 +207,36 @@
  "kanakadhara/verse-4": {
   "published": "2026-11-01",
   "modified": "2026-11-02",
-  "hash": "8f1174749c13"
+  "hash": "b0c3e168e0f8"
  },
  "kanakadhara/verse-5": {
   "published": "2026-11-01",
   "modified": "2026-11-02",
-  "hash": "711f387b46ca"
+  "hash": "e1bd43e1a762"
  },
  "kanakadhara/verse-6": {
   "published": "2026-11-02",
   "modified": "2026-11-02",
-  "hash": "a3638d2b700d"
+  "hash": "d699a7d07f81"
  },
  "kanakadhara/verse-8": {
   "published": "2026-11-02",
   "modified": "2026-11-02",
-  "hash": "27ae252c0923"
+  "hash": "51d65d906b8e"
  },
  "kanakadhara/verse-9": {
   "published": "2026-11-02",
   "modified": "2026-11-02",
-  "hash": "8adfc23fce69"
+  "hash": "bba45f71b9bc"
  },
  "kanakadhara/verse-10": {
   "published": "2026-11-02",
   "modified": "2026-11-02",
-  "hash": "2d77d65b7bbc"
+  "hash": "21c14ecd29a6"
+ },
+ "kanakadhara/verse-11": {
+  "published": "2026-11-02",
+  "modified": "2026-11-02",
+  "hash": "582c0951c8cb"
  }
 }
