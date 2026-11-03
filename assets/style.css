@@ -359,3 +359,8 @@ ol.med{background:var(--sand);border:1px solid var(--sand-line);border-radius:14
 .sk-img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--sand-line)}
 .skbody{overflow:auto;max-height:80vh}
 @media (max-width:700px){dialog.skdlg .skbody img.sk-img{min-width:900px;max-width:none}}
+
+/* verse card: everything centred */
+.ov-verse{text-align:center}
+.ov-verse .ov-h{text-align:center}
+.ov-verse .deva,.ov-verse .iast{text-align:center}
