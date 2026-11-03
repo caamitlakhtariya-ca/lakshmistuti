@@ -981,6 +981,7 @@ KVERSES = [
   deva="श्रुत्यै नमोऽस्तु शुभकर्मफलप्रसूत्यै<br>रत्यै नमोऽस्तु रमणीयगुणार्णवायै।<br>शक्त्यै नमोऽस्तु शतपत्रनिकेतनायै<br>पुष्ट्यै नमोऽस्तु पुरुषोत्तमवल्लभायै॥",
   iast="Śrutyai namo ’stu śubha-karma-phala-prasūtyai<br>Ratyai namo ’stu ramaṇīya-guṇārṇavāyai;<br>Śaktyai namo ’stu śata-patra-niketanāyai<br>Puṣṭyai namo ’stu puruṣottama-vallabhāyai.",
   ttl="Kanakadhara Stotram Verse 11 Meaning – Shrutyai Namostu",
+  icons=["book","heart","bolt","sprout"],
   keypoints=[("Śruti","Wisdom: the sacred knowledge that guides good action"),("Rati","Delight: love, beauty and lovely qualities"),("Śakti","Power: the energy that gives strength and the ability to act"),("Puṣṭi","Nourishment: growth, fullness and flourishing")],
   tagline="The Goddess is praised as wisdom, delight, power and nourishment: four strands of a flourishing life.",
   dsc="Kanakadhara Stotram Verse 11 (Shrutyai Namo ’stu): four salutations to Lakshmi as Shruti, Rati, Shakti and Pushti. Word-by-word meaning in English.",
@@ -1741,13 +1742,39 @@ def close_block(t):
     d = f'<p class="disc">{E(disc)}</p>' if disc else ""
     return f'<p class="closing">{E(t)}</p>{d}'
 
-def four_art(kp):
+ICONS = {
+ "book":'<path d="M3 5.5c3-1.5 6-1.2 9 .8 3-2 6-2.3 9-.8V19c-3-1.5-6-1.2-9 .8-3-2-6-2.3-9-.8z"/><path d="M12 6.3v13.5"/>',
+ "heart":'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+ "bolt":'<path d="M13 2 5 13.5h6L10 22l9-12h-6z"/>',
+ "sprout":'<path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 15c0-3 2.5-5 6-5 0 3.5-2.5 5-6 5z"/>',
+ "lotus":'<path d="M12 20c-4 0-7-2.5-8-6 3 0 5 1 8 3 3-2 5-3 8-3-1 3.5-4 6-8 6z"/><path d="M12 17c-3-2-3.5-5 0-10 3.5 5 3 8 0 10z"/><path d="M8 15c-2-2-2.5-4-2-6 2 1 3.500 3 4 5.500"/><path d="M16 15c2-2 2.5-4 2-6-2 1-3.5 3-4 5.5"/>',
+}
+def icon(name, size=22, cls="", attrs=""):
+    return f'<svg class="icn {cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" {attrs}>{ICONS[name]}</svg>'
+
+def four_art(kp, icons):
     pos=[(88,88),(192,88),(88,192),(192,192)]
     out='<svg class="fourart" viewBox="0 0 280 280" role="img" aria-label="The four forms">'
-    for (cx,cy),(a,b) in zip(pos,kp):
-        out+=f'<circle cx="{cx}" cy="{cy}" r="62" fill="rgba(255,255,255,.07)" stroke="#e5b94a" stroke-opacity=".7"/><text x="{cx}" y="{cy-2}" text-anchor="middle" class="fa-t">{E(a)}</text><text x="{cx}" y="{cy+16}" text-anchor="middle" class="fa-s">{E(b.split(":")[0])}</text>'
+    for (cx,cy),(a,b),ic in zip(pos,kp,icons):
+        out+=f'<circle cx="{cx}" cy="{cy}" r="62" fill="rgba(255,255,255,.07)" stroke="#e5b94a" stroke-opacity=".7"/>'
+        out+=f'<svg x="{cx-13}" y="{cy-42}" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e5b94a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{ICONS[ic]}</svg>'
+        out+=f'<text x="{cx}" y="{cy-2}" text-anchor="middle" class="fa-t">{E(a)}</text><text x="{cx}" y="{cy+16}" text-anchor="middle" class="fa-s">{E(b.split(":")[0])}</text>'
     out+='<circle cx="140" cy="140" r="14" fill="#e5b94a"/></svg>'
     return out
+
+def sketch_note(kp, icons, centre="Flourishing Life"):
+    cols=["#8e5bb5","#e0587a","#e8a22b","#5f9b4f"]
+    # petal centres on a 640x400 canvas
+    pos=[(190,115),(450,115),(190,290),(450,290)]
+    o='<svg class="sketch" viewBox="0 0 640 410" role="img" aria-label="Sketch note: four forms making a flourishing life">'
+    for (cx,cy),(a,b),ic,c,rot in zip(pos,kp,icons,cols,(-4,3,3,-3)):
+        w=b.split(":")[0]
+        o+=f'<g transform="rotate({rot} {cx} {cy})"><ellipse cx="{cx}" cy="{cy}" rx="140" ry="76" fill="{c}" fill-opacity=".16" stroke="{c}" stroke-width="2.2" stroke-dasharray="7 4" stroke-linecap="round"/></g>'
+        o+=f'<svg x="{cx-14}" y="{cy-60}" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{c}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{ICONS[ic]}</svg>'
+        o+=f'<text x="{cx}" y="{cy-2}" text-anchor="middle" class="sk-a" fill="{c}">{E(a)}</text><text x="{cx}" y="{cy+22}" text-anchor="middle" class="sk-b">{E(w)}</text>'
+    o+=f'<g transform="translate(320 203)"><circle r="66" fill="#fdf0c8" fill-opacity=".95" stroke-opacity="0"/><circle r="66" fill="#e5b94a" fill-opacity=".28" stroke="#c9972b" stroke-width="2.2" stroke-dasharray="3 5" stroke-linecap="round"/><svg x="-15" y="-50" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b9801c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{ICONS["lotus"]}</svg><text y="6" text-anchor="middle" class="sk-c">{E(centre.split(" ",1)[0])}</text><text y="28" text-anchor="middle" class="sk-c">{E(centre.split(" ",1)[1])}</text></g>'
+    o+='</svg>'
+    return o
 
 def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None, spname=None):
     lst = lst or VERSES
@@ -1791,13 +1818,14 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <h1>{v["h1"]}</h1>
 <p class="lede">{E(v["sub"])}</p>
 <p class="vh-by">By {AUTHOR}</p></div>
-<div class="vh-art">{four_art(v["keypoints"]) if v.get("keypoints") else YANTRA}</div></div></header>
+<div class="vh-art">{four_art(v["keypoints"], v["icons"]) if v.get("keypoints") else YANTRA}</div></div></header>
 <main class="wrap has-vnav">{vnav}<article>
 {crumbs([(sname,base+"/"),(lab(v),None)])}
 <nav class="vtabs" aria-label="On this page"><a href="#overview">Overview</a><a href="#words">Word by word</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
 <section id="overview" class="ov"><div class="ov-card ov-verse"><h2 class="ov-h">The verse</h2><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
 <div class="ov-card ov-mean"><h2 class="ov-h">Meaning in short</h2><p>{E(v["meaning"])}</p>{('<p class="ov-quote">'+E(v["tagline"])+'</p>') if v.get("tagline") else ""}</div>
-{('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><b>'+E(a)+'</b> '+E(b)+'</li>' for a,b in v["keypoints"])+'</ul></div>') if v.get("keypoints") else ""}</section>
+{('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><span class="ic ic'+str(n)+'">'+icon(v["icons"][n],22)+'</span><span><b>'+E(a)+'</b> '+E(b)+'</span></li>' for n,(a,b) in enumerate(v["keypoints"]))+'</ul></div>') if v.get("keypoints") else ""}
+{('<div class="ov-card ov-sketch"><h2 class="ov-h">Sketch note</h2>'+sketch_note(v["keypoints"], v["icons"])+'<p class="sk-cap">Four forms of one Goddess, drawn as a sketch note: wisdom, delight, power and nourishment together make a flourishing life.</p></div>') if v.get("keypoints") else ""}</section>
 {ad("below-verse")}
 <h2 id="words">Word-by-word meaning</h2>
 {words}

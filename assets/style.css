@@ -256,3 +256,16 @@ h2.ov-h{font-family:var(--display);font-size:1.25rem;margin:0 0 .5em;padding:0 0
 .ov-high li:last-child{border-bottom:0}
 .ov-high b{color:var(--maroon);font-family:var(--display);font-size:1.15rem;margin-right:.3em}
 h2[id]{scroll-margin-top:100px}
+
+/* icons and sketch note */
+.icn{display:block;flex:0 0 auto}
+.ov-high li{display:flex;gap:12px;align-items:flex-start}
+.ic{flex:0 0 40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1.5px dashed currentColor}
+.ic0{color:#8e5bb5;background:rgba(142,91,181,.13)}.ic1{color:#e0587a;background:rgba(224,88,122,.13)}.ic2{color:#d28a12;background:rgba(232,162,43,.16)}.ic3{color:#5f9b4f;background:rgba(95,155,79,.15)}
+.ov-sketch{background:var(--surface);border-style:dashed;border-width:1.5px}
+.ov-sketch svg.sketch{width:100%;max-width:640px;height:auto;display:block;margin:6px auto}
+.sk-a{font-family:var(--display);font-size:30px;font-weight:700;font-style:italic}
+.sk-b{font-family:var(--sans);font-size:15px;fill:var(--ink)}
+.sk-c{font-family:var(--display);font-size:20px;font-weight:700;font-style:italic;fill:#3a2208}
+.sk-cap{text-align:center;color:var(--muted);font-size:.9rem;margin:.2em 0 0}
+@media (min-width:700px){.ov-sketch{grid-column:1/-1}}
