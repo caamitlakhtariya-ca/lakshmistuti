@@ -355,3 +355,7 @@ ol.med{background:var(--sand);border:1px solid var(--sand-line);border-radius:14
 .reflect{background:var(--sage)}
 .ov-sketch{background:var(--sand);border-color:var(--sand-line)}
 @media (prefers-color-scheme:dark){.ins-thread .chip{color:#9cc3d2}.gk{background:#2f4a57}}
+
+.sk-img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--sand-line)}
+.skbody{overflow:auto;max-height:80vh}
+@media (max-width:700px){dialog.skdlg .skbody img.sk-img{min-width:900px;max-width:none}}

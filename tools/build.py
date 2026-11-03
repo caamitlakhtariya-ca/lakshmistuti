@@ -985,6 +985,7 @@ KVERSES = [
   keypoints=[("Śruti","Wisdom: the sacred knowledge that guides good action"),("Rati","Delight: love, beauty and lovely qualities"),("Śakti","Power: the energy that gives strength and the ability to act"),("Puṣṭi","Nourishment: growth, fullness and flourishing")],
   tagline="The Goddess is praised as wisdom, delight, power and nourishment: four strands of a flourishing life.",
   sketchfile="kanakadhara-verse-11-sketch-note.png",
+  sketchalt="Sketch note for Kanakadhāra Stotram Verse 11: the Sanskrit verse and transliteration, its meaning, the four salutations to Śruti (wisdom), Rati (delight), Śakti (power) and Puṣṭi (nourishment), key words and a life takeaway, around a picture of Goddess Lakshmi seated on a lotus.",
   sheet=dict(
    essence="The Goddess is praised in four complementary forms: wisdom, delight, power and nourishment. Together they make a life prosperous and fulfilling.",
    short="Salutations to her as Śruti, source of the fruit of good deeds; as Rati, ocean of lovely qualities; as Śakti, dwelling in the hundred-petalled lotus; and as Puṣṭi, beloved of Puruṣottama.",
@@ -1882,7 +1883,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <div class="ov-card ov-mean"><h2 class="ov-h">Meaning in short</h2><p>{E(v["meaning"])}</p>{('<p class="ov-quote">'+E(v["tagline"])+'</p>') if v.get("tagline") else ""}</div>
 {('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><span class="ic ic'+str(n)+'">'+icon(v["icons"][n],22)+'</span><span><b>'+E(a)+'</b> '+E(b)+'</span></li>' for n,(a,b) in enumerate(v["keypoints"]))+'</ul></div>') if v.get("keypoints") else ""}
 {forms_block(v) if v.get("formnotes") else ""}
-{('<div class="ov-card ov-sketch"><h2 class="ov-h">Sketch note</h2><div class="sk-wrap">'+sketch_note(v["keypoints"], v["icons"])+'</div><p class="sk-cap">Four forms of one Goddess, drawn as a sketch note: wisdom, delight, power and nourishment together make a flourishing life.</p>'+('<p class="sk-act"><a class="btn-s" href="/assets/sketch/'+v["sketchfile"]+'" download>Download the sketch note (PNG)</a></p>' if v.get("sketchfile") else "")+'</div>') if v.get("keypoints") else ""}</section>
+{('<div class="ov-card ov-sketch"><h2 class="ov-h">Sketch note</h2><div class="sk-wrap">'+(f'<img class="sk-img" src="/assets/sketch/{v["sketchfile"][:-4]}-1344.webp" width="1344" height="896" loading="lazy" alt="{E(v["sketchalt"])}">' if v.get("sketchfile") else sketch_note(v["keypoints"], v["icons"]))+'</div><p class="sk-cap">'+('A one-page summary of the verse: Sanskrit, meaning, the four forms, key words and a takeaway. On a phone, open it full screen.' if v.get("sketchfile") else 'Four forms of one Goddess: wisdom, delight, power and nourishment together make a flourishing life.')+'</p>'+('<p class="sk-act"><a class="btn-s" href="/assets/sketch/'+v["sketchfile"]+'" download>Download the sketch note (PNG)</a></p>' if v.get("sketchfile") else "")+'</div>') if v.get("keypoints") else ""}</section>
 {ad("below-verse")}
 <h2 id="words">Word-by-word meaning</h2>
 <p class="sect-note">The literal meaning of each word.</p>

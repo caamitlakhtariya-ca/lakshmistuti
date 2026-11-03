@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """One-page sketch note for a verse -> assets/sketch/<file>.png
-Usage: python3 tools/make_sketch_png.py kana 11 [plain|art:/path/to/lakshmi.png]
+Usage: python3 tools/make_sketch_png.py kana 11 [plain|lotus|art:/path/to/lakshmi.png]  (plain = use assets/sketch/lakshmi-art.png if present; lotus = my drawn lotus)
 Text comes from the verified verse data in build.py (verse['sheet']), never typed by hand.
 """
 import sys, os, html
@@ -36,7 +36,7 @@ def sheet(v, art=None):
 <style>
 *{{box-sizing:border-box;margin:0}}
 body{{width:1344px;height:896px;background:radial-gradient(circle at 20% 10%,#fffaf0,#fdf3dc 70%);font-family:"Patrick Hand","Cormorant Garamond",serif;color:#3b2a1e;position:relative;overflow:hidden}}
-.g{{position:absolute;inset:18px 22px;display:grid;grid-template-columns:396px 1fr 396px;gap:16px 20px;grid-template-rows:auto 1fr}}
+.g{{position:absolute;inset:18px 22px 34px;display:grid;grid-template-columns:396px 1fr 396px;gap:16px 20px;grid-template-rows:auto 1fr}}
 .title{{grid-column:2;grid-row:1;justify-self:center;align-self:start;white-space:nowrap;background:linear-gradient(#fbe7b5,#f6d48a);border:3px solid #b9801c;border-radius:10px 14px 10px 14px;padding:8px 30px;font:700 32px Caveat,cursive;color:#5a2d0c;letter-spacing:.5px;position:relative}}
 .panel{{position:relative;border:2.5px solid;border-radius:20px 26px 18px 24px/24px 18px 26px 20px;padding:22px 16px 12px}}
 .lab{{position:absolute;top:-17px;left:14px;font:700 26px Caveat,cursive;padding:0 16px;border-radius:999px;border:2px solid;line-height:1.35}}
@@ -66,7 +66,7 @@ body{{width:1344px;height:896px;background:radial-gradient(circle at 20% 10%,#ff
 .p-cp{{background:#fdeef2;border-color:#e28aa0;flex:1;padding-bottom:6px}}.p-cp .lab{{background:#f8c9d5;border-color:#d04a6c;color:#8a2c3c}}
 .p-cp svg.sketch{{width:100%;height:auto;margin:auto 0}}
 .sk-a{{font-family:"Cormorant Garamond";font-size:34px;font-weight:700;font-style:italic}}.sk-b{{font-family:"Patrick Hand";font-size:20px;fill:#3b2a1e}}.sk-c{{font-family:Caveat;font-size:25px;font-weight:700;fill:#3a2208}}
-.foot{{position:absolute;bottom:6px;left:0;right:0;text-align:center;font:600 15px Caveat;color:#8a7a62}}
+.foot{{position:absolute;bottom:8px;left:0;right:0;text-align:center;font:600 15px Caveat;color:#8a7a62}}
 </style></head><body><div class="g">
 <div class="col" style="grid-column:1;grid-row:1/3">
  <div class="panel p-sa"><span class="lab">Sanskrit</span><p class="deva" lang="sa">{v["deva"]}</p></div>
@@ -85,7 +85,9 @@ body{{width:1344px;height:896px;background:radial-gradient(circle at 20% 10%,#ff
 if __name__ == "__main__":
     series, n = sys.argv[1], int(sys.argv[2]); mode = sys.argv[3] if len(sys.argv) > 3 else "plain"
     v = next(x for x in SERIES[series] if x["n"] == n)
-    art = mode[4:] if mode.startswith("art:") else None
+    default_art = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "assets", "sketch", "lakshmi-art.png"))
+    art = mode[4:] if mode.startswith("art:") else (default_art if mode == "plain" and os.path.exists(default_art) else None)
+    if mode == "lotus": art = None
     out = sys.argv[4] if len(sys.argv) > 4 else os.path.join(os.path.dirname(__file__), "..", "assets", "sketch", v["sketchfile"])
     tmp = os.path.join(os.path.dirname(os.path.abspath(out)), "_sheet.html")
     open(tmp, "w").write(sheet(v, art))
@@ -93,4 +95,6 @@ if __name__ == "__main__":
         b = p.chromium.launch(); pg = b.new_page(viewport={"width": 1344, "height": 896}, device_scale_factor=2)
         pg.goto("file://" + os.path.abspath(tmp)); pg.wait_for_timeout(2500)
         pg.screenshot(path=out); b.close()
+    from PIL import Image
+    im = Image.open(out).convert("RGB"); im.resize((1344, 896), Image.LANCZOS).save(out.replace(".png", "-1344.webp"), quality=88, method=6)
     os.remove(tmp)
