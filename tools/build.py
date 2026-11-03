@@ -1092,12 +1092,12 @@ KVERSES = [
  ),
 
  dict(
-  n=13, slug="verse-13",
+  n=16, slug="verse-16",
   deva="सम्पत्कराणि सकलेन्द्रियनन्दनानि<br>साम्राज्यदानविभवानि सरोरुहाक्षि।<br>त्वद्वन्दनानि दुरिताहरणोद्यतानि<br>मामेव मातरनिशं कलयन्तु मान्ये॥",
   iast="Sampat-karāṇi sakalendriya-nandanāni<br>Sāmrājya-dāna-vibhavāni saroruhākṣi;<br>Tvad-vandanāni duritāharaṇodyatāni<br>Mām eva mātar aniśaṁ kalayantu mānye.",
-  ttl="Kanakadhara Stotram Verse 13 Meaning – Sampatkarani Sakalendriya",
-  dsc="Kanakadhara Stotram Verse 13 (Sampatkarani Sakalendriya Nandanani): salutations that bring prosperity and delight and remove misfortune. Word-by-word meaning.",
-  h1="Kanakadhāra Stotram – Verse 13",
+  ttl="Kanakadhara Stotram Verse 16 Meaning – Sampatkarani Sakalendriya",
+  dsc="Kanakadhara Stotram Verse 16 (Sampatkarani Sakalendriya Nandanani): salutations that bring prosperity and delight and remove misfortune. Word-by-word meaning.",
+  h1="Kanakadhāra Stotram – Verse 16",
   sub="Sampat-karāṇi sakalendriya-nandanāni – what homage brings",
   words=[
    ("सम्पत्कराणि","Sampat-karāṇi","Bringing prosperity","<em>Sampat</em> is wealth, good fortune, flourishing; <em>kara</em>, from the root <em>kṛ</em>, “to make”, means making or doing. So <em>sampat-kara</em> is “maker of prosperity”. The ending <em>-āṇi</em> is neuter plural, which tells us the word describes the salutations (<em>vandanāni</em>), not the Goddess. She is only addressed later in the verse."),
@@ -1116,13 +1116,13 @@ KVERSES = [
   insights=[
    ("In simple words","“O lotus-eyed Mother, worthy of honour: my salutations to you bring prosperity, gladden the senses, can bestow sovereignty and are always ready to remove misfortune. Let them be with me, and with me alone, without a break.” It is one sentence, and its subject is the poet’s own act of bowing."),
    ("What the verse actually says","The Goddess is not described here; the bowing is. Four descriptions, all in the same form, qualify <em>vandanāni</em>, “salutations”: they bring prosperity, they delight all the senses, they have the power to bestow sovereignty and they are ready to remove misfortune. Then comes the prayer: <em>mām eva … aniśaṁ kalayantu</em>, “let them attend me alone, without pause”."),
-   ("The poetry hidden in the verse","After four verses of bows, the poet stops to say what a bow is worth. Imagine a person who has been walking to a temple every morning and now says, quietly, what those walks have given him: a little more to live on, a little more joy in ordinary things, a little more command of himself, a little less weight of old mistakes. Then he asks only that the walking never stop."),
+   ("The poetry hidden in the verse","After a run of bows, the poet stops to say what a bow is worth. Imagine a person who has been walking to a temple every morning and now says, quietly, what those walks have given him: a little more to live on, a little more joy in ordinary things, a little more command of himself, a little less weight of old mistakes. Then he asks only that the walking never stop."),
    ("Sampat, the first fruit","<em>Sampat</em> is wealth, but also good fortune and flourishing in general. The verse says the <em>salutations</em> are <em>sampat-kara</em>, makers of it. As a reflection: prosperity here is wider than money. It includes work, health, family and the steadiness to use them well. The hymn’s own request for wealth in <a href=\"/kanakadhara/verse-8/\">Verse 8</a> is the more direct one; this verse says what the habit of homage can do."),
    ("The delight of the senses","<em>Sakala-indriya-nandana</em> means gladdening all the senses. Many people picture devotion as turning away from the senses; this line says the opposite. As a reflection: a mind that is thankful tends to notice more of what is beautiful, a sound, a taste, a sight, and enjoys it with less hurry."),
    ("Sovereignty","<em>Sāmrājya</em> is rule over a large realm. In the old picture it is the highest worldly power. Many readers take it also in an inner sense, as mastery of oneself: of habit, temper and spending. That is a reflection, not a line of the text; the verse itself says only that the salutations have the might to bestow sovereignty."),
    ("Release from misfortune","<em>Durita</em> is what has gone wrong. The salutations are called <em>udyata</em>, ready or intent, to remove it. As a reflection: prayer does not take the place of action, but it can steady a person enough to put right what can be put right."),
    ("Kalayantu: stay or attend?","The last verb has more than one shade. Some translators write “may they always remain with me”; others “may they ever attend me”. All of them keep what the line plainly says: it is a prayer, it is for himself, and it is without pause. This site keeps the wider “attend me”."),
-   ("How this verse follows the last","<a href=\"/kanakadhara/verse-12/\">Verse 12</a> gave four bows that told us who she is. This verse turns from her to the bows themselves and asks what they do. The question moves from “who is she?” to “what does honouring her bring me?”, and the poet answers in four fruits."),
+   ("How this verse follows the last","Verses 10 to 15 are a long run of bows: her names, her qualities, her face, her birth, her seat, her family and her beloved. This verse turns from her to the bows themselves and asks what they do. The question moves from “who is she?” to “what does honouring her bring me?”, and the poet answers in four fruits."),
    ("Three Sanskrit words to keep","<em>Vandana</em> is a salutation. <em>Sampat</em> is prosperity. <em>Durita</em> is misfortune or fault."),
    ("How to pronounce the key words","Sampat-karāṇi: sam-pat-ka-raa-ni. Sakalendriya-nandanāni: sa-ka-len-dri-ya-nan-da-naa-ni. Sāmrājya-dāna-vibhavāni: saam-raa-jya-daa-na-vi-bha-vaa-ni. Saroruhākṣi: sa-ro-ru-haak-shi. Tvad-vandanāni: tvad-van-da-naa-ni. Duritāharaṇodyatāni: du-ri-taa-ha-ra-no-dya-taa-ni. Mām eva mātar aniśaṁ kalayantu mānye: maam e-va maa-tar a-ni-sham ka-la-yan-tu maa-nye."),
   ],

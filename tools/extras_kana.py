@@ -411,7 +411,7 @@ EXTRAS = {
    foot="These notes follow standard Sanskrit grammar and explain the words themselves. They do not depend on any one commentary.",
   ),
  ),
- 13: dict(
+ 16: dict(
   icons=["coin","heart","crown","sun"],
   keypoints=[("Sampat","Prosperity: homage that brings good fortune"),("Nandana","Delight: it gladdens all the senses"),("Sāmrājya","Sovereignty: it can bestow rule and mastery"),("Durita","Release: it is ready to remove misfortune")],
   tagline="Four fruits of homage: prosperity, delight, sovereignty and release from misfortune, and a prayer that the homage never stops.",
@@ -430,7 +430,7 @@ EXTRAS = {
    words=[("सम्पत्","Sampat","Prosperity; good fortune"),("वन्दन","Vandana","Salutation; homage"),("विभव","Vibhava","Might; power; splendour"),("दुरित","Durita","Misfortune; fault")],
    take=["Count what already supports you.","Let thankfulness refine your senses.","Master yourself before anything else.","Set right one fault this week."],
   ),
-  sketchalt="Sketch note for Kanakadhāra Stotram Verse 13: the Sanskrit verse and transliteration, its meaning, four fruits of homage to the Goddess (prosperity, delight of the senses, sovereignty and release from misfortune), key words and a life takeaway, around a picture of Goddess Lakshmi seated on a lotus.",
+  sketchalt="Sketch note for Kanakadhāra Stotram Verse 16: the Sanskrit verse and transliteration, its meaning, four fruits of homage to the Goddess (prosperity, delight of the senses, sovereignty and release from misfortune), key words and a life takeaway, around a picture of Goddess Lakshmi seated on a lotus.",
   grammar=dict(
    anvaya_head=["Part of the sentence","In the verse"],
    anvaya_note="The verse is one sentence. Its subject is vandanāni, “salutations”; the four descriptions all agree with it. The Goddess is only called, in the “calling” case (the vocative). In plain order the sentence reads: saroruhākṣi mātar mānye, tvad-vandanāni sampat-karāṇi sakalendriya-nandanāni sāmrājya-dāna-vibhavāni duritāharaṇodyatāni mām eva aniśaṁ kalayantu.",
