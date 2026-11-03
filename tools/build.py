@@ -985,6 +985,13 @@ KVERSES = [
   keypoints=[("Śruti","Wisdom: the sacred knowledge that guides good action"),("Rati","Delight: love, beauty and lovely qualities"),("Śakti","Power: the energy that gives strength and the ability to act"),("Puṣṭi","Nourishment: growth, fullness and flourishing")],
   tagline="The Goddess is praised as wisdom, delight, power and nourishment: four strands of a flourishing life.",
   sketchfile="kanakadhara-verse-11-sketch-note.png",
+  sheet=dict(
+   essence="The Goddess is praised in four complementary forms: wisdom, delight, power and nourishment. Together they make a life prosperous and fulfilling.",
+   short="Salutations to her as Śruti, source of the fruit of good deeds; as Rati, ocean of lovely qualities; as Śakti, dwelling in the hundred-petalled lotus; and as Puṣṭi, beloved of Puruṣottama.",
+   salut=["The sacred knowledge that leads to good actions and their fruits.","Love, delight and kindness: an ocean of lovely qualities.","The energy that gives life, strength and the ability to act.","Growth, fullness and flourishing: the beloved of Viṣṇu (Puruṣottama)."],
+   words=[("श्रुति","Śruti","Sacred wisdom, the Veda"),("रति","Rati","Love, delight, joy"),("शक्ति","Śakti","Divine power, energy"),("पुष्टि","Puṣṭi","Nourishment, growth")],
+   take=["Seek wisdom to choose rightly.","Nurture love and lovely qualities.","Use your strength for a worthy purpose.","Make your life and work nourish others."],
+  ),
   formnotes=[
    ("Śruti means “what is heard”, the Veda. The line calls her the source from which good deeds yield their fruit. Wisdom comes first because it tells us which deeds are worth doing.","Am I deciding with understanding, or only reacting?"),
    ("Rati is delight, love and the pleasure of lovely qualities. The poet calls her an ocean of them. After wisdom, the second bow is to warmth and beauty.","Do the people around me feel kindness from the way I act?"),
