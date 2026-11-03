@@ -1759,7 +1759,9 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     art = {"@context":"https://schema.org","@type":"Article","headline":v["title"],"description":v["desc"],
            "author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
-    words = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p class="m">{E(c)}</p><p>{d}</p></div>' for a,b,c,d in v["words"])
+    rows = "".join(f'<tr><td class="t-s" lang="sa">{a}<i>{E(b)}</i></td><td>{E(c)}</td></tr>' for a,b,c,d in v["words"])
+    notes = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p>{d}</p></div>' for a,b,c,d in v["words"] if d)
+    words = f'<table class="wtable"><thead><tr><th>Sanskrit</th><th>Meaning</th></tr></thead><tbody>{rows}</tbody></table>' + (f'<details class="wnotes" open><summary>Notes on each word</summary>{notes}</details>' if notes else "")
     ins = "".join(ins_card(a,b) for a,b in v["insights"])
     med = "".join(med_step(x) for x in v["meditation"])
     medlink = '<a href="#meditation">Meditation</a>' if v["meditation"] else ''
@@ -1782,11 +1784,11 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <p class="crumbs">By {AUTHOR}</p>
 <div class="verse">{YANTRA}<p class="label">Devanāgarī</p><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
 {ad("below-verse")}
-<nav class="toc" aria-label="On this page"><a href="#words">Word by word</a><a href="#meaning">Meaning</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
+<nav class="toc" aria-label="On this page"><a href="#meaning">In plain English</a><a href="#words">Word by word</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
+<h2 id="meaning">The verse in plain English</h2>
+<blockquote class="plain"><p>{E(v["meaning"])}</p></blockquote>
 <h2 id="words">Word-by-word meaning</h2>
 {words}
-<h2 id="meaning">Full meaning</h2>
-<blockquote><p>{E(v["meaning"])}</p></blockquote>
 <h2 id="insights">Deeper spiritual insights</h2>
 {ins}
 {medsec}

@@ -210,3 +210,17 @@ ol.med li:last-child{border-bottom:0}
 .disc{font-family:var(--sans);font-size:.78rem;color:var(--muted);text-align:center;margin:0 0 20px}
 @media (max-width:560px){ol.med li{flex-direction:column;gap:6px}.mn{flex:none;align-self:flex-start}.ins{padding:16px 16px 14px}}
 @media print{.ins,.reflect{break-inside:avoid}}
+
+/* plain-English box and word table */
+blockquote.plain{background:var(--soft);border:1px solid var(--gold);border-left:6px solid var(--gold);border-radius:10px;padding:14px 20px;font-family:var(--display);font-size:1.25rem;line-height:1.6;font-style:italic}
+blockquote.plain p{margin:.3em 0}
+table.wtable{width:100%;border-collapse:collapse;margin:14px 0;font-size:.98rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.wtable th{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;text-align:left;color:var(--maroon);background:var(--soft);padding:9px 14px}
+.wtable td{padding:9px 14px;border-top:1px solid var(--line);vertical-align:top}
+.wtable tr:nth-child(even) td{background:rgba(184,134,11,.05)}
+.t-s{width:44%;font-family:var(--deva);font-size:1.12rem;color:var(--maroon)}
+.t-s i{display:block;font-family:var(--serif);font-size:.85rem;color:var(--muted);margin-top:1px}
+details.wnotes{margin:18px 0;border:1px dashed var(--line);border-radius:10px;padding:2px 16px}
+details.wnotes>summary{cursor:pointer;font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:12px 0;font-weight:600}
+@media (max-width:560px){.t-s{width:48%}.wtable td,.wtable th{padding:8px 10px}}
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px}.toc a{margin-right:0}
