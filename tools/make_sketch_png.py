@@ -39,7 +39,7 @@ def sheet(v, art=None, sname="Kanakadhāra Stotram"):
 <style>
 *{{box-sizing:border-box;margin:0}}
 body{{width:1344px;height:896px;background:radial-gradient(circle at 20% 10%,#fffaf0,#fdf3dc 70%);font-family:"Patrick Hand","Cormorant Garamond",serif;color:#3b2a1e;position:relative;overflow:hidden}}
-.g{{position:absolute;inset:18px 22px 34px;display:grid;grid-template-columns:396px 1fr 396px;gap:16px 20px;grid-template-rows:auto 1fr}}
+.g{{position:absolute;inset:18px 22px 34px;display:grid;grid-template-columns:396px minmax(0,1fr) 396px;gap:16px 20px;grid-template-rows:auto 1fr}}
 .title{{grid-column:2;grid-row:1;justify-self:center;align-self:start;white-space:nowrap;background:linear-gradient(#fbe7b5,#f6d48a);border:3px solid #b9801c;border-radius:10px 14px 10px 14px;padding:8px 30px;font:700 32px Caveat,cursive;color:#5a2d0c;letter-spacing:.5px;position:relative}}
 .panel{{position:relative;border:2.5px solid;border-radius:20px 26px 18px 24px/24px 18px 26px 20px;padding:22px 16px 12px}}
 .lab{{position:absolute;top:-17px;left:14px;font:700 26px Caveat,cursive;padding:0 16px;border-radius:999px;border:2px solid;line-height:1.35}}
@@ -77,7 +77,7 @@ body{{width:1344px;height:896px;background:radial-gradient(circle at 20% 10%,#ff
  <div class="panel p-me"><span class="lab">Meaning (in short)</span><p>{esc(d["short"])}</p></div>
  <div class="panel p-kw"><span class="lab">Key Words</span>{words}</div>
 </div>
-<div class="title">{esc(sname)} – {esc(B.lab(v))}</div>
+<div class="title" style="font-size:{30 if len(sname)+len(B.lab(v))<34 else 25}px">{esc(sname)} – {esc(B.lab(v))}</div>
 <div class="col" style="grid-column:3;grid-row:1/3"><div class="panel p-fs"><span class="lab">{esc(d.get("salut_title","Key Ideas"))}</span>{sal}</div>
  <div class="panel p-cp"><span class="lab">{esc(d.get("centre_title","The Whole Picture"))}</span>{centre}</div></div>
 <div class="mid" style="grid-column:2;grid-row:2">{lotus(art)}
