@@ -981,6 +981,8 @@ KVERSES = [
   deva="श्रुत्यै नमोऽस्तु शुभकर्मफलप्रसूत्यै<br>रत्यै नमोऽस्तु रमणीयगुणार्णवायै।<br>शक्त्यै नमोऽस्तु शतपत्रनिकेतनायै<br>पुष्ट्यै नमोऽस्तु पुरुषोत्तमवल्लभायै॥",
   iast="Śrutyai namo ’stu śubha-karma-phala-prasūtyai<br>Ratyai namo ’stu ramaṇīya-guṇārṇavāyai;<br>Śaktyai namo ’stu śata-patra-niketanāyai<br>Puṣṭyai namo ’stu puruṣottama-vallabhāyai.",
   ttl="Kanakadhara Stotram Verse 11 Meaning – Shrutyai Namostu",
+  keypoints=[("Śruti","Wisdom: the sacred knowledge that guides good action"),("Rati","Delight: love, beauty and lovely qualities"),("Śakti","Power: the energy that gives strength and the ability to act"),("Puṣṭi","Nourishment: growth, fullness and flourishing")],
+  tagline="The Goddess is praised as wisdom, delight, power and nourishment: four strands of a flourishing life.",
   dsc="Kanakadhara Stotram Verse 11 (Shrutyai Namo ’stu): four salutations to Lakshmi as Shruti, Rati, Shakti and Pushti. Word-by-word meaning in English.",
   h1="Kanakadhāra Stotram – Verse 11",
   sub="Śrutyai namo ’stu – four bows",
@@ -1739,6 +1741,14 @@ def close_block(t):
     d = f'<p class="disc">{E(disc)}</p>' if disc else ""
     return f'<p class="closing">{E(t)}</p>{d}'
 
+def four_art(kp):
+    pos=[(88,88),(192,88),(88,192),(192,192)]
+    out='<svg class="fourart" viewBox="0 0 280 280" role="img" aria-label="The four forms">'
+    for (cx,cy),(a,b) in zip(pos,kp):
+        out+=f'<circle cx="{cx}" cy="{cy}" r="62" fill="rgba(255,255,255,.07)" stroke="#e5b94a" stroke-opacity=".7"/><text x="{cx}" y="{cy-2}" text-anchor="middle" class="fa-t">{E(a)}</text><text x="{cx}" y="{cy+16}" text-anchor="middle" class="fa-s">{E(b.split(":")[0])}</text>'
+    out+='<circle cx="140" cy="140" r="14" fill="#e5b94a"/></svg>'
+    return out
+
 def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None, spname=None):
     lst = lst or VERSES
     total = total or len(lst)
@@ -1776,17 +1786,19 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     vnav = f'<aside class="vnav" aria-label="Verses"><p class="vn-title"><a href="/{base}/">{sname}</a></p><ol>{items}</ol><p class="vn-other"><a href="/{other[1]}/">{other[0]} →</a></p></aside>'
     vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView&&innerWidth<1100){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
-<main class="wrap has-vnav">{vnav}<article>
-{crumbs([(sname,base+"/"),(lab(v),None)])}
-<p class="shri small" lang="sa">श्री</p>
+<header class="vhero"><div class="vh-in"><div class="vh-text">
+<p class="vh-kick" lang="sa">श्री</p>
 <h1>{v["h1"]}</h1>
 <p class="lede">{E(v["sub"])}</p>
-<p class="crumbs">By {AUTHOR}</p>
-<div class="verse">{YANTRA}<p class="label">Devanāgarī</p><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
+<p class="vh-by">By {AUTHOR}</p></div>
+<div class="vh-art">{four_art(v["keypoints"]) if v.get("keypoints") else YANTRA}</div></div></header>
+<main class="wrap has-vnav">{vnav}<article>
+{crumbs([(sname,base+"/"),(lab(v),None)])}
+<nav class="vtabs" aria-label="On this page"><a href="#overview">Overview</a><a href="#words">Word by word</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
+<section id="overview" class="ov"><div class="ov-card ov-verse"><h2 class="ov-h">The verse</h2><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
+<div class="ov-card ov-mean"><h2 class="ov-h">Meaning in short</h2><p>{E(v["meaning"])}</p>{('<p class="ov-quote">'+E(v["tagline"])+'</p>') if v.get("tagline") else ""}</div>
+{('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><b>'+E(a)+'</b> '+E(b)+'</li>' for a,b in v["keypoints"])+'</ul></div>') if v.get("keypoints") else ""}</section>
 {ad("below-verse")}
-<nav class="toc" aria-label="On this page"><a href="#meaning">In plain English</a><a href="#words">Word by word</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
-<h2 id="meaning">The verse in plain English</h2>
-<blockquote class="plain"><p>{E(v["meaning"])}</p></blockquote>
 <h2 id="words">Word-by-word meaning</h2>
 {words}
 <h2 id="insights">Deeper spiritual insights</h2>
