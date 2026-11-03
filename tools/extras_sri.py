@@ -24,7 +24,7 @@ EXTRAS = {
    essence="Before asking for anything, the hymn paints her: golden, gentle, garlanded and moon-bright, and then invites her through Agni.",
    short="I ask Agni, the knower of all births, to bring to me Lakshmi: golden-hued, gentle as a doe, wearing garlands of gold and silver, moon-bright and golden in form.",
    salut=["Golden in colour: purity, light and auspiciousness.", "Gentle and graceful, like a deer.", "Wears garlands of gold and silver.", "Shining and gladdening like the moon."],
-   words=[("हिरण्यवर्णां", "Hiraṇyavarṇāṁ", "Golden-coloured one"), ("हरिणीं", "Hariṇīṁ", "Deer-like, gentle"), ("चन्द्रां", "Chandrāṁ", "Moon-like, gladdening"), ("जातवेदो", "Jātavedo", "O Agni, knower of all births")],
+   words=[("हिरण्य", "Hiraṇya", "Gold, golden"), ("हरिणी", "Hariṇī", "Deer-like, gentle"), ("चन्द्र", "Chandra", "Moon-like, gladdening"), ("आवह", "Āvaha", "Please bring")],
    take=["Begin with gratitude for what is good.", "Choose gentleness before force.", "Let ambition and calm sit together.", "Be a comforting presence to others."]),
   sketchalt=_alt(1, "four glimpses of Lakshmi as Hiraṇyavarṇā (golden), Hariṇī (gentle), the wearer of the gold and silver garland, and Chandrā (moon-like)")),
 
@@ -46,7 +46,7 @@ EXTRAS = {
    essence="She is invited to stay for good, and the wish widens from gold to nourishment, strength and the company of good people.",
    short="O Jātaveda, bring to me Lakshmi, who never leaves, through whom I may obtain gold, cattle, horses and worthy people.",
    salut=["She who does not go away: a lasting presence.", "Gold, read as wisdom, grace and clarity.", "Cattle and horses: food, energy and progress.", "Worthy, noble people as part of true wealth."],
-   words=[("अनपगामिनीम्", "Anapagāminīm", "One who never leaves"), ("हिरण्यं", "Hiraṇyaṁ", "Gold, divine wealth"), ("गामश्वम्", "Gām aśvam", "Cattle and horses"), ("पुरुषान्", "Puruṣān", "Good, noble people")],
+   words=[("हिरण्य", "Hiraṇya", "Gold, divine wealth"), ("लक्ष्मी", "Lakṣmī", "The Goddess Lakshmi"), ("पुरुष", "Puruṣa", "Person; noble people"), ("आवह", "Āvaha", "Please bring")],
    take=["Ask for lasting things, not passing ones.", "Count nourishment and energy as wealth.", "Keep good people close.", "Let wealth widen your life, not narrow it."]),
   sketchalt=_alt(2, "four key ideas: Anapagāminī (she who never leaves), Hiraṇya (gold as divine wealth), Gām aśvam (cattle and horses, nourishment and progress) and Puruṣān (good company)")),
 
@@ -66,7 +66,7 @@ EXTRAS = {
    essence="Horses lead, a chariot carries and elephants announce her. Prosperity is pictured as energy, direction and steadiness together.",
    short="I call the divine Śrī, who comes preceded by horses, seated in a chariot and awakened by the trumpeting of elephants. May she favour me and stay.",
    salut=["Horses ahead of her: speed, enthusiasm, effort.", "The chariot: a structured path and direction.", "Elephants: strength, stability and wisdom."],
-   words=[("अश्वपूर्वां", "Aśva-pūrvāṁ", "Preceded by horses"), ("रथमध्यां", "Ratha-madhyāṁ", "Seated in the chariot"), ("हस्तिनादप्रबोधिनीम्", "Hastināda-prabodhinīm", "Awakened by elephant trumpets"), ("उपह्वये", "Upahvaye", "I invoke, I call upon")],
+   words=[("अश्व", "Aśva", "Horse"), ("रथ", "Ratha", "Chariot"), ("हस्ति", "Hasti", "Elephant"), ("श्रियं", "Śriyaṁ", "Śrī, the Goddess of prosperity")],
    take=["Bring energy to your work.", "Walk a path with direction.", "Build on steady, wise foundations.", "Ask for prosperity that stays."]),
   sketchalt=_alt(3, "three images of her arrival: horses (energy), the chariot (direction) and elephants (stability and wisdom)")),
 
@@ -88,7 +88,7 @@ EXTRAS = {
    essence="She is walled in gold, tender, radiant and content, seated on a lotus: prosperity that is secure, shared and pure.",
    short="I call here and now upon that Śrī: surrounded by walls of gold, tender, radiant, fully satisfied and satisfying others, seated on a lotus and lotus-hued.",
    salut=["Golden walls: well protected and enduring.", "Tender and compassionate; she nourishes others.", "Radiant like fire, yet fully satisfied.", "On a lotus: pure, untouched by the mud."],
-   words=[("हिरण्यप्राकाराम्", "Hiraṇya-prākārām", "Surrounded by walls of gold"), ("आर्द्राम्", "Ārdrām", "Tender, compassionate"), ("तृप्ताम्", "Tṛptāṁ", "Fully satisfied"), ("पद्मवर्णाम्", "Padma-varṇāṁ", "Lotus-coloured")],
+   words=[("हिरण्य", "Hiraṇya", "Gold, golden"), ("तृप्ता", "Tṛptā", "Fully satisfied"), ("पद्म", "Padma", "Lotus"), ("स्थितां", "Sthitāṁ", "Seated")],
    take=["Build on strong, honest foundations.", "Let what you have nourish others.", "Practise contentment while you strive.", "Stay pure and humble, like the lotus."]),
   sketchalt=_alt(4, "four qualities: golden walls (protected), Ārdrā (tender and nourishing), Tṛptā (radiant yet content) and the lotus (pure and untouched)")),
 
@@ -110,7 +110,7 @@ EXTRAS = {
    essence="After praising her moon-like glory and generosity, the verse becomes personal: I take refuge, let misfortune go and choose her.",
    short="I take refuge in that radiant, generous Śrī, adored by the gods and bearing the lotus. May misfortune vanish from me; O Lakshmi, I choose you.",
    salut=["Generous and glorious: she lifts others too.", "Refuge: do your part, then surrender the result.", "Alakṣmī, misfortune: may it vanish.", "I choose you: a conscious, daily choice."],
-   words=[("उदाराम्", "Udārām", "Generous, magnanimous"), ("शरणम्", "Śaraṇam", "Refuge, shelter"), ("अलक्ष्मीर्", "Alakṣmīr", "Misfortune, the opposite of Śrī"), ("वृणे", "Vṛṇe", "I choose")],
+   words=[("चन्द्र", "Chandra", "Moon-like, gladdening"), ("यशसा", "Yaśasā", "With fame and honour"), ("शरण", "Śaraṇa", "Refuge, shelter"), ("वृणे", "Vṛṇe", "I choose")],
    take=["Be generous as you grow.", "Do your best, then release the result.", "Let go of one blocking habit.", "Choose well, every day."]),
   sketchalt=_alt(5, "four steps: Udārā (generous), Śaraṇam (refuge and surrender), Alakṣmī (letting go of misfortune) and Tvāṁ vṛṇe (I choose you)")),
 
@@ -132,7 +132,7 @@ EXTRAS = {
    essence="Born of effort and bright as the sun, her sacred bilva tree stands for slow, steady fruit that clears obstacles within and without.",
    short="O Goddess bright as the sun, born of tapas: the bilva is your tree. May its fruits, through my effort, drive away illusion, inner obstacles and outer misfortune.",
    salut=["Bright as the sun: radiant, life-giving, steady.", "Tapas: effort and discipline are the root.", "The bilva tree: slow growth, sacred fruit.", "Inner and outer obstacles dissolve."],
-   words=[("आदित्यवर्णे", "Āditya-varṇe", "Sun-coloured one"), ("तपसो", "Tapaso", "By effort and discipline"), ("बिल्वः", "Bilvaḥ", "The bilva tree"), ("अलक्ष्मीः", "Alakṣmīḥ", "Misfortune")],
+   words=[("आदित्य", "Āditya", "The sun"), ("तपस", "Tapas", "Effort, discipline"), ("बिल्व", "Bilva", "The sacred bilva tree"), ("फलानि", "Phalāni", "Fruits")],
    take=["Choose steady effort over shortcuts.", "Plant slow, sincere work.", "Name the inner block, then clear it.", "Shine for others, like the sun."]),
   sketchalt=_alt(6, "four images: Āditya-varṇā (sun-bright), Tapas (effort), the bilva tree (slow sacred fruit) and the clearing of inner and outer obstacles")),
 
@@ -154,7 +154,7 @@ EXTRAS = {
    essence="She is asked for with honour: divine companionship, a good name, a place in society and steady growth.",
    short="May the friend of the gods approach me, with honour and brilliance. Having arisen in this society, may I be granted good repute and growth.",
    salut=["Companion of the gods: abundance in line with dharma.", "Honour and a good name, with jewel-like brilliance.", "In this society: prosperity that lifts others.", "Steady growth that keeps integrity."],
-   words=[("देवसखः", "Deva-sakhaḥ", "Friend of the gods"), ("कीर्तिः", "Kīrtiś", "Honour, good reputation"), ("मणिना", "Maṇinā", "With jewel-like brilliance"), ("ऋद्धिं", "Ṛddhiṁ", "Growth, prosperity")],
+   words=[("सखः", "Sakhaḥ", "Friend"), ("कीर्ति", "Kīrti", "Honour, good reputation"), ("मणि", "Maṇi", "Jewel, brilliance"), ("राष्ट्रे", "Rāṣṭre", "In this society, this land")],
    take=["Earn in a way you can speak of openly.", "Guard your good name.", "Let your prosperity lift others.", "Grow without losing your integrity."]),
   sketchalt=_alt(7, "four ideas: Deva-sakhaḥ (friend of the gods), Kīrti (honour), Rāṣṭra (society) and Ṛddhi (growth)")),
 
@@ -176,7 +176,7 @@ EXTRAS = {
    essence="A verse of clearing: name craving and scarcity, then decide firmly to sweep lack and stagnation out of the home and the heart.",
    short="I destroy the impurity of hunger and thirst, the misfortune called Jyeṣṭhā and Alakṣmī. Drive out all lack and stagnation from my home.",
    salut=["Hunger and thirst: restless craving, not only food.", "Jyeṣṭhā and Alakṣmī: scarcity, quarrel, negativity.", "“I destroy”: a firm, personal decision.", "Drive it out of my home, completely."],
-   words=[("क्षुत्पिपासामलां", "Kṣut-pipāsā-malāṁ", "Impurity of hunger and thirst"), ("ज्येष्ठाम्", "Jyeṣṭhām", "The elder sister of Lakshmi"), ("नाशयाम्यहम्", "Nāśayāmy aham", "I destroy"), ("निर्णुद", "Nirṇuda", "Drive out, banish")],
+   words=[("क्षुत्", "Kṣut", "Hunger"), ("पिपासा", "Pipāsā", "Thirst"), ("ज्येष्ठा", "Jyeṣṭhā", "The elder sister of Lakshmi"), ("निर्णुद", "Nirṇuda", "Drive out, banish")],
    take=["Notice where craving takes over.", "Decide, don’t just hope.", "Clear one corner of home or mind today.", "Stop feeding complaint and carelessness."]),
   sketchalt=_alt(8, "four steps of clearing: Kṣut-pipāsā (craving), Alakṣmī (misfortune), Nāśayāmi (I destroy, a firm resolve) and Nirṇuda (drive it out of the home)")),
 
@@ -198,7 +198,7 @@ EXTRAS = {
    essence="She is sensed like fragrance, cannot be overcome, is ever nourished and rules as protector of all beings.",
    short="Here and now I invoke Śrī: known by fragrance, invincible, ever nourishing and fruitful, the sovereign of all beings.",
    salut=["Fragrance: a quiet presence, sensed not announced.", "Invincible: grace that challenges do not shake.", "Ever nourished: steady, not peaks and valleys.", "Sovereign of all beings and their protector."],
-   words=[("गन्धद्वाराम्", "Gandha-dvārām", "Known by fragrance"), ("दुराधर्षाम्", "Durādharṣām", "Invincible"), ("नित्यपुष्टाम्", "Nitya-puṣṭām", "Ever nourishing"), ("ईश्वरीम्", "Īśvarīm", "Sovereign goddess")],
+   words=[("गन्ध", "Gandha", "Fragrance"), ("नित्य", "Nitya", "Ever, always"), ("पुष्टा", "Puṣṭā", "Nourished"), ("ईश्वरी", "Īśvarī", "Sovereign goddess")],
    take=["Be quietly useful, not loud.", "Build steadiness that outlasts bad days.", "Nourish health and relationships daily.", "Seek prosperity that is good for all."]),
   sketchalt=_alt(9, "four qualities: Gandha-dvārā (fragrance), Durādharṣā (unshaken), Nitya-puṣṭā (ever nourished) and Īśvarī (sovereign protector of all beings)")),
 
@@ -220,7 +220,7 @@ EXTRAS = {
    essence="A grounded prayer: pure wishes, truthful speech, enough to eat and honour that stays.",
    short="May the wishes and intentions of my mind be fulfilled and my speech be true. May cattle and food be mine, and may prosperity and honour dwell in me.",
    salut=["The mind’s wishes: pure, noble intentions.", "Truth in speech: honesty is the foundation.", "Cattle and food: nourishment for self and others.", "Prosperity and honour that stay within."],
-   words=[("मनसः", "Manasaḥ", "Of the mind"), ("सत्यम्", "Satyam", "Truth"), ("अन्नस्य", "Annasya", "Of food, nourishment"), ("यशः", "Yaśaḥ", "Honour, good name")],
+   words=[("मनसः", "Manasaḥ", "Of the mind"), ("सत्यम्", "Satyam", "Truth"), ("पशूनां", "Paśūnāṁ", "Of cattle"), ("यशः", "Yaśaḥ", "Honour, good name")],
    take=["Check your wishes for care, not ego.", "Keep your word.", "Share what nourishes you.", "Let a good name grow slowly."]),
   sketchalt=_alt(10, "four wishes: Kāmam (pure intentions), Satyam (truthful speech), Annam (nourishment) and Yaśaḥ (honour that stays)")),
 
@@ -242,7 +242,7 @@ EXTRAS = {
    essence="Prosperity as fertile soil: it rises from within, continues through the family and rests with Lakshmi as a lotus-garlanded mother.",
    short="By Kardama, the fertile force, may abundance arise in me. May Lakshmi, the mother who wears lotus garlands, dwell in my family and lineage.",
    salut=["Kardama: the fertile, nourishing ground.", "Creation and continuity across generations.", "Abundance rising from character and effort.", "The mother with lotus garlands, always present."],
-   words=[("कर्दमेन", "Kardamena", "By Kardama, the fertile force"), ("प्रजाभूता", "Prajābhūtā", "Giving rise to creation"), ("सम्भव", "Sambhava", "Arise, come into being"), ("मातरं", "Mātaraṁ", "Mother")],
+   words=[("कर्दम", "Kardama", "The fertile force"), ("प्रजा", "Prajā", "Offspring, creation"), ("मातरं", "Mātaraṁ", "Mother"), ("कुले", "Kule", "In the family")],
    take=["Prepare good soil: habits and intentions.", "Build what will outlast you.", "Grow from within first.", "Make home a place of care."]),
   sketchalt=_alt(11, "four ideas: Kardama (fertile soil), Prajābhūtā (continuity), Mayi sambhava (abundance from within) and Mātā (the motherly Lakshmi with a lotus garland)")),
 
@@ -264,7 +264,7 @@ EXTRAS = {
    essence="The sacred waters bring softness, and the verse asks Lakshmi to dwell, humble and constant, in the family.",
    short="May the sacred waters bring forth softness and richness. Dwell in my home; O Mother Śrī, make the Goddess live in my family.",
    salut=["Sacred waters: flow, purity, cleansing.", "Softness: sweet behaviour, harmony at home.", "Ciklīta: what helps prosperity stay.", "A humble, constant presence in the family."],
-   words=[("आपः", "Āpaḥ", "Sacred waters"), ("स्निग्धानि", "Snigdhāni", "Soft, smooth, affectionate"), ("चिक्लीत", "Ciklīta", "Richness, fertility"), ("वासय", "Vāsaya", "Make her dwell")],
+   words=[("आपः", "Āpaḥ", "Sacred waters"), ("स्निग्ध", "Snigdha", "Soft, smooth, affectionate"), ("चिक्लीत", "Ciklīta", "Richness, fertility"), ("वासय", "Vāsaya", "Make her dwell")],
    take=["Let things flow, don’t force them.", "Be gentle at home.", "Practise contentment and gratitude.", "Welcome a calm, constant presence."]),
   sketchalt=_alt(12, "four ideas: Āpaḥ (sacred waters), Snigdha (softness), Ciklīta (what helps prosperity stay) and Vāsaya (a settled, humble presence in the family)")),
 
@@ -286,7 +286,7 @@ EXTRAS = {
    essence="Four soft qualities, tender, lotus-calm, nourishing and golden, are asked for through Agni, the messenger.",
    short="O Jātaveda, bring to me Lakshmi: tender, dwelling among lotuses, full of nourishment, golden-hued, wearing lotus garlands, moon-bright and golden in form.",
    salut=["Tender and compassionate: wealth with empathy.", "A lotus lake: purity, serenity and peace.", "Nourishment of body, mind and soul.", "Golden and warm: a bright, inviting glow."],
-   words=[("आर्द्राम्", "Ārdrām", "Tender, compassionate"), ("पुष्करिणीं", "Puṣkariṇīṁ", "Dweller among lotuses"), ("पुष्टिं", "Puṣṭiṁ", "Nourishment, fullness"), ("पिङ्गलाम्", "Piṅgalām", "Golden-hued")],
+   words=[("आर्द्रां", "Ārdrāṁ", "Tender, compassionate"), ("पद्म", "Padma", "Lotus"), ("पुष्टिं", "Puṣṭiṁ", "Nourishment, fullness"), ("चन्द्र", "Chandra", "Moon-like")],
    take=["Let empathy shape your decisions.", "Make room for stillness.", "Nourish body, mind and soul.", "Be warm and inviting to others."]),
   sketchalt=_alt(13, "four qualities: Ārdrā (tender), Puṣkariṇī (lotus lake), Puṣṭi (nourishment) and Piṅgalā (golden glow)")),
 
@@ -308,7 +308,7 @@ EXTRAS = {
    essence="Tender and hard-working, golden and sun-bright: wealth that is kind, active and radiant from within.",
    short="O Agni, bring to me Lakshmi: tender, the power that fulfils every work, golden, garlanded with gold, sun-bright and filled with golden light.",
    salut=["Tender: wealth with kindness and love.", "Action and resolve: steady, disciplined effort.", "Golden and garlanded: the beauty of life.", "Sun-bright: an inner light that lights others."],
-   words=[("आर्द्राम्", "Ārdrām", "Tender, compassionate"), ("करिणीं", "Kariṇīṁ", "Power to complete work"), ("सुवर्णाम्", "Suvarṇām", "Golden, pure and bright"), ("सूर्याम्", "Sūryām", "Sun-bright, life-giving")],
+   words=[("आर्द्र", "Ārdra", "Tender, compassionate"), ("करिणी", "Kariṇī", "Power to complete work"), ("सुवर्ण", "Suvarṇa", "Golden, pure and bright"), ("सूर्य", "Sūrya", "Sun-bright, life-giving")],
    take=["Keep kindness inside your work.", "Finish what you begin.", "Notice beauty beyond possessions.", "Be a source of light for others."]),
   sketchalt=_alt(14, "four qualities: Ārdrā (tender), Kariṇī (action and resolve), Suvarṇā (golden beauty) and Sūryā (sun-bright inner light)")),
 
@@ -330,7 +330,7 @@ EXTRAS = {
    essence="The hymn returns to its first request: a Lakshmi who stays, with brightness, nourishment, support and good company.",
    short="O Jātaveda, bring to me Lakshmi who never leaves, in whose presence may I obtain gold in abundance, cows, helpers, horses and excellent people.",
    salut=["She who never leaves: lasting prosperity and peace.", "Gold in abundance, also knowledge and judgement.", "Nourishment, helpers and horses: support and progress.", "Excellent people: positive, uplifting company."],
-   words=[("अनपगामिनीम्", "Anapagāminīm", "One who never goes away"), ("प्रभूतं", "Prabhūtam", "In abundance"), ("गावो", "Gāvo", "Cows, nourishment"), ("पुरुषान्", "Puruṣān", "Excellent people")],
+   words=[("हिरण्य", "Hiraṇya", "Gold, also knowledge"), ("गावो", "Gāvo", "Cows, nourishment"), ("अश्वान्", "Aśvān", "Horses: strength, progress"), ("पुरुष", "Puruṣa", "Excellent people")],
    take=["Ask for what lasts.", "Value knowledge and good judgement.", "Thank those who support you.", "Keep company that lifts you."]),
   sketchalt=_alt(15, "four ideas: Anapagāminī (she who never leaves), Hiraṇya (gold and brightness), Gāvaḥ and Aśvān (nourishment, helpers and strength) and Puruṣān (good company)")),
 
@@ -352,7 +352,7 @@ EXTRAS = {
    essence="The closing verse is about practice: purity, restraint, a daily offering and steady recitation of the fifteen verses.",
    short="One who becomes pure and self-restrained, offers ghee into the fire daily and steadily recites the fifteen verses of Śrī, desiring Śrī.",
    salut=["Śuci: a pure, clean mind.", "Prayata: self-restraint and discipline.", "A daily offering of ghee, and of one’s work.", "Steady recitation of the fifteen verses."],
-   words=[("शुचिः", "Śuciḥ", "Pure"), ("प्रयतः", "Prayataḥ", "Self-restrained"), ("आज्यम्", "Ājyam", "Ghee, clarified butter"), ("जपेत्", "Japet", "One should recite")],
+   words=[("शुचिः", "Śuciḥ", "Pure"), ("प्रयत", "Prayata", "Self-restrained"), ("सततं", "Satataṁ", "Continuously"), ("जपेत्", "Japet", "One should recite")],
    take=["Begin with a clean mind.", "Practise restraint.", "Keep a small daily offering.", "Recite steadily, with faith."]),
   sketchalt=_alt(16, "four practices: Śuci (purity), Prayata (restraint), Juhuyāt (the daily offering) and Japet (steady recitation of the fifteen verses)")),
 }
