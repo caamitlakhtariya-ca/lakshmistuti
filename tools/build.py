@@ -1822,6 +1822,10 @@ ICONS = {
 def icon(name, size=22, cls="", attrs=""):
     return f'<svg class="icn {cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" {attrs}>{ICONS[name]}</svg>'
 
+def fa_fit(t, size, maxw):
+    # approx. width of display type ~0.52em per char; shrink only when it would leave the circle
+    w=len(t)*size*0.52
+    return f' style="font-size:{size*maxw/w:.1f}px"' if w>maxw else ""
 FA_POS = {3:[(92,92),(188,92),(140,186)], 4:[(88,88),(192,88),(88,192),(192,192)]}
 FA_CENTRE = {3:(140,121), 4:(140,140)}
 def four_art(kp, icons):
@@ -1830,7 +1834,7 @@ def four_art(kp, icons):
     for (cx,cy),(a,b),ic in zip(FA_POS[n],kp,icons):
         out+=f'<circle cx="{cx}" cy="{cy}" r="62" fill="rgba(255,255,255,.07)" stroke="#e5b94a" stroke-opacity=".7"/>'
         out+=f'<svg x="{cx-13}" y="{cy-42}" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e5b94a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{ICONS[ic]}</svg>'
-        out+=f'<text x="{cx}" y="{cy-2}" text-anchor="middle" class="fa-t">{E(a)}</text><text x="{cx}" y="{cy+16}" text-anchor="middle" class="fa-s">{E(b.split(":")[0])}</text>'
+        out+=f'<text x="{cx}" y="{cy-2}" text-anchor="middle" class="fa-t"{fa_fit(a,20,104)}>{E(a)}</text><text x="{cx}" y="{cy+16}" text-anchor="middle" class="fa-s"{fa_fit(b.split(":")[0],10,104)}>{E(b.split(":")[0])}</text>'
     ox,oy=FA_CENTRE[n]
     out+=f'<circle cx="{ox}" cy="{oy}" r="14" fill="#e5b94a"/></svg>'
     return out
