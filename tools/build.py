@@ -1880,6 +1880,13 @@ def forms_block(v):
         o+=f'<details name="forms" class="fcard fc{n}"><summary><span class="ic ic{n}">{icon(v["icons"][n],26)}</span><span class="ft"><b>{E(a)}</b><small>{E(b.split(":")[0])}</small></span></summary><div class="fbody"><p>{E(body)}</p><p class="fask"><b>Pause and reflect:</b> {E(ask)}</p></div></details>'
     return o+'</div></div>'
 
+ORN = '<svg class="orn {c}" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z"/></svg>'
+ORN_TL = ORN.replace("{c}", "tl"); ORN_BR = ORN.replace("{c}", "br")
+def verse_label(v, base):
+    if v.get("label") and "halaśruti" in v["label"]: return "॥ फलश्रुति ॥"
+    dn = str(v["n"]).translate(str.maketrans("0123456789", "०१२३४५६७८९"))
+    return f"॥ {'ऋचा' if base == 'sri-suktam' else 'श्लोक'} {dn} ॥"
+
 def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None, spname=None):
     lst = lst or VERSES
     total = total or len(lst)
@@ -1930,7 +1937,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <main class="wrap has-vnav">{vnav}<article>
 {crumbs([(sname,base+"/"),(lab(v),None)])}
 <nav class="vtabs" aria-label="On this page"><a href="#overview">Overview</a><a href="#words">Word by word</a>{gramlink}<a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
-<section id="overview" class="ov"><div class="ov-card ov-verse"><h2 class="ov-h">The verse</h2><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
+<section id="overview" class="ov"><div class="ov-card ov-verse vcard">{ORN_TL}{ORN_BR}<h2 class="sr">The verse</h2><p class="vlabel" lang="sa">{verse_label(v, base)}</p><p class="deva" lang="sa">{v["deva"]}</p><p class="vfoot" lang="sa">॥ श्री महालक्ष्म्यै नमः ॥</p><div class="vtr"><p class="iast" lang="sa-Latn">{v["iast"]}</p></div></div>
 <div class="ov-card ov-mean"><h2 class="ov-h">Meaning in short</h2><p>{E(v["meaning"])}</p>{('<p class="ov-quote">'+E(v["tagline"])+'</p>') if v.get("tagline") else ""}</div>
 {('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><span class="ic ic'+str(n)+'">'+icon(v["icons"][n],22)+'</span><span><b>'+E(a)+'</b> '+E(b)+'</span></li>' for n,(a,b) in enumerate(v["keypoints"]))+'</ul></div>') if v.get("keypoints") else ""}
 {forms_block(v) if v.get("formnotes") else ""}
