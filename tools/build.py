@@ -1054,6 +1054,43 @@ KVERSES = [
   closing="Four bows give the poet’s picture of a full life: wisdom to choose well, delight to enjoy it, strength to act and nourishment to last. The thought to carry is that prosperity is measured not only by what we gather but by what we grow, in ourselves and in those around us. " + "This meditation is a devotional practice for attention and reflection; it does not promise a supernatural result or guarantee material wealth.",
  ),
 
+ dict(
+  n=12, slug="verse-12",
+  deva="नमोऽस्तु नालीकनिभाननायै<br>नमोऽस्तु दुग्धोदधिजन्मभूम्यै।<br>नमोऽस्तु सोमामृतसोदरायै<br>नमोऽस्तु नारायणवल्लभायै॥",
+  iast="Namo ’stu nālīka-nibhānanāyai<br>Namo ’stu dugdhodadhi-janma-bhūmyai;<br>Namo ’stu somāmṛta-sodarāyai<br>Namo ’stu nārāyaṇa-vallabhāyai.",
+  ttl="Kanakadhara Stotram Verse 12 Meaning – Nalika Nibhananayai",
+  dsc="Kanakadhara Stotram Verse 12 (Namo ’stu Nalika-nibhananayai): four bows to Lakshmi, lotus-faced, born of the ocean of milk. Word-by-word meaning in English.",
+  h1="Kanakadhāra Stotram – Verse 12",
+  sub="Namo ’stu nālīka-nibhānanāyai – her face, birth and beloved",
+  words=[
+   ("नमः अस्तु","Namo ’stu","Let there be a bow","<em>Namaḥ</em> is a bow, a salutation; <em>astu</em> means “let it be”. The two meet as <em>namo ’stu</em>, where the apostrophe marks the lost <em>a</em> of <em>astu</em>. As in <a href=\"/kanakadhara/verse-11/\">Verse 11</a>, the phrase opens every line, but here it comes first and the description follows."),
+   ("नालीकनिभाननायै","Nālīka-nibha-ānanāyai","To her whose face is like a lotus","<em>Nālīka</em> is a lotus; <em>nibha</em> means resembling, like; <em>ānana</em> is the face. So she is the one whose face looks like a lotus. The first two parts end in <em>a</em> and the third begins with <em>ā</em>, so they join into <em>-nibhānana-</em>. The ending <em>-āyai</em> means “to”, because <em>namaḥ</em> takes the “to” form."),
+   ("दुग्धोदधिजन्मभूम्यै","Dugdha-udadhi-janma-bhūmyai","To her whose birthplace is the ocean of milk","<em>Dugdha</em> is milk; <em>udadhi</em> is an ocean (literally, a holder of water); <em>janma</em> is birth; <em>bhūmi</em> is ground, place. So <em>dugdhodadhi</em> is the ocean of milk, and the whole word means “to her whose place of birth is the ocean of milk”. Here <em>bhūmi</em> is a feminine word in <em>-i</em>, so its “to” form is <em>-yai</em>, as in <em>śrutyai</em> in the last verse."),
+   ("सोमामृतसोदरायै","Soma-amṛta-sodarāyai","To her who is the sister of the Moon and the nectar","<em>Soma</em> is usually taken here as the Moon; <em>amṛta</em> is the nectar of immortality, from <em>a</em>, not, and <em>mṛta</em>, dead. <em>Sodarā</em> is “of the same womb”: <em>sa</em>, same, and <em>udara</em>, womb or belly; <em>sodarā</em> is a sister and <em>sodara</em> a brother. So she is the sister of the Moon and of the nectar, because in the old story all three rose from the same ocean."),
+   ("नारायणवल्लभायै","Nārāyaṇa-vallabhāyai","To the beloved of Nārāyaṇa","<em>Nārāyaṇa</em> is a name of Vishnu. <em>Vallabhā</em> is a beloved, a wife, the same word that ended the last verse. The ending means “to”. With this line the four bows reach the one person with whom Lakshmi’s own story is always joined."),
+  ],
+  meaning="Let there be a bow to her whose face is like a lotus. Let there be a bow to her whose birthplace is the ocean of milk. Let there be a bow to her who is the sister of the Moon and of the nectar of immortality. Let there be a bow to her who is the beloved of Nārāyaṇa.",
+  insights=[
+   ("In simple words","“O Mother, I bow to you whose face is like a lotus. I bow to you who were born in the ocean of milk. I bow to you, sister of the Moon and of the nectar of immortality. I bow to you, beloved of Nārāyaṇa.” Four bows, one in each line."),
+   ("What the verse actually says","Each line has the same shape: <em>namo ’stu</em> and then a description of the Goddess in the “to” form. The four descriptions are: she whose face is like a lotus; she whose birthplace is the ocean of milk; she who is the sister of the Moon and the nectar of immortality; she who is the beloved of Nārāyaṇa. The Goddess is not named in the verse. She is known by what is said of her."),
+   ("The poetry hidden in the verse","Imagine being introduced to someone you have heard about for a long time. First you see her face, and the poet says it is like a lotus: calm, clean and lovely. Then you hear where she comes from: the ocean of milk, a wide white sea in the old story of the churning. Then you meet her family: the Moon, cool and silver, and the nectar of immortality, who rose from the same water. Last, you learn who she belongs to: she is the beloved of Nārāyaṇa. \n\nNotice how the poet widens and then narrows his gaze. He begins with one face, steps back to a whole ocean, looks up to the sky, and then returns to a single person at her husband’s side. The introduction is an image to help us read the verse, in which the four descriptions and four bows are what the poet gives us."),
+   ("Nālīka, the lotus face","<em>Nālīka</em> is a word for the lotus. In Indian poetry the lotus is the usual picture of calm and cleanliness, since it grows from mud and rises clean above the water. To say that her face is like a lotus is to praise a face that is serene, open and bright. As a reflection: the first thing the poet notices is the way she looks, and he finds in it peace, not riches."),
+   ("Born of the ocean of milk","The Purāṇas tell of the churning of the ocean (<em>samudra-manthana</em>), when gods and demons churned the ocean of milk and many treasures rose from it, among them the Moon, the nectar of immortality and Lakshmi herself. The lists and the order differ from one text to another. The verse does not tell the story; it only names her birthplace and trusts the listener to know it. As a reflection: in this story good fortune comes out of a long, shared effort, not in a moment."),
+   ("Sister of the Moon and the nectar","<em>Sodarā</em> means born of the same womb. Here the sisterhood comes from the shared birth: the Moon, the nectar and Lakshmi all rose from the same ocean. The Moon is cool and gentle; the nectar is what does not die; Lakshmi is prosperity. As a reflection: the poet puts prosperity beside calm and beside what lasts. The <a href=\"/ashtalakshmi-stotram/\">Ashtalakshmi Stotram</a> describes her the same way: its first stanza calls her the sister of the Moon."),
+   ("Beloved of Nārāyaṇa","The fourth bow ends at Vishnu, called Nārāyaṇa. Lakshmi is shown at his side in many pictures of the tradition, often seated beside him or pressing his feet. Many readers take this as a reminder that wealth sits best beside what is right and steady. That is a reflection, not a line of the text. The same phrase, <em>vallabhā</em>, closed <a href=\"/kanakadhara/verse-11/\">Verse 11</a>."),
+   ("How this verse follows the last","<a href=\"/kanakadhara/verse-11/\">Verse 11</a> bowed to her as wisdom, delight, power and nourishment: qualities. This verse keeps the same run of salutations but changes the question. It no longer asks what she gives; it asks who she is, and answers with her face, her birth, her family and her beloved."),
+   ("Three Sanskrit words to keep","<em>Nālīka</em> is a lotus. <em>Sodarā</em> is a sister, one born of the same womb. <em>Vallabhā</em> is a beloved."),
+   ("How to pronounce the key words","Namo ’stu: na-mo-stu. Nālīka-nibhānanāyai: naa-lee-ka-ni-bhaa-na-naa-yai. Dugdhodadhi-janma-bhūmyai: dug-dho-da-dhi-jan-ma-bhoom-yai. Somāmṛta-sodarāyai: so-maa-mri-ta-so-da-raa-yai. Nārāyaṇa-vallabhāyai: naa-raa-ya-na-val-la-bhaa-yai."),
+  ],
+  meditation=["Minute 1, the lotus: picture a lotus on still water and say silently, nālīka-nibhānanāyai namaḥ. Let your face and shoulders soften.",
+              "Minute 2, the ocean: picture a wide, pale ocean at dawn. Remember one good thing in your life that came from a long, patient effort.",
+              "Minute 3, the Moon and the nectar: picture the Moon over the water. Ask for a mind that is cool and unhurried.",
+              "Minute 4, the beloved: say nārāyaṇa-vallabhāyai namaḥ. Think of one value you want your work to stay beside, and ask that your earning keep its company.",
+              "Minute 5, a bow: bow your head and give thanks for what is already in your life."],
+  reflection="Face: what do people see in my face when I am under pressure? Origin: which patient effort am I tempted to abandon? Company: is what I am gathering keeping good company, in peace of mind and in right conduct? One honest answer is enough for today.",
+  closing="In four bows the poet introduces the Goddess to us: her face, her birth, her family and her beloved. The thought to carry is that, in this picture, good fortune is never alone. It rises from a long churning, it is raised beside calm and nectar, and it stands beside what is right. " + "This meditation is a devotional practice for attention and reflection; it does not promise a supernatural result or guarantee material wealth.",
+ ),
+
 ]
 
 
@@ -1864,7 +1901,7 @@ def grammar_section(g):
         return f'<div class="gscroll"><table class="gtable {cls}"><thead><tr>{h}</tr></thead><tbody>{r}</tbody></table></div>'
     o='<h2 id="grammar">Sanskrit structure</h2>\n<p class="sect-note">How the verse is built. Grammar only, with no interpretation.</p>\n<div class="gram">'
     o+='<section class="gblock"><h3><span class="gk">Anvaya</span> The sentence in plain order</h3><p>'+E(g["anvaya_note"])+'</p>'
-    o+=tbl(["Who is saluted","Her description (every line ends: namo ’stu)"],[[f'<span lang="sa-Latn"><i>{E(a)}</i></span>',f'<span lang="sa-Latn"><i>{E(b)}</i></span>'] for a,b,c in g["anvaya"]])+'</section>'
+    o+=tbl(g.get("anvaya_head",["Who is saluted","Her description (every line ends: namo ’stu)"]),[[f'<span lang="sa-Latn"><i>{E(a)}</i></span>',f'<span lang="sa-Latn"><i>{E(b)}</i></span>'] for a,b,c in g["anvaya"]])+'</section>'
     o+='<section class="gblock"><h3><span class="gk">Vibhakti</span> '+E(g["vib_title"])+'</h3>'+"".join(f'<p>{x}</p>' for x in g["vib_notes"])
     o+=tbl(["Name","The word “to her”","Case"],[[f'<span lang="sa">{a}</span> <i>{E(b)}</i>',f'<span lang="sa">{c}</span> <i>{E(d)}</i>',E(e)] for a,b,c,d,e in g["vib_rows"]])+'</section>'
     o+='<section class="gblock"><h3><span class="gk">Samāsa</span> Compound analysis</h3><p>'+E(g["sam_note"])+'</p>'
