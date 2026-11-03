@@ -364,3 +364,16 @@ ol.med{background:var(--sand);border:1px solid var(--sand-line);border-radius:14
 .ov-verse{text-align:center}
 .ov-verse .ov-h{text-align:center}
 .ov-verse .deva,.ov-verse .iast{text-align:center}
+
+/* verse card: parchment panel with ornaments (design from the author's mock-up) */
+.ov-verse.vcard{background:linear-gradient(135deg,#f8edd8,#ead5b2);border-color:#d9bd8d;padding:34px 22px 0;overflow:hidden;box-shadow:0 8px 28px rgba(110,70,30,.14)}
+.ov-verse.vcard::before{inset:8px;border:1px solid #c9a35f;opacity:.45;border-radius:11px}
+.vcard .orn{position:absolute;width:44px;height:44px;fill:rgba(146,97,62,.26);pointer-events:none}
+.vcard .orn.tl{top:14px;left:16px}.vcard .orn.br{bottom:12px;right:16px}
+.vcard .vlabel{font:700 .72rem/1 var(--sans);letter-spacing:.2em;color:#916d4a;margin:0 0 12px;text-transform:none}
+.vcard .deva{font-size:clamp(1.35rem,3.4vw,2rem);line-height:2;color:#4b3040;margin:.1em 0 .3em;position:relative}
+.vcard .vfoot{font:italic 1.05rem var(--display);color:#916d4a;margin:.3em 0 22px}
+.vcard .vtr{margin:0 -22px;padding:16px 22px 18px;background:rgba(255,255,255,.4);border-top:1px solid rgba(201,163,95,.45)}
+.vcard .iast{color:#5b4650;margin:.1em 0;line-height:1.85;font-size:1.02rem}
+@media (max-width:600px){.vcard .orn{width:30px;height:30px}.vcard .orn.br{bottom:8px;right:10px}}
+.vcard>*:not(.orn):not(.sr){position:relative;z-index:1}.vcard .orn{z-index:0}
