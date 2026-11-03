@@ -984,6 +984,30 @@ KVERSES = [
   icons=["book","heart","bolt","sprout"],
   keypoints=[("Śruti","Wisdom: the sacred knowledge that guides good action"),("Rati","Delight: love, beauty and lovely qualities"),("Śakti","Power: the energy that gives strength and the ability to act"),("Puṣṭi","Nourishment: growth, fullness and flourishing")],
   tagline="The Goddess is praised as wisdom, delight, power and nourishment: four strands of a flourishing life.",
+  sketchfile="kanakadhara-verse-11-sketch-note.png",
+  formnotes=[
+   ("Śruti means “what is heard”, the Veda. The line calls her the source from which good deeds yield their fruit. Wisdom comes first because it tells us which deeds are worth doing.","Am I deciding with understanding, or only reacting?"),
+   ("Rati is delight, love and the pleasure of lovely qualities. The poet calls her an ocean of them. After wisdom, the second bow is to warmth and beauty.","Do the people around me feel kindness from the way I act?"),
+   ("Śakti is power, the energy that gives strength and the ability to act. The verse places her in the hundred-petalled lotus, Lakshmi’s own seat.","Am I using my abilities for something worthwhile?"),
+   ("Puṣṭi is nourishment, fullness and thriving. The line ends by calling her the beloved of Puruṣottama, Vishnu, which brings us back to Lakshmi herself.","Are my family, my office and my community better fed because of what I do?"),
+  ],
+  grammar=dict(
+   anvaya_note="The verse is one sentence pattern repeated four times: the name in the “to” form, a description in the same form, and the words namo ’stu. The lines already stand in prose order, so the sentence below is the verse itself, read line by line.",
+   anvaya=[("Śrutyai","śubha-karma-phala-prasūtyai","namo ’stu"),("Ratyai","ramaṇīya-guṇārṇavāyai","namo ’stu"),("Śaktyai","śata-patra-niketanāyai","namo ’stu"),("Puṣṭyai","puruṣottama-vallabhāyai","namo ’stu")],
+   vib_title="Why every name ends in -yai",
+   vib_notes=["Śruti, rati, śakti and puṣṭi are feminine nouns ending in -i. Their “to” form is called the dative, the fourth case (caturthī). In Sanskrit the word namaḥ, “a bow”, is joined with the dative: “a bow to…” (Pāṇini 2.3.16). For a feminine word in -i the dative singular is -yai, so śruti becomes śrutyai, “to Śruti”, which the English renders as “to her”.",
+              "The four descriptions must agree with the name they describe, so they take the same case, number and gender. A compound takes its ending on the last word: -prasūtyai (prasūti, a feminine word in -i), and -arṇavāyai, -niketanāyai and -vallabhāyai, which are feminine forms in -ā whose dative singular is -āyai."],
+   vib_rows=[("श्रुति","śruti","श्रुत्यै","śrutyai","dative singular, feminine"),("रति","rati","रत्यै","ratyai","dative singular, feminine"),("शक्ति","śakti","शक्त्यै","śaktyai","dative singular, feminine"),("पुष्टि","puṣṭi","पुष्ट्यै","puṣṭyai","dative singular, feminine")],
+   sam_note="Each long word in the verse is a compound (samāsa): several words joined into one. Reading the parts in order gives the meaning.",
+   sam_rows=[("शुभकर्मफलप्रसूत्यै","śubha-karma-phala-prasūtyai","śubha + karma + phala + prasūti","tatpuruṣa: each part limits the next","to her who is the source of the fruit of good deeds"),
+             ("रमणीयगुणार्णवायै","ramaṇīya-guṇārṇavāyai","ramaṇīya + guṇa + arṇava","tatpuruṣa: “ocean of delightful qualities”","to her who is an ocean of lovely qualities"),
+             ("शतपत्रनिकेतनायै","śata-patra-niketanāyai","śata + patra + niketana","bahuvrīhi: “she whose dwelling is the hundred-petalled lotus”","to her whose dwelling is the lotus"),
+             ("पुरुषोत्तमवल्लभायै","puruṣottama-vallabhāyai","puruṣa + uttama + vallabhā","tatpuruṣa: “beloved of the supreme person”","to the beloved of Puruṣottama")],
+   sandhi=[("namaḥ + astu","namo ’stu","The visarga after -a becomes o before a, and the a of astu is dropped, shown by the apostrophe."),
+           ("guṇa + arṇava","guṇārṇava","a + a join into ā."),
+           ("puruṣa + uttama","puruṣottama","a + u join into o.")],
+   foot="These notes follow standard Sanskrit grammar and explain the words themselves. They do not depend on any one commentary.",
+  ),
   dsc="Kanakadhara Stotram Verse 11 (Shrutyai Namo ’stu): four salutations to Lakshmi as Shruti, Rati, Shakti and Pushti. Word-by-word meaning in English.",
   h1="Kanakadhāra Stotram – Verse 11",
   sub="Śrutyai namo ’stu – four bows",
@@ -1776,6 +1800,29 @@ def sketch_note(kp, icons, centre="Flourishing Life"):
     o+='</svg>'
     return o
 
+def grammar_section(g):
+    def tbl(head, rows, cls=""):
+        h="".join(f"<th>{E(x)}</th>" for x in head)
+        r="".join("<tr>"+"".join(f"<td>{c}</td>" for c in row)+"</tr>" for row in rows)
+        return f'<div class="gscroll"><table class="gtable {cls}"><thead><tr>{h}</tr></thead><tbody>{r}</tbody></table></div>'
+    o='<h2 id="grammar">Sanskrit structure</h2>\n<p class="sect-note">How the verse is built. Grammar only, with no interpretation.</p>\n<div class="gram">'
+    o+='<section class="gblock"><h3><span class="gk">Anvaya</span> The sentence in plain order</h3><p>'+E(g["anvaya_note"])+'</p>'
+    o+=tbl(["Who is saluted","Her description (every line ends: namo ’stu)"],[[f'<span lang="sa-Latn"><i>{E(a)}</i></span>',f'<span lang="sa-Latn"><i>{E(b)}</i></span>'] for a,b,c in g["anvaya"]])+'</section>'
+    o+='<section class="gblock"><h3><span class="gk">Vibhakti</span> '+E(g["vib_title"])+'</h3>'+"".join(f'<p>{x}</p>' for x in g["vib_notes"])
+    o+=tbl(["Name","The word “to her”","Case"],[[f'<span lang="sa">{a}</span> <i>{E(b)}</i>',f'<span lang="sa">{c}</span> <i>{E(d)}</i>',E(e)] for a,b,c,d,e in g["vib_rows"]])+'</section>'
+    o+='<section class="gblock"><h3><span class="gk">Samāsa</span> Compound analysis</h3><p>'+E(g["sam_note"])+'</p>'
+    o+=tbl(["Compound","Parts","Type","Meaning"],[[f'<span lang="sa">{a}</span><i>{E(b)}</i>',E(c),E(d),E(e)] for a,b,c,d,e in g["sam_rows"]],"gcomp")+'</section>'
+    o+='<section class="gblock"><h3><span class="gk">Sandhi</span> Where sounds join</h3>'
+    o+=tbl(["Before","After","What happens"],[[f'<i>{E(a)}</i>',f'<i>{E(b)}</i>',E(c)] for a,b,c in g["sandhi"]])+'</section>'
+    o+='<p class="gfoot">'+E(g["foot"])+'</p></div>'
+    return o
+
+def forms_block(v):
+    o='<div class="ov-card ov-forms"><h2 class="ov-h">Explore the four forms</h2><p class="ov-sub">Tap a form to open its meaning and a question to carry with you.</p><div class="fgrid">'
+    for n,((a,b),(body,ask)) in enumerate(zip(v["keypoints"],v["formnotes"])):
+        o+=f'<details name="forms" class="fcard fc{n}"><summary><span class="ic ic{n}">{icon(v["icons"][n],26)}</span><span class="ft"><b>{E(a)}</b><small>{E(b.split(":")[0])}</small></span></summary><div class="fbody"><p>{E(body)}</p><p class="fask"><b>Pause and reflect:</b> {E(ask)}</p></div></details>'
+    return o+'</div></div>'
+
 def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None, spname=None):
     lst = lst or VERSES
     total = total or len(lst)
@@ -1799,6 +1846,8 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     rows = "".join(f'<tr><td class="t-s" lang="sa">{a}<i>{E(b)}</i></td><td>{E(c)}</td></tr>' for a,b,c,d in v["words"])
     notes = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p>{d}</p></div>' for a,b,c,d in v["words"] if d)
     words = f'<table class="wtable"><thead><tr><th>Sanskrit</th><th>Meaning</th></tr></thead><tbody>{rows}</tbody></table>' + (f'<details class="wnotes" open><summary>Notes on each word</summary>{notes}</details>' if notes else "")
+    gramsec = grammar_section(v["grammar"]) if v.get("grammar") else ""
+    gramlink = '<a href="#grammar">Sanskrit structure</a>' if v.get("grammar") else ""
     ins = "".join(ins_card(a,b) for a,b in v["insights"])
     med = "".join(med_step(x) for x in v["meditation"])
     medlink = '<a href="#meditation">Meditation</a>' if v["meditation"] else ''
@@ -1821,15 +1870,19 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <div class="vh-art">{four_art(v["keypoints"], v["icons"]) if v.get("keypoints") else YANTRA}</div></div></header>
 <main class="wrap has-vnav">{vnav}<article>
 {crumbs([(sname,base+"/"),(lab(v),None)])}
-<nav class="vtabs" aria-label="On this page"><a href="#overview">Overview</a><a href="#words">Word by word</a><a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
+<nav class="vtabs" aria-label="On this page"><a href="#overview">Overview</a><a href="#words">Word by word</a>{gramlink}<a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
 <section id="overview" class="ov"><div class="ov-card ov-verse"><h2 class="ov-h">The verse</h2><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
 <div class="ov-card ov-mean"><h2 class="ov-h">Meaning in short</h2><p>{E(v["meaning"])}</p>{('<p class="ov-quote">'+E(v["tagline"])+'</p>') if v.get("tagline") else ""}</div>
 {('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><span class="ic ic'+str(n)+'">'+icon(v["icons"][n],22)+'</span><span><b>'+E(a)+'</b> '+E(b)+'</span></li>' for n,(a,b) in enumerate(v["keypoints"]))+'</ul></div>') if v.get("keypoints") else ""}
-{('<div class="ov-card ov-sketch"><h2 class="ov-h">Sketch note</h2>'+sketch_note(v["keypoints"], v["icons"])+'<p class="sk-cap">Four forms of one Goddess, drawn as a sketch note: wisdom, delight, power and nourishment together make a flourishing life.</p></div>') if v.get("keypoints") else ""}</section>
+{forms_block(v) if v.get("formnotes") else ""}
+{('<div class="ov-card ov-sketch"><h2 class="ov-h">Sketch note</h2><div class="sk-wrap">'+sketch_note(v["keypoints"], v["icons"])+'</div><p class="sk-cap">Four forms of one Goddess, drawn as a sketch note: wisdom, delight, power and nourishment together make a flourishing life.</p>'+('<p class="sk-act"><a class="btn-s" href="/assets/sketch/'+v["sketchfile"]+'" download>Download the sketch note (PNG)</a></p>' if v.get("sketchfile") else "")+'</div>') if v.get("keypoints") else ""}</section>
 {ad("below-verse")}
 <h2 id="words">Word-by-word meaning</h2>
+<p class="sect-note">The literal meaning of each word.</p>
 {words}
+{gramsec}
 <h2 id="insights">Deeper spiritual insights</h2>
+<p class="sect-note">Interpretation and reflection: ideas that help us read the verse, not part of the text itself.</p>
 {ins}
 {medsec}
 {refsec}
@@ -1837,7 +1890,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 <p class="crumbs">Terms used here are explained in the <a href="/glossary/">glossary</a>. This commentary was prepared with AI assistance; <a href="/about/">read more</a>.</p>
 {ad("end")}
 <div class="pager">{p}{n}</div>
-</article></main>{vscript}''' + foot()
+</article></main>{vscript}<script src="/assets/verse.js" defer></script>''' + foot()
     write(path, body, "0.9")
 
 ASHTA = [

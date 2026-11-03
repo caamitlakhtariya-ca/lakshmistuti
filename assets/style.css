@@ -269,3 +269,54 @@ h2[id]{scroll-margin-top:100px}
 .sk-c{font-family:var(--display);font-size:20px;font-weight:700;font-style:italic;fill:#3a2208}
 .sk-cap{text-align:center;color:var(--muted);font-size:.9rem;margin:.2em 0 0}
 @media (min-width:700px){.ov-sketch{grid-column:1/-1}}
+
+/* section notes and chips */
+.sect-note{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin:-.4em 0 1em}
+/* four-form cards */
+.ov-forms{grid-column:1/-1}
+.ov-sub{margin:-.2em 0 .8em;color:var(--muted);font-size:.9rem}
+.fgrid{display:grid;gap:10px}
+@media (min-width:700px){.fgrid{grid-template-columns:1fr 1fr;align-items:start}}
+.fcard{border:1.5px dashed var(--line);border-radius:14px;background:var(--bg)}
+.fcard summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px}
+.fcard summary::-webkit-details-marker{display:none}
+.fcard summary::after{content:"+";margin-left:auto;font-size:1.4rem;line-height:1;color:var(--muted)}
+.fcard[open] summary::after{content:"–"}
+.fcard.fc0[open]{border-color:#8e5bb5}.fcard.fc1[open]{border-color:#e0587a}.fcard.fc2[open]{border-color:#d28a12}.fcard.fc3[open]{border-color:#5f9b4f}
+.ft b{display:block;font-family:var(--display);font-size:1.25rem;color:var(--maroon)}
+.ft small{font-family:var(--sans);color:var(--muted);font-size:.8rem}
+.fbody{padding:0 16px 14px 16px}
+.fbody p{margin:.2em 0 .7em;font-size:.97rem}
+.fask{background:var(--rose);border-radius:10px;padding:8px 12px}
+:focus-visible{outline:2px solid #8e5bb5;outline-offset:2px}
+.fcard summary:focus-visible{outline-offset:-2px}
+/* sketch note actions */
+.sk-act{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:.8em 0 0}
+.btn-s{display:inline-block;font-family:var(--sans);font-size:.88rem;text-decoration:none;cursor:pointer;color:#fbf1de;background:#4a1d5c;border:1.5px solid #4a1d5c;border-radius:999px;padding:8px 16px}
+.btn-s:hover{background:#5d2773}
+.btn-s.ghost{background:transparent;color:var(--maroon);border-color:var(--line)}
+.btn-s.ghost:hover{background:var(--soft)}
+dialog.skdlg{border:0;border-radius:18px;padding:18px;max-width:min(96vw,1000px);width:96vw;background:var(--surface);color:var(--ink)}
+dialog.skdlg::backdrop{background:rgba(20,8,30,.72)}
+.skx{display:block;margin:0 0 8px auto;font-family:var(--sans);font-size:.9rem;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--ink);cursor:pointer}
+.skbody svg.sketch{width:100%;height:auto;display:block}
+/* meditation timer */
+.mtimer{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.mclock{font-family:var(--display);font-size:1.5rem;color:var(--maroon);margin-left:6px}
+ol.med li.now{box-shadow:0 0 0 2px #8e5bb5;background:var(--rose);transition:background .3s}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* sanskrit structure */
+.gram{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:0 0 20px}
+.gblock{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+.gblock h3{font-family:var(--display);font-size:1.2rem;margin:0 0 .5em;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.gk{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fbf1de;background:#6b2a62;border-radius:999px;padding:3px 10px}
+.gblock p{margin:.3em 0 .8em;font-size:.96rem}
+.gscroll{overflow-x:auto}
+table.gtable{width:100%;border-collapse:collapse;font-size:.93rem}
+.gtable th{text-align:left;font-family:var(--sans);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.gtable td{padding:8px 10px;border-bottom:1px dashed var(--line);vertical-align:top}
+.gtable tr:last-child td{border-bottom:0}
+.gtable td [lang="sa"]{font-family:var(--deva);color:var(--maroon);font-size:1.05rem;display:block}
+.gcomp td:first-child{min-width:170px}
+.gtable td i{color:var(--muted)}
+.gfoot{font-size:.85rem;color:var(--muted);margin:0}
