@@ -819,7 +819,7 @@ KVERSES = [
   insights=[
    ("In simple words","“O Mother, your glance once did something wonderful: through its power the god of love first found a footing in Vishnu himself. May that same glance, slow and soft and only half-given, fall on me.” The poet shows what her glance can do, and then asks for it in its smallest form."),
    ("What the verse actually says","The verse is one sentence in two parts. The first part says what the glance has done: by its power Manmatha first gained a footing in Vishnu. The second part is the wish: may that slow, languid half-glance of the ocean’s daughter fall on me here. The word <em>yat</em> (“by whose”) ties the two together: it is the glance itself, not only the Goddess, whose power is meant."),
-   ("The poetry hidden in the verse","Picture the scene the verse describes. Vishnu sits serene and complete in his own abode, and Lakshmi is beside him. Somewhere in this world is Manmatha, the god of love, with his bow of sugarcane and his arrows of flowers, the picture tradition gives of desire and attraction. Then the poet makes a quiet claim: it was by the power of her glance that even Manmatha first gained a footing in Vishnu. Notice the turn. Verses 1 to 6 showed us the beauty of her glance; now we see its influence. And then comes the most delicate part of the verse. Having shown how great the power is, the poet asks for the smallest piece of it: <em>mantharam īkṣaṇārdham</em>, a slow half-glance. Imagine standing before a great queen. She need not speak or make a grand gesture; a small movement of her eyes is enough to say that you have been seen and welcomed. That is the feeling of this verse. The scene is an imagined picture to help us enter the verse, not something the verse itself states in these words. The poet does not demand attention and does not claim a right. He asks that even a fraction of her loving attention fall on him, and in that there is both humility and a great confidence in grace."),
+   ("The poetry hidden in the verse","Picture the scene the verse describes. Vishnu sits serene and complete in his own abode, and Lakshmi is beside him. Somewhere in this world is Manmatha, the god of love, with his bow of sugarcane and his arrows of flowers, the picture tradition gives of desire and attraction. Then the poet makes a quiet claim: it was by the power of her glance that even Manmatha first gained a footing in Vishnu. \n\nNotice the turn. Verses 1 to 6 showed us the beauty of her glance; now we see its influence. And then comes the most delicate part of the verse. Having shown how great the power is, the poet asks for the smallest piece of it: <em>mantharam īkṣaṇārdham</em>, a slow half-glance. \n\nImagine standing before a great queen. She need not speak or make a grand gesture; a small movement of her eyes is enough to say that you have been seen and welcomed. That is the feeling of this verse. The scene is an imagined picture to help us enter the verse, not something the verse itself states in these words. The poet does not demand attention and does not claim a right. He asks that even a fraction of her loving attention fall on him, and in that there is both humility and a great confidence in grace."),
    ("Manmatha and Vishnu","<em>Manmatha</em> is the god of love, shown with a bow of sugarcane and arrows of flowers. The verse says that through the power of her glance he first gained a place in Vishnu. A common reading is that her look is what made love take hold in the Lord. The verse does not tell the story, and commentators read it a little differently, but the point is the same: if her glance can move even Vishnu, its power is beyond doubt. Note that the page says “a footing in Vishnu”, not “in his heart”: the verse says <em>padam</em>, a place or footing, and leaves the place unnamed."),
    ("The sound of the verse","Listen for the sound <em>m</em>. Eight words or word-parts begin with <em>ma-</em> or <em>mā-</em>: <em>māṅgalya</em>, <em>madhu</em>, <em>māthini</em>, <em>manmathena</em>, <em>mayy</em>, <em>mantharam</em>, <em>mandālasam</em>, <em>makarālaya</em>. There is also a small play on words: <em>madhu-māthin</em> and <em>manmatha</em> both contain the root <em>math</em>, to churn or crush. One is the crusher of Madhu, and the other, by the traditional explanation, churns the mind."),
    ("Three kinds of slowness","The glance is described three ways. <em>Mantharam</em> is slow, unhurried. <em>Mandālasam</em> is slow and languid, relaxed to the point of drowsiness. <em>Īkṣaṇārdham</em> is only half a glance. Nothing in these words is quick, strong or complete. The poet asks for a look that is gentle and small, and trusts that it is enough."),
@@ -911,7 +911,7 @@ KVERSES = [
   insights=[
    ("In simple words","“O Mother, the wise and the devoted reach the highest places easily by your compassionate look. Let that same look, shining like the heart of an open lotus, give me the growth and nourishment I wish for.” After the picture of the helpless bird in Verse 8, the poet speaks of a goal he can name: <em>puṣṭi</em>."),
    ("What the verse actually says","The first half is a statement: those who are cherished and of excellent understanding obtain heaven easily through her glance. The second half is a wish: may her glance, radiant as an open lotus, bring about the <em>puṣṭi</em> I desire. Notice what is placed under her glance: even people of fine understanding. The verse does not say that the humble or the unlearned are favoured; it says that her look is what makes the way easy for everyone, including the wise."),
-   ("The poetry hidden in the verse","Imagine a lotus pond at sunrise. The night has passed, the first light touches the water, and a lotus slowly opens its petals to show its bright centre. There is a quiet beauty in that moment. Now imagine Lakshmi seated on that lotus, and her eyes carrying the same soft light as the open flower. This is the picture the verse paints in <em>prahṛṣṭa-kamalodara-dīptiḥ</em>. Against it the poet sets a large claim: by her glance even the wise and devoted reach the highest places with ease. Notice the contrast. The lotus is delicate, yet it shines. The glance is gentle, yet its reach is great. Her compassion is quiet, yet it can change a life. The poet does not describe her power with weapons, thunder or command. He describes it through her eyes. That is much of the beauty of the verse: the greatest power is shown in the gentlest gesture. The pond and the sunrise are an imagined setting to help us see the lotus; the verse itself gives the comparison with the open lotus."),
+   ("The poetry hidden in the verse","Imagine a lotus pond at sunrise. The night has passed, the first light touches the water, and a lotus slowly opens its petals to show its bright centre. There is a quiet beauty in that moment. \n\nNow imagine Lakshmi seated on that lotus, and her eyes carrying the same soft light as the open flower. This is the picture the verse paints in <em>prahṛṣṭa-kamalodara-dīptiḥ</em>. Against it the poet sets a large claim: by her glance even the wise and devoted reach the highest places with ease. \n\nNotice the contrast. The lotus is delicate, yet it shines. The glance is gentle, yet its reach is great. Her compassion is quiet, yet it can change a life. The poet does not describe her power with weapons, thunder or command. He describes it through her eyes. That is much of the beauty of the verse: the greatest power is shown in the gentlest gesture. The pond and the sunrise are an imagined setting to help us see the lotus; the verse itself gives the comparison with the open lotus."),
    ("A note on the reading","The line is <em>iṣṭā viśiṣṭa-matayo ’pi</em>: the wise and devoted (<em>viśiṣṭa-matayaḥ</em>). Some summaries read it as <em>aviśiṣṭa</em>, “not distinguished”, and so take the verse to be about ordinary people being lifted. Standard editions have <em>viśiṣṭa</em>, and so does this page. Both readings can inspire a reflection, but the verse itself is about the wise."),
    ("The sound of the verse","Listen to the verse and one sound keeps returning: <em>ṣṭ</em>. It appears ten times in this one verse: <em>iṣṭā</em>, <em>viśiṣṭa</em>, <em>triviṣṭapa</em>, <em>dṛṣṭyā</em>, <em>dṛṣṭiḥ</em>, <em>prahṛṣṭa</em>, <em>iṣṭām</em>, <em>puṣṭim</em>, <em>kṛṣīṣṭa</em>, <em>viṣṭarāyāḥ</em>. Śaṅkara builds the whole verse on one repeating beat. It is a poet’s pleasure, and you can hear it best when the verse is read aloud."),
    ("The glance that is wet with compassion","<em>Dayārdra-dṛṣṭi</em> is one of the loveliest phrases in the hymn. <em>Ārdra</em> means moist, as soil after rain or as eyes that have filled. The poet has just spoken of clouds in Verse 8; here the same idea returns in a smaller form. Her look is not cold or merely graceful; it is softened by feeling."),
@@ -956,7 +956,7 @@ KVERSES = [
   insights=[
    ("In simple words","“O Mother, you are known as Sarasvatī, as Vishnu’s beloved, as Śākambharī and as the beloved of Shiva. You are present whenever the world is made, kept and dissolved. I bow to you, the ever-young wife of the one teacher of the three worlds.” After asking for puṣṭi in Verse 9, the poet stops to bow."),
    ("What the verse actually says","The verse is one long salutation. It names her four times, each name closed with <em>iti</em>: the goddess of speech, the beloved of Garuḍa’s banner, Śākambharī, the beloved of the moon-crested one. It says where she is found: in the play of creation, preservation and dissolution. And it bows to her as the young wife of the teacher of the three worlds."),
-   ("The poetry hidden in the verse","Imagine a devotee standing before a great temple. At first he sees different forms. There is a Goddess with a <em>vīṇā</em>, the lute, who stands for speech, music and learning. There is a Goddess beside Vishnu, who stands for beauty, prosperity and keeping. There is a Mother surrounded by fruit, vegetables and green leaves, who feeds the world. And there is a Goddess beside Shiva. The names differ, the appearances differ, and so do their relationships. Then the poet invites us to look beyond the forms. By the traditional reading, the power that nourishes, creates, sustains and transforms the universe is one, and the verse bows to her under all these names. See how the verse moves: it begins with the personal, the beloved of Vishnu, and widens to the universal, the one present in making, keeping and dissolving the world. The temple scene is a picture to help us read the verse; the verse itself gives only the names and the bow."),
+   ("The poetry hidden in the verse","Imagine a devotee standing before a great temple. At first he sees different forms. There is a Goddess with a <em>vīṇā</em>, the lute, who stands for speech, music and learning. There is a Goddess beside Vishnu, who stands for beauty, prosperity and keeping. There is a Mother surrounded by fruit, vegetables and green leaves, who feeds the world. And there is a Goddess beside Shiva. The names differ, the appearances differ, and so do their relationships. \n\nThen the poet invites us to look beyond the forms. By the traditional reading, the power that nourishes, creates, sustains and transforms the universe is one, and the verse bows to her under all these names. \n\nSee how the verse moves: it begins with the personal, the beloved of Vishnu, and widens to the universal, the one present in making, keeping and dissolving the world. The temple scene is a picture to help us read the verse; the verse itself gives only the names and the bow."),
    ("What iti is doing","Each name ends with <em>iti</em>, meaning “thus”. It works like an opening and closing quotation mark: she who is called <em>gīrdevatā</em>, she who is called <em>śākambharī</em>. The poet is repeating the names by which she is known, not defining her by any one."),
    ("The names","<em>Gīrdevatā</em> is the goddess of speech, usually taken as Sarasvatī. <em>Garuḍadhvaja-sundarī</em> is Vishnu’s beloved, Lakshmi. <em>Śākambharī</em> is a form of the Mother remembered for feeding the world. <em>Śaśiśekhara-vallabhā</em> is the beloved of Shiva, usually taken as Pārvatī. Traditional readers understand these as names of the one Goddess; others take the verse as a salutation to several goddesses together. This site follows the first, because the hymn is addressed to Lakshmi throughout."),
    ("Śākambharī","In the Devī Māhātmya, a major text of the Goddess tradition, she promises that in a time of drought she will sustain the world with life-giving vegetables from her own body, and she is then known as Śākambharī. The name <em>śāka-bhṛ</em> means exactly that: the bearer of greens. It is a good companion to the previous verse: after asking for <em>puṣṭi</em>, nourishment, the poet names the Goddess who feeds the world."),
@@ -999,7 +999,7 @@ KVERSES = [
   insights=[
    ("In simple words","“O Mother, I bow to you as the sacred word that gives good deeds their fruit. I bow to you as delight, an ocean of lovely qualities. I bow to you as power, who lives in the lotus. I bow to you as nourishment, the beloved of Vishnu.” Four bows, one in each line."),
    ("What the verse actually says","Each line has the same shape: a name in the “to” form, <em>namo ’stu</em>, and a description. The four names are Śruti, Rati, Śakti and Puṣṭi. The four descriptions are: she who brings forth the fruit of good deeds; she who is an ocean of lovely qualities; she whose dwelling is the lotus; she who is the beloved of Puruṣottama."),
-   ("The poetry hidden in the verse","Imagine four offerings placed one after another at the Goddess’s feet. The first is <em>śruti</em>: wisdom, the sacred knowledge that guides us towards what is worth doing. The second is <em>rati</em>: delight, the beauty of love and the lovely qualities that make a life worth living. The third is <em>śakti</em>: power, the unseen energy that gives movement and strength to things. The fourth is <em>puṣṭi</em>: nourishment, the fullness that sustains body, mind and family. Notice how they follow one another. Wisdom gives direction. Delight gives sweetness. Power gives strength. Nourishment gives continuity. In four bows the poet has gathered a whole picture of a flourishing life. The four offerings are an image to help us read the verse, in which the four names and the four bows are what the poet gives us."),
+   ("The poetry hidden in the verse","Imagine four offerings placed one after another at the Goddess’s feet. The first is <em>śruti</em>: wisdom, the sacred knowledge that guides us towards what is worth doing. The second is <em>rati</em>: delight, the beauty of love and the lovely qualities that make a life worth living. The third is <em>śakti</em>: power, the unseen energy that gives movement and strength to things. The fourth is <em>puṣṭi</em>: nourishment, the fullness that sustains body, mind and family. \n\nNotice how they follow one another. Wisdom gives direction. Delight gives sweetness. Power gives strength. Nourishment gives continuity. In four bows the poet has gathered a whole picture of a flourishing life. The four offerings are an image to help us read the verse, in which the four names and the four bows are what the poet gives us."),
    ("Śruti","<em>Śruti</em>, “what is heard”, is the Veda. The Goddess is honoured as the sacred knowledge itself, and the second part of the line says what that knowledge does: it brings the fruit of good deeds. This reading follows the traditional commentators, for whom the Veda teaches which deeds are good and what they lead to. As a reflection: the first bow is not to gold but to wisdom, and the line suggests that prosperity begins with knowing what is worth doing."),
    ("Rati","<em>Rati</em> is delight, and it is also the goddess of love. The poet calls her an ocean of lovely qualities. After wisdom, the second bow is to joy and beauty. As a reflection: a life can be successful and still feel empty, and warmth, kindness and joy are part of what the verse calls Lakshmi."),
    ("Śakti and the lotus","<em>Śakti</em> is power, and the line says where that power lives: in the lotus. A later yoga tradition speaks of a thousand-petalled lotus at the crown of the head, but this verse says hundred-petalled, and <em>śatapatra</em> is also simply a common word for a lotus. So the verse need not be read as pointing to that tradition. The central picture is of divine power seated in a lotus."),
@@ -1689,6 +1689,56 @@ def page_mla():
 </main>{copyjs}''' + foot()
     write("mahalakshmi-ashtakam", body, "0.9")
 
+INS_KINDS = [
+ ("in simple words","simple",""),
+ ("what the verse actually says","text","From the text"),
+ ("the poetry hidden","scene","Picture it"),
+ ("the sound of the verse","sound","Listen"),
+ ("three sanskrit words","keep","Words to keep"),
+ ("how to pronounce","say","Say it aloud"),
+ ("how this verse follows","thread","The thread"),
+ ("an echo of","thread","The thread"),
+ ("a note on","note","A note"),
+]
+def ins_card(h, body):
+    kind, chip = "", ""
+    for key, k, c in INS_KINDS:
+        if h.lower().startswith(key): kind, chip = k, c; break
+    cls = "card ins" + (f" ins-{kind}" if kind else "")
+    chip_html = f'<p class="chip">{chip}</p>' if chip else ""
+    paras = "".join(f"<p>{q}</p>" for q in body.split("\n\n"))
+    return f'<div class="{cls}">{chip_html}<h3>{E(h)}</h3>{paras}</div>'
+
+import re as _re
+def med_step(x):
+    m = _re.match(r"^(Minutes? \d+(?:[–-]\d+)?)(?:,\s*([^:]{1,40}))?:\s*(.*)$", x)
+    if not m: return f"<li><span class=\"mt\">{E(x)}</span></li>"
+    lab_, what, rest = m.groups()
+    what_html = f"<b>{E(what[0].upper()+what[1:])}</b>" if what else ""
+    rest = rest[:1].upper()+rest[1:]
+    return f'<li><span class="mn">{E(lab_)}</span><span class="mt">{what_html}{E(rest)}</span></li>'
+
+def ref_block(t):
+    tail = ""
+    if t.rstrip().endswith("One honest answer is enough for today."):
+        t = t.rstrip()[: -len("One honest answer is enough for today.")].rstrip(); tail = "One honest answer is enough for today."
+    parts = _re.split(r"(?<=[.?!”]) (?=[A-Z][A-Za-z ]{2,25}: )", t)
+    ok = len(parts) >= 2 and all(_re.match(r"^[A-Z][A-Za-z ]{2,25}: ", q) for q in parts)
+    if ok:
+        lis = "".join(f'<li><b>{E(q.split(": ",1)[0])}</b>{E(q.split(": ",1)[1][:1].upper()+q.split(": ",1)[1][1:])}</li>' for q in parts)
+        body = f'<ul class="asks">{lis}</ul>'
+    else:
+        body = f"<p>{E(t)}</p>"
+    foot = f'<p class="once">{E(tail)}</p>' if tail else ""
+    return f'<div class="reflect">{body}{foot}</div>'
+
+def close_block(t):
+    disc = ""
+    i = t.find("This meditation is a devotional practice")
+    if i > 0: disc = t[i:].strip(); t = t[:i].strip()
+    d = f'<p class="disc">{E(disc)}</p>' if disc else ""
+    return f'<p class="closing">{E(t)}</p>{d}'
+
 def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sri", total=None, spname=None):
     lst = lst or VERSES
     total = total or len(lst)
@@ -1710,13 +1760,13 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
            "author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     words = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p class="m">{E(c)}</p><p>{d}</p></div>' for a,b,c,d in v["words"])
-    ins = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in v["insights"])
-    med = "".join(f"<li>{E(x)}</li>" for x in v["meditation"])
+    ins = "".join(ins_card(a,b) for a,b in v["insights"])
+    med = "".join(med_step(x) for x in v["meditation"])
     medlink = '<a href="#meditation">Meditation</a>' if v["meditation"] else ''
-    medsec = f'<h2 id="meditation">Practical meditation</h2>\n<ol>{med}</ol>' if v["meditation"] else ''
+    medsec = f'<h2 id="meditation">Practical meditation</h2>\n<ol class="med">{med}</ol>' if v["meditation"] else ''
     reflink = '<a href="#reflection">Reflection</a>' if v["reflection"] else ''
-    refsec = f'<h2 id="reflection">Reflection for today</h2>\n<p>{E(v["reflection"])}</p>' if v["reflection"] else ''
-    closesec = f'<p><em>{E(v["closing"])}</em></p>' if v["closing"] else ''
+    refsec = f'<h2 id="reflection">Reflection for today</h2>\n{ref_block(v["reflection"])}' if v["reflection"] else ''
+    closesec = close_block(v["closing"]) if v["closing"] else ''
     p = f'<a href="/{base}/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
     n = f'<a href="/{base}/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/{base}/">All verses →</a>' if v["n"]>=total else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
     other = ("Kanakadhāra Stotram","kanakadhara") if base=="sri-suktam" else ("Śrī Sūktam","sri-suktam")
