@@ -1747,6 +1747,15 @@ def _load_story():
 KVERSES.sort(key=lambda x: x["n"])
 _load_story()
 
+KAPPX = []  # appendix pages outside the numbered verses (Kanakadhāra: the Bilvāṭavī dhyāna verse)
+def _load_appx():
+    import importlib.util
+    fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "extras_appx.py")
+    if not os.path.exists(fp): return
+    spec = importlib.util.spec_from_file_location("extras_appx", fp); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    KAPPX.append(dict(m.APPX))
+_load_appx()
+
 GLOSSARY = [
  ("महामाया","Mahāmāyā","The “great Māyā”: the divine creative power by which the world appears; a title of the Goddess.","mahalakshmi-ashtakam/verse-1/"),
  ("श्रीपीठ","Śrīpīṭha","The seat of Śrī (Lakshmi); tradition links it with the Mahalakshmi temple at Kolhapur.","mahalakshmi-ashtakam/verse-1/"),
@@ -2128,6 +2137,7 @@ def page_kana():
 <h2 id="verses">Verses</h2>
 <div class="grid">{krows}</div>
 <p><small>{"All "+str(KANA_TOTAL)+" verses are published." if len(KVERSES)>=KANA_TOTAL else str(len(KVERSES))+" of "+str(KANA_TOTAL)+" verses published so far. The next ones are added one at a time."}</small></p>
+{("<h3>Appendix</h3><div class=\"grid\">"+"".join(f'<a class=\"tile\" href=\"/kanakadhara/{a["slug"]}/\"><h3>{lab(a)}: Bilvāṭavī</h3><p>{E(a["sub"])}</p></a>' for a in KAPPX)+"</div><p><small>An extra meditation verse that some editions place with the hymn. It is outside the standard 22 verses.</small></p>") if KAPPX else ""}
 <h2 id="story">The story before the first verse</h2>
 
 <p>Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
@@ -2388,6 +2398,7 @@ def forms_block(v):
 ORN = '<svg class="orn {c}" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z"/></svg>'
 ORN_TL = ORN.replace("{c}", "tl"); ORN_BR = ORN.replace("{c}", "br")
 def verse_label(v, base):
+    if v.get("vlabel"): return v["vlabel"]
     if v.get("label") and "halaśruti" in v["label"]: return "॥ फलश्रुति ॥"
     dn = str(v["n"]).translate(str.maketrans("0123456789", "०१२३४५६७८९"))
     return f"॥ {'ऋचा' if base == 'sri-suktam' else 'श्लोक'} {dn} ॥"
@@ -2430,7 +2441,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     p = f'<a href="/{base}/{prev["slug"]}/">← {lab(prev)}</a>' if prev else '<span class="off">← Previous</span>'
     n = f'<a href="/{base}/{nxt["slug"]}/">{lab(nxt)} →</a>' if nxt else (f'<a href="/{base}/">All verses →</a>' if v["n"]>=total else f'<span class="off">Verse {v["n"]+1} coming soon →</span>')
     other = ("Kanakadhāra Stotram","kanakadhara") if base=="sri-suktam" else ("Śrī Sūktam","sri-suktam")
-    items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x["slug"]==v["slug"] else ""}><b>{x["n"]}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
+    items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x["slug"]==v["slug"] else ""}><b>{x.get("navno", x["n"])}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
     vnav = f'<aside class="vnav" aria-label="Verses"><p class="vn-title"><a href="/{base}/">{sname}</a></p><ol>{items}</ol><p class="vn-other"><a href="/{other[1]}/">{other[0]} →</a></p></aside>'
     vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView&&innerWidth<1100){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
@@ -2793,6 +2804,7 @@ if __name__ == "__main__":
     page_home(); page_sri(); page_kana(); page_mla()
     for i in range(len(VERSES)): page_verse(i)
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
+    for j in range(len(KAPPX)): page_verse(len(KVERSES)+j, KVERSES+KAPPX, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
     page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
