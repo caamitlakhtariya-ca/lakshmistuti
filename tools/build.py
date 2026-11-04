@@ -1934,6 +1934,8 @@ def story_html(v):
             out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3><div class="gscroll"><table class="wtable stable"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
         elif k=="chips":
             out+=f'<h3 class="sh sh-s">{E(b[1])}</h3><ul class="schips">'+"".join(f'<li><b>{a}</b> {c}</li>' for a,c in b[2])+'</ul>'
+        elif k=="next":
+            out+=f'<div class="snext"><p class="snk">A question to carry into {E(b[1])}</p>{paras(b[2])}</div>'
         elif k=="note":
             out+=f'<h3 class="sh sh-s">{E(b[1])}</h3>{paras(b[2])}'
     return out+'</div>'

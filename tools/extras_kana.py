@@ -389,6 +389,7 @@ EXTRAS = {
    ("sec","How this verse follows the last",["<a href=\"/kanakadhara/verse-11/\">Verse 11</a> bowed to her as wisdom, delight, power and nourishment: qualities. This verse keeps the same run of salutations but changes the question. It no longer asks what she gives; it asks who she is, and answers with her face, her birth, her family and her beloved."]),
    ("chips","Three Sanskrit words to keep",[("Nālīka","a lotus"),("Sodarā","a sister, born of the same womb"),("Vallabhā","a beloved")]),
    ("note","How to pronounce the key words",["Namo ’stu: na-mo-stu. Nālīka-nibhānanāyai: naa-lee-ka-ni-bhaa-na-naa-yai. Dugdhodadhi-janma-bhūmyai: dug-dho-da-dhi-jan-ma-bhoom-yai. Somāmṛta-sodarāyai: so-maa-mri-ta-so-da-raa-yai. Nārāyaṇa-vallabhāyai: naa-raa-ya-na-val-la-bhaa-yai."]),
+   ("next","Verse 13",["Verse 12 told us who she is: her face, her birth, her family and her beloved. The next verse keeps the same bows but asks a different question: where does she sit, what does she rule, and how does she feel towards those who come to her?","So carry this with you: when we think of someone powerful, do we also ask whether that person is merciful?"]),
   ],
   keypoints=[("Nālīka","Beauty: a face like a lotus, calm and pure"),("Dugdhodadhi","Origin: born of the ocean of milk"),("Somāmṛta","Kinship: sister of the Moon and the nectar"),("Nārāyaṇa","Union: the beloved of Vishnu")],
   tagline="Four bows that tell us who she is: her face, her birth, her family and her beloved.",
