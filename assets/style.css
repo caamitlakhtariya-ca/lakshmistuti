@@ -439,3 +439,29 @@ ol.med{background:var(--sand);border:1px solid var(--sand-line);border-radius:14
 .vnav a.on{background:var(--ct);border-color:var(--c);box-shadow:inset 4px 0 0 var(--c)}
 .vnav a.on .t{color:var(--ink);font-weight:600}
 @media (min-width:1100px){.vnav a b{border-radius:9px;min-width:1.9em}}
+
+/* design review pass: consistency, contrast, one visual system */
+.srow.c0{--rd:#5b30b0}.srow.c1{--rd:#c52457}.srow.c2{--rd:#a85a00;--rc:#e07a00;--rc2:#f5a524}.srow.c3{--rd:#0b7a6d}
+.srow .sbody h4,.srow .contem b{color:var(--rd)}
+@media (prefers-color-scheme:dark){.srow .sbody h4,.srow .contem b{color:var(--rc2)}}
+.vnav li:nth-child(4n+3){--c:#e07a00;--c2:#f5a524}
+/* every section heading shares the gradient rule */
+article h2[id]{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#8e5bb5,#e0366b,#f08a00,transparent) 1}
+/* vivid icon tiles in highlights and the four cards */
+.ic{border:0;color:#fff;box-shadow:0 4px 10px -5px currentColor}
+.ic0{background:linear-gradient(135deg,#6a3fc2,#a37be8);color:#fff}.ic1{background:linear-gradient(135deg,#e0366b,#ff7a9c);color:#fff}.ic2{background:linear-gradient(135deg,#e07a00,#f5a524);color:#fff}.ic3{background:linear-gradient(135deg,#0e9f8e,#4fd1b8);color:#fff}
+.srow .stile.ic0{background:linear-gradient(135deg,#6a3fc2,#a37be8)}
+/* meditation: coloured minute pills */
+ol.med li:nth-child(4n+1) .mn{--m:#6a3fc2;--m2:#a37be8}ol.med li:nth-child(4n+2) .mn{--m:#e0366b;--m2:#ff7a9c}ol.med li:nth-child(4n+3) .mn{--m:#e07a00;--m2:#f5a524}ol.med li:nth-child(4n) .mn{--m:#0e9f8e;--m2:#4fd1b8}
+ol.med li .mn{background:linear-gradient(135deg,var(--m),var(--m2));color:#fff;border:0}
+ol.med li .mt b{color:var(--ink)}
+/* reflection: a coloured bar and label per question */
+.asks li{border-left:4px solid var(--m);padding-left:14px;border-bottom:0;margin:8px 0}
+.asks li:nth-child(4n+1){--m:#6a3fc2}.asks li:nth-child(4n+2){--m:#e0366b}.asks li:nth-child(4n+3){--m:#e07a00}.asks li:nth-child(4n){--m:#0e9f8e}
+.asks li b{color:var(--m)}
+.reflect{background:var(--soft);border-color:var(--line)}
+/* closing thought as a card */
+.closing{border:0;border-radius:16px;padding:24px 22px;background:linear-gradient(135deg,rgba(106,63,194,.10),rgba(224,54,107,.08),rgba(240,138,0,.10));border-left:6px solid #6a3fc2;text-align:left}
+.asks li:nth-child(4n+1) b{color:#5b30b0}.asks li:nth-child(4n+2) b{color:#c52457}.asks li:nth-child(4n+3) b{color:#a85a00}.asks li:nth-child(4n) b{color:#0b7a6d}
+@media (prefers-color-scheme:dark){.asks li:nth-child(4n+1) b{color:#a37be8}.asks li:nth-child(4n+2) b{color:#ff7a9c}.asks li:nth-child(4n+3) b{color:#f5a524}.asks li:nth-child(4n) b{color:#4fd1b8}}
+.reflect{background:var(--surface)}

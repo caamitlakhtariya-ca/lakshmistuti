@@ -1933,7 +1933,7 @@ def story_html(v):
             tr="".join("<tr>"+"".join(f"<td>{c}</td>" for c in r)+"</tr>" for r in rows)
             out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3><div class="gscroll"><table class="wtable stable"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
         elif k=="chips":
-            out+=f'<h3 class="sh sh-s">{E(b[1])}</h3><ul class="schips">'+"".join(f'<li><b>{a}</b> {c}</li>' for a,c in b[2])+'</ul>'
+            out+=f'<h3 class="sh sh-s">{E(b[1])}</h3><ul class="schips">'+"".join(f'<li><b>{a}</b> – {c}</li>' for a,c in b[2])+'</ul>'
         elif k=="next":
             out+=f'<div class="snext"><p class="snk">A question to carry into {E(b[1])}</p>{paras(b[2])}</div>'
         elif k=="note":
@@ -1977,7 +1977,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
            "mainEntityOfPage":SITE+"/"+path+"/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     rows = "".join(f'<tr><td class="t-s" lang="sa">{a}<i>{E(b)}</i></td><td>{E(c)}</td></tr>' for a,b,c,d in v["words"])
     notes = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p>{d}</p></div>' for a,b,c,d in v["words"] if d)
-    words = f'<table class="wtable"><thead><tr><th>Sanskrit</th><th>Meaning</th></tr></thead><tbody>{rows}</tbody></table>' + (f'<details class="wnotes" open><summary>Notes on each word</summary>{notes}</details>' if notes else "")
+    words = f'<table class="wtable"><thead><tr><th>Sanskrit</th><th>Meaning</th></tr></thead><tbody>{rows}</tbody></table>' + (f'<details class="wnotes"{"" if v.get("story") else " open"}><summary>Notes on each word</summary>{notes}</details>' if notes else "")
     # The Sanskrit structure (grammar) section is switched off site-wide; the data stays in the extras files.
     gramsec = grammar_section(v["grammar"]) if (SHOW_GRAMMAR and v.get("grammar")) else ""
     gramlink = '<a href="#grammar">Sanskrit structure</a>' if (SHOW_GRAMMAR and v.get("grammar")) else ""
