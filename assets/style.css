@@ -484,3 +484,15 @@ ol.med li .mt b{color:var(--ink)}
 .slesson.c3{--rc:#0e9f8e;--rc2:#4cd6c4;--rt:rgba(14,159,142,.12)}
 .sfoot{font-style:italic;opacity:.85}
 .story ul,.story ol{padding-left:1.3em}
+
+/* "More" menu in the main navigation */
+nav.main details.more{position:relative}
+nav.main details.more summary{list-style:none;cursor:pointer;padding:6px 12px;border-radius:999px;color:var(--ink);user-select:none}
+nav.main details.more summary::-webkit-details-marker{display:none}
+nav.main details.more summary::after{content:"";display:inline-block;width:.4em;height:.4em;margin:0 0 .18em .45em;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .15s}
+nav.main details.more[open] summary::after{transform:rotate(225deg);margin-bottom:-.1em}
+nav.main details.more summary:hover,nav.main details.more[open] summary{color:var(--saffron)}
+nav.main details.more summary.cur{background:var(--soft);color:var(--maroon)}
+nav.main .more-list{position:absolute;top:calc(100% + 8px);right:0;z-index:30;min-width:210px;display:flex;flex-direction:column;gap:2px;padding:8px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 30px rgba(122,31,43,.14)}
+nav.main .more-list a{display:block;white-space:nowrap}
+@media (max-width:640px){nav.main details.more{position:static}nav.main details.more[open]{flex-basis:100%;order:9}nav.main .more-list{position:static;box-shadow:none;border:0;border-top:1px solid var(--line);border-radius:0;margin-top:4px;padding:6px 0 0;flex-direction:row;flex-wrap:wrap;gap:2px 4px}nav.main details.more summary{padding:5px 9px;font-size:.86rem}}

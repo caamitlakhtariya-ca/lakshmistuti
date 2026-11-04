@@ -1987,13 +1987,20 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 </head>'''
 
 def nav(cur):
-    items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla"),("Glossary","glossary/","gl"),("About","about/","about")]
-    out = "".join('<a href="/%s"%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", l) for l,p,k in items)
+    items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla")]
+    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("Glossary","glossary/","gl")]
+    tail = [("About","about/","about")]
+    def lk(l,p,k,cls=""): return '<a href="/%s"%s%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", cls, l)
+    cur_more = cur in ("ashta","aarti","yantra","gl")
+    out = "".join(lk(*x) for x in items)
+    out += '<details class="more"%s><summary%s>More</summary><div class="more-list">%s</div></details>' % ("", ' class="cur"' if cur_more else "", "".join(lk(*x) for x in more))
+    out += "".join(lk(*x) for x in tail)
     return f'''<body>
 <header class="site"><div class="wrap">
 <a class="brand" href="/">श्री लक्ष्मी स्तुति<small>LAKSHMI STUTI · A COMMENTARY</small></a>
 <nav class="main" aria-label="Main">{out}</nav>
-</div></header>'''
+</div></header>
+<script>try{{document.addEventListener("click",function(e){{var d=document.querySelector("nav.main details.more");if(d&&d.open&&!d.contains(e.target))d.open=false}});document.addEventListener("keydown",function(e){{if(e.key==="Escape"){{var d=document.querySelector("nav.main details.more");if(d)d.open=false}}}})}}catch(e){{}}</script>'''
 
 def foot():
     return f'''
@@ -2522,7 +2529,7 @@ def page_asts():
     parts = [("Ashtalakshmi Stotram","ashtalakshmi-stotram/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi-stotram/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in ASTS)
-    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f'''
+    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + f'''
 <main class="wrap">{crumbs([("Ashtalakshmi Stotram",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Ashtalakshmi Stotram – meaning in English</h1>
@@ -2549,7 +2556,7 @@ def page_ashta():
     parts = [("Aṣṭalakṣmī","ashtalakshmi/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     cards = "".join(f'<div class="card"><h3>{i}. {E(n)} <span lang="sa" style="font-family:var(--deva);font-weight:400;color:var(--muted)">· {dv}</span></h3><p class="m" style="font-weight:700;margin:.1em 0 .4em">{E(sub)}</p><p>{body}</p><p><small>{E(img)}</small></p></div>' for i,(n,dv,sub,body,img) in enumerate(ASHTA,1))
-    body = head(t,d,"ashtalakshmi/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f'''
+    body = head(t,d,"ashtalakshmi/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + f'''
 <main class="wrap">{crumbs([("Aṣṭalakṣmī",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Aṣṭalakṣmī – the eight forms of Lakshmi</h1>
@@ -2587,7 +2594,7 @@ def page_aarti():
     parts = [("Lakshmi Aarti","lakshmi-aarti/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/lakshmi-aarti/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in AARTI)
-    body = head(t,d,"lakshmi-aarti/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f'''
+    body = head(t,d,"lakshmi-aarti/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("aarti") + f'''
 <main class="wrap">{crumbs([("Lakshmi Aarti",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Lakshmi Aarti – meaning and how to perform it</h1>
@@ -2645,7 +2652,7 @@ def page_aarti_print():
     parts = [("Lakshmi Aarti","lakshmi-aarti/"),("Printable guide","lakshmi-aarti-printable/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/lakshmi-aarti-printable/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     mean = "".join(f'<li><strong>{E(a)}.</strong> {E(b)}</li>' for a,b in AARTI_ONE)
-    body = head(t,d,"lakshmi-aarti-printable/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f"""
+    body = head(t,d,"lakshmi-aarti-printable/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("aarti") + f"""
 <main class="wrap">{crumbs([("Lakshmi Aarti","lakshmi-aarti/"),("Printable guide",None)])}
 <div class="printpage">
 <button type="button" class="btn noprint" onclick="window.print()">Print this page</button>
@@ -2690,7 +2697,7 @@ def page_yantra():
     t = "Sri Yantra Meaning – Layers and Symbolism"
     d = "What the Sri Yantra (Lakshmi Yantra) is and what each layer means: the square enclosure, circle, lotus petals, nine triangles and the central point."
     parts = [("Śrī Yantra","sri-yantra/")]
-    body = head(t,d,"sri-yantra/",bc_ld(parts)) + nav("") + f'''
+    body = head(t,d,"sri-yantra/",bc_ld(parts)) + nav("yantra") + f'''
 <main class="wrap">{crumbs([("Śrī Yantra",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>The Śrī Yantra</h1>
