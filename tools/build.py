@@ -1894,6 +1894,8 @@ def sketch_note(kp, icons, centre="Flourishing Life", label="Sketch note: the ke
     o+='</svg>'
     return o
 
+SHOW_GRAMMAR = False
+
 def grammar_section(g):
     def tbl(head, rows, cls=""):
         h="".join(f"<th>{E(x)}</th>" for x in head)
@@ -1949,8 +1951,9 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     rows = "".join(f'<tr><td class="t-s" lang="sa">{a}<i>{E(b)}</i></td><td>{E(c)}</td></tr>' for a,b,c,d in v["words"])
     notes = "".join(f'<div class="word"><div class="w">{a}<i>{E(b)}</i></div><p>{d}</p></div>' for a,b,c,d in v["words"] if d)
     words = f'<table class="wtable"><thead><tr><th>Sanskrit</th><th>Meaning</th></tr></thead><tbody>{rows}</tbody></table>' + (f'<details class="wnotes" open><summary>Notes on each word</summary>{notes}</details>' if notes else "")
-    gramsec = grammar_section(v["grammar"]) if v.get("grammar") else ""
-    gramlink = '<a href="#grammar">Sanskrit structure</a>' if v.get("grammar") else ""
+    # The Sanskrit structure (grammar) section is switched off site-wide; the data stays in the extras files.
+    gramsec = grammar_section(v["grammar"]) if (SHOW_GRAMMAR and v.get("grammar")) else ""
+    gramlink = '<a href="#grammar">Sanskrit structure</a>' if (SHOW_GRAMMAR and v.get("grammar")) else ""
     ins = "".join(ins_card(a,b) for a,b in v["insights"])
     med = "".join(med_step(x) for x in v["meditation"])
     medlink = '<a href="#meditation">Meditation</a>' if v["meditation"] else ''
