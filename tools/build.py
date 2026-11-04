@@ -1702,6 +1702,19 @@ def _load_extras():
                 v.setdefault(k, val)
 _load_extras()
 
+def _load_story():
+    """Story layout built from Amit's own commentary files (tools/extras_story.py). Overrides story/intro/meditation/reflection/closing."""
+    import importlib.util
+    fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "extras_story.py")
+    if not os.path.exists(fp): return
+    spec = importlib.util.spec_from_file_location("extras_story", fp); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    for v in KVERSES:
+        for k, val in m.STORIES.get(v["n"], {}).items():
+            v[k] = val
+        if v["n"] in m.STORIES and "reflection" not in m.STORIES[v["n"]]: v["reflection"] = ""
+KVERSES.sort(key=lambda x: x["n"])
+_load_story()
+
 GLOSSARY = [
  ("महामाया","Mahāmāyā","The “great Māyā”: the divine creative power by which the world appears; a title of the Goddess.","mahalakshmi-ashtakam/verse-1/"),
  ("श्रीपीठ","Śrīpīṭha","The seat of Śrī (Lakshmi); tradition links it with the Mahalakshmi temple at Kolhapur.","mahalakshmi-ashtakam/verse-1/"),
@@ -2298,30 +2311,40 @@ def grammar_section(g):
     return o
 
 def story_html(v):
-    """Alive layout for Deeper insights: numbered sections, icon tiles with a Contemplation line, tables."""
+    """Alive layout for Deeper insights: intro remark, numbered sections, icon tiles with a Contemplation line, tables, lessons."""
     out='<div class="story">'; n=0
-    def paras(ps): return "".join(f"<p>{q}</p>" for q in ps)
+    def paras(ps): return "".join(q if q.startswith(("<ul","<ol")) else f"<p>{q}</p>" for q in ps)
+    def hd(t):
+        nonlocal n
+        n+=1; return f'<h3 class="sh"><span class="sn">{n}</span><span>{t}</span></h3>'
+    if v.get("intro"):
+        out+='<div class="sintro"><p class="sik">Before we begin</p>'+paras(v["intro"])+'</div>'
     for b in v["story"]:
         k=b[0]
         if k=="quote":
             out+=f'<p class="squote">{b[1]}</p>'
         elif k=="sec":
-            n+=1; out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3>{paras(b[2])}'
+            out+=hd(b[1])+paras(b[2])
         elif k=="rows":
-            n+=1; out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3>'
+            out+=hd(b[1])
             for i,(ic,h,ps,cont) in enumerate(b[2]):
-                out+=f'<div class="srow c{i%4}"><div class="stile ic{i%4}">{icon(ic,44)}</div><div class="sbody"><h4>{E(h)}</h4>{paras(ps)}<p class="contem"><b>Contemplation:</b> {cont}</p></div></div>'
+                cb=f'<p class="contem"><b>Contemplation:</b> {cont}</p>' if cont else ""
+                out+=f'<div class="srow c{i%4}"><div class="stile ic{i%4}">{icon(ic,44)}</div><div class="sbody"><h4>{h}</h4>{paras(ps)}{cb}</div></div>'
         elif k=="table":
-            n+=1; head=b[2]; rows=b[3]
-            th="".join(f"<th>{E(x)}</th>" for x in head)
+            head=b[2]; rows=b[3]
+            th="".join(f"<th>{x}</th>" for x in head)
             tr="".join("<tr>"+"".join(f"<td>{c}</td>" for c in r)+"</tr>" for r in rows)
-            out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3><div class="gscroll"><table class="wtable stable"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
+            out+=hd(b[1])+f'<div class="gscroll"><table class="wtable stable"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
+            if len(b)>4: out+=paras(b[4])
+        elif k=="lessons":
+            out+=hd(b[1])+'<div class="slessons">'+"".join(f'<div class="slesson c{i%4}"><span class="slnum">{i+1}</span><div><b>{h}</b><p>{t}</p></div></div>' for i,(h,t) in enumerate(b[2]))+'</div>'
+            if len(b)>3 and b[3]: out+=f'<p class="sfoot">{b[3]}</p>'
         elif k=="chips":
-            out+=f'<h3 class="sh sh-s">{E(b[1])}</h3><ul class="schips">'+"".join(f'<li><b>{a}</b> – {c}</li>' for a,c in b[2])+'</ul>'
+            out+=f'<h3 class="sh sh-s">{b[1]}</h3><ul class="schips">'+"".join(f'<li><b>{a}</b> – {c}</li>' for a,c in b[2])+'</ul>'
         elif k=="next":
             out+=f'<div class="snext"><p class="snk">A question to carry into {E(b[1])}</p>{paras(b[2])}</div>'
         elif k=="note":
-            out+=f'<h3 class="sh sh-s">{E(b[1])}</h3>{paras(b[2])}'
+            out+=f'<h3 class="sh sh-s">{b[1]}</h3>{paras(b[2])}'
     return out+'</div>'
 
 def forms_block(v):
