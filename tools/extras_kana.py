@@ -859,4 +859,25 @@ EXTRAS = {
    foot="These notes follow standard Sanskrit grammar and explain the words themselves. They do not depend on any one commentary.",
   ),
  ),
+ 22: dict(
+  icons=["book","home","gem","crown"],
+  keypoints=[("Trayīmayī","Knowledge: she is the embodiment of the three Vedas"),("Tribhuvana","Motherhood: she is the Mother of the three worlds"),("Guṇādhikā","Virtue: those who praise her grow rich in qualities"),("Budhabhāvita","Honour: a mind the wise esteem, the closing hope")],
+  tagline="A closing blessing: those who praise the Mother daily grow in virtue, in fortune and in a mind the wise respect.",
+  forms_title="Explore the four fruits",
+  formnotes=[
+   ("Trayī is the threefold Veda, and -mayī means made of. Lakshmi is praised as the Goddess in whom sacred knowledge abides, so she is joined with wisdom as well as with wealth. A reflection: prosperity without knowledge can become arrogance; with knowledge it can become welfare.","Where does knowledge guide my decisions about money?"),
+   ("Tribhuvana is the three worlds, earth, the space between and the heavens, and she is called their mother. In Verse 18 she gave prosperity to the three worlds; here she is their mother. The hymn has widened from one devotee to the whole universe.","Whom besides myself does my prosperity reach?"),
+   ("Guṇādhikā means rich in virtues, and the next word speaks of great fortune. Character is named first and fortune second. A reflection: the verse does not read as a way of getting money; it describes what devotion hopes to make of the person who prays.","Which virtue would I most like to grow this year?"),
+   ("Budha is a wise person and bhāvita means held in regard. The last line hopes for a mind that the wise esteem, not for fame or wealth. A reflection: being admired by crowds and being respected by the wise are not the same thing.","Whose respect do I really want?"),
+  ],
+  sheet=dict(
+   salut_title="The Four Fruits", centre_title="The Fruit of Daily Praise", centre="Daily Praise",
+   essence="Let devotion become virtue, and virtue become true prosperity: the highest fruit is to become worthy of handling prosperity.",
+   short="Those who praise Lakshmi daily with these hymns, the Mother of the three worlds and the essence of the Vedas, become rich in virtue, share in great fortune and have minds the wise honour.",
+   salut=["She is the embodiment of the three Vedas.","She is the Mother of the three worlds.","Her devotees become rich in virtue and fortune.","Their minds are held in regard by the wise."],
+   words=[("त्रयी","Trayī","The three Vedas"),("गुण","Guṇa","Virtue; quality"),("भाग्य","Bhāgya","Fortune"),("बुध","Budha","A wise person")],
+   take=["Let knowledge guide your decisions.","Grow virtue along with prosperity.","Pray daily, not only in need.","Seek respect from the wise."],
+  ),
+  sketchalt="Sketch note for Kanakadhāra Stotram Verse 22: the Sanskrit verse and transliteration, its meaning, four fruits of praising the Goddess daily (knowledge, motherhood of the three worlds, virtue and fortune, a mind the wise honour), key words and a life takeaway, around a picture of Goddess Lakshmi seated on a lotus.",
+ ),
 }

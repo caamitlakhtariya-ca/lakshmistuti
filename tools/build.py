@@ -1137,7 +1137,7 @@ KVERSES = [
 
  dict(
   n=21, slug="verse-21",
-  deva="देवि प्रसीद जगदीश्वरि लोकमातः<br>कल्याणगात्रि कमलेक्षणजीवनाथे।<br>दारिद्र्यभीतिहृदयं शरणागतं मां<br>आलोकय प्रतिदिनं सदयैरपाङ्गैः॥",
+  deva="देवि प्रसीद जगदीश्वरि लोकमातः<br>कल्याणगात्रि कमलेक्षणजीवनाथे।<br>दारिद्र्यभीतिहृदयं शरणागतं माम्<br>आलोकय प्रतिदिनं सदयैरपाङ्गैः॥",
   iast="Devi prasīda jagadīśvari lokamātaḥ<br>Kalyāṇagātri kamalekṣaṇa-jīvanāthe;<br>Dāridrya-bhīti-hṛdayaṁ śaraṇāgataṁ mām<br>Ālokaya pratidinaṁ sadayair apāṅgaiḥ.",
   ttl="Kanakadhara Stotram Verse 21 Meaning – Devi Prasida Jagadishvari",
   dsc="Kanakadhara Stotram Verse 21 (Devi Prasida Jagadishvari): a prayer to Lakshmi from a heart afraid of poverty, asking for her glance. Word-by-word meaning.",
@@ -1475,6 +1475,38 @@ KVERSES = [
   closing="Śaṅkarācārya asks to be looked on and gives his only credential: honest need. The thought to carry is that an honest account of one’s own emptiness is where a real asking begins, and that being a vessel means leaving room. " + "This meditation is a devotional practice for attention and reflection; it does not promise a supernatural result or guarantee material wealth.",
  ),
 
+
+ dict(
+  n=22, slug="verse-22",
+  deva="स्तुवन्ति ये स्तुतिभिरमीभिरन्वहं<br>त्रयीमयीं त्रिभुवनमातरं रमाम्।<br>गुणाधिका गुरुतरभाग्यभागिनो<br>भवन्ति ते भुवि बुधभाविताशयाः॥",
+  iast="Stuvanti ye stutibhir amībhir anvahaṁ<br>Trayīmayīṁ tribhuvana-mātaraṁ ramām;<br>Guṇādhikā gurutara-bhāgya-bhāgino<br>Bhavanti te bhuvi budha-bhāvitāśayāḥ.",
+  ttl="Kanakadhara Stotram Verse 22 Meaning – Stuvanti Ye Stutibhir",
+  dsc="Kanakadhara Stotram Verse 22 (Stuvanti Ye Stutibhir): the closing verse on the fruit of praising Lakshmi daily. Word-by-word meaning in English.",
+  h1="Kanakadhāra Stotram – Verse 22",
+  sub="Stuvanti ye stutibhir – the closing benediction: virtue, good fortune and a mind the wise honour",
+  words=[
+   ("स्तुवन्ति ये","Stuvanti ye","Those who praise","<em>Stuvanti</em> is “they praise”, from the root <em>stu</em>, from which <em>stuti</em>, a hymn, also comes. <em>Ye</em> is “those who”. The verse opens by naming the people it is about, and will say what becomes of them in the last line with <em>te</em>, “they”."),
+   ("स्तुतिभिरमीभिरन्वहम्","Stutibhir amībhir anvaham","With these hymns, every day","<em>Stutibhiḥ</em> is “with hymns”, <em>amībhiḥ</em> is “with these”, and <em>anvaham</em> is “day by day”. The visarga of both words turns into <em>r</em> before the vowel that follows. “These hymns” points to the hymn we have just read. Editions differ between <em>amībhiḥ</em> and <em>amūbhiḥ</em>; this site keeps <em>amībhiḥ</em>."),
+   ("त्रयीमयीम्","Trayīmayīm","Her who is made of the three Vedas","<em>Trayī</em> is the threefold Veda, the Ṛg, Yajus and Sāman. <em>-mayī</em> means “made of, full of”. So she is the Goddess in whom the sacred knowledge of the three Vedas abides."),
+   ("त्रिभुवनमातरं रमाम्","Tribhuvana-mātaraṁ ramām","Ramā, the mother of the three worlds","<em>Tri-bhuvana</em> is the three worlds, <em>mātaram</em> is “mother” and <em>ramā</em> is a name of Lakshmi, “the delightful one”. The words are all in the form of the object: they are what the praising is directed at."),
+   ("गुणाधिकाः","Guṇādhikāḥ","Rich in virtues","<em>Guṇa</em> is a quality or virtue, and <em>adhika</em> is “more, abundant”. They become people of excellent qualities. Notice that character is named first."),
+   ("गुरुतरभाग्यभागिनः","Gurutara-bhāgya-bhāginaḥ","Sharing in great good fortune","<em>Gurutara</em> is “weightier, greater”, <em>bhāgya</em> is fortune and <em>bhāgin</em> is one who shares in. Fortune follows virtue in the sentence."),
+   ("भवन्ति ते भुवि","Bhavanti te bhuvi","They become, on earth","<em>Bhavanti</em> is “they become”, the verb of the sentence. <em>Te</em> is “they”, answering the opening <em>ye</em>. <em>Bhuvi</em> is “on the earth, in the world”: the fruit is to be seen in this life."),
+   ("बुधभाविताशयाः","Budha-bhāvitāśayāḥ","With minds the wise honour","<em>Budha</em> is a wise person, <em>bhāvita</em> is “held in regard, esteemed” and <em>āśaya</em> is the mind, the inner disposition. <em>Bhāvita</em> and <em>āśaya</em> join into <em>bhāvitāśaya</em>. The last word is about the quality of mind, not about wealth or fame."),
+  ],
+  meaning="Those who praise Lakshmi every day with these hymns, Lakshmi who embodies the three Vedas and is the Mother of the three worlds, become endowed with excellent virtues and share in great good fortune. On earth, their minds and intentions become worthy of the esteem of the wise.",
+  insights=[
+   ("In simple words","“Those who praise Ramā every day with these hymns, the Mother of the three worlds, whose nature is the three Vedas, become rich in virtue and blessed with great fortune, and on earth their minds are honoured by the wise.”"),
+   ("A devotional benediction","The verse is a closing blessing. It is not a guarantee that reciting the hymn will mechanically produce a particular amount of wealth or remove every difficulty. Its deeper invitation is to let devotion transform the person who recites it."),
+  ],
+  meditation=["Trayīmayīm: “May knowledge guide my decisions.”",
+              "Tribhuvanamātaram: “May I remember that the Divine Mother is not only my protector, but the Mother of all beings.”",
+              "Guṇādhikāḥ: “May I develop virtues along with material prosperity.”",
+              "Gurutarabhāgyabhāginaḥ: “May good fortune come with the wisdom to use it properly.”",
+              "Budhabhāvitāśayāḥ: “May my thoughts, intentions and actions become worthy of the respect of the wise.”"],
+  reflection="",
+  closing="",
+ ),
 ]
 
 
@@ -2050,7 +2082,7 @@ def page_home():
 </section>
 <div class="grid">
 <a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
-<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram</h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi. The story and {len(KVERSES)} verse{"s" if len(KVERSES)!=1 else ""} are live; more follow one at a time.</p></a>
+<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram</h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi. The story and {"all " if len(KVERSES)>=KANA_TOTAL else ""}{len(KVERSES)} verse{"s" if len(KVERSES)!=1 else ""} are live{"" if len(KVERSES)>=KANA_TOTAL else "; more follow one at a time"}.</p></a>
 <a class="tile" href="/mahalakshmi-ashtakam/"><h3>Mahālakṣmī Aṣṭakam</h3><p>Indra’s eight-verse hymn to Mahalakshmi. The full text to chant, with the meaning of every verse.</p></a>
 <a class="tile" href="/ashtalakshmi/"><h3>Aṣṭalakṣmī</h3><p>The eight forms of Lakshmi, and what each one stands for.</p></a>
 <a class="tile" href="/lakshmi-aarti/"><h3>Lakshmi Aarti</h3><p>How to perform the aarti at home on Diwali, and what each stanza means.</p></a>
@@ -2095,7 +2127,7 @@ def page_kana():
 <p><a class="btn" href="/kanakadhara/verse-1/">Start with Verse 1</a><a class="btn ghost" href="#story">Read the story first</a></p>
 <h2 id="verses">Verses</h2>
 <div class="grid">{krows}</div>
-<p><small>{len(KVERSES)} of {KANA_TOTAL} verses published so far. The next ones are added one at a time.</small></p>
+<p><small>{"All "+str(KANA_TOTAL)+" verses are published." if len(KVERSES)>=KANA_TOTAL else str(len(KVERSES))+" of "+str(KANA_TOTAL)+" verses published so far. The next ones are added one at a time."}</small></p>
 <h2 id="story">The story before the first verse</h2>
 
 <p>Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
