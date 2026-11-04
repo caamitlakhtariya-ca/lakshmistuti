@@ -1926,7 +1926,7 @@ def story_html(v):
         elif k=="rows":
             n+=1; out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3>'
             for i,(ic,h,ps,cont) in enumerate(b[2]):
-                out+=f'<div class="srow"><div class="stile ic{i%4}">{icon(ic,44)}</div><div class="sbody"><h4>{E(h)}</h4>{paras(ps)}<p class="contem"><b>Contemplation:</b> {cont}</p></div></div>'
+                out+=f'<div class="srow c{i%4}"><div class="stile ic{i%4}">{icon(ic,44)}</div><div class="sbody"><h4>{E(h)}</h4>{paras(ps)}<p class="contem"><b>Contemplation:</b> {cont}</p></div></div>'
         elif k=="table":
             n+=1; head=b[2]; rows=b[3]
             th="".join(f"<th>{E(x)}</th>" for x in head)
