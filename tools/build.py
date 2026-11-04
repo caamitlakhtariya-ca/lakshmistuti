@@ -1987,7 +1987,7 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 </head>'''
 
 def nav(cur):
-    items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla"),("Glossary","glossary/","gl"),("About","about/","about")]
+    items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla"),("Aarti","lakshmi-aarti/","aarti"),("Glossary","glossary/","gl"),("About","about/","about")]
     out = "".join('<a href="/%s"%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", l) for l,p,k in items)
     return f'''<body>
 <header class="site"><div class="wrap">
@@ -2587,7 +2587,7 @@ def page_aarti():
     parts = [("Lakshmi Aarti","lakshmi-aarti/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/lakshmi-aarti/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
     cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in AARTI)
-    body = head(t,d,"lakshmi-aarti/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("") + f'''
+    body = head(t,d,"lakshmi-aarti/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("aarti") + f'''
 <main class="wrap">{crumbs([("Lakshmi Aarti",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Lakshmi Aarti – meaning and how to perform it</h1>
