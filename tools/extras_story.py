@@ -2,8 +2,7 @@
 # Applied by build._load_story(): keys here OVERRIDE the verse dict (story, intro, meditation, reflection, closing).
 # intro = the "initial remark" at the top of his file. Block types: see build.story_html.
 
-DISC = " This meditation is a devotional practice for attention and reflection; it does not promise a supernatural result or guarantee material wealth."
-A = lambda n: f'<a href="/kanakadhara/verse-{n}/">Verse {n}</a>'
+from story_common import DISC, A
 
 STORIES = {
  13: dict(
@@ -412,3 +411,11 @@ STORIES = {
   closing="Let devotion become virtue, and virtue become true prosperity: the highest fruit of devotion is to become worthy of handling prosperity with wisdom, humility, generosity and good character." + DISC,
  ),
 }
+
+# Verses 1-11 live in tools/story_parts/p1..p4.py (each defines PART = {n: dict(...)})
+import importlib, os as _os
+_here = _os.path.dirname(__file__)
+if _here not in __import__("sys").path: __import__("sys").path.insert(0, _here)
+for _m in ("p1", "p2", "p3", "p4"):
+    if _os.path.exists(_os.path.join(_here, "story_parts", _m + ".py")):
+        STORIES.update(importlib.import_module("story_parts." + _m).PART)
