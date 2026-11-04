@@ -1393,7 +1393,7 @@ KVERSES = [
   n=19, slug="verse-19",
   deva="दिग्घस्तिभिः कनककुम्भमुखावसृष्ट-<br>स्वर्वाहिनीविमलचारुजलप्लुताङ्गीम्।<br>प्रातर्नमामि जगतां जननीमशेष-<br>लोकाधिनाथगृहिणीममृताब्धिपुत्रीम्॥",
   iast="Dig-ghastibhiḥ kanaka-kumbha-mukhāvasṛṣṭa-<br>svarvāhinī-vimala-cāru-jala-plutāṅgīm,<br>Prātar namāmi jagatāṁ jananīm aśeṣa-<br>lokādhinātha-gṛhiṇīm amṛtābdhi-putrīm.",
-  ttl="Kanakadhara Stotram Verse 19 Meaning – Dig Ghastibhih Kanaka Kumbha",
+  ttl="Kanakadhara Stotram Verse 19 Meaning – Dig Ghastibhih Kanaka",
   dsc="Kanakadhara Stotram Verse 19 (Dig Ghastibhih Kanaka Kumbha): the Goddess bathed by the elephants of the directions. Word-by-word meaning.",
   h1="Kanakadhāra Stotram – Verse 19",
   sub="Dig-ghastibhiḥ kanaka-kumbha – the morning bath of the Goddess, and the bow at dawn",
