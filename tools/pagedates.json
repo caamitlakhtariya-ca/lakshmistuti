@@ -12,7 +12,7 @@
  "kanakadhara": {
   "published": "2026-10-11",
   "modified": "2026-11-04",
-  "hash": "8dece695c65e"
+  "hash": "4c27eb938043"
  },
  "mahalakshmi-ashtakam": {
   "published": "2026-10-23",
@@ -298,5 +298,10 @@
   "published": "2026-11-04",
   "modified": "2026-11-04",
   "hash": "5430d5bb2c0b"
+ },
+ "kanakadhara/appendix-bilvatavi": {
+  "published": "2026-11-04",
+  "modified": "2026-11-04",
+  "hash": "58b3d2155914"
  }
 }
