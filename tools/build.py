@@ -1913,6 +1913,31 @@ def grammar_section(g):
     o+='<p class="gfoot">'+E(g["foot"])+'</p></div>'
     return o
 
+def story_html(v):
+    """Alive layout for Deeper insights: numbered sections, icon tiles with a Contemplation line, tables."""
+    out='<div class="story">'; n=0
+    def paras(ps): return "".join(f"<p>{q}</p>" for q in ps)
+    for b in v["story"]:
+        k=b[0]
+        if k=="quote":
+            out+=f'<p class="squote">{b[1]}</p>'
+        elif k=="sec":
+            n+=1; out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3>{paras(b[2])}'
+        elif k=="rows":
+            n+=1; out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3>'
+            for i,(ic,h,ps,cont) in enumerate(b[2]):
+                out+=f'<div class="srow"><div class="stile ic{i%4}">{icon(ic,44)}</div><div class="sbody"><h4>{E(h)}</h4>{paras(ps)}<p class="contem"><b>Contemplation:</b> {cont}</p></div></div>'
+        elif k=="table":
+            n+=1; head=b[2]; rows=b[3]
+            th="".join(f"<th>{E(x)}</th>" for x in head)
+            tr="".join("<tr>"+"".join(f"<td>{c}</td>" for c in r)+"</tr>" for r in rows)
+            out+=f'<h3 class="sh"><span class="sn">{n}</span><span>{E(b[1])}</span></h3><div class="gscroll"><table class="wtable stable"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
+        elif k=="chips":
+            out+=f'<h3 class="sh sh-s">{E(b[1])}</h3><ul class="schips">'+"".join(f'<li><b>{a}</b> {c}</li>' for a,c in b[2])+'</ul>'
+        elif k=="note":
+            out+=f'<h3 class="sh sh-s">{E(b[1])}</h3>{paras(b[2])}'
+    return out+'</div>'
+
 def forms_block(v):
     o=f'<div class="ov-card ov-forms"><h2 class="ov-h">{E(v.get("forms_title","Explore the key ideas"))}</h2><p class="ov-sub">Tap a card to open its meaning and a question to carry with you.</p><div class="fgrid">'
     for n,((a,b),(body,ask)) in enumerate(zip(v["keypoints"],v["formnotes"])):
@@ -1954,7 +1979,7 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     # The Sanskrit structure (grammar) section is switched off site-wide; the data stays in the extras files.
     gramsec = grammar_section(v["grammar"]) if (SHOW_GRAMMAR and v.get("grammar")) else ""
     gramlink = '<a href="#grammar">Sanskrit structure</a>' if (SHOW_GRAMMAR and v.get("grammar")) else ""
-    ins = "".join(ins_card(a,b) for a,b in v["insights"])
+    ins = story_html(v) if v.get("story") else "".join(ins_card(a,b) for a,b in v["insights"])
     med = "".join(med_step(x) for x in v["meditation"])
     medlink = '<a href="#meditation">Meditation</a>' if v["meditation"] else ''
     medsec = f'<h2 id="meditation">Practical meditation</h2>\n<ol class="med">{med}</ol>' if v["meditation"] else ''
