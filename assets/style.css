@@ -427,3 +427,15 @@ ol.med{background:var(--sand);border:1px solid var(--sand-line);border-radius:14
 .snext p{margin:.4em 0}
 .snk{font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#6a3fc2}
 @media (prefers-color-scheme:dark){.snk{color:#a37be8}}
+
+/* coloured verse index */
+.vnav li:nth-child(4n+1){--c:#6a3fc2;--c2:#a37be8;--ct:rgba(106,63,194,.12)}
+.vnav li:nth-child(4n+2){--c:#e0366b;--c2:#ff7a9c;--ct:rgba(224,54,107,.12)}
+.vnav li:nth-child(4n+3){--c:#f08a00;--c2:#ffc23d;--ct:rgba(240,138,0,.15)}
+.vnav li:nth-child(4n){--c:#0e9f8e;--c2:#4fd1b8;--ct:rgba(14,159,142,.14)}
+.vnav a b{display:inline-flex;align-items:center;justify-content:center;min-width:1.7em;height:1.7em;padding:0 .35em;border-radius:50%;background:linear-gradient(135deg,var(--c),var(--c2));color:#fff;font-size:.78rem;line-height:1}
+.vnav a{border-color:var(--ct);align-items:center}
+.vnav a:hover{border-color:var(--c);background:var(--ct)}
+.vnav a.on{background:var(--ct);border-color:var(--c);box-shadow:inset 4px 0 0 var(--c)}
+.vnav a.on .t{color:var(--ink);font-weight:600}
+@media (min-width:1100px){.vnav a b{border-radius:9px;min-width:1.9em}}
