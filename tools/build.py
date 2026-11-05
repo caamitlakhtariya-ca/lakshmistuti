@@ -5,6 +5,7 @@ Add a verse by appending to VERSES below, then rebuild.
 """
 import os, re, json, html, hashlib, unicodedata, subprocess
 from datetime import date
+import openverse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://lakshmistuti.com"
@@ -2494,15 +2495,18 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     other = ("Kanakadhāra Stotram","kanakadhara") if base=="sri-suktam" else ("Śrī Sūktam","sri-suktam")
     items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x["slug"]==v["slug"] else ""}><b>{x.get("navno", x["n"])}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
     vnav = f'<aside class="vnav" aria-label="Verses"><p class="vn-title"><a href="/{base}/">{sname}</a></p><ol>{items}</ol><p class="vn-other"><a href="/{other[1]}/">{other[0]} →</a></p></aside>'
-    vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView&&innerWidth<1100){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
+    vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
+    medband = f'<div class="vband b3"><div class="bin">{medsec}</div></div>' if medsec else ''
+    refband = f'<div class="vband b4"><div class="bin">{refsec}{closesec}</div></div>' if (refsec or closesec) else ''
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
-<header class="vhero"><div class="vh-in"><div class="vh-text">
+<header class="vhero">{openverse.scene()}<div class="vh-in"><div class="vh-text">
 <p class="vh-kick" lang="sa">श्री</p>
 <h1>{v["h1"]}</h1>
 <p class="lede">{E(v["sub"])}</p>
 <p class="vh-by">{"Hymn by Ādi Śaṅkarācārya, the Jagadguru · " if base == "kanakadhara" else ""}Commentary by {AUTHOR}</p></div>
 <div class="vh-art">{four_art(v["keypoints"], v["icons"]) if v.get("keypoints") else YANTRA}</div></div></header>
-<main class="wrap has-vnav">{vnav}<article>
+<main class="wrap has-vnav vwide"><article>
+<div class="vband b0"><div class="bin">{vnav}
 {crumbs([(sname,base+"/"),(lab(v),None)])}
 <nav class="vtabs" aria-label="On this page"><a href="#overview">Overview</a><a href="#words">Word by word</a>{gramlink}<a href="#insights">Deeper insights</a>{medlink}{reflink}</nav>
 <section id="overview" class="ov"><div class="ov-card ov-verse vcard">{ORN_TL}{ORN_BR}<h2 class="sr">The verse</h2><p class="vlabel" lang="sa">{verse_label(v, base)}</p><p class="deva" lang="sa">{v["deva"]}</p><p class="vfoot" lang="sa">॥ श्री महालक्ष्म्यै नमः ॥</p><div class="vtr"><p class="iast" lang="sa-Latn">{v["iast"]}</p></div></div>
@@ -2510,20 +2514,24 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
 {('<div class="ov-card ov-high"><h2 class="ov-h">Key highlights</h2><ul>'+"".join('<li><span class="ic ic'+str(n)+'">'+icon(v["icons"][n],22)+'</span><span><b>'+E(a)+'</b> '+E(b)+'</span></li>' for n,(a,b) in enumerate(v["keypoints"]))+'</ul></div>') if v.get("keypoints") else ""}
 {forms_block(v) if v.get("formnotes") else ""}
 {('<div class="ov-card ov-sketch"><h2 class="ov-h">Sketch note</h2><div class="sk-wrap">'+(f'<img class="sk-img" src="/assets/sketch/{v["sketchfile"][:-4]}-1344.webp" width="1344" height="896" loading="lazy" alt="{E(v["sketchalt"])}">' if v.get("sketchfile") else sketch_note(v["keypoints"], v["icons"]))+'</div><p class="sk-cap">'+('A one-page summary of the verse: Sanskrit, meaning, key ideas, key words and a takeaway. On a phone, open it full screen.' if v.get("sketchfile") else 'The key ideas of the verse at a glance.')+'</p>'+('<p class="sk-act"><a class="btn-s" href="/assets/sketch/'+v["sketchfile"]+'" download>Download the sketch note (PNG)</a></p>' if v.get("sketchfile") else "")+'</div>') if v.get("keypoints") else ""}</section>
+</div></div>
+<div class="vband b1"><div class="bin">
 {ad("below-verse")}
 <h2 id="words">Word-by-word meaning</h2>
 <p class="sect-note">The literal meaning of each word.</p>
 {words}
 {gramsec}
+</div></div>
+<div class="vband b2"><div class="bin">
 <h2 id="insights">Deeper spiritual insights</h2>
 <p class="sect-note">Interpretation and reflection: ideas that help us read the verse, not part of the text itself.</p>
 {ins}
-{medsec}
-{refsec}
-{closesec}
+</div></div>
+{medband}{refband}<div class="vband b5"><div class="bin">
 <p class="crumbs">Terms used here are explained in the <a href="/glossary/">glossary</a>. This commentary was prepared with AI assistance; <a href="/about/">read more</a>.</p>
 {ad("end")}
 <div class="pager">{p}{n}</div>
+</div></div>
 </article></main>{vscript}<script src="/assets/verse.js" defer></script>''' + foot()
     write(path, body, "0.9")
 

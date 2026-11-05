@@ -47,3 +47,21 @@ if(wrap&&typeof HTMLDialogElement==="function"){
 }
 }catch(e){}
 })();
+/* 3. Open-sky verse pages: reading progress, soft reveals, light parallax (all optional) */
+(function(){try{
+var d=document,root=d.documentElement,calm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!d.querySelector(".vwide"))return;
+var bar=d.createElement("div");bar.id="vprog";bar.setAttribute("aria-hidden","true");d.body.appendChild(bar);
+var hero=d.querySelector(".vhero"),tk=false;
+function fr(){tk=false;var h=root.scrollHeight-innerHeight,y=window.pageYOffset;bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0).toFixed(3)+")";
+ if(hero&&!calm){hero.style.setProperty("--vy",Math.min(y,600).toFixed(0))}}
+addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(fr)}},{passive:true});addEventListener("resize",fr);fr();
+if(calm||!("IntersectionObserver" in window))return;
+var sd=d.querySelector(".ov-verse .deva");if(sd)sd.classList.add("shim");
+root.classList.add("js");
+var sel=".ov-card,.card.ins,.story>*,.word,ol.med li,.reflect,.closing,table.wtable tbody tr";
+var els=[].slice.call(d.querySelectorAll(sel)).filter(function(e){return e.getBoundingClientRect().top>innerHeight*0.92});
+els.forEach(function(e,i){e.classList.add("vrv");e.style.setProperty("--d",((i%3)*0.07).toFixed(2)+"s")});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -6% 0px",threshold:0.05});
+els.forEach(function(e){io.observe(e)});
+}catch(e){}})();
