@@ -932,3 +932,7 @@ html:not(.js) .pdays li{padding-left:14px}
 @media print{.jdiya,.jfill{display:none}}
 
 .plan-bar [hidden],.plan-bar[hidden]{display:none!important}
+/* keep the original verse-page heading sizes over the open-sky scene */
+.vhero h1{font-size:2.4rem;text-shadow:0 1px 14px rgba(20,8,50,.35)}
+.vhero .lede{font-size:1.35rem;text-shadow:0 1px 10px rgba(20,8,50,.4)}
+@media (max-width:520px){.vhero h1{font-size:2rem}}
