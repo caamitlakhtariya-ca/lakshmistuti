@@ -61,3 +61,44 @@
   window.addEventListener("resize", req);
   frame();
 })();
+
+/* Aarti page: diya, active step. Ashtalakshmi page: petal wheel. Runs even with reduced motion (no animation needed). */
+(function () {
+  var d = document;
+  var calm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var box = d.getElementById("diyab"), btn = d.getElementById("dbtn"), note = d.getElementById("dn");
+  if (box && btn) {
+    btn.addEventListener("click", function () {
+      var lit = box.classList.toggle("lit");
+      btn.setAttribute("aria-pressed", lit);
+      btn.textContent = lit ? "Put out the diya" : "Light the diya";
+      note.textContent = lit ? "The lamp is lit. Take a quiet moment of gratitude, then begin the aarti." : "Tap to light a lamp. A quiet moment before the aarti is part of the worship.";
+    });
+  }
+  var steps = [].slice.call(d.querySelectorAll("ol.steps li"));
+  if (steps.length && "IntersectionObserver" in window && !calm) {
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { steps.forEach(function (s) { s.classList.toggle("on", s === e.target); }); } });
+    }, { rootMargin: "-42% 0px -48% 0px" });
+    steps.forEach(function (s) { so.observe(s); });
+  }
+  var petals = [].slice.call(d.querySelectorAll(".awheel .ap"));
+  if (petals.length) {
+    var data = JSON.parse(d.getElementById("aw-data").textContent);
+    var n = d.getElementById("aw-n"), dv = d.getElementById("aw-d"), sb = d.getElementById("aw-s"), ln = d.getElementById("aw-l");
+    function show(i) {
+      petals.forEach(function (p, k) { p.classList.toggle("sel", k === i); });
+      n.textContent = data[i][0]; dv.textContent = data[i][1]; sb.textContent = data[i][2]; ln.setAttribute("href", "#f" + (i + 1));
+    }
+    petals.forEach(function (p, i) {
+      p.addEventListener("mouseenter", function () { show(i); });
+      p.addEventListener("focus", function () { show(i); });
+      p.addEventListener("click", function () { show(i); });
+    });
+    show(0);
+    var w = d.querySelector(".aw-svg");
+    if (w && !w.classList.contains("in") && "IntersectionObserver" in window && !calm) {
+      /* .rv already adds .in on scroll; nothing more needed */
+    }
+  }
+})();
