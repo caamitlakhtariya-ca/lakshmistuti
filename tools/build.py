@@ -2232,6 +2232,7 @@ def page_kana():
     write("kanakadhara", body, "0.7")
 
 def page_mla():
+    import landing
     t = "Mahalakshmi Ashtakam Lyrics and Meaning in English"
     d = "Mahalakshmi Ashtakam (Mahalaxmi Ashtak) in Sanskrit with transliteration and English meaning: chant the full text, then read each verse word by word."
     parts = [("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/")]
@@ -2242,14 +2243,16 @@ def page_mla():
     for k in range(3): chant.append((9+k, dd[2*k]+"<br>"+dd[2*k+1], ii[2*k]+"<br>"+ii[2*k+1]))
     dev = '<p class="ch-dv" lang="sa">इन्द्र उवाच</p>' + "".join(f'<p class="ch-dv" lang="sa">{c[1]}<br><span class="ch-n">॥ {str(c[0]).translate(dn)} ॥</span></p>' for c in chant)
     ias = '<p class="ch-ia"><em>Indra uvāca</em></p>' + "".join(f'<p class="ch-ia" lang="sa-Latn">{c[2]}<br><span class="ch-n">({c[0]})</span></p>' for c in chant)
-    rows = "".join(f'<a class="tile" href="/mahalakshmi-ashtakam/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>' for v in MVERSES)
+    rows = "".join(landing.verse_card(v, "mahalakshmi-ashtakam", i, E(v["sub"])) for i, v in enumerate(MVERSES))
+    hero = landing.hub_hero("Hymn to Goddess Mahalakshmi · traditionally ascribed to Indra", "Mahālakṣmī Aṣṭakam",
+        "The Mahalakshmi Ashtakam (also written Mahalaxmi Ashtak or Mahalakshmyashtakam) is an eight-verse hymn to Goddess Mahalakshmi. Chant the full text, then read the meaning of each verse.",
+        '',
+        '<a class="btn" href="#chant">Chant the Ashtakam</a><a class="btn ghost" href="/mahalakshmi-ashtakam/verse-1/">Meaning, verse by verse</a>',
+        '<span>8 verses + 3 closing verses</span><span>Devanāgarī and Roman text</span><span>Word-by-word meaning</span>')
     copyjs = '<script>try{var b=document.getElementById("copy-deva");b.addEventListener("click",function(){var t=document.getElementById("deva-text").innerText;navigator.clipboard.writeText(t).then(function(){b.textContent="Copied"},function(){b.textContent="Copy not available"})})}catch(e){}</script>'
-    body = head(t,d,"mahalakshmi-ashtakam/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("mla") + f'''
-<main class="wrap">{crumbs([("Mahālakṣmī Aṣṭakam",None)])}
-<h1>Mahālakṣmī Aṣṭakam</h1>
-<p class="lede">The Mahalakshmi Ashtakam (also written Mahalaxmi Ashtak or Mahalakshmyashtakam) is an eight-verse hymn to Goddess Mahalakshmi, traditionally ascribed to Indra. Chant the full text below, then read the meaning of each verse.</p>
-<p class="crumbs">By {AUTHOR}</p>
-<p><a class="btn" href="#chant">Chant the Ashtakam</a><a class="btn ghost" href="/mahalakshmi-ashtakam/verse-1/">Meaning, verse by verse</a></p>
+    body = head(t,d,"mahalakshmi-ashtakam/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("mla") + MOTION_BOOT + f'''
+{hero}
+<main class="hub">{crumbs([("Mahālakṣmī Aṣṭakam",None)])}
 <h2 id="chant">Chant the Ashtakam</h2>
 <p>The full hymn in one place, for daily practice. Devanāgarī first, then the same text in Roman transliteration. The meaning of each verse follows further down.</p>
 <p><button class="btn ghost" id="copy-deva" type="button">Copy Devanāgarī text</button></p>
@@ -2257,14 +2260,14 @@ def page_mla():
 <div class="chant"><h3>Transliteration (IAST)</h3>{ias}</div>
 <p><small>Verses 9–11 are the phalaśruti, the closing verses on the fruit of reciting the hymn. Many people chant only the first eight. Editions differ in the wording of a few words; where they do, the verse page says so.</small></p>
 <h2 id="verses">Meaning, verse by verse</h2>
-<div class="grid">{rows}</div>
+<div class="vgrid">{rows}</div>
 <h2>About the hymn</h2>
 <p>An <em>aṣṭaka</em> is a hymn of eight verses. In the Mahālakṣmī Aṣṭakam each verse ends with the same line, <em>Mahālakṣmi namo ’stu te</em>, “O Mahalakshmi, I bow to you”, so the refrain gives the hymn a steady rhythm for chanting. Tradition ascribes it to Indra, king of the gods, and places it in the Padma Purāṇa; accounts of the occasion differ.</p>
 <p>The verses move from the Goddess seated at her sacred seat and worshipped by the gods, to her protection and her gifts, to her nature as the primal power and the mother of the world. The closing three verses describe the fruit of reciting the hymn, as tradition tells it. This commentary reads those as encouragement to practise, and does not promise any outcome.</p>
 <p>There is no single rule for how to chant it. Many people recite after a bath, before a lamp and an image of the Goddess, and Fridays and Diwali are popular times. Follow your own family tradition or teacher where they differ from what is written here.</p>
 <p><small>This commentary was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("index")}
-</main>{copyjs}''' + foot()
+</main>{copyjs}''' + MOTION_JS + foot()
     write("mahalakshmi-ashtakam", body, "0.9")
 
 INS_KINDS = [
@@ -2827,65 +2830,89 @@ def page_aarti_print():
 </main>""" + foot()
     write("lakshmi-aarti-printable", body, "0.6")
 
+
+def yantra_layers():
+    y = YANTRA
+    rects = "".join(re.findall(r'<rect[^>]*/>', y))
+    circ = re.findall(r'<circle cx="150" cy="150" r="(?:138|134|130)"/>', y)
+    i1 = y.index('<g><path'); i2 = y.index('</g>', y.index('</g>', i1)+4)+4
+    petals = y[i1:i2]
+    inner = "".join(re.findall(r'<circle cx="150" cy="150" r="(?:82|80)"/>', y))
+    tg = y.index('<g transform="translate(150 150) scale(.8)')
+    tri = y[tg:y.index('<circle cx="150" cy="150" r="1.6"', tg)] + '</g>'
+    return ('<svg class="yantra ys-svg" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width=".9" stroke-linejoin="round">'
+            f'<g class="yl yl1">{rects}</g><g class="yl yl2">{"".join(circ)}</g><g class="yl yl3">{petals}{inner}</g><g class="yl yl4">{tri}</g>'
+            '<g class="yl yl5"><circle cx="150" cy="150" r="3.2" fill="currentColor"/><circle cx="150" cy="150" r="7"/></g></g></svg>')
+
 def page_yantra():
     t = "Sri Yantra Meaning – Layers and Symbolism"
     d = "What the Sri Yantra (Lakshmi Yantra) is and what each layer means: the square enclosure, circle, lotus petals, nine triangles and the central point."
     parts = [("Śrī Yantra","sri-yantra/")]
-    body = head(t,d,"sri-yantra/",bc_ld(parts)) + nav("yantra") + f'''
-<main class="wrap">{crumbs([("Śrī Yantra",None)])}
-<p class="shri small" lang="sa">श्री</p>
-<h1>The Śrī Yantra</h1>
-<p class="lede">The Śrī Yantra is the sacred diagram associated with Goddess Lakshmi (Śrī): nine interlocking triangles around a central point, held inside circles, lotus petals and a gated square.</p>
-<div class="verse yantra-big">{YANTRA}<p class="shri" lang="sa" style="font-size:2.4rem;margin:70px 0">श्रीं</p></div>
+    import landing
+    hero = landing.hub_hero("The sacred diagram of Goddess Lakshmi", "The Śrī Yantra",
+        "The Śrī Yantra is the sacred diagram associated with Goddess Lakshmi (Śrī): nine interlocking triangles around a central point, held inside circles, lotus petals and a gated square.",
+        '', '<a class="btn" href="#layers">Watch it build, layer by layer</a>',
+        '<span>5 layers</span><span>9 triangles</span><span>Seed sound: Śrīṁ</span>')
+    ycards = ""
+    body = head(t,d,"sri-yantra/",bc_ld(parts)) + nav("yantra") + MOTION_BOOT + f'''
+{hero}
+<main class="hub ypage">{crumbs([("Śrī Yantra",None)])}
 <h2>What is a yantra?</h2>
 <p>A yantra is a geometric design made of shapes and patterns, used in early India as the basis on which major temples were planned. The word <em>yantra</em> means “machinery”. Like a machine, it has one task: to turn one form of energy into another and put it to use. Yantras are made for different purposes, such as prosperity or peace in the home.</p>
-<h2>The layers, from the outside in</h2>
-<div class="card"><h3>1. The enclosure (the Sun layer)</h3><p>The outermost square, with its four gateways. It is the first layer and creates a protected, enclosed space in the yantra. According to the source below, a yantra is drawn starting from this layer and energised last.</p></div>
-<div class="card"><h3>2. The circle (the Moon layer)</h3><p>The circle stands for the continuous flow of energy. Where the square regulates energy at its corners and junctions, the circle lets it flow evenly. The Moon layer also keeps the strong energy of the Sun in balance.</p></div>
-<div class="card"><h3>3. The lotus petals (the filter)</h3><p>Two rings of petals clean the energy, letting the steady, flowing part pass and holding back the disturbed part. The two rings stand in a ratio of 1:2 or 1:1. In the Śrī Yantra there are eight inner petals and sixteen outer petals, a ratio of 1:2.</p></div>
-<div class="card"><h3>4. The triangles (the converters)</h3><p>Triangles take energy of one form and send it in one direction with full force. The Śrī Yantra has nine: four pointing upward and five pointing downward, interlocked so that together they form forty-three smaller triangles.</p></div>
-<div class="card"><h3>5. The central point (bindu)</h3><p>All the energy finally reaches the centre, which becomes the point of reception. The bindu is the heart of the yantra.</p></div>
+<h2 id="layers">The layers, from the outside in</h2>
+<div class="ybuild"><div class="ystage" aria-hidden="true">{yantra_layers()}<p class="ycap" id="ycap">Layer 1 of 5</p></div><div class="ylist">
+<div class="card ylc" data-l="1"><h3>1. The enclosure (the Sun layer)</h3><p>The outermost square, with its four gateways. It is the first layer and creates a protected, enclosed space in the yantra. According to the source below, a yantra is drawn starting from this layer and energised last.</p></div>
+<div class="card ylc" data-l="2"><h3>2. The circle (the Moon layer)</h3><p>The circle stands for the continuous flow of energy. Where the square regulates energy at its corners and junctions, the circle lets it flow evenly. The Moon layer also keeps the strong energy of the Sun in balance.</p></div>
+<div class="card ylc" data-l="3"><h3>3. The lotus petals (the filter)</h3><p>Two rings of petals clean the energy, letting the steady, flowing part pass and holding back the disturbed part. The two rings stand in a ratio of 1:2 or 1:1. In the Śrī Yantra there are eight inner petals and sixteen outer petals, a ratio of 1:2.</p></div>
+<div class="card ylc" data-l="4"><h3>4. The triangles (the converters)</h3><p>Triangles take energy of one form and send it in one direction with full force. The Śrī Yantra has nine: four pointing upward and five pointing downward, interlocked so that together they form forty-three smaller triangles.</p></div>
+<div class="card ylc" data-l="5"><h3>5. The central point (bindu)</h3><p>All the energy finally reaches the centre, which becomes the point of reception. The bindu is the heart of the yantra.</p></div>
+</div></div>
 <h2>The seed sound</h2>
 <p>A yantra is written in a language of its own, built from seed sounds (<em>bīja mantras</em>). The seed sound associated with Lakshmi is <em>Śrīṁ</em> (श्रीं), the sound shown in the yantra above. The same Śrī gives its name to the Śrī Sūktam, the hymn this site studies.</p>
 <p>Begin with the <a href="/sri-suktam/verse-1/">first verse of the Śrī Sūktam</a>.</p>
 <h2>Sources and credits</h2>
 <p>The layer descriptions are adapted from the presentation <em>Universal Energy: Geometry of the Universe – Basics of Yantras</em> by Deepanshu Giri. The drawing uses the nine-triangle geometry published by Bhaskar Tripathi at <a href="https://texample.net/sri-yantra/" rel="noopener">texample.net</a> (CC BY-SA 4.0).</p>
-</main>''' + foot()
+</main>''' + MOTION_JS + foot()
     write("sri-yantra", body, "0.7")
 
 def page_gl():
     t = "Sanskrit Glossary – Sri Suktam & Lakshmi Stotras"
     d = "Simple meanings of Sanskrit words in the Sri Suktam and Kanakadhara Stotram: Hiranya, Harini, Lakshmi, Jatavedas, Apanga and more."
     parts = [("Glossary","glossary/")]
-    dl = "".join(f'<dt>{a} <span style="font-family:var(--serif);font-weight:400;color:var(--muted)">· {E(b)}</span></dt><dd>{E(c)} <a href="/{u}">See verse →</a></dd>' for a,b,c,u in GLOSSARY)
-    body = head(t,d,"glossary/",bc_ld(parts)) + nav("gl") + f'''
-<main class="wrap">{crumbs([("Glossary",None)])}
-<h1>Glossary</h1>
-<p class="lede">Sanskrit words met in the commentary. New entries are added with every verse.</p>
-<dl class="gl">{dl}</dl>
-</main>''' + foot()
+    dl = "".join(f'<div class="gi k{i%4}" data-q="{E((a+" "+b+" "+c).lower())}"><dt>{a} <span style="font-family:var(--serif);font-weight:400;color:var(--muted)">· {E(b)}</span></dt><dd>{E(c)} <a href="/{u}">See verse →</a></dd></div>' for i,(a,b,c,u) in enumerate(GLOSSARY))
+    import landing
+    hero = landing.hub_hero("Sanskrit words met in the commentary", "Glossary", "Simple meanings of the Sanskrit words in the hymns. New entries are added with every verse.", "", "", f"<span>{len(GLOSSARY)} words</span><span>Each links to its verse</span>")
+    body = head(t,d,"glossary/",bc_ld(parts)) + nav("gl") + MOTION_BOOT + f'''
+{hero}
+<main class="hub">{crumbs([("Glossary",None)])}
+<div class="gsearch" id="gsearch" hidden><label for="gq" class="sr">Search the glossary</label><input id="gq" type="search" placeholder="Search a word or meaning (for example: lotus, wealth, Lakshmi)" autocomplete="off"><p id="gcount" role="status" aria-live="polite"></p></div>
+<dl class="gl gl2" id="gl">{dl}</dl>
+<p id="gnone" hidden>No word matches your search. Try another spelling, for example without the long marks.</p>
+</main>''' + MOTION_JS + foot()
     write("glossary", body, "0.6")
 
 def page_about():
     t = f"About – {NAME} by {AUTHOR}"
     d = "About this commentary on the Śrī Sūktam and Kanakadhāra Stotram by Amit N. Lakhtariya, and how AI assistance is used in preparing it."
     parts = [("About","about/")]
+    import landing
+    hero = landing.hub_hero("A slow, verse-by-verse reading", "About this site", "A personal study of the hymns to Goddess Lakshmi, shared for anyone who wants to understand what they are chanting.", "", "", "<span>Śrī Sūktam</span><span>Kanakadhāra Stotram</span><span>Mahālakṣmī Aṣṭakam</span>")
     ld = {"@context":"https://schema.org","@type":"AboutPage","name":"About","url":SITE+"/about/","author":{"@type":"Person","name":AUTHOR}}
-    body = head(t,d,"about/",ld) + nav("about") + f'''
-<main class="wrap">{crumbs([("About",None)])}
-<h1>About this site</h1>
-<p>This site is a slow, verse-by-verse reading of the Śrī Sūktam and the Kanakadhāra Stotram, the well-loved hymns to Goddess Lakshmi. It began on the first day of Sharad Navratri, 2026, as a personal study and is shared here for anyone who wants to understand what they are chanting.</p>
-<h2>About the author</h2>
-<p><strong>{AUTHOR}</strong> is a Chartered Accountant based in Ahmedabad, India, and a lifelong student of the devotional tradition. The commentary reflects his own reading and reflections on each verse.</p>
-<h2>AI assistance</h2>
-<p>This commentary is prepared collaboratively with an AI assistant (Claude, by Anthropic). The AI helps with drafting, structuring and cross-checking the word-by-word explanations. The author directs the interpretation, reviews every verse and decides what is published. Because AI can make mistakes, and because Sanskrit admits more than one reading, this is a study aid and not a substitute for a teacher or the traditional commentaries. Corrections are welcome through the <a href="/contact/">contact page</a>.</p>
-<h2>How the content is organised</h2>
-<p>Every verse page has the Devanāgarī text, a transliteration, a word-by-word meaning, the full meaning, deeper insights, a short meditation and a reflection for the day. Verses are released one at a time.</p>
-<h2>Credits</h2>
-<p>The Śrī Yantra drawn in the background uses the nine-triangle geometry published by Bhaskar Tripathi at <a href="https://texample.net/sri-yantra/" rel="noopener">texample.net</a> (CC BY-SA 4.0).</p>
-<h2>Spellings</h2>
-<p>The Goddess’s name is written <em>Lakshmi</em> (Sanskrit <em>Lakṣmī</em>), and is also commonly spelled <em>Laxmi</em>. Both refer to the same Goddess.</p>
-</main>''' + foot()
+    body = head(t,d,"about/",ld) + nav("about") + MOTION_BOOT + f'''
+{hero}
+<main class="hub abt">{crumbs([("About",None)])}
+<p class="ab-intro rv">This site is a slow, verse-by-verse reading of the Śrī Sūktam and the Kanakadhāra Stotram, the well-loved hymns to Goddess Lakshmi. It began on the first day of Sharad Navratri, 2026, as a personal study and is shared here for anyone who wants to understand what they are chanting.</p></section>
+<section class="abs rv"><h2>About the author</h2>
+<p><strong>{AUTHOR}</strong> is a Chartered Accountant based in Ahmedabad, India, and a lifelong student of the devotional tradition. The commentary reflects his own reading and reflections on each verse.</p></section>
+<section class="abs rv"><h2>AI assistance</h2>
+<p>This commentary is prepared collaboratively with an AI assistant (Claude, by Anthropic). The AI helps with drafting, structuring and cross-checking the word-by-word explanations. The author directs the interpretation, reviews every verse and decides what is published. Because AI can make mistakes, and because Sanskrit admits more than one reading, this is a study aid and not a substitute for a teacher or the traditional commentaries. Corrections are welcome through the <a href="/contact/">contact page</a>.</p></section>
+<section class="abs rv"><h2>How the content is organised</h2>
+<p>Every verse page has the Devanāgarī text, a transliteration, a word-by-word meaning, the full meaning, deeper insights, a short meditation and a reflection for the day. Verses are released one at a time.</p></section>
+<section class="abs rv"><h2>Credits</h2>
+<p>The Śrī Yantra drawn in the background uses the nine-triangle geometry published by Bhaskar Tripathi at <a href="https://texample.net/sri-yantra/" rel="noopener">texample.net</a> (CC BY-SA 4.0).</p></section>
+<section class="abs rv"><h2>Spellings</h2>
+<p>The Goddess’s name is written <em>Lakshmi</em> (Sanskrit <em>Lakṣmī</em>), and is also commonly spelled <em>Laxmi</em>. Both refer to the same Goddess.</p></section>
+</main>''' + MOTION_JS + foot()
     write("about", body, "0.5")
 
 def page_contact():

@@ -158,3 +158,36 @@
     paint();
   }
 })();
+
+/* Yantra layered build, and glossary search */
+(function () {
+  var d = document;
+  var cards = [].slice.call(d.querySelectorAll(".ylc")), layers = [].slice.call(d.querySelectorAll(".ys-svg .yl")), cap = d.getElementById("ycap");
+  if (cards.length && layers.length && "IntersectionObserver" in window) {
+    var names = ["Enclosure", "Circle", "Lotus petals", "Triangles", "Central point"];
+    var show = function (n) {
+      layers.forEach(function (g, i) { g.classList.toggle("on", i < n); g.classList.toggle("cur", i === n - 1); });
+      cards.forEach(function (c, i) { c.classList.toggle("cur", i === n - 1); });
+      if (cap) cap.textContent = "Layer " + n + " of " + cards.length + ": " + (names[n - 1] || "");
+    };
+    show(1);
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) show(+e.target.getAttribute("data-l")); });
+    }, { rootMargin: "-40% 0px -45% 0px" });
+    cards.forEach(function (c) { io.observe(c); });
+  }
+  var gl = d.getElementById("gl"), q = d.getElementById("gq");
+  if (gl && q) {
+    d.getElementById("gsearch").hidden = false;
+    var items = [].slice.call(gl.querySelectorAll(".gi")), cnt = d.getElementById("gcount"), none = d.getElementById("gnone");
+    var norm = function (t) { return t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
+    items.forEach(function (it) { it._n = norm(it.getAttribute("data-q") || ""); });
+    var run = function () {
+      var v = norm(q.value.trim()), shown = 0;
+      items.forEach(function (it) { var ok = !v || it._n.indexOf(v) >= 0; it.hidden = !ok; if (ok) shown++; });
+      cnt.textContent = v ? shown + " of " + items.length + " words" : items.length + " words";
+      none.hidden = shown > 0;
+    };
+    q.addEventListener("input", run); run();
+  }
+})();
