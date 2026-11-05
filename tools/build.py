@@ -1983,7 +1983,7 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 {ldh}{ga}{ads}
-{INTRO_JS if path=="" else ""}
+
 </head>'''
 
 def nav(cur):
@@ -2062,71 +2062,76 @@ def opening(v, n=4):
 
 # ---------------------------------------------------------------- pages
 def lab(v): return v.get("label") or f"Verse {v['n']}"
+MOTION_BOOT = '<script>document.documentElement.classList.add("js")</script>'
+MOTION_JS = '<script src="/assets/motion.js" defer></script>'
+
 def page_home():
+    import landing
     v = KVERSES[-1]
     t = "Lakshmi Stuti: Sri Suktam & Kanakadhara Stotram Meaning"
     d = "Verse-by-verse English meaning of the Sri Suktam and Kanakadhara Stotram to Goddess Lakshmi (Laxmi): Sanskrit text, word meanings and reflection."
-    ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","inGroup":None,"author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
-    ld.pop("inGroup")
-    body = head(t,d,"",ld) + INTRO_HTML + nav("home") + f'''
-<main class="wrap">
-<section class="hero">
-{YANTRA}
-<p class="shri" lang="sa">श्री</p>
-<p class="eyebrow">Śrī Sūktam · Kanakadhāra Stotram</p>
+    ld = {"@context":"https://schema.org","@type":"WebSite","name":NAME,"url":SITE+"/","author":{"@type":"Person","name":AUTHOR},"inLanguage":"en"}
+    steps = [("Choose your verse","Begin with the first verse. Take your time. There is no hurry; it is depth, not speed, that matters here."),
+             ("Understand the meaning","Read an authentic translation. Reflect deeply: what qualities of the divine are highlighted, and how do they resonate with you personally?"),
+             ("Chant and meditate","Recite the verse slowly, attentively and lovingly. After chanting, sit quietly and let the vibration and meaning settle into your heart. Visualise the essence of the verse and feel it within you."),
+             ("Take it into your heart","Through the day, recall the meaning and let the verse echo silently. Allow its wisdom to gently influence your interactions and decisions."),
+             ("Gratitude and reflection","Before sleep, reflect on how the verse subtly influenced your day. Express sincere gratitude to the divine for the insights gained.")]
+    trail = "".join(f'<div class="ts k{i%4} rv"><span class="dot">{i+1}</span><h3>{E(a)}</h3><p>{E(b)}</p></div>' for i,(a,b) in enumerate(steps))
+    tiles = [("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","Indra’s eight-verse hymn to Mahalakshmi. The full text to chant, with the meaning of every verse.","sun"),
+             ("Aṣṭalakṣmī","ashtalakshmi/","The eight forms of Goddess Lakshmi, and what each one stands for.","lotus"),
+             ("Lakshmi Aarti","lakshmi-aarti/","How to perform the aarti at home on Diwali, and what each stanza means.","flame"),
+             ("Śrī Yantra","sri-yantra/","The sacred diagram of Goddess Lakshmi, and what each of its five layers means.","star"),
+             ("Glossary","glossary/","Sanskrit words used across the commentary, with simple meanings.","book")]
+    xt = "".join(f'<a class="xt k{i%4} rv" style="--d:{(i%3)*0.08:.2f}s" href="/{p}"><span class="xi">{icon(ic,24)}</span><h3>{E(n)}</h3><p>{E(s)}</p></a>' for i,(n,p,s,ic) in enumerate(tiles))
+    body = head(t,d,"",ld) + nav("home") + MOTION_BOOT + f'''
+<div class="lp">
+<section class="bloom" id="bloom"><div class="bstage"><div class="sky">{landing.sparkles(30, 3)}</div>
+<div class="btxt"><p class="eyebrow">Śrī Sūktam · Kanakadhāra Stotram</p>
 <h1>Śrī Sūktam &amp; Kanakadhāra Stotram, understood gently</h1>
 <p class="lede">A slow, verse-by-verse commentary on the hymns to Goddess Lakshmi (also written Laxmi): the original text, simple word meanings, and a short practice for each verse.</p>
-<p><a class="btn" href="/sri-suktam/verse-1/">Start with Śrī Sūktam Verse 1</a><a class="btn ghost" href="/sri-suktam/">Śrī Sūktam index</a><a class="btn ghost" href="/kanakadhara/">Kanakadhāra Stotram</a></p>
-</section>
-<h2>Latest verse</h2>
-<div class="verse"><p class="label">Kanakadhāra Stotram · {lab(v)}</p><p class="deva">{v["deva"]}</p><p class="iast">{v["iast"]}</p></div>
-<p>{E(v["closing"] or v["meaning"])} <a href="/kanakadhara/{v["slug"]}/">Read the full commentary →</a></p>
-<section class="garden">
-<h2>A sacred garden, one seed at a time</h2>
-<p>Think of your journey into the Śrī Sūktam like planting seeds in a sacred garden. Each verse is a seed. By carefully understanding and meditating upon one verse daily, you gently plant and nurture it within your heart. Slowly but surely, this practice blossoms into an abundant, radiant inner garden of clarity, devotion and wisdom.</p>
-<p>Here is a practical and poetic approach you can follow each day.</p>
-<ol class="steps">
-<li><h3>Choose your verse</h3><p>Begin with the first verse. Take your time. There is no hurry; it is depth, not speed, that matters here.</p></li>
-<li><h3>Understand the meaning</h3><p>Read an authentic translation. Reflect deeply: what qualities of the divine are highlighted, and how do they resonate with you personally?</p></li>
-<li><h3>Chant and meditate</h3><p>Recite the verse slowly, attentively and lovingly. After chanting, sit quietly and let the vibration and meaning settle into your heart. Visualise the essence of the verse and feel it within you.</p></li>
-<li><h3>Take it into your heart</h3><p>Through the day, recall the meaning and let the verse echo silently. Allow its wisdom to gently influence your interactions and decisions.</p></li>
-<li><h3>Gratitude and reflection</h3><p>Before sleep, reflect on how the verse subtly influenced your day. Express sincere gratitude to the divine for the insights gained.</p></li>
-</ol>
-<p>This mindful approach turns spiritual practice into an enriching daily ritual. Each verse becomes an intimate friend, illuminating your inner space and your life.</p>
-<p>Stay gently sceptical, too. Allow yourself curiosity and questions; explore, feel, understand, and trust the ancient wisdom at your own rhythm. No rush, only mindful growth.</p>
-<p class="amen">You are on a beautiful path. Enjoy every step.</p>
-</section>
-<div class="grid">
-<a class="tile" href="/sri-suktam/"><h3>Śrī Sūktam</h3><p>The Vedic hymn to Lakshmi. {len(VERSES)} verses are live; more are added one at a time.</p></a>
-<a class="tile" href="/kanakadhara/"><h3>Kanakadhāra Stotram</h3><p>Śrī Śaṅkarācārya’s hymn to Lakshmi. The story and {"all " if len(KVERSES)>=KANA_TOTAL else ""}{len(KVERSES)} verse{"s" if len(KVERSES)!=1 else ""} are live{"" if len(KVERSES)>=KANA_TOTAL else "; more follow one at a time"}.</p></a>
-<a class="tile" href="/mahalakshmi-ashtakam/"><h3>Mahālakṣmī Aṣṭakam</h3><p>Indra’s eight-verse hymn to Mahalakshmi. The full text to chant, with the meaning of every verse.</p></a>
-<a class="tile" href="/ashtalakshmi/"><h3>Aṣṭalakṣmī</h3><p>The eight forms of Lakshmi, and what each one stands for.</p></a>
-<a class="tile" href="/lakshmi-aarti/"><h3>Lakshmi Aarti</h3><p>How to perform the aarti at home on Diwali, and what each stanza means.</p></a>
-<a class="tile" href="/sri-yantra/"><h3>Śrī Yantra</h3><p>The sacred diagram of Lakshmi, and what each of its five layers means.</p></a>
-<a class="tile" href="/glossary/"><h3>Glossary</h3><p>Sanskrit words used across the commentary, with simple meanings.</p></a>
-</div>
+<div class="caps" aria-hidden="true"><span class="on">Begin in stillness.</span><span>Open one petal at a time.</span><span>Two hymns. One Mother.</span></div>
+<div class="bcta"><a href="/sri-suktam/">Śrī Sūktam<small>{len(VERSES)} verses</small></a><a href="/kanakadhara/">Kanakadhāra Stotram<small>{len(KVERSES)} verses</small></a></div></div>
+{landing.lotus_svg()}
+<div class="shint" aria-hidden="true">Scroll</div></div></section>
+{landing.hymn_tabs(VERSES, KVERSES, KANA_TOTAL, TOTAL_SRI, KAPPX)}
+<section class="sec"><h2 class="rv">Latest verse</h2>
+<div class="lverse rv"><p class="label">Kanakadhāra Stotram · {lab(v)}</p><p class="deva" lang="sa">{v["deva"]}</p><p class="iast" lang="sa-Latn">{v["iast"]}</p></div>
+<p class="rv" style="margin-top:18px">{E(v["closing"] or v["meaning"])} <a href="/kanakadhara/{v["slug"]}/">Read the full commentary →</a></p></section>
+<section class="sec"><h2 class="rv">A sacred garden, one seed at a time</h2>
+<p class="rv">Think of your journey into the Śrī Sūktam like planting seeds in a sacred garden. Each verse is a seed. By carefully understanding and meditating upon one verse daily, you gently plant and nurture it within your heart. Slowly but surely, this practice blossoms into an abundant, radiant inner garden of clarity, devotion and wisdom.</p>
+<p class="rv">Here is a practical and poetic approach you can follow each day.</p>
+<div class="trail">{trail}</div>
+<p class="rv">This mindful approach turns spiritual practice into an enriching daily ritual. Each verse becomes an intimate friend, illuminating your inner space and your life.</p>
+<p class="rv">Stay gently sceptical, too. Allow yourself curiosity and questions; explore, feel, understand, and trust the ancient wisdom at your own rhythm. No rush, only mindful growth.</p>
+<p class="amen rv">You are on a beautiful path. Enjoy every step.</p></section>
+<section class="sec"><h2 class="rv">Explore more</h2></section>
+<div class="xg">{xt}</div>
+<section class="endb"><div class="flame" aria-hidden="true"></div>{landing.sparkles(14, 5)}<p class="e1" lang="sa">श्रीः प्रसन्ना भवतु।</p><p class="e2">May Goddess Lakshmi’s grace be upon all.</p></section>
 {ad("home")}
-</main>''' + INTRO_SCRIPT + foot()
+</div>''' + MOTION_JS + foot()
     write("", body, "1.0")
 
 def page_sri():
+    import landing
     t = "Sri Suktam Meaning in English – Verse by Verse"
     d = "Sri Suktam (Shri Suktam) meaning in English: all 16 verses of the Vedic hymn to Goddess Lakshmi with Sanskrit text and word-by-word explanation."
     parts = [("Śrī Sūktam","sri-suktam/")]
-    rows = ""
-    for v in VERSES:
-        rows += f'<a class="tile" href="/sri-suktam/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>'
+    rows = "".join(landing.verse_card(v, "sri-suktam", i, E(v["sub"])) for i, v in enumerate(VERSES))
     for n in range(len(VERSES)+1, TOTAL_SRI+1):
         rows += f'<div class="tile" style="opacity:.55"><h3>Verse {n} <span class="soon">coming soon</span></h3></div>'
-    body = head(t,d,"sri-suktam/",bc_ld(parts)) + nav("sri") + f'''
-<main class="wrap">{crumbs([("Śrī Sūktam",None)])}
-<h1>Śrī Sūktam – verse by verse</h1>
-<p class="lede">The Śrī Sūktam (also written Sri Suktam, Shri Suktam or Shree Suktam) is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.</p>
-<p>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears.</p>
-<p><small>A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
-<div class="grid">{rows}</div>
+    hero = landing.hub_hero("Vedic hymn to Goddess Lakshmi", "Śrī Sūktam – verse by verse",
+        "The Śrī Sūktam (also written Sri Suktam, Shri Suktam or Shree Suktam) is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.",
+        f'<p class="hh-by">Commentary by {AUTHOR}</p>',
+        '<a class="btn" href="/sri-suktam/verse-1/">Start with Verse 1</a><a class="btn ghost" href="/kanakadhara/">Kanakadhāra Stotram →</a>',
+        f'<span>{len(VERSES)} verses</span><span>Word-by-word meaning</span><span>A practice for each verse</span>')
+    body = head(t,d,"sri-suktam/",bc_ld(parts)) + nav("sri") + MOTION_BOOT + f'''
+{hero}
+<main class="hub">{crumbs([("Śrī Sūktam",None)])}
+<h2 class="rv">The verses</h2>
+<div class="vgrid">{rows}</div>
+<p><small>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears. A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
 {ad("index")}
-</main>''' + foot()
+</main>''' + MOTION_JS + foot()
     write("sri-suktam", body, "0.9")
 
 def page_kana():
@@ -2134,55 +2139,94 @@ def page_kana():
     d = "Kanakadhara Stotram by Adi Shankaracharya: the story of the poor woman’s gooseberry, what “stream of gold” means, and verse-by-verse meaning in English."
     parts = [("Kanakadhāra Stotram","kanakadhara/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":"Kanakadhāra Stotram – The Story Before the First Verse","author":{"@type":"Person","name":AUTHOR},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/kanakadhara/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
-    krows = "".join(f'<a class="tile" href="/kanakadhara/{v["slug"]}/"><h3>{lab(v)}</h3><p>{E(v["sub"])}</p></a>' for v in KVERSES)
-    body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + f'''
-<main class="wrap">{crumbs([("Kanakadhāra Stotram",None)])}
-<h1>Kanakadhāra Stotram</h1>
-<p class="lede">Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi (the Kanakadhara Stotram, also written Kanakdhara or Kanaka Dhara Stotra), read slowly, verse by verse.</p>
-<p class="crumbs">By {AUTHOR}</p>
-<p><a class="btn" href="/kanakadhara/verse-1/">Start with Verse 1</a><a class="btn ghost" href="#story">Read the story first</a></p>
-<h2 id="verses">Verses</h2>
-<div class="grid">{krows}</div>
+    import landing
+    MOVES = [(1,5,"Divine beauty and grace","Lakshmi’s glance, compassion and auspiciousness"),
+             (6,10,"The story of divine grace","Her compassion, Vishnu’s grace and the imagery of prosperity"),
+             (11,15,"Salutations to the Goddess","Her many names, forms and divine relationships"),
+             (16,20,"Personal prayer","Prosperity, worship, surrender and compassionate grace"),
+             (21,22,"Final appeal and benediction","Refuge in the Mother and the fruits of daily devotion")]
+    mv = ""
+    for mi,(lo,hi,mt,md) in enumerate(MOVES):
+        vs = [v for v in KVERSES if lo <= v["n"] <= hi]
+        if not vs: continue
+        cards = "".join(landing.verse_card(v, "kanakadhara", v["n"]-1, E(v["sub"])) for v in vs)
+        mv += f'<div class="mv k{mi%4} rv"><h2>{E(mt)}</h2><p>Verses {lo}–{hi}: {E(md)}</p></div><div class="vgrid">{cards}</div>'
+    appx = ""
+    if KAPPX:
+        appx = ('<div class="mv k1 rv"><h2>Appendix</h2><p>An extra meditation verse that some editions place with the hymn. It is outside the standard 22 verses.</p></div><div class="vgrid">'
+                + "".join(f'<a class="vc k1 rv" href="/kanakadhara/{a["slug"]}/"><span class="vc-n">+</span><span class="vc-t"><b>{lab(a)}: Bilvāṭavī</b><small>{E(a["sub"])}</small></span></a>' for a in KAPPX) + '</div>')
+    hero = landing.hub_hero("Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi", "Kanakadhāra Stotram",
+        "Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi (the Kanakadhara Stotram, also written Kanakdhara or Kanaka Dhara Stotra), read slowly, verse by verse.",
+        f'<p class="hh-by">Commentary by {AUTHOR}</p>',
+        '<a class="btn" href="/kanakadhara/verse-1/">Start with Verse 1</a><a class="btn ghost" href="#story">Read the story first</a><a class="btn ghost" href="/sri-suktam/">Śrī Sūktam →</a>',
+        f'<span>{len(KVERSES)} verses</span><span>Five movements</span><span>A meditation for each verse</span>')
+    body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + MOTION_BOOT + f'''
+{hero}
+<div class="hub">{crumbs([("Kanakadhāra Stotram",None)])}
+{mv}
 <p><small>{"All "+str(KANA_TOTAL)+" verses are published." if len(KVERSES)>=KANA_TOTAL else str(len(KVERSES))+" of "+str(KANA_TOTAL)+" verses published so far. The next ones are added one at a time."}</small></p>
-{("<h3>Appendix</h3><div class=\"grid\">"+"".join(f'<a class=\"tile\" href=\"/kanakadhara/{a["slug"]}/\"><h3>{lab(a)}: Bilvāṭavī</h3><p>{E(a["sub"])}</p></a>' for a in KAPPX)+"</div><p><small>An extra meditation verse that some editions place with the hymn. It is outside the standard 22 verses.</small></p>") if KAPPX else ""}
-<h2 id="story">The story before the first verse</h2>
-
-<p>Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
-<p>More than 1,200 years ago, the young Ādi Śaṅkarācārya, still a boy of about eight in most tellings, went from house to house seeking <em>bhikṣā</em> (alms), as a student and renunciate does. The custom is not about need. Accepting whatever is freely offered cultivates humility in both the giver and the receiver.</p>
+{appx}
+</div>
+<main class="wrap st">
+<section class="sbook" id="story">
+<div class="gold-rain" aria-hidden="true">{landing.rain(22, 4)}</div>
+<p class="kick rv">Before we begin</p>
+<h2 class="rv">The story before the first verse</h2>
+<p class="s-lede rv">Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
+<div class="scenes">
+<div class="scene k0 rv"><span class="sc-i">{icon("bud",26)}</span><div><h3>A young seeker at the door</h3>
+<p>More than 1,200 years ago, the young Ādi Śaṅkarācārya, still a boy of about eight in most tellings, went from house to house seeking <em>bhikṣā</em> (alms), as a student and renunciate does. The custom is not about need. Accepting whatever is freely offered cultivates humility in both the giver and the receiver.</p></div></div>
+<div class="scene k1 rv"><span class="sc-i">{icon("home",26)}</span><div><h3>One small gooseberry</h3>
 <p>One day he arrived at the home of a poor Brahmin family. The lady of the house searched every corner of her kitchen. She had nothing to offer. Nothing, except one small <em>āmalakī</em> (Indian gooseberry): the last edible thing in the house.</p>
-<p>She faced a dilemma. Should she keep it for herself and her family, or honour the sacred duty of offering food to a seeker? Her heart chose generosity. She offered that lone gooseberry with complete sincerity.</p>
-<p>The young Śaṅkara saw her poverty at once and, more importantly, her boundless generosity. Deeply moved, he composed a spontaneous hymn in praise of Mahālakṣmī, praying that her compassionate glance fall upon this noble woman.</p>
-<p>Tradition says that the Goddess first replied that, by the law of karma, the woman had not yet earned enough merit to receive wealth. Śaṅkara, it is said, then appealed not to justice but to compassion. The story is often read as carrying this unspoken argument: if a person who possesses nothing can still give everything, has she not created merit at this very moment?</p>
-<p>The Goddess smiled. A shower of golden gooseberries fell upon the humble home. Thus the Kanakadhāra Stotram was born. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream or continuous flow, so <em>Kanakadhārā</em> is “the stream of gold”.</p>
+<p>She faced a dilemma. Should she keep it for herself and her family, or honour the sacred duty of offering food to a seeker? Her heart chose generosity. She offered that lone gooseberry with complete sincerity.</p></div></div>
+<div class="scene k2 rv"><span class="sc-i">{icon("bell",26)}</span><div><h3>A hymn is born</h3>
+<p>The young Śaṅkara saw her poverty at once and, more importantly, her boundless generosity. Deeply moved, he composed a spontaneous hymn in praise of Mahālakṣmī, praying that her compassionate glance fall upon this noble woman.</p></div></div>
+<div class="scene k3 rv"><span class="sc-i">{icon("scale",26)}</span><div><h3>Karma, and an appeal to compassion</h3>
+<p>Tradition says that the Goddess first replied that, by the law of karma, the woman had not yet earned enough merit to receive wealth. Śaṅkara, it is said, then appealed not to justice but to compassion. The story is often read as carrying this unspoken argument: if a person who possesses nothing can still give everything, has she not created merit at this very moment?</p></div></div>
+<div class="scene sc-gold rv"><span class="sc-i">{icon("coin",26)}</span><div><h3>The stream of gold</h3>
+<p>The Goddess smiled. A shower of golden gooseberries fell upon the humble home. Thus the Kanakadhāra Stotram was born. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream or continuous flow, so <em>Kanakadhārā</em> is “the stream of gold”.</p></div></div>
+</div>
+<p class="s-note rv"><small>The story is the traditional account; details vary between tellings.</small></p>
+</section>
 
-<h2>The first lesson, even before verse one</h2>
+<section class="lesson rv">
+<p class="kick">The first lesson, even before verse one</p>
+<p class="les-q">She gave before she received.</p>
 <p>Many people take this hymn to be about becoming rich. The story points to something subtler. The miracle did not begin with Lakshmi. It began with the generosity of the poor woman. She gave before she received.</p>
 <p>Prosperity does not begin in the wallet. It begins in the heart. Lakshmi is not merely the Goddess of money; she is the Goddess of abundance in every form:</p>
-<ul>
-<li>Wealth</li><li>Health</li><li>Knowledge</li><li>Virtue</li><li>Beauty</li><li>Courage</li><li>Harmony</li><li>Opportunity</li><li>Contentment</li>
-</ul>
-<p>Money is only one expression of Śrī.</p>
+<ul class="abund"><li class="k0">Wealth</li><li class="k1">Health</li><li class="k2">Knowledge</li><li class="k3">Virtue</li><li class="k1">Beauty</li><li class="k0">Courage</li><li class="k3">Harmony</li><li class="k2">Opportunity</li><li class="k0">Contentment</li></ul>
+<p class="les-end">Money is only one expression of Śrī.</p>
+</section>
 
-<h2>A Sanskrit jewel</h2>
-<div class="verse">{YANTRA}<p class="deva" lang="sa">श्री</p><p class="iast" lang="sa-Latn">Śrī</p></div>
+<section class="jewel rv">
+<p class="kick">A Sanskrit jewel</p>
+<div class="jw-art"><div class="jw-ring">{YANTRA}</div><p class="jw-deva" lang="sa">श्री</p><p class="jw-iast" lang="sa-Latn">Śrī</p></div>
 <p>This is one of the most beautiful words in Sanskrit, and no single English word carries it. <em>Śrī</em> means prosperity, auspiciousness, grace, beauty, radiance, excellence and divine abundance. That is why we say Śrī Rāma, Śrī Kṛṣṇa and Śrī Mahālakṣmī: the word carries the sense of something blessed, noble and flourishing.</p>
+</section>
 
-<h2>Reflection for today</h2>
-<p>Rather than rushing to the first verse, pause with this question:</p>
-<p><em>If I had only one gooseberry left, would I have the faith and generosity to offer it?</em></p>
+<section class="reflect rv">
+<div class="diya" aria-hidden="true"><i class="flame"></i><b></b></div>
+<p class="kick">Reflection for today</p>
+<p class="rf-lead">Rather than rushing to the first verse, pause with this question:</p>
+<p class="rf-q"><em>If I had only one gooseberry left, would I have the faith and generosity to offer it?</em></p>
 <p>This question is the doorway to the Kanakadhāra Stotram. Śaṅkarācārya invites us to reflect not only on receiving Lakshmi’s blessings, but also on becoming worthy of them.</p>
+</section>
 
-<h2>Today’s takeaway</h2>
-<div class="grid">
-<div class="card"><h3>Three Sanskrit words</h3><p><strong>Śrī</strong> (श्री): divine abundance and auspiciousness.<br><strong>Kanaka</strong> (कनक): gold.<br><strong>Dhārā</strong> (धारा): stream or continuous flow.</p></div>
-<div class="card"><h3>Philosophical insight</h3><p>True prosperity begins with a generous heart, not a full treasury.</p></div>
-<div class="card"><h3>Practice for today</h3><p>Perform one act of giving, whether of time, kindness, knowledge or material help, without expecting anything in return.</p></div>
+<section class="takeaway">
+<h2 class="rv">Today’s takeaway</h2>
+<div class="tk">
+<div class="tkc k0 rv"><span class="xi">{icon("book",24)}</span><h3>Three Sanskrit words</h3><p><strong>Śrī</strong> (श्री): divine abundance and auspiciousness.<br><strong>Kanaka</strong> (कनक): gold.<br><strong>Dhārā</strong> (धारा): stream or continuous flow.</p></div>
+<div class="tkc k1 rv" style="--d:.08s"><span class="xi">{icon("heart",24)}</span><h3>Philosophical insight</h3><p>True prosperity begins with a generous heart, not a full treasury.</p></div>
+<div class="tkc k2 rv" style="--d:.16s"><span class="xi">{icon("hands",24)}</span><h3>Practice for today</h3><p>Perform one act of giving, whether of time, kindness, knowledge or material help, without expecting anything in return.</p></div>
 </div>
+</section>
 
+<section class="aboutc rv">
 <h2>About the text and this commentary</h2>
-<p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary will follow one clear edition and will say which, so that you can read along with the text you chant from. Each verse will have its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series. Verses will be published one at a time.</p>
-<p><small>The story is the traditional account; details vary between tellings.</small></p>
-</main>''' + foot()
+<p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary follows the 22-verse edition, so that you can read along with the text you chant from. Each verse has its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series.</p>
+</section>
+</main>
+''' + MOTION_JS + foot()
     write("kanakadhara", body, "0.7")
 
 def page_mla():
