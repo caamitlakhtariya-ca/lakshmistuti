@@ -2594,18 +2594,45 @@ def page_asts():
 </main>''' + foot()
     write("ashtalakshmi-stotram", body, "0.8")
 
+
+AC = [("#6a3fc2","#a37be8"),("#c98a00","#f2c230"),("#2f8f3f","#7ccf6a"),("#d03a58","#ff8aa0"),("#0e9f8e","#4fd1b8"),("#d8581c","#f5a04d"),("#2a62cf","#6ea2ff"),("#a2409f","#e08ad8")]
+
+def ashta_wheel():
+    import math
+    ps = []
+    for i,(n,dv,sub,body,img) in enumerate(ASHTA):
+        ang = i*45
+        a,b = AC[i]
+        short = n.replace(" Lakshmi","")
+        lx = 200 + 112*math.sin(math.radians(ang)); ly = 200 - 112*math.cos(math.radians(ang))
+        ps.append(f'<a class="ap" href="#f{i+1}" data-i="{i}" style="--ka:{a};--kb:{b};--i:{i}" aria-label="{E(n)}: {E(sub)}">'
+                  f'<g transform="rotate({ang} 200 200)"><path class="pp" d="M200,200 C150,168 150,78 200,36 C250,78 250,168 200,200Z"/></g>'
+                  f'<text class="pn" x="{lx:.1f}" y="{ly+4:.1f}" text-anchor="middle">{E(short)}</text></a>')
+    first = ASHTA[0]
+    return ('<section class="awheel" aria-label="The eight forms of Lakshmi">'
+            '<div class="aw-svg rv"><svg viewBox="0 0 400 400" class="alotus" role="group" focusable="false">'
+            '<circle class="aring" cx="200" cy="200" r="190"/>'
+            + "".join(ps) +
+            '<circle class="acore" cx="200" cy="200" r="38"/><text class="acoret" x="200" y="212" text-anchor="middle" lang="sa">श्री</text></svg></div>'
+            '<div class="aw-info rv" style="--d:.12s"><p class="aw-k">Tap a petal</p>'
+            f'<h2 id="aw-n" style="margin-top:.1em">{E(first[0])}</h2><p class="aw-d" id="aw-d" lang="sa">{first[1]}</p>'
+            f'<p id="aw-s">{E(first[2])}</p><p><a id="aw-l" href="#f1">Read about this form ↓</a></p></div></section>'
+            '<script type="application/json" id="aw-data">' + json.dumps([[n,dv,sub] for n,dv,sub,_,_ in ASHTA], ensure_ascii=False) + '</script>')
+
 def page_ashta():
     t = "Ashtalakshmi Meaning – The Eight Forms of Goddess Lakshmi"
     d = "The Ashtalakshmi, the eight forms of Goddess Lakshmi: Adi, Dhana, Dhanya, Gaja, Santana, Dhairya, Vijaya and Vidya, and what each one stands for."
     parts = [("Aṣṭalakṣmī","ashtalakshmi/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
-    cards = "".join(f'<div class="card"><h3>{i}. {E(n)} <span lang="sa" style="font-family:var(--deva);font-weight:400;color:var(--muted)">· {dv}</span></h3><p class="m" style="font-weight:700;margin:.1em 0 .4em">{E(sub)}</p><p>{body}</p><p><small>{E(img)}</small></p></div>' for i,(n,dv,sub,body,img) in enumerate(ASHTA,1))
-    body = head(t,d,"ashtalakshmi/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + f'''
+    cards = "".join(f'<div class="card ac fm rv" id="f{i}" style="--ka:{AC[i-1][0]};--kb:{AC[i-1][1]}"><span class="ab" aria-hidden="true">{i}</span><h3>{E(n)} <span lang="sa" style="font-family:var(--deva);font-weight:400;color:var(--muted)">· {dv}</span></h3><p class="m" style="font-weight:700;margin:.1em 0 .4em">{E(sub)}</p><p>{body}</p><p><small>{E(img)}</small></p></div>' for i,(n,dv,sub,body,img) in enumerate(ASHTA,1))
+    wheel = ashta_wheel()
+    body = head(t,d,"ashtalakshmi/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + MOTION_BOOT + f'''
 <main class="wrap">{crumbs([("Aṣṭalakṣmī",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Aṣṭalakṣmī – the eight forms of Lakshmi</h1>
 <p class="lede">The Ashtalakshmi (also written Ashta Lakshmi or Ashtalaxmi) are eight forms of Goddess Lakshmi, each standing for a different kind of prosperity. Wealth is one of the eight; the others are a source, food, standing, family, courage, success and knowledge.</p>
 <p class="crumbs">By {AUTHOR}</p>
+{wheel}
 <h2>Why eight?</h2>
 <p><em>Aṣṭa</em> means eight. The idea behind the eight forms is that prosperity is not one thing. A person can have money and no peace, or a good family and a struggling business, or learning without a livelihood. Tradition therefore pictures Lakshmi in eight forms, and a worshipper may turn to one or to all of them.</p>
 <p>Lists differ a little from one tradition to another. Some name Vīra Lakshmi in place of Dhairya, or Jaya in place of Vijaya, and some lists include Aiśvarya (grandeur) or Saubhāgya (good fortune). The eight below are the most common set. The pictures described are typical ones; temples and paintings differ in the details, and the number of hands varies.</p>
@@ -2617,7 +2644,7 @@ def page_ashta():
 <p>The Ashtalakshmi are also worshipped together in temples and in the <a href="/ashtalakshmi-stotram/">Ashtalakshmi Stotram</a>, a hymn that praises each form in turn. Prosperity in its wider sense is also the theme of the <a href="/sri-suktam/">Śrī Sūktam</a>, the <a href="/kanakadhara/">Kanakadhāra Stotram</a> and the <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a> on this site.</p>
 <p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("end")}
-</main>''' + foot()
+</main>''' + MOTION_JS + foot()
     write("ashtalakshmi", body, "0.8")
 
 AARTI = [
@@ -2632,13 +2659,28 @@ AARTI = [
  ("Final stanza: the fruit of singing","The closing stanza says that whoever sings this aarti to Mahālakṣmī finds joy filling the heart and sin falling away. Singing alone does not cancel the results of what we do, and devotion is not an exemption from responsibility. What it can do is help us see our own faults, such as greed, pride, resentment, fear and ingratitude, and find the strength to turn back to the right path. The deeper fruit of prayer is not always that life changes as we wish; it can be that we gain the wisdom to live rightly whatever comes."),
 ]
 
+
+DIYA = '''<div class="diyab rv" id="diyab">
+<div class="orb"><svg class="diya" viewBox="0 0 160 150" aria-hidden="true" focusable="false">
+<defs><radialGradient id="dg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".95"/><stop offset=".5" stop-color="#ffb347" stop-opacity=".45"/><stop offset="1" stop-color="#ff8a00" stop-opacity="0"/></radialGradient>
+<linearGradient id="df" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a00"/><stop offset=".55" stop-color="#ffc233"/><stop offset="1" stop-color="#fff6c8"/></linearGradient>
+<linearGradient id="db" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e58a2d"/><stop offset="1" stop-color="#8f3d10"/></linearGradient></defs>
+<circle class="glow" cx="80" cy="62" r="70" fill="url(#dg)"/>
+<path class="flame" d="M80 20 C94 40 100 54 94 68 C90 78 70 78 66 68 C60 54 70 42 80 20Z" fill="url(#df)"/>
+<path class="flame2" d="M80 44 C87 54 88 62 84 68 C81 72 77 72 76 68 C73 62 76 54 80 44Z" fill="#fffbe6"/>
+<path d="M30 84 C34 118 56 132 80 132 C104 132 126 118 130 84 C112 92 98 94 80 94 C62 94 48 92 30 84Z" fill="url(#db)"/>
+<ellipse cx="80" cy="84" rx="50" ry="8" fill="#f6b04b"/><ellipse cx="80" cy="83" rx="40" ry="5" fill="#7a3510"/>
+<rect x="76" y="70" width="8" height="13" rx="3" fill="#3a1d0a"/></svg></div>
+<div class="diyat"><p class="dk">Before you begin</p><button type="button" class="dbtn" id="dbtn" aria-pressed="false">Light the diya</button>
+<p class="dn" id="dn" aria-live="polite">Tap to light a lamp. A quiet moment before the aarti is part of the worship.</p></div></div>'''
+
 def page_aarti():
     t = "Lakshmi Aarti Meaning and How to Perform It on Diwali"
     d = "Lakshmi Aarti (Om Jai Lakshmi Mata): how to perform it at home on Diwali, and what each stanza means, explained in English."
     parts = [("Lakshmi Aarti","lakshmi-aarti/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/lakshmi-aarti/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
-    cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in AARTI)
-    body = head(t,d,"lakshmi-aarti/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("aarti") + f'''
+    cards = "".join(f'<div class="card ac k{i%4} rv" style="--d:{(i%2)*0.08:.2f}s"><span class="ab" aria-hidden="true">{"ॐ" if i==0 else i}</span><h3>{E(a)}</h3><p>{b}</p></div>' for i,(a,b) in enumerate(AARTI))
+    body = head(t,d,"lakshmi-aarti/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("aarti") + MOTION_BOOT + f'''
 <main class="wrap">{crumbs([("Lakshmi Aarti",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Lakshmi Aarti – meaning and how to perform it</h1>
@@ -2651,7 +2693,8 @@ def page_aarti():
 <p>The Lakshmi Aarti is sung on Fridays in many homes, and above all during the Lakshmi Puja of Diwali. The date and the auspicious time (<em>muhūrta</em>) of the evening puja change every year, so check a local panchang or your temple for the exact time.</p>
 <h2 id="how">How to perform it at home</h2>
 <p>There is no single rule, and families differ. This is a common simple order.</p>
-<ol>
+{DIYA}
+<ol class="steps">
 <li><strong>Prepare the place.</strong> Clean the space and set an image or idol of the Goddess on a clean cloth. Many people draw a small rangoli at the entrance.</li>
 <li><strong>Prepare the thali.</strong> A plate with a ghee lamp (<em>dīpa</em>), incense, flowers, kumkum, and a small piece of camphor or a second lamp for the aarti. Keep the sweets or fruit that will be offered close by.</li>
 <li><strong>Complete the puja first.</strong> The aarti closes the worship. Offer the flowers, kumkum and sweets before you begin.</li>
@@ -2675,7 +2718,7 @@ def page_aarti():
 <p>See also: <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a> to chant, and the <a href="/sri-suktam/">Śrī Sūktam</a>.</p>
 <p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("end")}
-</main>''' + foot()
+</main>''' + MOTION_JS + foot()
     write("lakshmi-aarti", body, "0.8")
 
 AARTI_ONE = [
