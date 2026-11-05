@@ -88,7 +88,7 @@
     var n = d.getElementById("aw-n"), dv = d.getElementById("aw-d"), sb = d.getElementById("aw-s"), ln = d.getElementById("aw-l");
     function show(i) {
       petals.forEach(function (p, k) { p.classList.toggle("sel", k === i); });
-      n.textContent = data[i][0]; dv.textContent = data[i][1]; sb.textContent = data[i][2]; ln.setAttribute("href", "#f" + (i + 1));
+      n.textContent = data[i][0]; dv.textContent = data[i][1]; sb.textContent = data[i][2]; ln.setAttribute("href", petals[i].getAttribute("href"));
     }
     petals.forEach(function (p, i) {
       p.addEventListener("mouseenter", function () { show(i); });
@@ -100,5 +100,61 @@
     if (w && !w.classList.contains("in") && "IntersectionObserver" in window && !calm) {
       /* .rv already adds .in on scroll; nothing more needed */
     }
+  }
+})();
+
+/* Ashtalakshmi Stotram page: scroll journey with a moving diya, and the read-one-stanza-a-day planner */
+(function () {
+  var d = document, calm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var jp = d.getElementById("jpath");
+  if (jp && !calm) {
+    var tk = false;
+    var upd = function () {
+      tk = false;
+      var r = jp.getBoundingClientRect(), vh = window.innerHeight;
+      var lp = Math.max(0, Math.min(1, (vh * 0.55 - r.top) / r.height));
+      jp.style.setProperty("--lp", lp.toFixed(3));
+      var nodes = jp.querySelectorAll(".jn"), h = vh * 0.55;
+      for (var i = 0; i < nodes.length; i++) { var t = nodes[i].getBoundingClientRect().top; nodes[i].classList.toggle("lit", t < h); }
+    };
+    addEventListener("scroll", function () { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
+    addEventListener("resize", upd); upd();
+  } else if (jp) { jp.style.setProperty("--lp", "1"); [].forEach.call(jp.querySelectorAll(".jn"), function (n) { n.classList.add("lit"); }); }
+
+  var list = d.getElementById("pdays"), bar = d.getElementById("plan-bar");
+  if (list && bar) {
+    var KEY = "lakshmistuti_stotram_plan", st = { start: null, done: [] };
+    try { var raw = localStorage.getItem(KEY); if (raw) st = JSON.parse(raw) || st; } catch (e) {}
+    var save = function () { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+    var items = [].slice.call(list.querySelectorAll("li"));
+    var msg = d.getElementById("plan-msg"), go = d.getElementById("plan-start"), rs = d.getElementById("plan-reset");
+    bar.hidden = false;
+    items.forEach(function (li, i) {
+      var cb = d.createElement("input"); cb.type = "checkbox"; cb.className = "pchk"; cb.setAttribute("aria-label", "Mark day " + (i + 1) + " as read");
+      cb.addEventListener("change", function () {
+        var k = st.done.indexOf(i); if (cb.checked && k < 0) st.done.push(i); if (!cb.checked && k >= 0) st.done.splice(k, 1); save(); paint();
+      });
+      li.insertBefore(cb, li.firstChild);
+    });
+    var today = function () {
+      if (!st.start) return -1;
+      var a = new Date(st.start), b = new Date(); a.setHours(0, 0, 0, 0); b.setHours(0, 0, 0, 0);
+      return Math.round((b - a) / 864e5);
+    };
+    function paint() {
+      var t = today();
+      items.forEach(function (li, i) {
+        var on = st.done.indexOf(i) >= 0;
+        li.classList.toggle("done", on); li.querySelector(".pchk").checked = on; li.classList.toggle("now", t === i);
+      });
+      var n = st.done.length;
+      if (!st.start) msg.textContent = "Tick each day as you read it, or press Start today to follow along.";
+      else if (t > 7) msg.textContent = n + " of 8 days read. The eight days are over; read any stanza again whenever you like.";
+      else if (t >= 0) msg.textContent = "Today is Day " + (t + 1) + ". " + n + " of 8 read.";
+      go.hidden = !!st.start; rs.hidden = !st.start && n === 0;
+    }
+    go.addEventListener("click", function () { st.start = new Date().toISOString(); save(); paint(); });
+    rs.addEventListener("click", function () { st = { start: null, done: [] }; save(); paint(); });
+    paint();
   }
 })();
