@@ -2580,52 +2580,92 @@ def page_asts():
     d = "Ashtalakshmi Stotram meaning in English: what each of the eight stanzas says about Adi, Dhanya, Dhairya, Gaja, Santana, Vijaya, Vidya and Dhana Lakshmi."
     parts = [("Ashtalakshmi Stotram","ashtalakshmi-stotram/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi-stotram/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
-    cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in ASTS)
-    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + f'''
-<main class="wrap">{crumbs([("Ashtalakshmi Stotram",None)])}
+    swheel, journey, planner = stotram_extras()
+    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + MOTION_BOOT + f'''
+<main class="wrap jw">{crumbs([("Ashtalakshmi Stotram",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Ashtalakshmi Stotram – meaning in English</h1>
 <p class="lede">The Ashtalakshmi Stotram is a Sanskrit hymn of eight stanzas, one for each of the <a href="/ashtalakshmi/">eight forms of Lakshmi</a>, with a short closing salutation. This page explains what each stanza says.</p>
 <p class="crumbs">By {AUTHOR}</p>
+{swheel}
 <p><small>A note on the words: this hymn is a modern composition, not an ancient scripture, so this page explains it and does not print the verses. Please use a trusted printed or recorded version for chanting; printed versions differ in small details.</small></p>
 <h2>About the hymn</h2>
 <p>According to Wikipedia, the hymn was composed in Chennai in the early 1970s by U. V. Srinivasa Varadachariyar, a scholar of the Sri Vaishnava tradition, and became widely known through recordings in the 1980s. I have not been able to confirm this from a second source, so please treat the attribution as provisional. The eight forms are taken in this order: Ādi, Dhānya, Dhairya, Gaja, Santāna, Vijaya, Vidyā and Dhana. (The <a href="/ashtalakshmi/">explainer page</a> lists Dhana second; the order differs between lists.)</p>
 <h2>What the stanzas say</h2>
 <p>These are my own explanations of the hymn’s ideas, and any practical lessons are reflections inspired by it, not literal lines in the text.</p>
-{cards}
+{journey}
 {ad("below-verse")}
+{planner}
 <h2>A way to read it</h2>
 <p>Some people read one stanza a day, or the stanza of the form they feel most in need of. A simple way to begin is to read the meaning of a stanza here, then listen to or chant it from your own book, and sit quietly for a minute with the form’s name. This is a devotional and reflective reading. It does not promise any outcome or guarantee wealth.</p>
 <p>See also: <a href="/ashtalakshmi/">Aṣṭalakṣmī – the eight forms</a>, <a href="/kanakadhara/">Kanakadhāra Stotram</a> and <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a>.</p>
 <p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("end")}
-</main>''' + foot()
+</main>''' + MOTION_JS + foot()
     write("ashtalakshmi-stotram", body, "0.8")
 
 
 AC = [("#6a3fc2","#a37be8"),("#c98a00","#f2c230"),("#2f8f3f","#7ccf6a"),("#d03a58","#ff8aa0"),("#0e9f8e","#4fd1b8"),("#d8581c","#f5a04d"),("#2a62cf","#6ea2ff"),("#a2409f","#e08ad8")]
 
-def ashta_wheel():
+def wheel_html(items, kicker="Tap a petal", linktext="Read about this form ↓"):
+    """items: list of (short label, full name, devanagari, sub, ka, kb, href)"""
     import math
     ps = []
-    for i,(n,dv,sub,body,img) in enumerate(ASHTA):
+    for i,(short,n,dv,sub,a,b,href) in enumerate(items):
         ang = i*45
-        a,b = AC[i]
-        short = n.replace(" Lakshmi","")
         lx = 200 + 112*math.sin(math.radians(ang)); ly = 200 - 112*math.cos(math.radians(ang))
-        ps.append(f'<a class="ap" href="#f{i+1}" data-i="{i}" style="--ka:{a};--kb:{b};--i:{i}" aria-label="{E(n)}: {E(sub)}">'
+        ps.append(f'<a class="ap" href="{href}" data-i="{i}" style="--ka:{a};--kb:{b};--i:{i}" aria-label="{E(n)}: {E(sub)}">'
                   f'<g transform="rotate({ang} 200 200)"><path class="pp" d="M200,200 C150,168 150,78 200,36 C250,78 250,168 200,200Z"/></g>'
                   f'<text class="pn" x="{lx:.1f}" y="{ly+4:.1f}" text-anchor="middle">{E(short)}</text></a>')
-    first = ASHTA[0]
+    f = items[0]
     return ('<section class="awheel" aria-label="The eight forms of Lakshmi">'
             '<div class="aw-svg rv"><svg viewBox="0 0 400 400" class="alotus" role="group" focusable="false">'
             '<circle class="aring" cx="200" cy="200" r="190"/>'
             + "".join(ps) +
             '<circle class="acore" cx="200" cy="200" r="38"/><text class="acoret" x="200" y="212" text-anchor="middle" lang="sa">श्री</text></svg></div>'
-            '<div class="aw-info rv" style="--d:.12s"><p class="aw-k">Tap a petal</p>'
-            f'<h2 id="aw-n" style="margin-top:.1em">{E(first[0])}</h2><p class="aw-d" id="aw-d" lang="sa">{first[1]}</p>'
-            f'<p id="aw-s">{E(first[2])}</p><p><a id="aw-l" href="#f1">Read about this form ↓</a></p></div></section>'
-            '<script type="application/json" id="aw-data">' + json.dumps([[n,dv,sub] for n,dv,sub,_,_ in ASHTA], ensure_ascii=False) + '</script>')
+            f'<div class="aw-info rv" style="--d:.12s"><p class="aw-k">{kicker}</p>'
+            f'<h2 id="aw-n" style="margin-top:.1em">{E(f[1])}</h2><p class="aw-d" id="aw-d" lang="sa">{f[2]}</p>'
+            f'<p id="aw-s">{E(f[3])}</p><p><a id="aw-l" href="{f[6]}">{linktext}</a></p></div></section>'
+            '<script type="application/json" id="aw-data">' + json.dumps([[n,dv,sub] for _,n,dv,sub,_,_,_ in items], ensure_ascii=False) + '</script>')
+
+def ashta_wheel():
+    items = [(n.replace(" Lakshmi",""), n, dv, sub, AC[i][0], AC[i][1], f"#f{i+1}") for i,(n,dv,sub,body,img) in enumerate(ASHTA)]
+    return wheel_html(items)
+
+STORDER = [None,0,2,5,3,4,6,7,1]   # ASTS stanza k -> index in ASHTA
+PLAN = [
+ "Sit for a minute and think of what has always been there for you, beneath every change of fortune.",
+ "Give thanks for one meal today, and for the hands behind it.",
+ "Name one thing that needs patience, and give it a little more.",
+ "Notice where dignity matters: how you speak, how you carry yourself.",
+ "Think of the next generation, and of one value you wish to hand down.",
+ "Pick one small obstacle, including an inner one, and take its first step.",
+ "Read or learn something for ten minutes, however small.",
+ "Look at how you earn and use money today, and share a little of it.",
+]
+
+def stotram_extras():
+    items = []
+    for k in range(1,9):
+        n,dv,sub,_,_ = ASHTA[STORDER[k]]
+        a,b = AC[STORDER[k]]
+        items.append((n.replace(" Lakshmi",""), f"Stanza {k}: {n}", dv, sub, a, b, f"#s{k}"))
+    wheel = wheel_html(items, "Tap a stanza", "Read this stanza ↓")
+    nodes = []
+    for i,(a,b) in enumerate(ASTS):
+        if i in (0,len(ASTS)-1): ka,kb,badge = "#c98a00","#f2c230","ॐ"
+        else: ka,kb = AC[STORDER[i]]; badge = str(i)
+        side = "jn-e" if i in (0,len(ASTS)-1) else ("jl" if i%2 else "jr")
+        nodes.append(f'<div class="jn {side} rv" id="s{i}" style="--ka:{ka};--kb:{kb}"><span class="jm" aria-hidden="true">{badge}</span><div class="card jc"><h3>{E(a)}</h3><p>{b}</p></div></div>')
+    journey = ('<div class="jpath" id="jpath"><div class="jline" aria-hidden="true"><i class="jfill"></i></div>'
+               '<svg class="jdiya" viewBox="0 0 40 46" aria-hidden="true" focusable="false"><path class="jf" d="M20 2 C26 11 28 17 25 22 C23 26 17 26 15 22 C12 17 15 11 20 2Z" fill="#ffb73a"/><path d="M5 28 C7 40 14 44 20 44 C26 44 33 40 35 28 C29 31 25 32 20 32 C15 32 11 31 5 28Z" fill="#c4691f"/><ellipse cx="20" cy="28" rx="15" ry="3.2" fill="#f6b04b"/></svg>'
+               + "".join(nodes) + '</div>')
+    days = "".join(f'<li><a href="#s{k+1}"><b>Day {k+1}</b> <span>{E(ASHTA[STORDER[k+1]][0])}</span></a><p>{E(PLAN[k])}</p></li>' for k in range(8))
+    planner = ('<section class="plan" id="plan"><h2>Read one stanza a day</h2>'
+               '<p>Eight stanzas make eight days. Each day, read the meaning of one stanza here, listen to or chant it from your own book, and keep the day’s quiet thought in mind. The thoughts are my own reflections, not lines of the hymn, and the plan promises no outcome.</p>'
+               '<div class="plan-bar" id="plan-bar" hidden><button type="button" class="btn-s" id="plan-start">Start today</button> <button type="button" class="btn-s ghost" id="plan-reset" hidden>Reset</button> <span id="plan-msg" role="status" aria-live="polite"></span></div>'
+               f'<ol class="pdays" id="pdays">{days}</ol></section>')
+    return wheel, journey, planner
 
 def page_ashta():
     t = "Ashtalakshmi Meaning – The Eight Forms of Goddess Lakshmi"

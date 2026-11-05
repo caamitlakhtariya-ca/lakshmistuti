@@ -885,3 +885,50 @@ main.vwide{max-width:none;padding:0;display:block}
 .vhero .vh-by{text-shadow:0 1px 10px rgba(20,8,50,.7)}
 .vhero .vh-in{align-self:flex-start;padding-top:48px}
 @media (max-width:700px){.vhero{min-height:480px}}
+
+/* ===== Ashtalakshmi Stotram page ===== */
+.wrap.jw{max-width:1040px}
+.jpath{position:relative;margin:26px 0 10px;padding:6px 0 10px;--lp:0}
+.jline{position:absolute;left:21px;top:0;bottom:0;width:4px;border-radius:4px;background:rgba(150,110,60,.22)}
+.jfill{position:absolute;left:0;top:0;width:100%;height:calc(var(--lp)*100%);border-radius:4px;background:linear-gradient(180deg,#e0366b,#f5a524,#0e9f8e)}
+.jdiya{position:absolute;left:3px;top:calc(var(--lp)*(100% - 46px));width:40px;height:46px;z-index:3;filter:drop-shadow(0 0 10px rgba(255,170,60,.8));transition:top .15s linear}
+.jdiya .jf{transform-origin:20px 22px;animation:flick 1.6s ease-in-out infinite}
+.jn{position:relative;margin:0 0 22px;padding-left:62px}
+.jm{position:absolute;left:4px;top:14px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;color:#fff;background:linear-gradient(135deg,var(--ka),var(--kb));box-shadow:0 0 0 6px var(--bg);z-index:1;transition:transform .4s,box-shadow .4s;opacity:.55}
+.jn.lit .jm{opacity:1;transform:scale(1.12);box-shadow:0 0 0 6px var(--bg),0 0 18px 4px var(--kb)}
+.jc{margin:0;padding:18px 22px 16px;border-color:transparent;border-top:4px solid var(--ka);box-shadow:0 2px 0 rgba(0,0,0,.04),0 8px 22px rgba(0,0,0,.08);transition:transform .25s,box-shadow .25s}
+.jn.lit .jc{box-shadow:0 12px 28px rgba(0,0,0,.14)}
+.jc h3{margin-top:0;color:var(--ka)}
+@media (min-width:900px){
+ .jline{left:50%;margin-left:-2px}
+ .jdiya{left:calc(50% - 20px)}
+ .jn{width:calc(50% - 44px);padding-left:0}
+ .jn.jl{margin-right:auto}
+ .jn.jr{margin-left:auto}
+ .jn .jm{top:14px}
+ .jn.jl .jm{left:auto;right:-62px}
+ .jn.jr .jm{left:-62px}
+ .jn.jn-e{width:min(620px,100%);margin-left:auto;margin-right:auto;margin-top:36px}
+ .jn.jn-e .jm{left:50%;right:auto;margin-left:-18px;top:-22px}
+ .jn.jn-e .jc{text-align:center;padding-top:30px}
+ .js .jn.jl.rv{transform:translateX(-26px)}.js .jn.jr.rv{transform:translateX(26px)}.js .jn.jn-e.rv{transform:translateY(18px)}
+ .js .jn.rv.in{transform:none}
+}
+/* planner */
+.plan{margin:34px 0;padding:24px clamp(16px,3vw,30px);border-radius:20px;background:linear-gradient(135deg,var(--sand),var(--lav));border:1px solid var(--sand-line)}
+.plan h2{margin-top:0}
+.plan-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+.plan-bar #plan-msg{font-family:var(--sans);font-size:.92rem;color:var(--muted)}
+.pdays{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.pdays li{position:relative;padding:14px 14px 12px 44px;border-radius:14px;background:var(--surface);border:1px solid var(--line);transition:transform .25s,box-shadow .25s,border-color .25s}
+.pdays li a{font-family:var(--sans);text-decoration:none;color:var(--ink)}
+.pdays li a b{color:var(--maroon)}
+.pdays li p{margin:.4em 0 0;font-size:.93rem;color:var(--muted)}
+.pdays .pchk{position:absolute;left:14px;top:16px;width:20px;height:20px;accent-color:#d98a00;cursor:pointer}
+.pdays li.done{opacity:.72}.pdays li.done a span{text-decoration:line-through}
+.pdays li.now{border-color:#f2a03d;box-shadow:0 8px 22px rgba(242,160,61,.28);transform:translateY(-2px)}
+html:not(.js) .pdays li{padding-left:14px}
+@media (prefers-reduced-motion:reduce){.jdiya{transition:none}.jdiya .jf{animation:none}.js .jn.rv{transform:none!important}}
+@media print{.jdiya,.jfill{display:none}}
+
+.plan-bar [hidden],.plan-bar[hidden]{display:none!important}
