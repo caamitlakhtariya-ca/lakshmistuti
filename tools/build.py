@@ -6,6 +6,7 @@ Add a verse by appending to VERSES below, then rebuild.
 import os, re, json, html, hashlib, unicodedata, subprocess
 from datetime import date
 import openverse
+import landing
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://lakshmistuti.com"
@@ -2122,7 +2123,7 @@ def page_sri():
         rows += f'<div class="tile" style="opacity:.55"><h3>Verse {n} <span class="soon">coming soon</span></h3></div>'
     hero = landing.hub_hero("Vedic hymn to Goddess Lakshmi", "Śrī Sūktam – verse by verse",
         "The Śrī Sūktam (also written Sri Suktam, Shri Suktam or Shree Suktam) is a Vedic hymn praising Goddess Lakshmi (Śrī) as the source of prosperity, grace and auspiciousness. Each verse here has the Sanskrit text, a word-by-word meaning, deeper insights and a short practice.",
-        f'<p class="hh-by">Commentary by {AUTHOR}</p>',
+        '',
         '<a class="btn" href="/sri-suktam/verse-1/">Start with Verse 1</a><a class="btn ghost" href="/kanakadhara/">Kanakadhāra Stotram →</a>',
         f'<span>{len(VERSES)} verses</span><span>Word-by-word meaning</span><span>A practice for each verse</span>')
     body = head(t,d,"sri-suktam/",bc_ld(parts)) + nav("sri") + MOTION_BOOT + f'''
@@ -2158,7 +2159,7 @@ def page_kana():
                 + "".join(f'<a class="vc k1 rv" href="/kanakadhara/{a["slug"]}/"><span class="vc-n">+</span><span class="vc-t"><b>{lab(a)}: Bilvāṭavī</b><small>{E(a["sub"])}</small></span></a>' for a in KAPPX) + '</div>')
     hero = landing.hub_hero("Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi", "Kanakadhāra Stotram",
         "Śrī Śaṅkarācārya’s hymn to Goddess Lakshmi (the Kanakadhara Stotram, also written Kanakdhara or Kanaka Dhara Stotra), read slowly, verse by verse.",
-        f'<p class="hh-by">Commentary by {AUTHOR}</p>',
+        '',
         '<a class="btn" href="/kanakadhara/verse-1/">Start with Verse 1</a><a class="btn ghost" href="#story">Read the story first</a><a class="btn ghost" href="/sri-suktam/">Śrī Sūktam →</a>',
         f'<span>{len(KVERSES)} verses</span><span>Five movements</span><span>A meditation for each verse</span>')
     body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + MOTION_BOOT + f'''
@@ -2496,15 +2497,13 @@ def page_verse(i, lst=None, base="sri-suktam", sname="Śrī Sūktam", navkey="sr
     items = "".join(f'<li><a href="/{base}/{x["slug"]}/"{" class=\"on\" aria-current=\"page\"" if x["slug"]==v["slug"] else ""}><b>{x.get("navno", x["n"])}</b><span class="t">{E(x["sub"].split(" – ")[0])}</span></a></li>' for x in lst)
     vnav = f'<aside class="vnav" aria-label="Verses"><p class="vn-title"><a href="/{base}/">{sname}</a></p><ol>{items}</ol><p class="vn-other"><a href="/{other[1]}/">{other[0]} →</a></p></aside>'
     vscript = '<script>try{var a=document.querySelector(".vnav a.on");if(a&&a.scrollIntoView){var o=a.parentNode.parentNode;o.scrollLeft=a.offsetLeft-o.offsetWidth/2+a.offsetWidth/2}}catch(e){}</script>'
+    _kick = "Hymn by Ādi Śaṅkarācārya, the Jagadguru" if base == "kanakadhara" else ("Vedic hymn to Goddess Lakshmi" if base == "sri-suktam" else sname)
+    _chips = "".join(f"<span>{E(a)}</span>" for a,b in v["keypoints"]) if v.get("keypoints") else ""
+    vhero = landing.hub_hero(_kick, v["h1"], E(v["sub"]), "", "", _chips).replace('<header class="hh">','<header class="hh vh2">')
     medband = f'<div class="vband b3"><div class="bin">{medsec}</div></div>' if medsec else ''
     refband = f'<div class="vband b4"><div class="bin">{refsec}{closesec}</div></div>' if (refsec or closesec) else ''
     body = head(v["title"],v["desc"],path+"/",art,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav(navkey) + f'''
-<header class="vhero">{openverse.scene()}<div class="vh-in"><div class="vh-text">
-<p class="vh-kick" lang="sa">श्री</p>
-<h1>{v["h1"]}</h1>
-<p class="lede">{E(v["sub"])}</p>
-<p class="vh-by">{"Hymn by Ādi Śaṅkarācārya, the Jagadguru · " if base == "kanakadhara" else ""}Commentary by {AUTHOR}</p></div>
-<div class="vh-art">{four_art(v["keypoints"], v["icons"]) if v.get("keypoints") else YANTRA}</div></div></header>
+{vhero}
 <main class="wrap has-vnav vwide"><article>
 <div class="vband b0"><div class="bin">{vnav}
 {crumbs([(sname,base+"/"),(lab(v),None)])}

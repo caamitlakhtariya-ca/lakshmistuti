@@ -29,7 +29,7 @@ for p in pages:
         n_f = s.count('class="fcard'); n_k = len(re.findall(r'<li><span class="ic ic\d">', s))
         if n_f != n_k: e(p, f"form cards {n_f} vs highlights {n_k}")
         if "ov-sketch" not in s: e(p, "no sketch card")
-        if 'class="vhero"' not in s: e(p, "no hero")
+        if 'class="hh vh2"' not in s: e(p, "no hero")
         if "verse.js" not in s: e(p, "no verse.js")
 for t, ps in titles.items():
     if len(ps) > 1: errs.append(f"duplicate title {t!r}: {[os.path.relpath(x, ROOT) for x in ps]}")

@@ -936,3 +936,9 @@ html:not(.js) .pdays li{padding-left:14px}
 .vhero h1{font-size:2.4rem;text-shadow:0 1px 14px rgba(20,8,50,.35)}
 .vhero .lede{font-size:1.35rem;text-shadow:0 1px 10px rgba(20,8,50,.4)}
 @media (max-width:520px){.vhero h1{font-size:2rem}}
+/* verse pages use the same banner heading as the two hymn hubs */
+.hh-c:empty{display:none}
+.hh.vh2 .hh-in{padding:46px 22px 40px}
+.hh.vh2 h1{font-size:clamp(2rem,4.4vw,2.9rem)}
+.hh.vh2 .hh-l{font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.5rem);color:#e9d9bd;margin-bottom:0}
+.hh.vh2 .hh-stat{margin-top:16px}
