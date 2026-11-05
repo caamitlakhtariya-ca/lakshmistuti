@@ -2167,45 +2167,66 @@ def page_kana():
 <p><small>{"All "+str(KANA_TOTAL)+" verses are published." if len(KVERSES)>=KANA_TOTAL else str(len(KVERSES))+" of "+str(KANA_TOTAL)+" verses published so far. The next ones are added one at a time."}</small></p>
 {appx}
 </div>
-<main class="wrap">
-<h2 id="story">The story before the first verse</h2>
-
-<p>Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
-<p>More than 1,200 years ago, the young Ādi Śaṅkarācārya, still a boy of about eight in most tellings, went from house to house seeking <em>bhikṣā</em> (alms), as a student and renunciate does. The custom is not about need. Accepting whatever is freely offered cultivates humility in both the giver and the receiver.</p>
+<main class="wrap st">
+<section class="sbook" id="story">
+<div class="gold-rain" aria-hidden="true">{landing.rain(22, 4)}</div>
+<p class="kick rv">Before we begin</p>
+<h2 class="rv">The story before the first verse</h2>
+<p class="s-lede rv">Every great hymn has a story. The Kanakadhāra Stotram is no exception.</p>
+<div class="scenes">
+<div class="scene k0 rv"><span class="sc-i">{icon("bud",26)}</span><div><h3>A young seeker at the door</h3>
+<p>More than 1,200 years ago, the young Ādi Śaṅkarācārya, still a boy of about eight in most tellings, went from house to house seeking <em>bhikṣā</em> (alms), as a student and renunciate does. The custom is not about need. Accepting whatever is freely offered cultivates humility in both the giver and the receiver.</p></div></div>
+<div class="scene k1 rv"><span class="sc-i">{icon("home",26)}</span><div><h3>One small gooseberry</h3>
 <p>One day he arrived at the home of a poor Brahmin family. The lady of the house searched every corner of her kitchen. She had nothing to offer. Nothing, except one small <em>āmalakī</em> (Indian gooseberry): the last edible thing in the house.</p>
-<p>She faced a dilemma. Should she keep it for herself and her family, or honour the sacred duty of offering food to a seeker? Her heart chose generosity. She offered that lone gooseberry with complete sincerity.</p>
-<p>The young Śaṅkara saw her poverty at once and, more importantly, her boundless generosity. Deeply moved, he composed a spontaneous hymn in praise of Mahālakṣmī, praying that her compassionate glance fall upon this noble woman.</p>
-<p>Tradition says that the Goddess first replied that, by the law of karma, the woman had not yet earned enough merit to receive wealth. Śaṅkara, it is said, then appealed not to justice but to compassion. The story is often read as carrying this unspoken argument: if a person who possesses nothing can still give everything, has she not created merit at this very moment?</p>
-<p>The Goddess smiled. A shower of golden gooseberries fell upon the humble home. Thus the Kanakadhāra Stotram was born. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream or continuous flow, so <em>Kanakadhārā</em> is “the stream of gold”.</p>
+<p>She faced a dilemma. Should she keep it for herself and her family, or honour the sacred duty of offering food to a seeker? Her heart chose generosity. She offered that lone gooseberry with complete sincerity.</p></div></div>
+<div class="scene k2 rv"><span class="sc-i">{icon("bell",26)}</span><div><h3>A hymn is born</h3>
+<p>The young Śaṅkara saw her poverty at once and, more importantly, her boundless generosity. Deeply moved, he composed a spontaneous hymn in praise of Mahālakṣmī, praying that her compassionate glance fall upon this noble woman.</p></div></div>
+<div class="scene k3 rv"><span class="sc-i">{icon("scale",26)}</span><div><h3>Karma, and an appeal to compassion</h3>
+<p>Tradition says that the Goddess first replied that, by the law of karma, the woman had not yet earned enough merit to receive wealth. Śaṅkara, it is said, then appealed not to justice but to compassion. The story is often read as carrying this unspoken argument: if a person who possesses nothing can still give everything, has she not created merit at this very moment?</p></div></div>
+<div class="scene sc-gold rv"><span class="sc-i">{icon("coin",26)}</span><div><h3>The stream of gold</h3>
+<p>The Goddess smiled. A shower of golden gooseberries fell upon the humble home. Thus the Kanakadhāra Stotram was born. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream or continuous flow, so <em>Kanakadhārā</em> is “the stream of gold”.</p></div></div>
+</div>
+<p class="s-note rv"><small>The story is the traditional account; details vary between tellings.</small></p>
+</section>
 
-<h2>The first lesson, even before verse one</h2>
+<section class="lesson rv">
+<p class="kick">The first lesson, even before verse one</p>
+<p class="les-q">She gave before she received.</p>
 <p>Many people take this hymn to be about becoming rich. The story points to something subtler. The miracle did not begin with Lakshmi. It began with the generosity of the poor woman. She gave before she received.</p>
 <p>Prosperity does not begin in the wallet. It begins in the heart. Lakshmi is not merely the Goddess of money; she is the Goddess of abundance in every form:</p>
-<ul>
-<li>Wealth</li><li>Health</li><li>Knowledge</li><li>Virtue</li><li>Beauty</li><li>Courage</li><li>Harmony</li><li>Opportunity</li><li>Contentment</li>
-</ul>
-<p>Money is only one expression of Śrī.</p>
+<ul class="abund"><li class="k0">Wealth</li><li class="k1">Health</li><li class="k2">Knowledge</li><li class="k3">Virtue</li><li class="k1">Beauty</li><li class="k0">Courage</li><li class="k3">Harmony</li><li class="k2">Opportunity</li><li class="k0">Contentment</li></ul>
+<p class="les-end">Money is only one expression of Śrī.</p>
+</section>
 
-<h2>A Sanskrit jewel</h2>
-<div class="verse">{YANTRA}<p class="deva" lang="sa">श्री</p><p class="iast" lang="sa-Latn">Śrī</p></div>
+<section class="jewel rv">
+<p class="kick">A Sanskrit jewel</p>
+<div class="jw-art"><div class="jw-ring">{YANTRA}</div><p class="jw-deva" lang="sa">श्री</p><p class="jw-iast" lang="sa-Latn">Śrī</p></div>
 <p>This is one of the most beautiful words in Sanskrit, and no single English word carries it. <em>Śrī</em> means prosperity, auspiciousness, grace, beauty, radiance, excellence and divine abundance. That is why we say Śrī Rāma, Śrī Kṛṣṇa and Śrī Mahālakṣmī: the word carries the sense of something blessed, noble and flourishing.</p>
+</section>
 
-<h2>Reflection for today</h2>
-<p>Rather than rushing to the first verse, pause with this question:</p>
-<p><em>If I had only one gooseberry left, would I have the faith and generosity to offer it?</em></p>
+<section class="reflect rv">
+<div class="diya" aria-hidden="true"><i class="flame"></i><b></b></div>
+<p class="kick">Reflection for today</p>
+<p class="rf-lead">Rather than rushing to the first verse, pause with this question:</p>
+<p class="rf-q"><em>If I had only one gooseberry left, would I have the faith and generosity to offer it?</em></p>
 <p>This question is the doorway to the Kanakadhāra Stotram. Śaṅkarācārya invites us to reflect not only on receiving Lakshmi’s blessings, but also on becoming worthy of them.</p>
+</section>
 
-<h2>Today’s takeaway</h2>
-<div class="grid">
-<div class="card"><h3>Three Sanskrit words</h3><p><strong>Śrī</strong> (श्री): divine abundance and auspiciousness.<br><strong>Kanaka</strong> (कनक): gold.<br><strong>Dhārā</strong> (धारा): stream or continuous flow.</p></div>
-<div class="card"><h3>Philosophical insight</h3><p>True prosperity begins with a generous heart, not a full treasury.</p></div>
-<div class="card"><h3>Practice for today</h3><p>Perform one act of giving, whether of time, kindness, knowledge or material help, without expecting anything in return.</p></div>
+<section class="takeaway">
+<h2 class="rv">Today’s takeaway</h2>
+<div class="tk">
+<div class="tkc k0 rv"><span class="xi">{icon("book",24)}</span><h3>Three Sanskrit words</h3><p><strong>Śrī</strong> (श्री): divine abundance and auspiciousness.<br><strong>Kanaka</strong> (कनक): gold.<br><strong>Dhārā</strong> (धारा): stream or continuous flow.</p></div>
+<div class="tkc k1 rv" style="--d:.08s"><span class="xi">{icon("heart",24)}</span><h3>Philosophical insight</h3><p>True prosperity begins with a generous heart, not a full treasury.</p></div>
+<div class="tkc k2 rv" style="--d:.16s"><span class="xi">{icon("hands",24)}</span><h3>Practice for today</h3><p>Perform one act of giving, whether of time, kindness, knowledge or material help, without expecting anything in return.</p></div>
 </div>
+</section>
 
+<section class="aboutc rv">
 <h2>About the text and this commentary</h2>
-<p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary will follow one clear edition and will say which, so that you can read along with the text you chant from. Each verse will have its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series. Verses will be published one at a time.</p>
-<p><small>The story is the traditional account; details vary between tellings.</small></p>
-</main>''' + MOTION_JS + foot()
+<p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary follows the 22-verse edition, so that you can read along with the text you chant from. Each verse has its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series.</p>
+</section>
+</main>
+''' + MOTION_JS + foot()
     write("kanakadhara", body, "0.7")
 
 def page_mla():

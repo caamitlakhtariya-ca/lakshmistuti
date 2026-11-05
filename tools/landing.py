@@ -77,3 +77,11 @@ def hub_hero(kick, h1, lede, byline, ctas, stat):
     return f'''<header class="hh"><div class="hh-sky">{sparkles(18, 11)}<span class="hh-shri" lang="sa" aria-hidden="true">श्री</span></div>
 <div class="hh-in"><p class="hh-k">{kick}</p><h1>{h1}</h1><p class="hh-l">{lede}</p>{byline}<p class="hh-c">{ctas}</p>
 <p class="hh-stat">{stat}</p></div></header>'''
+
+def rain(n=20, seed=4):
+    r = random.Random(seed)
+    out = []
+    for i in range(n):
+        x = r.uniform(2, 98); s = r.choice([6, 8, 9, 11]); d = r.uniform(0, 7); t = r.uniform(5, 9)
+        out.append(f'<i style="left:{x:.1f}%;--s:{s}px;--dl:{d:.1f}s;--du:{t:.1f}s"></i>')
+    return "".join(out)
