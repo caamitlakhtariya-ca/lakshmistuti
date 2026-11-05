@@ -2572,8 +2572,8 @@ def page_asts():
     d = "Ashtalakshmi Stotram meaning in English: what each of the eight stanzas says about Adi, Dhanya, Dhairya, Gaja, Santana, Vijaya, Vidya and Dhana Lakshmi."
     parts = [("Ashtalakshmi Stotram","ashtalakshmi-stotram/")]
     ld = {"@context":"https://schema.org","@type":"Article","headline":t,"author":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"},"datePublished":"@@PUB@@","dateModified":"@@MOD@@","inLanguage":"en","image":SITE+"/assets/og.png","isAccessibleForFree":True,"mainEntityOfPage":SITE+"/ashtalakshmi-stotram/","publisher":{"@type":"Person","name":AUTHOR,"url":SITE+"/about/"}}
-    cards = "".join(f'<div class="card ac rv" style="--ka:{AC[i%8][0]};--kb:{AC[i%8][1]}"><span class="ab" aria-hidden="true">{"ॐ" if i in (0,9) else i}</span><h3>{E(a)}</h3><p>{b}</p></div>' for i,(a,b) in enumerate(ASTS))
-    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + MOTION_BOOT + f'''
+    cards = "".join(f'<div class="card"><h3>{E(a)}</h3><p>{b}</p></div>' for a,b in ASTS)
+    body = head(t,d,"ashtalakshmi-stotram/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("ashta") + f'''
 <main class="wrap">{crumbs([("Ashtalakshmi Stotram",None)])}
 <p class="shri small" lang="sa">श्री</p>
 <h1>Ashtalakshmi Stotram – meaning in English</h1>
@@ -2591,7 +2591,7 @@ def page_asts():
 <p>See also: <a href="/ashtalakshmi/">Aṣṭalakṣmī – the eight forms</a>, <a href="/kanakadhara/">Kanakadhāra Stotram</a> and <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a>.</p>
 <p><small>This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 {ad("end")}
-</main>''' + MOTION_JS + foot()
+</main>''' + foot()
     write("ashtalakshmi-stotram", body, "0.8")
 
 
