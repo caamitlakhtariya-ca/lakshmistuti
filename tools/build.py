@@ -2032,7 +2032,35 @@ PAGES = []  # (path, priority, lastmod)
 MANIFEST_PATH = os.path.join(ROOT, "tools", "pagedates.json")
 try: MANIFEST = json.load(open(MANIFEST_PATH, encoding="utf-8"))
 except Exception: MANIFEST = {}
+
+_SKIP=("h1","h2","h3","h4","h5","h6","script","style","svg","title","a","button","summary","dt","th","figcaption","label")
+_BARE=re.compile(r"(?<![\w’'-])(?<!Goddess )(?<!Mother )(?<!Śrī )(?<!Sri )(?<!Shri )(?<!Divine )(?<!Lord )(?<!Maha)(?<!Ashta)Lakshmi\b(?!\s*(?:Stuti|Aarti|Stotram|Ashtakam|Sahasranama|ji\b)|-)")
+def goddess(content):
+    """Visible prose only: the first bare 'Lakshmi' in a paragraph or list item of <main> becomes 'Goddess Lakshmi'.
+    Titles, meta tags, headings, links, structured data and URLs are never touched, so search listings stay as they were."""
+    a=content.find("<main"); b=content.rfind("</main>")
+    if a<0 or b<0: return content
+    main=content[a:b]
+    if "Goddess Lakshmi" in main: return content
+    out=[]; stack=[]; done=False
+    for tok in re.split(r"(<[^>]+>)", main):
+        if tok.startswith("<"):
+            m=re.match(r"<(/?)([a-zA-Z0-9]+)",tok)
+            if m and not tok.endswith("/>"):
+                name=m.group(2).lower()
+                if name in ("br","img","hr","input","meta","link","path","circle","use","rect","line"): pass
+                elif m.group(1): 
+                    if name in stack: 
+                        while stack and stack.pop()!=name: pass
+                else: stack.append(name)
+            out.append(tok); continue
+        if not done and tok.strip() and not any(x in _SKIP for x in stack) and ("p" in stack or "li" in stack):
+            new,n=_BARE.subn("Goddess Lakshmi",tok,count=1)
+            if n: tok=new; done=True
+        out.append(tok)
+    return content[:a]+"".join(out)+content[b:]
 def write(path, content, prio="0.6"):
+    content = goddess(content)
     # published / modified dates come from a manifest: the modified date moves only when the page's own content changes
     m = content[content.find("<main"):content.rfind("</main>")]
     h = hashlib.sha1(m.encode("utf-8")).hexdigest()[:12]
@@ -2588,7 +2616,6 @@ def page_asts():
 <p class="shri small" lang="sa">श्री</p>
 <h1>Ashtalakshmi Stotram – meaning in English</h1>
 <p class="lede">The Ashtalakshmi Stotram is a Sanskrit hymn of eight stanzas, one for each of the <a href="/ashtalakshmi/">eight forms of Lakshmi</a>, with a short closing salutation. This page explains what each stanza says.</p>
-<p class="crumbs">By {AUTHOR}</p>
 {swheel}
 <p><small>A note on the words: this hymn is a modern composition, not an ancient scripture, so this page explains it and does not print the verses. Please use a trusted printed or recorded version for chanting; printed versions differ in small details.</small></p>
 <h2>About the hymn</h2>
@@ -2681,7 +2708,6 @@ def page_ashta():
 <p class="shri small" lang="sa">श्री</p>
 <h1>Aṣṭalakṣmī – the eight forms of Lakshmi</h1>
 <p class="lede">The Ashtalakshmi (also written Ashta Lakshmi or Ashtalaxmi) are eight forms of Goddess Lakshmi, each standing for a different kind of prosperity. Wealth is one of the eight; the others are a source, food, standing, family, courage, success and knowledge.</p>
-<p class="crumbs">By {AUTHOR}</p>
 {wheel}
 <h2>Why eight?</h2>
 <p><em>Aṣṭa</em> means eight. The idea behind the eight forms is that prosperity is not one thing. A person can have money and no peace, or a good family and a struggling business, or learning without a livelihood. Tradition therefore pictures Lakshmi in eight forms, and a worshipper may turn to one or to all of them.</p>
@@ -2735,7 +2761,6 @@ def page_aarti():
 <p class="shri small" lang="sa">श्री</p>
 <h1>Lakshmi Aarti – meaning and how to perform it</h1>
 <p class="lede">The Lakshmi Aarti, “Om Jai Lakshmi Mata”, is the song of light sung to Goddess Lakshmi at the end of worship, above all on the evening of Diwali. This page explains how the aarti is performed at home and what its stanzas say.</p>
-<p class="crumbs">By {AUTHOR}</p>
 <nav class="toc" aria-label="On this page"><a href="#how">How to perform it</a><a href="#meaning">What it says</a><a href="#prayer">A closing prayer</a></nav>
 <p><small>A note on the words: the aarti is a sung folk hymn, and printed versions differ slightly from region to region and family to family. This page explains it and does not print the words, so please use the version your family or temple sings.</small></p>
 <h2>What is an aarti?</h2>
@@ -2824,7 +2849,7 @@ def page_aarti_print():
 <p class="pp-prayer">O Mother Mahalakshmi, give us enough wealth to live with dignity and to meet our duties, and the wisdom never to let the pursuit of wealth make us forget our dharma. Give us courage in hard times and humility when success comes. Bless our homes with food, peace and understanding. Make us worthy keepers of the prosperity we ask for.</p>
 </section>
 </div>
-<p class="pp-foot">Full explanation of each stanza: lakshmistuti.com/lakshmi-aarti/ · By {AUTHOR}</p>
+<p class="pp-foot">Full explanation of each stanza: lakshmistuti.com/lakshmi-aarti/</p>
 </div>
 <p class="noprint"><small>The full guide, with a longer explanation of every stanza, is at <a href="/lakshmi-aarti/">Lakshmi Aarti – meaning and how to perform it</a>. This page was prepared with AI assistance and reviewed by the author. <a href="/about/">Read more</a>.</small></p>
 </main>""" + foot()

@@ -11,8 +11,8 @@
  },
  "kanakadhara": {
   "published": "2026-10-11",
-  "modified": "2026-11-05",
-  "hash": "50a7afe077b2"
+  "modified": "2026-11-06",
+  "hash": "452b232ab3ab"
  },
  "mahalakshmi-ashtakam": {
   "published": "2026-10-23",
@@ -206,28 +206,28 @@
  },
  "ashtalakshmi": {
   "published": "2026-10-27",
-  "modified": "2026-11-05",
-  "hash": "1b14f65ed5c3"
+  "modified": "2026-11-06",
+  "hash": "378436632056"
  },
  "ashtalakshmi-stotram": {
   "published": "2026-10-27",
-  "modified": "2026-11-05",
-  "hash": "9cb4616d6f91"
+  "modified": "2026-11-06",
+  "hash": "95b02586d8a6"
  },
  "lakshmi-aarti": {
   "published": "2026-10-27",
-  "modified": "2026-11-05",
-  "hash": "9f5925df32bc"
+  "modified": "2026-11-06",
+  "hash": "2d56a699e1cd"
  },
  "lakshmi-aarti-printable": {
   "published": "2026-10-27",
-  "modified": "2026-10-27",
-  "hash": "78bb9c5ab5b8"
+  "modified": "2026-11-06",
+  "hash": "acbc77cb4677"
  },
  "sri-yantra": {
   "published": "2026-10-11",
-  "modified": "2026-11-05",
-  "hash": "32d79e991b98"
+  "modified": "2026-11-06",
+  "hash": "edcfa27ac79c"
  },
  "glossary": {
   "published": "2026-10-11",
@@ -301,7 +301,7 @@
  },
  "kanakadhara/appendix-bilvatavi": {
   "published": "2026-11-04",
-  "modified": "2026-11-05",
-  "hash": "776bdf168a77"
+  "modified": "2026-11-06",
+  "hash": "910a8d214cd1"
  }
 }
