@@ -2158,6 +2158,9 @@ def page_home():
 <p class="amen rv">You are on a beautiful path. Enjoy every step.</p></section>
 <section class="sec"><h2 class="rv">Explore more</h2></section>
 <div class="xg">{xt}</div>
+<section class="sec"><h2 class="rv">Take the hymns with you</h2>
+<p class="rv">Plain Devanāgarī text of each hymn as a clean PDF, free to print or keep on your phone for chanting. <a href="/downloads/">See all downloads →</a></p>
+<div class="dlgrid">{"".join(f'<article class="dlc k{i%4} rv"><p class="dlc-dv" lang="sa">{x["deva"]}</p><p class="dlc-a"><a class="btn" href="{dl_info(x["k"])[1]}" download>Download PDF</a></p></article>' for i,x in enumerate(DLS))}</div></section>
 <section class="endb"><div class="flame" aria-hidden="true"></div>{landing.sparkles(14, 5)}<p class="e1" lang="sa">श्रीः प्रसन्ना भवतु।</p><p class="e2">May Goddess Lakshmi’s grace be upon all.</p></section>
 {ad("home")}
 </div>''' + MOTION_JS + foot()

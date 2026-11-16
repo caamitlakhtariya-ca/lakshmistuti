@@ -996,3 +996,4 @@ dl.gl2{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));ga
 .dlnotes{max-width:46rem;line-height:1.7}
 @media (max-width:520px){.dlstrip .btn{width:100%;text-align:center}}
 #copy-deva{font:inherit;font-size:1rem;padding:.7em 1.3em}
+.sec .dlgrid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.sec .dlc{padding:16px 12px}.sec .dlc-dv{font-size:1.5rem}
