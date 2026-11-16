@@ -1988,12 +1988,34 @@ def head(title, desc, path, extra_ld=None, og_type="website"):
 
 </head>'''
 
+
+# ---- plain-text Devanagari PDFs (made by tools/make_pdfs.py, stored in assets/downloads/) ----
+DLS = [
+ dict(k="sri", deva="श्री सूक्तम्", name="Śrī Sūktam", file="sri-suktam-devanagari.pdf", page="sri-suktam/",
+      about="The Vedic hymn to Goddess Lakshmi: the 15 verses and the closing phalaśruti."),
+ dict(k="kana", deva="कनकधारा स्तोत्रम्", name="Kanakadhāra Stotram", file="kanakadhara-stotram-devanagari.pdf", page="kanakadhara/",
+      about="Ādi Śaṅkarācārya’s hymn to Goddess Lakshmi, all 22 verses."),
+ dict(k="mla", deva="महालक्ष्म्यष्टकम्", name="Mahālakṣmī Aṣṭakam", file="mahalakshmi-ashtakam-devanagari.pdf", page="mahalakshmi-ashtakam/",
+      about="The eight-verse hymn to Goddess Mahalakshmi, with its three closing verses."),
+]
+def dl_info(k):
+    d = next(x for x in DLS if x["k"] == k)
+    fp = os.path.join(ROOT, "assets", "downloads", d["file"])
+    kb = max(1, round(os.path.getsize(fp) / 1024)) if os.path.exists(fp) else 0
+    return d, f"/assets/downloads/{d['file']}", kb
+
+def dl_strip(k):
+    d, href, kb = dl_info(k)
+    return (f'<aside class="dlstrip rv" aria-label="Download"><span class="dl-i" aria-hidden="true">PDF</span>'
+            f'<span class="dl-t"><b>Download the Devanāgarī text</b><small>Plain text of the hymn in Sanskrit, with no commentary. Free, for chanting and printing.</small></span>'
+            f'<a class="btn" href="{href}" download>Download PDF ({kb} KB)</a></aside>')
+
 def nav(cur):
     items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla")]
-    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("Glossary","glossary/","gl")]
+    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("Glossary","glossary/","gl"),("Downloads","downloads/","dl")]
     tail = [("About","about/","about")]
     def lk(l,p,k,cls=""): return '<a href="/%s"%s%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", cls, l)
-    cur_more = cur in ("ashta","aarti","yantra","gl")
+    cur_more = cur in ("ashta","aarti","yantra","gl","dl")
     out = "".join(lk(*x) for x in items)
     out += '<details class="more"%s><summary%s>More</summary><div class="more-list">%s</div></details>' % ("", ' class="cur"' if cur_more else "", "".join(lk(*x) for x in more))
     out += "".join(lk(*x) for x in tail)
@@ -2008,7 +2030,7 @@ def foot():
     return f'''
 <footer class="site"><div class="wrap">
 <p class="shri foot" lang="sa">श्री</p>
-<p><a href="/sri-yantra/">Śrī Yantra</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p>
+<p><a href="/sri-yantra/">Śrī Yantra</a><a href="/downloads/">Downloads</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p>
 <p>© 2026 {AUTHOR}. Commentary prepared with AI assistance and reviewed by the author.</p>
 </div></footer>
 </body></html>'''
@@ -2157,6 +2179,7 @@ def page_sri():
     body = head(t,d,"sri-suktam/",bc_ld(parts)) + nav("sri") + MOTION_BOOT + f'''
 {hero}
 <main class="hub">{crumbs([("Śrī Sūktam",None)])}
+{dl_strip("sri")}
 <h2 class="rv">The verses</h2>
 <div class="vgrid">{rows}</div>
 <p><small>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears. A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
@@ -2193,6 +2216,7 @@ def page_kana():
     body = head(t,d,"kanakadhara/",ld,"article") + f'<script type="application/ld+json">{json.dumps(bc_ld(parts),ensure_ascii=False)}</script>' + nav("kana") + MOTION_BOOT + f'''
 {hero}
 <div class="hub">{crumbs([("Kanakadhāra Stotram",None)])}
+{dl_strip("kana")}
 {mv}
 <p><small>{"All "+str(KANA_TOTAL)+" verses are published." if len(KVERSES)>=KANA_TOTAL else str(len(KVERSES))+" of "+str(KANA_TOTAL)+" verses published so far. The next ones are added one at a time."}</small></p>
 {appx}
@@ -2283,7 +2307,7 @@ def page_mla():
 <main class="hub">{crumbs([("Mahālakṣmī Aṣṭakam",None)])}
 <h2 id="chant">Chant the Ashtakam</h2>
 <p>The full hymn in one place, for daily practice. Devanāgarī first, then the same text in Roman transliteration. The meaning of each verse follows further down.</p>
-<p><button class="btn ghost" id="copy-deva" type="button">Copy Devanāgarī text</button></p>
+<p><button class="btn ghost" id="copy-deva" type="button">Copy Devanāgarī text</button> <a class="btn ghost" href="{dl_info("mla")[1]}" download>Download Devanāgarī PDF</a></p>
 <div class="chant"><h3>देवनागरी</h3><div id="deva-text">{dev}</div></div>
 <div class="chant"><h3>Transliteration (IAST)</h3>{ias}</div>
 <p><small>Verses 9–11 are the phalaśruti, the closing verses on the fruit of reciting the hymn. Many people chant only the first eight. Editions differ in the wording of a few words; where they do, the verse page says so.</small></p>
@@ -2900,6 +2924,34 @@ def page_yantra():
 </main>''' + MOTION_JS + foot()
     write("sri-yantra", body, "0.7")
 
+def page_dl():
+    import landing
+    t = "Sri Suktam, Kanakadhara Stotram PDF Download (Devanagari)"
+    d = "Free PDF downloads of the plain Devanagari text of the Sri Suktam, Kanakadhara Stotram and Mahalakshmi Ashtakam, for chanting and printing."
+    parts = [("Downloads","downloads/")]
+    cards = ""
+    for i, x in enumerate(DLS):
+        _, href, kb = dl_info(x["k"])
+        cards += (f'<article class="dlc k{i%4} rv"><p class="dlc-dv" lang="sa">{x["deva"]}</p><h2>{E(x["name"])}</h2><p>{E(x["about"])}</p>'
+                  f'<p class="dlc-a"><a class="btn" href="{href}" download>Download PDF ({kb} KB)</a> <a class="btn ghost" href="/{x["page"]}">Read with meaning →</a></p></article>')
+    hero = landing.hub_hero("Free to download and share", "Downloads",
+        "The hymns in plain Devanāgarī, as a clean PDF you can print or keep on your phone for chanting.", "", "",
+        f'<span>{len(DLS)} hymns</span><span>Sanskrit text only</span><span>Free</span>')
+    body = head(t,d,"downloads/",bc_ld(parts)) + nav("dl") + MOTION_BOOT + f'''
+{hero}
+<main class="hub">{crumbs([("Downloads",None)])}
+<div class="dlgrid">{cards}</div>
+<h2 class="rv">About these files</h2>
+<ul class="dlnotes rv">
+<li>Each PDF holds the Sanskrit text only, in Devanāgarī, with verse numbers. The meanings and commentary stay on this site, verse by verse.</li>
+<li>They are made for chanting and for printing on A4 paper. The text is the same as on the verse pages.</li>
+<li>Editions of these hymns differ in the wording of a few words. Where yours differs, follow your family’s or teacher’s tradition.</li>
+<li>Free for personal and devotional use. Please share the link to this page rather than re-uploading the files.</li>
+</ul>
+{ad("index")}
+</main>''' + MOTION_JS + foot()
+    write("downloads", body, "0.7")
+
 def page_gl():
     t = "Sanskrit Glossary – Sri Suktam & Lakshmi Stotras"
     d = "Simple meanings of Sanskrit words in the Sri Suktam and Kanakadhara Stotram: Hiranya, Harini, Lakshmi, Jatavedas, Apanga and more."
@@ -2999,6 +3051,6 @@ if __name__ == "__main__":
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for j in range(len(KAPPX)): page_verse(len(KVERSES)+j, KVERSES+KAPPX, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
-    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_dl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")
