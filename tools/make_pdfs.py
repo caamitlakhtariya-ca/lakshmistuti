@@ -83,30 +83,37 @@ await b.close();})();
 
 def lotus():
     petal = "M0,0 C-30,-34 -28,-100 0,-146 C28,-100 30,-34 0,0 Z"
-    rings = [(1.0, [-120,-90,-60,-30,0,30,60,90,120], "#8e1c63", "#c0457f"), (0.8, [-105,-75,-45,-15,15,45,75,105], "#d9435f", "#f0766f"), (0.58, [-60,-30,0,30,60], "#ffa63d", "#ffd079")]
+    rings = [(1.0, [-90,-60,-30,0,30,60,90], "#8e1c63", "#c0457f"), (0.8, [-75,-45,-15,15,45,75], "#d9435f", "#f0766f"), (0.58, [-60,-30,0,30,60], "#ffa63d", "#ffd079")]
     g = []
     for k, (sc, angs, c1, c2) in enumerate(rings):
         for a in angs:
             g.append(f'<path d="{petal}" transform="rotate({a}) scale({sc})" fill="url(#pg{k})" stroke="rgba(255,226,200,.55)" stroke-width="1.2"/>')
     defs = "".join(f'<linearGradient id="pg{k}" x1="0" y1="0" x2="0" y2="-1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="{c2}"/><stop offset="1" stop-color="{c1}"/></linearGradient>' for k,(sc,an,c1,c2) in enumerate(rings))
-    return f'<svg viewBox="-190 -160 380 200" class="lot"><defs>{defs}<radialGradient id="gold"><stop offset="0" stop-color="#ffe9a0"/><stop offset="1" stop-color="#d89a22"/></radialGradient></defs>{"".join(g)}<circle r="26" cy="-6" fill="url(#gold)"/><text y="4" text-anchor="middle" font-size="28" font-weight="700" fill="#7a1f2b" font-family="Noto Serif Devanagari">श्री</text></svg>'
+    return f'<svg viewBox="-190 -160 380 190" class="lot"><defs>{defs}<radialGradient id="gold"><stop offset="0" stop-color="#ffe9a0"/><stop offset="1" stop-color="#d89a22"/></radialGradient></defs>{"".join(g)}<circle r="26" cy="-6" fill="url(#gold)"/><text y="4" text-anchor="middle" font-size="28" font-weight="700" fill="#7a1f2b" font-family="Noto Serif Devanagari">श्री</text></svg>'
 
 def stars():
     import random; r = random.Random(11); o = []
-    for i in range(46):
-        x, y, z = r.uniform(3, 97), r.uniform(2, 70), r.choice([2, 2, 3, 3, 4, 5])
-        o.append(f'<i style="left:{x:.1f}%;top:{y:.1f}%;width:{z}px;height:{z}px"></i>')
-    return '<div class="stars">' + "".join(o) + "</div>"
+    while len(o) < 34:
+        x, y, z = r.uniform(12, 198), r.uniform(10, 205), r.choice([.35, .4, .5, .6, .8, 1.0])
+        if 20 < x < 190 and 24 < y < 150: continue      # keep the title area clear
+        if 25 < x < 185 and 150 <= y < 205 and abs(x - 105) < 60: continue   # keep the lotus area clear
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{z*2.6:.2f}" fill="#ffe9a8" opacity=".18"/><circle cx="{x:.1f}" cy="{y:.1f}" r="{z:.2f}" fill="#ffe9a8" opacity=".95"/>')
+    return "".join(o)
+
+def backdrop():
+    return ('<svg class="bg" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
+            '<stop offset="0" stop-color="#1a1240"/><stop offset=".28" stop-color="#3d2278"/><stop offset=".52" stop-color="#7a2f7a"/><stop offset=".76" stop-color="#c4476a"/><stop offset="1" stop-color="#f08a5d"/></linearGradient></defs>'
+            '<rect width="210" height="297" fill="url(#sky)"/>' + stars() +
+            '<rect x="9" y="9" width="192" height="279" rx="7" fill="none" stroke="#ffe29a" stroke-opacity=".75" stroke-width=".8"/>'
+            '<rect x="13" y="13" width="184" height="271" rx="5" fill="none" stroke="#ffe29a" stroke-opacity=".45" stroke-width=".3"/></svg>')
 
 COVER_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500&display=swap');
 @page{size:A4;margin:0}
 *{box-sizing:border-box;margin:0}
 html,body{width:210mm;height:297mm}
-body{position:relative;overflow:hidden;color:#fbf1de;text-align:center;background:linear-gradient(180deg,#1a1240 0%,#3d2278 28%,#7a2f7a 52%,#c4476a 76%,#f08a5d 100%)}
-.stars i{position:absolute;border-radius:50%;background:#ffe9a8;box-shadow:0 0 10px 2px rgba(255,214,120,.7)}
-.f1{position:absolute;inset:9mm;border:.9mm solid rgba(255,226,154,.7);border-radius:7mm}
-.f2{position:absolute;inset:13mm;border:.3mm solid rgba(255,226,154,.45);border-radius:5mm}
+body{position:relative;overflow:hidden;color:#fbf1de;text-align:center;background:#1a1240}
+.bg{position:absolute;left:0;top:0;width:210mm;height:297mm}
 .in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding:34mm 26mm 30mm}
 .kick{font-family:Inter,sans-serif;font-size:11pt;letter-spacing:.42em;text-transform:uppercase;color:#f4cf7a}
 .om{font-family:'Noto Serif Devanagari',serif;font-size:20pt;color:#ffe08a;margin-top:10mm;font-weight:600}
@@ -115,14 +122,14 @@ h1{font-family:'Noto Serif Devanagari',serif;font-size:56pt;font-weight:700;line
 .rule{width:70mm;height:.6mm;margin:9mm 0 7mm;background:linear-gradient(90deg,transparent,#f4cf7a,transparent)}
 .src{font-family:'Noto Serif Devanagari',serif;font-size:15pt;color:#ead9bd;line-height:1.6}
 .line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17pt;color:#f6e9d1;margin-top:5mm}
-.lot{position:absolute;left:50%;bottom:30mm;width:150mm;transform:translateX(-50%)}
+.lot{position:absolute;left:50%;bottom:34mm;width:150mm;transform:translateX(-50%)}
 .foot{position:absolute;left:0;right:0;bottom:21mm;font-family:Inter,sans-serif;font-size:9.5pt;letter-spacing:.28em;text-transform:uppercase;color:#fff3c9}
 """
 
 def cover_html(d):
     src = f'<div class="src">{html.escape(d["sub"])}</div>' if d["sub"] else ""
     return f'''<!doctype html><html lang="sa"><head><meta charset="utf-8"><title>{d["roman"]}</title><style>{COVER_CSS}</style></head><body>
-{stars()}<div class="f1"></div><div class="f2"></div>
+{backdrop()}
 <div class="in"><div class="kick">Lakshmi Stuti</div><div class="om">॥ श्रीः ॥</div><h1>{d["deva"]}</h1><div class="roman">{d["roman"]}</div><div class="rule"></div>{src}<div class="line">The Devanāgarī text, for chanting and recitation</div></div>
 {lotus()}<div class="foot">lakshmistuti.com</div></body></html>'''
 
