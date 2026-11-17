@@ -87,9 +87,9 @@ def lotus():
     g = []
     for k, (sc, angs, c1, c2) in enumerate(rings):
         for a in angs:
-            g.append(f'<path d="{petal}" transform="rotate({a}) scale({sc})" fill="url(#pg{k})" stroke="rgba(255,226,200,.55)" stroke-width="1.2"/>')
+            g.append(f'<path d="{petal}" transform="rotate({a}) scale({sc})" fill="url(#pg{k})" stroke="#f2c4b2" stroke-width="1.2"/>')
     defs = "".join(f'<linearGradient id="pg{k}" x1="0" y1="0" x2="0" y2="-1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="{c2}"/><stop offset="1" stop-color="{c1}"/></linearGradient>' for k,(sc,an,c1,c2) in enumerate(rings))
-    return f'<svg viewBox="-190 -160 380 190" class="lot"><defs>{defs}<radialGradient id="gold"><stop offset="0" stop-color="#ffe9a0"/><stop offset="1" stop-color="#d89a22"/></radialGradient></defs>{"".join(g)}<circle r="26" cy="-6" fill="url(#gold)"/><text y="4" text-anchor="middle" font-size="28" font-weight="700" fill="#7a1f2b" font-family="Noto Serif Devanagari">श्री</text></svg>'
+    return f'<svg viewBox="-190 -160 380 230" class="lot" style="overflow:visible"><defs>{defs}<radialGradient id="gold"><stop offset="0" stop-color="#ffe9a0"/><stop offset="1" stop-color="#d89a22"/></radialGradient></defs>{"".join(g)}<circle r="26" cy="-6" fill="url(#gold)"/><text y="4" text-anchor="middle" font-size="28" font-weight="700" fill="#7a1f2b" font-family="Noto Serif Devanagari">श्री</text></svg>'
 
 def stars():
     import random; r = random.Random(11); o = []
@@ -97,15 +97,15 @@ def stars():
         x, y, z = r.uniform(12, 198), r.uniform(10, 205), r.choice([.35, .4, .5, .6, .8, 1.0])
         if 20 < x < 190 and 24 < y < 150: continue      # keep the title area clear
         if 25 < x < 185 and 150 <= y < 205 and abs(x - 105) < 60: continue   # keep the lotus area clear
-        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{z*2.6:.2f}" fill="#ffe9a8" opacity=".18"/><circle cx="{x:.1f}" cy="{y:.1f}" r="{z:.2f}" fill="#ffe9a8" opacity=".95"/>')
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{z:.2f}" fill="#ffe9a8"/>')
     return "".join(o)
 
 def backdrop():
     return ('<svg class="bg" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
             '<stop offset="0" stop-color="#1a1240"/><stop offset=".28" stop-color="#3d2278"/><stop offset=".52" stop-color="#7a2f7a"/><stop offset=".76" stop-color="#c4476a"/><stop offset="1" stop-color="#f08a5d"/></linearGradient></defs>'
             '<rect width="210" height="297" fill="url(#sky)"/>' + stars() +
-            '<rect x="9" y="9" width="192" height="279" rx="7" fill="none" stroke="#ffe29a" stroke-opacity=".75" stroke-width=".8"/>'
-            '<rect x="13" y="13" width="184" height="271" rx="5" fill="none" stroke="#ffe29a" stroke-opacity=".45" stroke-width=".3"/></svg>')
+            '<rect x="9" y="9" width="192" height="279" rx="7" fill="none" stroke="#f0cf8a" stroke-width=".8"/>'
+            '<rect x="13" y="13" width="184" height="271" rx="5" fill="none" stroke="#d9b47c" stroke-width=".3"/></svg>')
 
 COVER_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500&display=swap');
@@ -119,10 +119,10 @@ body{position:relative;overflow:hidden;color:#fbf1de;text-align:center;backgroun
 .om{font-family:'Noto Serif Devanagari',serif;font-size:20pt;color:#ffe08a;margin-top:10mm;font-weight:600}
 h1{font-family:'Noto Serif Devanagari',serif;font-size:56pt;font-weight:700;line-height:1.45;color:#fff8e8;margin-top:8mm}
 .roman{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:34pt;color:#ffe08a;line-height:1.1;margin-top:2mm}
-.rule{width:70mm;height:.6mm;margin:9mm 0 7mm;background:linear-gradient(90deg,transparent,#f4cf7a,transparent)}
+.rule{width:60mm;height:.5mm;margin:9mm 0 7mm;background:#e3bf72}
 .src{font-family:'Noto Serif Devanagari',serif;font-size:15pt;color:#ead9bd;line-height:1.6}
 .line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17pt;color:#f6e9d1;margin-top:5mm}
-.lot{position:absolute;left:50%;bottom:34mm;width:150mm;transform:translateX(-50%)}
+.lot{position:absolute;left:50%;bottom:26mm;width:150mm;transform:translateX(-50%)}
 .foot{position:absolute;left:0;right:0;bottom:21mm;font-family:Inter,sans-serif;font-size:9.5pt;letter-spacing:.28em;text-transform:uppercase;color:#fff3c9}
 """
 
