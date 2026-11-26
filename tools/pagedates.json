@@ -306,8 +306,8 @@
  },
  "downloads": {
   "published": "2026-11-16",
-  "modified": "2026-11-17",
-  "hash": "374ff282c0b1"
+  "modified": "2026-11-26",
+  "hash": "1a187c6ed9fc"
  },
  "kanakadhara-stotram-story": {
   "published": "2026-11-26",
@@ -317,6 +317,11 @@
  "lakshmi-friday-chanting-guide": {
   "published": "2026-11-26",
   "modified": "2026-11-26",
-  "hash": "af6cddb6318e"
+  "hash": "3c61e895be92"
+ },
+ "lakshmi-ashtottara-shatanamavali": {
+  "published": "2026-11-26",
+  "modified": "2026-11-26",
+  "hash": "dde45674f202"
  }
 }
