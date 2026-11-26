@@ -1097,7 +1097,7 @@ KVERSES = [
   n=16, slug="verse-16",
   deva="सम्पत्कराणि सकलेन्द्रियनन्दनानि<br>साम्राज्यदानविभवानि सरोरुहाक्षि।<br>त्वद्वन्दनानि दुरिताहरणोद्यतानि<br>मामेव मातरनिशं कलयन्तु मान्ये॥",
   iast="Sampat-karāṇi sakalendriya-nandanāni<br>Sāmrājya-dāna-vibhavāni saroruhākṣi;<br>Tvad-vandanāni duritāharaṇodyatāni<br>Mām eva mātar aniśaṁ kalayantu mānye.",
-  ttl="Kanakadhara Stotram Verse 16 Meaning – Sampatkarani Sakalendriya",
+  ttl="Kanakadhara Verse 16 Meaning – Sampatkarani Sakalendriya",
   dsc="Kanakadhara Stotram Verse 16 (Sampatkarani Sakalendriya Nandanani): salutations that bring prosperity and delight and remove misfortune. Word-by-word meaning.",
   h1="Kanakadhāra Stotram – Verse 16",
   sub="Sampat-karāṇi sakalendriya-nandanāni – what homage brings",
@@ -1141,7 +1141,7 @@ KVERSES = [
   n=21, slug="verse-21",
   deva="देवि प्रसीद जगदीश्वरि लोकमातः<br>कल्याणगात्रि कमलेक्षणजीवनाथे।<br>दारिद्र्यभीतिहृदयं शरणागतं माम्<br>आलोकय प्रतिदिनं सदयैरपाङ्गैः॥",
   iast="Devi prasīda jagadīśvari lokamātaḥ<br>Kalyāṇagātri kamalekṣaṇa-jīvanāthe;<br>Dāridrya-bhīti-hṛdayaṁ śaraṇāgataṁ mām<br>Ālokaya pratidinaṁ sadayair apāṅgaiḥ.",
-  ttl="Kanakadhara Stotram Verse 21 Meaning – Devi Prasida Jagadishvari",
+  ttl="Kanakadhara Verse 21 Meaning – Devi Prasida Jagadishvari",
   dsc="Kanakadhara Stotram Verse 21 (Devi Prasida Jagadishvari): a prayer to Lakshmi from a heart afraid of poverty, asking for her glance. Word-by-word meaning.",
   h1="Kanakadhāra Stotram – Verse 21",
   sub="Devi prasīda jagadīśvari – a prayer from a heart afraid of want",
@@ -1235,7 +1235,7 @@ KVERSES = [
   n=14, slug="verse-14",
   deva="नमोऽस्तु देव्यै भृगुनन्दनायै<br>नमोऽस्तु विष्णोरुरसि स्थितायै।<br>नमोऽस्तु लक्ष्म्यै कमलालयायै<br>नमोऽस्तु दामोदरवल्लभायै॥",
   iast="Namo ’stu devyai bhṛgu-nandanāyai<br>Namo ’stu viṣṇor urasi sthitāyai;<br>Namo ’stu lakṣmyai kamalālayāyai<br>Namo ’stu dāmodara-vallabhāyai.",
-  ttl="Kanakadhara Stotram Verse 14 Meaning – Devyai Bhrigunandanayai",
+  ttl="Kanakadhara Verse 14 Meaning – Devyai Bhrigunandanayai",
   dsc="Kanakadhara Stotram Verse 14 (Devyai Bhrigunandanayai): four bows to Lakshmi, daughter of Bhrigu, dwelling on Vishnu’s chest. Word-by-word meaning in English.",
   h1="Kanakadhāra Stotram – Verse 14",
   sub="Namo ’stu devyai bhṛgu-nandanāyai – her birth, her place, her home and her beloved",
@@ -1274,7 +1274,7 @@ KVERSES = [
   n=15, slug="verse-15",
   deva="नमोऽस्तु कान्त्यै कमलेक्षणायै<br>नमोऽस्तु भूत्यै भुवनप्रसूत्यै।<br>नमोऽस्तु देवादिभिरर्चितायै<br>नमोऽस्तु नन्दात्मजवल्लभायै॥",
   iast="Namo ’stu kāntyai kamalekṣaṇāyai<br>Namo ’stu bhūtyai bhuvana-prasūtyai;<br>Namo ’stu devādibhir arcitāyai<br>Namo ’stu nandātmaja-vallabhāyai.",
-  ttl="Kanakadhara Stotram Verse 15 Meaning – Kantyai Kamalekshanayai",
+  ttl="Kanakadhara Verse 15 Meaning – Kantyai Kamalekshanayai",
   dsc="Kanakadhara Stotram Verse 15 (Kantyai Kamalekshanayai): four bows to Lakshmi as radiance and prosperity, worshipped by the gods. Word-by-word meaning.",
   h1="Kanakadhāra Stotram – Verse 15",
   sub="Namo ’stu kāntyai kamalekṣaṇāyai – her radiance, prosperity, worship and beloved",
@@ -1314,7 +1314,7 @@ KVERSES = [
   n=17, slug="verse-17",
   deva="यत्कटाक्षसमुपासनाविधिः सेवकस्य सकलार्थसम्पदः।<br>सन्तनोति वचनाङ्गमानसैः त्वां मुरारिहृदयेश्वरीं भजे॥",
   iast="Yat-kaṭākṣa-samupāsanā-vidhiḥ sevakasya sakalārtha-sampadaḥ,<br>Santanoti vacanāṅga-mānasaiḥ tvāṁ murāri-hṛdayeśvarīṁ bhaje.",
-  ttl="Kanakadhara Stotram Verse 17 Meaning – Yat Kataksha Samupasana",
+  ttl="Kanakadhara Verse 17 Meaning – Yat Kataksha Samupasana",
   dsc="Kanakadhara Stotram Verse 17 (Yat Kataksha Samupasana): worship of the Goddess with speech, body and mind. Word-by-word meaning.",
   h1="Kanakadhāra Stotram – Verse 17",
   sub="Yat-kaṭākṣa-samupāsanā-vidhiḥ – worship of her glance, and the vow “I worship you”",
@@ -1437,7 +1437,7 @@ KVERSES = [
   n=20, slug="verse-20",
   deva="कमले कमलाक्षवल्लभे त्वं<br>करुणापूरतरङ्गितैरपाङ्गैः।<br>अवलोकय मामकिञ्चनानां<br>प्रथमं पात्रमकृत्रिमं दयायाः॥",
   iast="Kamale kamalākṣa-vallabhe tvaṁ<br>karuṇā-pūra-taraṅgitair apāṅgaiḥ,<br>Avalokaya mām akiñcanānāṁ<br>prathamaṁ pātram akṛtrimaṁ dayāyāḥ.",
-  ttl="Kanakadhara Stotram Verse 20 Meaning – Kamale Kamalaksha Vallabhe",
+  ttl="Kanakadhara Verse 20 Meaning – Kamale Kamalaksha Vallabhe",
   dsc="Kanakadhara Stotram Verse 20 (Kamale Kamalaksha Vallabhe): look on me with the glance rippling with compassion. Word-by-word meaning.",
   h1="Kanakadhāra Stotram – Verse 20",
   sub="Kamale kamalākṣa-vallabhe – “look on me”, the most honest request of the hymn",
@@ -2186,6 +2186,17 @@ def page_sri():
 <h2 class="rv">The verses</h2>
 <div class="vgrid">{rows}</div>
 <p><small>Verses are published one at a time, so that each can be read and absorbed slowly before the next appears. A note on the count: the hymn proper has 15 verses. Here the closing verse on the fruit of reciting it (the <em>phalaśruti</em>) is numbered Verse 16, so the series is complete at sixteen. Editions differ: some print more phalaśruti verses, and some do not number this one at all.</small></p>
+<section class="aboutc rv">
+<h2>Common questions about the Śrī Sūktam</h2>
+<h3>What is the Śrī Sūktam?</h3>
+<p>It is a Vedic hymn in praise of Goddess Lakshmi (Śrī), traditionally counted among the supplementary (<em>khila</em>) hymns of the Ṛgveda. Its verses ask for prosperity, nourishment and auspiciousness, and for the removal of lack and misfortune.</p>
+<h3>How many verses does it have?</h3>
+<p>The hymn proper has 15 verses. Many printed editions add a closing verse on the fruit of reciting it, which this commentary numbers as Verse 16. Editions differ, so follow the text you chant from.</p>
+<h3>When is it chanted?</h3>
+<p>It is commonly recited on Fridays and during Lakshmi worship, such as at Diwali. There is no single rule, so family and teacher traditions are the best guide.</p>
+<h3>Where can I get the Sanskrit text to chant from?</h3>
+<p>Every verse page carries the Devanāgarī text, and the <a href="/downloads/">Downloads page</a> has a plain Devanāgarī PDF of the whole hymn. For the meaning of unfamiliar words, see the <a href="/glossary/">glossary</a>. A companion hymn is the <a href="/kanakadhara/">Kanakadhāra Stotram</a>.</p>
+</section>
 {ad("index")}
 </main>''' + MOTION_JS + foot()
     write("sri-suktam", body, "0.9")
@@ -2281,6 +2292,18 @@ def page_kana():
 <section class="aboutc rv">
 <h2>About the text and this commentary</h2>
 <p>The number of verses differs between editions: many printed and online versions carry 21 or 22 stanzas, while some scholarly editions of Śaṅkarācārya’s works give a shorter core text. This commentary follows the 22-verse edition, so that you can read along with the text you chant from. Each verse has its Devanāgarī and transliteration, a word-by-word meaning, the full meaning in plain English, deeper insights, a short meditation and a reflection, as in the <a href="/sri-suktam/">Śrī Sūktam</a> series.</p>
+</section>
+
+<section class="aboutc rv">
+<h2>Common questions about the Kanakadhāra Stotram</h2>
+<h3>What is the Kanakadhāra Stotram?</h3>
+<p>It is a hymn to Goddess Lakshmi traditionally attributed to Ādi Śaṅkarācārya. The well-known story says he composed it as a boy, in front of a poor woman’s house, and that a shower of golden gooseberries followed. The story is told at the top of this page.</p>
+<h3>How many verses does it have?</h3>
+<p>Editions vary between about 18 and 22 verses. This commentary follows the 22-verse edition so you can read along with the text you chant from.</p>
+<h3>Can I read the meaning in English?</h3>
+<p>Yes. Each verse page gives the Devanāgarī, the transliteration, a word-by-word meaning, the full meaning in plain English, and a short reflection. Difficult terms are explained in the <a href="/glossary/">glossary</a>.</p>
+<h3>Is there a PDF to chant from?</h3>
+<p>Yes. The <a href="/downloads/">Downloads page</a> has a plain Devanāgarī PDF of the Kanakadhāra Stotram, and one for the <a href="/sri-suktam/">Śrī Sūktam</a>.</p>
 </section>
 </main>
 ''' + MOTION_JS + foot()
