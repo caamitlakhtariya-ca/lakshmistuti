@@ -7,12 +7,12 @@
  "sri-suktam": {
   "published": "2026-10-11",
   "modified": "2026-11-26",
-  "hash": "137d17ab37ff"
+  "hash": "4028d5dad432"
  },
  "kanakadhara": {
   "published": "2026-10-11",
   "modified": "2026-11-26",
-  "hash": "343c3bc21ebf"
+  "hash": "2297c12055a4"
  },
  "mahalakshmi-ashtakam": {
   "published": "2026-10-23",
@@ -308,5 +308,15 @@
   "published": "2026-11-16",
   "modified": "2026-11-17",
   "hash": "374ff282c0b1"
+ },
+ "kanakadhara-stotram-story": {
+  "published": "2026-11-26",
+  "modified": "2026-11-26",
+  "hash": "9f000a38c1e0"
+ },
+ "lakshmi-friday-chanting-guide": {
+  "published": "2026-11-26",
+  "modified": "2026-11-26",
+  "hash": "af6cddb6318e"
  }
 }

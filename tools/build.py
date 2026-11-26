@@ -2012,10 +2012,10 @@ def dl_strip(k):
 
 def nav(cur):
     items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla")]
-    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("Glossary","glossary/","gl"),("Downloads","downloads/","dl")]
+    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("Chanting guide","lakshmi-friday-chanting-guide/","guide"),("Glossary","glossary/","gl"),("Downloads","downloads/","dl")]
     tail = [("About","about/","about")]
     def lk(l,p,k,cls=""): return '<a href="/%s"%s%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", cls, l)
-    cur_more = cur in ("ashta","aarti","yantra","gl","dl")
+    cur_more = cur in ("ashta","aarti","yantra","gl","dl","guide")
     out = "".join(lk(*x) for x in items)
     out += '<details class="more"%s><summary%s>More</summary><div class="more-list">%s</div></details>' % ("", ' class="cur"' if cur_more else "", "".join(lk(*x) for x in more))
     out += "".join(lk(*x) for x in tail)
@@ -2193,7 +2193,7 @@ def page_sri():
 <h3>How many verses does it have?</h3>
 <p>The hymn proper has 15 verses. Many printed editions add a closing verse on the fruit of reciting it, which this commentary numbers as Verse 16. Editions differ, so follow the text you chant from.</p>
 <h3>When is it chanted?</h3>
-<p>It is commonly recited on Fridays and during Lakshmi worship, such as at Diwali. There is no single rule, so family and teacher traditions are the best guide.</p>
+<p>It is commonly recited on Fridays and during Lakshmi worship, such as at Diwali. There is no single rule, so family and teacher traditions are the best guide. See the <a href="/lakshmi-friday-chanting-guide/">Friday chanting guide</a> for a simple routine.</p>
 <h3>Where can I get the Sanskrit text to chant from?</h3>
 <p>Every verse page carries the Devanāgarī text, and the <a href="/downloads/">Downloads page</a> has a plain Devanāgarī PDF of the whole hymn. For the meaning of unfamiliar words, see the <a href="/glossary/">glossary</a>. A companion hymn is the <a href="/kanakadhara/">Kanakadhāra Stotram</a>.</p>
 </section>
@@ -2254,7 +2254,7 @@ def page_kana():
 <div class="scene sc-gold rv"><span class="sc-i">{icon("coin",26)}</span><div><h3>The stream of gold</h3>
 <p>The Goddess smiled. A shower of golden gooseberries fell upon the humble home. Thus the Kanakadhāra Stotram was born. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream or continuous flow, so <em>Kanakadhārā</em> is “the stream of gold”.</p></div></div>
 </div>
-<p class="s-note rv"><small>The story is the traditional account; details vary between tellings.</small></p>
+<p class="s-note rv"><small>The story is the traditional account; details vary between tellings. <a href="/kanakadhara-stotram-story/">Read the full story and what it teaches →</a></small></p>
 </section>
 
 <section class="lesson rv">
@@ -2994,6 +2994,95 @@ def page_gl():
 </main>''' + MOTION_JS + foot()
     write("glossary", body, "0.6")
 
+def page_story():
+    import landing
+    t = "Kanakadhara Stotram Story – Shankaracharya & the Gooseberry"
+    d = "The story of the Kanakadhara Stotram: young Adi Shankaracharya, a poor woman's one gooseberry and the shower of gold. What the tradition says and teaches."
+    parts = [("Kanakadhāra Stotram","kanakadhara/"),("The story","kanakadhara-stotram-story/")]
+    hero = landing.hub_hero("The tradition behind the hymn", "The story of the Kanakadhāra Stotram",
+        "A young renunciate, a poor woman and one gooseberry. This page tells the traditional story in full, explains the name of the hymn, and draws out what the story teaches.", "",
+        '<a class="btn" href="/kanakadhara/verse-1/">Read Verse 1</a><a class="btn ghost" href="/kanakadhara/">All 22 verses →</a>',
+        '<span>A traditional account</span><span>About a 4-minute read</span>')
+    body = head(t,d,"kanakadhara-stotram-story/",bc_ld(parts)) + nav("kana") + MOTION_BOOT + f'''
+{hero}
+<main class="hub st">{crumbs([("Kanakadhāra Stotram","kanakadhara/"),("The story",None)])}
+<h2>Who was Ādi Śaṅkarācārya?</h2>
+<p>Ādi Śaṅkarācārya is the great teacher of Advaita Vedānta, the philosophy of non-duality. He is traditionally placed in Kerala in the 8th century, and the tradition says he took to the life of a renunciate while still very young. The Kanakadhāra Stotram is traditionally attributed to him. Scholars debate the authorship of many works that carry his name, so this page calls the account below what it is: the traditional story.</p>
+<h2>The story</h2>
+<h3>A young seeker at the door</h3>
+<p>As a student and renunciate, the young Śaṅkara went from house to house asking for <em>bhikṣā</em>, a small offering of food. In most tellings he is about eight years old. The custom is not really about need. Accepting whatever is freely offered teaches humility to the receiver and gives the giver a chance to give.</p>
+<h3>One small gooseberry</h3>
+<p>One day he stopped at the home of a poor Brahmin family. The lady of the house searched every corner of her kitchen and found nothing to offer, except one dried <em>āmalakī</em>, an Indian gooseberry, the last edible thing in the house. She had to choose between keeping it for her hungry family and giving it to a guest. She gave it, wholeheartedly.</p>
+<h3>A hymn is born</h3>
+<p>Śaṅkara saw at once how poor she was, and how generous. Moved, he composed a hymn in praise of Goddess Lakshmi, praying that her compassionate glance fall on this household. The hymn is the Kanakadhāra Stotram.</p>
+<h3>Karma, and an appeal to compassion</h3>
+<p>In one version, the Goddess answers that the family has not yet earned wealth through past actions. Śaṅkara then appeals not to justice but to compassion, and the story can be read as carrying a quiet argument: a woman who gives everything she has, has she not just earned merit this very moment?</p>
+<h3>The stream of gold</h3>
+<p>The Goddess is pleased, and golden gooseberries fall on the house. <em>Kanaka</em> means gold and <em>dhārā</em> means a stream, so <em>Kanakadhārā</em> is “the stream of gold”.</p>
+<p><small>Tellings differ on the details, such as the exact place, the family and what the family did afterwards. Whether it happened exactly so is for each reader to weigh. What is clear is why the story has lasted.</small></p>
+<h2>What the story teaches</h2>
+<ul>
+<li><strong>She gave before she received.</strong> The miracle begins with her generosity, not with the Goddess.</li>
+<li><strong>Wealth is more than money.</strong> The hymn asks for the grace that lets a life flourish: health, good company, peace of mind, and enough.</li>
+<li><strong>Humility on both sides.</strong> A seeker who accepts, a householder who gives, and neither is small.</li>
+</ul>
+<h2>Where to go in the hymn</h2>
+<p>The hymn is easiest to read with the story in mind. Begin with <a href="/kanakadhara/verse-1/">Verse 1</a>. <a href="/kanakadhara/verse-11/">Verse 11</a> is a good one for the question of how prosperity is built, and <a href="/kanakadhara/verse-16/">Verse 16</a> for seeking the Mother’s grace while doing so. The closing verses, <a href="/kanakadhara/verse-21/">21</a> and <a href="/kanakadhara/verse-22/">22</a>, are a plea for her favour and a promise to those who recite the hymn.</p>
+<h2>Read and chant the hymn</h2>
+<p>Read it <a href="/kanakadhara/">verse by verse</a> with the meaning, take the <a href="/downloads/">Devanāgarī PDF</a>, or see the <a href="/lakshmi-friday-chanting-guide/">Friday chanting guide</a>. For the meaning of unfamiliar words, see the <a href="/glossary/">glossary</a>.</p>
+</main>''' + MOTION_JS + foot()
+    write("kanakadhara-stotram-story", body, "0.7")
+
+def page_friday():
+    import landing
+    t = "Lakshmi Friday Chanting Guide – Sri Suktam & Kanakadhara"
+    d = "A simple guide to chanting Sri Suktam, Kanakadhara Stotram and Mahalakshmi Ashtakam on Fridays: setting, order, pronunciation tips and a short routine."
+    parts = [("Friday chanting guide","lakshmi-friday-chanting-guide/")]
+    hero = landing.hub_hero("A simple guide for devotees", "Chanting for Lakshmi on Fridays",
+        "Friday is the day many families keep for Goddess Lakshmi. This is a short, flexible guide to setting up, what to chant, and how to chant with understanding.", "",
+        '<a class="btn" href="/downloads/">Download the PDFs</a><a class="btn ghost" href="/sri-suktam/">Śrī Sūktam →</a>',
+        '<span>20 minutes</span><span>No rigid rules</span>')
+    body = head(t,d,"lakshmi-friday-chanting-guide/",bc_ld(parts)) + nav("guide") + MOTION_BOOT + f'''
+{hero}
+<main class="hub st">{crumbs([("Friday chanting guide",None)])}
+<p><small>This guide is general and non-prescriptive. Families and teachers follow different customs, and where you have a tradition or a teacher, follow that first.</small></p>
+<h2>Why Friday?</h2>
+<p>In many Hindu households Friday is the day kept for Goddess Lakshmi, and Fridays are a common day for her worship and for chanting her hymns. There is no need to wait for Friday, though. You can chant on any day, and many people also chant on Diwali, on the new moon and on festival days of Lakshmi.</p>
+<h2>A simple setting</h2>
+<ul>
+<li>Bathe or wash, and wear clean clothes if you can.</li>
+<li>Choose a quiet, tidy corner. A picture or idol of the Goddess, or a <a href="/sri-yantra/">Śrī Yantra</a>, helps the mind settle.</li>
+<li>Light a lamp (<em>dīpa</em>). Flowers and a simple offering of sweets or fruit are traditional.</li>
+<li>Sit comfortably. Face the picture, or face east if that is your custom.</li>
+</ul>
+<h2>What to chant</h2>
+<div class="dlgrid">
+<div class="dlc k0"><h3>The Śrī Sūktam</h3><p>A Vedic hymn to Śrī (Lakshmi). Longer, and best with a teacher or a recording to guide the intonation.</p><p><a href="/sri-suktam/">Read it with meaning →</a></p></div>
+<div class="dlc k1"><h3>The Kanakadhāra Stotram</h3><p>A devotional hymn attributed to Śaṅkarācārya, with the <a href="/kanakadhara-stotram-story/">story of the gooseberry</a> behind it.</p><p><a href="/kanakadhara/">Read it with meaning →</a></p></div>
+<div class="dlc k2"><h3>The Mahālakṣmī Aṣṭakam</h3><p>Eight short verses, a good starting point for a beginner.</p><p><a href="/mahalakshmi-ashtakam/">Read it with meaning →</a></p></div>
+</div>
+<p>You do not have to chant all of them. One hymn, chanted with attention, is a complete practice. Many people chant one hymn on a given Friday and move to another the next week.</p>
+<h2>A 20-minute routine</h2>
+<ol>
+<li><strong>Settle (2 minutes).</strong> Sit, light the lamp, and take a few quiet breaths.</li>
+<li><strong>Read the meaning first (3 minutes).</strong> Read the meaning of the verse or the hymn you will chant, so that the words carry their sense.</li>
+<li><strong>Chant (10 minutes).</strong> Chant slowly from the <a href="/downloads/">Devanāgarī PDF</a>. If you are a beginner, read the transliteration on each verse page alongside it.</li>
+<li><strong>Close (5 minutes).</strong> Sing the <a href="/lakshmi-aarti/">Lakshmi Aarti</a>, offer the prasād, and sit quietly for a minute.</li>
+</ol>
+<h2>Tips for pronunciation</h2>
+<ul>
+<li>Go slowly. A slow, clear recitation is better than a fast, blurred one.</li>
+<li>Long vowels (ā, ī, ū) are held twice as long as short ones.</li>
+<li>If you can, learn the Śrī Sūktam from a teacher or a trusted recording. The Vedic intonation is best learned by ear.</li>
+<li>Do not worry about perfection. Devotion and attention matter most.</li>
+</ul>
+<h2>A word on expectations</h2>
+<p>The hymns pray for prosperity in the widest sense: a settled mind, a good household, enough for oneself and to share. They are not a guarantee of any result, and chanting is no substitute for sound judgement and honest work. The <a href="/kanakadhara-stotram-story/">Kanakadhāra story</a> itself says that generosity comes first.</p>
+<h2>Where to go next</h2>
+<p>See the full <a href="/downloads/">Downloads page</a>, the <a href="/glossary/">glossary</a> for unfamiliar words, or begin with <a href="/mahalakshmi-ashtakam/verse-1/">Verse 1 of the Mahālakṣmī Aṣṭakam</a>.</p>
+</main>''' + MOTION_JS + foot()
+    write("lakshmi-friday-chanting-guide", body, "0.7")
+
 def page_about():
     t = f"About – {NAME} by {AUTHOR}"
     d = "About this commentary on the Śrī Sūktam and Kanakadhāra Stotram by Amit N. Lakhtariya, and how AI assistance is used in preparing it."
@@ -3077,6 +3166,6 @@ if __name__ == "__main__":
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for j in range(len(KAPPX)): page_verse(len(KVERSES)+j, KVERSES+KAPPX, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
-    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_dl(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_dl(); page_story(); page_friday(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")
