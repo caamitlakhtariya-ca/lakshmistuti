@@ -43,9 +43,15 @@ def mla_body():
             out.append(verse_block(ls, v["n"]))
     return "".join(out)
 
+def names_body():
+    from names108 import NAMES
+    items = "".join(f'<div class="nm">{dn(i+1)}. ॐ {html.escape(a)} नमः ॥</div>' for i, (a, b, c) in enumerate(NAMES))
+    return '<div class="sub">प्रत्येकं नामपूर्वं ‘ॐ’ तथा नामानन्तरं ‘नमः’ इति उच्चारयेत्।</div><div class="nms">' + items + '</div>'
+
 DOCS = [
  dict(slug="sri-suktam-devanagari", deva="श्री सूक्तम्", roman="Śrī Sūktam", sub="ऋग्वेदखिलसूक्तम्", body=sri_body, count=len(build.VERSES), page="sri-suktam/"),
  dict(slug="kanakadhara-stotram-devanagari", deva="कनकधारा स्तोत्रम्", roman="Kanakadhāra Stotram", sub="श्रीमच्छङ्कराचार्यविरचितम्", body=kana_body, count=len(build.KVERSES), page="kanakadhara/"),
+ dict(slug="lakshmi-108-names-devanagari", deva="श्री लक्ष्मी अष्टोत्तरशतनामावली", roman="Lakshmi Aṣṭottara-śatanāmāvalī", sub="श्री महालक्ष्म्याः १०८ पवित्र नामानि", body=names_body, count=108, page="lakshmi-ashtottara-shatanamavali/"),
  dict(slug="mahalakshmi-ashtakam-devanagari", deva="महालक्ष्म्यष्टकम्", roman="Mahālakṣmī Aṣṭakam", sub="", body=mla_body, count=11, page="mahalakshmi-ashtakam/"),
 ]
 
@@ -61,6 +67,8 @@ h1{font-size:30pt;font-weight:700;color:#5a1522;line-height:1.5;margin-top:2mm}
 .src{font-size:13pt;color:#7a5a3a;margin-top:3mm;line-height:1.5}
 .v{break-inside:avoid;margin:0 0 9mm}
 .v div{white-space:nowrap}
+.nms{columns:2;column-gap:10mm;text-align:left;font-size:14.5pt;line-height:1.55}
+.nm{break-inside:avoid;margin:0 0 2.2mm;white-space:nowrap}
 .sub{break-after:avoid;font-size:17pt;font-weight:700;color:#8c1d2a;margin:2mm 0 4mm}
 """
 
@@ -147,6 +155,7 @@ if __name__ == "__main__":
     js = os.path.join(tmp, "pdf_render.js"); open(js, "w").write(JS)
     outdir = os.path.join(ROOT, "assets", "downloads"); os.makedirs(outdir, exist_ok=True)
     for d in DOCS:
+        if os.environ.get("ONLY") and d["slug"] != os.environ["ONLY"]: continue
         h = os.path.join(tmp, d["slug"] + ".html"); open(h, "w", encoding="utf-8").write(doc_html(d))
         o = os.path.join(outdir, d["slug"] + ".pdf")
         body_pdf = os.path.join(tmp, d["slug"] + "_body.pdf")

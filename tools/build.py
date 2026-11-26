@@ -1997,6 +1997,8 @@ DLS = [
       about="Ādi Śaṅkarācārya’s hymn to Goddess Lakshmi, all 22 verses."),
  dict(k="mla", deva="महालक्ष्म्यष्टकम्", name="Mahālakṣmī Aṣṭakam", file="mahalakshmi-ashtakam-devanagari.pdf", page="mahalakshmi-ashtakam/",
       about="The eight-verse hymn to Goddess Mahalakshmi, with its three closing verses."),
+ dict(k="names", deva="श्री लक्ष्मी अष्टोत्तरशतनामावली", name="108 Names of Lakshmi", file="lakshmi-108-names-devanagari.pdf", page="lakshmi-ashtottara-shatanamavali/",
+      about="The Śrī Lakṣmī Aṣṭottara-śatanāmāvalī: all 108 names, each as Oṁ … namaḥ."),
 ]
 def dl_info(k):
     d = next(x for x in DLS if x["k"] == k)
@@ -2012,10 +2014,10 @@ def dl_strip(k):
 
 def nav(cur):
     items = [("Home","", "home"),("Śrī Sūktam","sri-suktam/","sri"),("Kanakadhāra","kanakadhara/","kana"),("Mahālakṣmī Aṣṭakam","mahalakshmi-ashtakam/","mla")]
-    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("Chanting guide","lakshmi-friday-chanting-guide/","guide"),("Glossary","glossary/","gl"),("Downloads","downloads/","dl")]
+    more = [("Aṣṭalakṣmī","ashtalakshmi/","ashta"),("Aṣṭalakṣmī Stotram","ashtalakshmi-stotram/","ashta"),("Lakshmi Aarti","lakshmi-aarti/","aarti"),("Śrī Yantra","sri-yantra/","yantra"),("108 Names","lakshmi-ashtottara-shatanamavali/","names"),("Chanting guide","lakshmi-friday-chanting-guide/","guide"),("Glossary","glossary/","gl"),("Downloads","downloads/","dl")]
     tail = [("About","about/","about")]
     def lk(l,p,k,cls=""): return '<a href="/%s"%s%s>%s</a>' % (p, ' aria-current="page"' if k==cur else "", cls, l)
-    cur_more = cur in ("ashta","aarti","yantra","gl","dl","guide")
+    cur_more = cur in ("ashta","aarti","yantra","gl","dl","guide","names")
     out = "".join(lk(*x) for x in items)
     out += '<details class="more"%s><summary%s>More</summary><div class="more-list">%s</div></details>' % ("", ' class="cur"' if cur_more else "", "".join(lk(*x) for x in more))
     out += "".join(lk(*x) for x in tail)
@@ -2953,7 +2955,7 @@ def page_yantra():
 def page_dl():
     import landing
     t = "Sri Suktam, Kanakadhara Stotram PDF Download (Devanagari)"
-    d = "Free PDF downloads of the plain Devanagari text of the Sri Suktam, Kanakadhara Stotram and Mahalakshmi Ashtakam, for chanting and printing."
+    d = "Free PDF downloads of the plain Devanagari text of the Sri Suktam, Kanakadhara Stotram, Mahalakshmi Ashtakam and the 108 names of Lakshmi, for chanting."
     parts = [("Downloads","downloads/")]
     cards = ""
     for i, x in enumerate(DLS):
@@ -2962,7 +2964,7 @@ def page_dl():
                   f'<p class="dlc-a"><a class="btn" href="{href}" download>Download PDF ({kb} KB)</a> <a class="btn ghost" href="/{x["page"]}">Read with meaning →</a></p></article>')
     hero = landing.hub_hero("Free to download and share", "Downloads",
         "The hymns in plain Devanāgarī, as a clean PDF you can print or keep on your phone for chanting.", "", "",
-        f'<span>{len(DLS)} hymns</span><span>Sanskrit text only</span><span>Free</span>')
+        f'<span>{len(DLS)} texts</span><span>Sanskrit text only</span><span>Free</span>')
     body = head(t,d,"downloads/",bc_ld(parts)) + nav("dl") + MOTION_BOOT + f'''
 {hero}
 <main class="hub">{crumbs([("Downloads",None)])}
@@ -3079,9 +3081,33 @@ def page_friday():
 <h2>A word on expectations</h2>
 <p>The hymns pray for prosperity in the widest sense: a settled mind, a good household, enough for oneself and to share. They are not a guarantee of any result, and chanting is no substitute for sound judgement and honest work. The <a href="/kanakadhara-stotram-story/">Kanakadhāra story</a> itself says that generosity comes first.</p>
 <h2>Where to go next</h2>
-<p>See the full <a href="/downloads/">Downloads page</a>, the <a href="/glossary/">glossary</a> for unfamiliar words, or begin with <a href="/mahalakshmi-ashtakam/verse-1/">Verse 1 of the Mahālakṣmī Aṣṭakam</a>.</p>
+<p>See the full <a href="/downloads/">Downloads page</a>, the <a href="/glossary/">glossary</a> for unfamiliar words, the <a href="/lakshmi-ashtottara-shatanamavali/">108 names of Lakshmi</a> with their meanings, or begin with <a href="/mahalakshmi-ashtakam/verse-1/">Verse 1 of the Mahālakṣmī Aṣṭakam</a>.</p>
 </main>''' + MOTION_JS + foot()
     write("lakshmi-friday-chanting-guide", body, "0.7")
+
+def page_names():
+    import landing
+    from names108 import NAMES
+    t = "Lakshmi 108 Names – Ashtottara Shatanamavali with Meaning"
+    d = "The 108 names of Goddess Lakshmi (Sri Lakshmi Ashtottara Shatanamavali) in Devanagari and transliteration, with the meaning of each name. Free PDF to download."
+    parts = [("108 names of Lakshmi","lakshmi-ashtottara-shatanamavali/")]
+    cards = "".join(f'<li class="nm k{(i//9)%4}"><span class="nm-n">{i+1}</span><div><p class="nm-d" lang="sa">ॐ {E(a)} नमः</p><p class="nm-r">Oṁ {E(b)} namaḥ</p><p class="nm-m">{E(c)}</p></div></li>' for i,(a,b,c) in enumerate(NAMES))
+    _, href, kb = dl_info("names")
+    hero = landing.hub_hero("The Ashtottara Shatanamavali", "The 108 Names of Goddess Lakshmi",
+        "The 108 names (<em>aṣṭottara-śatanāmāvalī</em>) are chanted one by one, each preceded by <em>Oṁ</em> and followed by <em>namaḥ</em>, as a salutation. Here they are in Devanāgarī and transliteration, with a short meaning for each.", "",
+        f'<a class="btn" href="{href}" download>Download PDF ({kb} KB)</a><a class="btn ghost" href="/lakshmi-friday-chanting-guide/">Chanting guide →</a>',
+        '<span>108 names</span><span>Devanāgarī + meaning</span><span>Free PDF</span>')
+    body = head(t,d,"lakshmi-ashtottara-shatanamavali/",bc_ld(parts)) + nav("names") + MOTION_BOOT + f'''
+{hero}
+<main class="hub">{crumbs([("108 names of Lakshmi",None)])}
+<h2>How the names are chanted</h2>
+<p>Each name is recited in the form <em>Oṁ</em> + name + <em>namaḥ</em>, for example <span lang="sa">ॐ प्रकृत्यै नमः</span> (<em>Oṁ prakṛtyai namaḥ</em>). The name is in the dative case (“to …”), so the line means “Salutations to the one who is …”. The meaning shown under each name is the name itself. A common way to use the list is to offer a flower or a few grains of rice at each name, or simply to recite it with attention on a Friday. See the <a href="/lakshmi-friday-chanting-guide/">Friday chanting guide</a>.</p>
+<ol class="nmgrid">{cards}</ol>
+<h2>A note on the text</h2>
+<p>This is the commonly printed Lakshmi aṣṭottara-śatanāmāvalī of 108 names. Editions differ in a few names and in the order of some, so where your family or teacher uses a different reading, follow that. The name <em>Devī</em> appears twice (numbers 50 and 102), as in the usual text. The meanings are short glosses, not a full commentary; the Devanāgarī is also available as a <a href="{href}" download>plain PDF</a>. Other texts to chant: <a href="/sri-suktam/">Śrī Sūktam</a>, <a href="/kanakadhara/">Kanakadhāra Stotram</a> and <a href="/mahalakshmi-ashtakam/">Mahālakṣmī Aṣṭakam</a>.</p>
+{ad("index")}
+</main>''' + MOTION_JS + foot()
+    write("lakshmi-ashtottara-shatanamavali", body, "0.8")
 
 def page_about():
     t = f"About – {NAME} by {AUTHOR}"
@@ -3166,6 +3192,6 @@ if __name__ == "__main__":
     for i in range(len(KVERSES)): page_verse(i, KVERSES, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for j in range(len(KAPPX)): page_verse(len(KVERSES)+j, KVERSES+KAPPX, "kanakadhara", "Kanakadhāra Stotram", "kana", KANA_TOTAL)
     for i in range(len(MVERSES)): page_verse(i, MVERSES, "mahalakshmi-ashtakam", "Mahālakṣmī Aṣṭakam", "mla", MLA_TOTAL, "Mahalakshmi Ashtakam")
-    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_dl(); page_story(); page_friday(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
+    page_ashta(); page_asts(); page_aarti(); page_aarti_print(); page_yantra(); page_gl(); page_dl(); page_story(); page_friday(); page_names(); page_about(); page_contact(); page_privacy(); page_404(); assets(); sitemap()
     json.dump(MANIFEST, open(MANIFEST_PATH,"w",encoding="utf-8"), indent=1, ensure_ascii=False)
     print("built", len(PAGES), "pages")
